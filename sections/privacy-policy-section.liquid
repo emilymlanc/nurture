@@ -1,0 +1,39 @@
+{{ 'privacy-policy.css' | asset_url | stylesheet_tag }}
+
+<div class="page-width">
+  <div class="privacy-section">
+  {%- if section.settings.banner_update != blank -%}
+<span class="banner-update nav link ">{{ section.settings.banner_update | escape }}</span>
+           {%- endif -%}
+
+<div class="rte">
+  {{ page.content }}
+</div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Privacy Policy Section",
+    "settings": [
+	{
+          "type": "text",
+          "id": "banner_update",
+		  "label": "Banner Update",
+		  "default": "updated jan 1, 2021"
+    }
+ ],
+"presets": [
+      {
+        "name": "Privacy Policy Section"
+      }
+    ]
+
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

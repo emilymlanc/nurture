@@ -1,0 +1,504 @@
+<div class="assembly-products">
+  <div class="page-width">
+    <p class="label bold">{{ section.settings.title }}</p>
+    <div class="assembly-products__container">
+      {% for block in section.blocks %}
+        {% assign current_product = all_products[block.settings.product] %}
+        <button class="assembly-products__item{% if forloop.first %} active{% endif %}" data-product="{{ current_product.handle }}" data-idx="{{ forloop.index0 }}">
+          {% render 'lazy-image' image: block.settings.image %}
+          <p class="btn">{{ current_product.title }}</p>
+        </button>
+      {% endfor %}
+    </div>
+    <div class="assembly-products__container-mobile swiper">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          {% assign current_product = all_products[block.settings.product] %}
+          <div class="assembly-products__container-mobile-item swiper-slide{% if forloop.first %} active{% endif %}" data-product="{{ current_product.handle }}" data-idx="{{ forloop.index0 }}">
+            {% render 'lazy-image' image: block.settings.image %}
+            <p class="btn">{{ current_product.title }}</p>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="assembly-instructions">
+  <div class="page-width">
+    {% for block in section.blocks %}
+      {% assign current_product = all_products[block.settings.product] %}
+      <div class="assembly-instructions__product{% if forloop.first %} active{% endif %}" data-product="{{ current_product.handle }}" data-idx="{{ forloop.index0 }}">
+        <div class="assembly-instructions__header">
+          <h2>{{ current_product.title }}</h2>
+          <p class="label bold">Assembly Guide</p>
+        </div>
+        {% comment %}
+        <div class="assembly-instructions__content">
+          <div class="assembly-instructions__parts">
+            <p class="sh3">Parts List</p>
+            <table>
+              <tr>
+                <th class="btn">No.</th>
+                <th class="btn">Description</th>
+                <th class="btn">Sketch</th>
+                <th class="btn">Qty.</th>
+              </tr>
+              {% if block.settings.part_a_description != blank %}
+                <tr>
+                  <td class="body-1">A</td>
+                  <td class="body-1">{{ block.settings.part_a_description }}</td>
+                  <td class="body-1"><div class="assembly-instructions__parts-image">{% render 'lazy-image' image: block.settings.part_a_sketch, classes: 'img-fill' %}</div></td>
+                  <td class="body-1">{{ block.settings.part_a_quantity }}</td>
+                </tr>
+              {% endif %}
+              {% if block.settings.part_b_description != blank %}
+                <tr>
+                  <td class="body-1">B</td>
+                  <td class="body-1">{{ block.settings.part_b_description }}</td>
+                  <td class="body-1"><div class="assembly-instructions__parts-image">{% render 'lazy-image' image: block.settings.part_b_sketch, classes: 'img-fill' %}</div></td>
+                  <td class="body-1">{{ block.settings.part_b_quantity }}</td>
+                </tr>
+              {% endif %}
+              {% if block.settings.part_c_description != blank %}
+                <tr>
+                  <td class="body-1">C</td>
+                  <td class="body-1">{{ block.settings.part_c_description }}</td>
+                  <td class="body-1"><div class="assembly-instructions__parts-image">{% render 'lazy-image' image: block.settings.part_c_sketch, classes: 'img-fill' %}</div></td>
+                  <td class="body-1">{{ block.settings.part_c_quantity }}</td>
+                </tr>
+              {% endif %}
+              {% if block.settings.part_d_description != blank %}
+                <tr>
+                  <td class="body-1">D</td>
+                  <td class="body-1">{{ block.settings.part_d_description }}</td>
+                  <td class="body-1"><div class="assembly-instructions__parts-image">{% render 'lazy-image' image: block.settings.part_d_sketch, classes: 'img-fill' %}</div></td>
+                  <td class="body-1">{{ block.settings.part_d_quantity }}</td>
+                </tr>
+              {% endif %}
+              {% if block.settings.part_e_description != blank %}
+                <tr>
+                  <td class="body-1">E</td>
+                  <td class="body-1">{{ block.settings.part_e_description }}</td>
+                  <td class="body-1"><div class="assembly-instructions__parts-image">{% render 'lazy-image' image: block.settings.part_e_sketch, classes: 'img-fill' %}</div></td>
+                  <td class="body-1">{{ block.settings.part_e_quantity }}</td>
+                </tr>
+              {% endif %}
+              {% if block.settings.part_f_description != blank %}
+                <tr>
+                  <td class="body-1">F</td>
+                  <td class="body-1">{{ block.settings.part_f_description }}</td>
+                  <td class="body-1"><div class="assembly-instructions__parts-image">{% render 'lazy-image' image: block.settings.part_f_sketch, classes: 'img-fill' %}</div></td>
+                  <td class="body-1">{{ block.settings.part_f_quantity }}</td>
+                </tr>
+              {% endif %}
+              {% if block.settings.part_g_description != blank %}
+                <tr>
+                  <td class="body-1">G</td>
+                  <td class="body-1">{{ block.settings.part_g_description }}</td>
+                  <td class="body-1"><div class="assembly-instructions__parts-image">{% render 'lazy-image' image: block.settings.part_g_sketch, classes: 'img-fill' %}</div></td>
+                  <td class="body-1">{{ block.settings.part_g_quantity }}</td>
+                </tr>
+              {% endif %}
+              {% if block.settings.part_h_description != blank %}
+                <tr>
+                  <td class="body-1">H</td>
+                  <td class="body-1">{{ block.settings.part_h_description }}</td>
+                  <td class="body-1"><div class="assembly-instructions__parts-image">{% render 'lazy-image' image: block.settings.part_h_sketch, classes: 'img-fill' %}</div></td>
+                  <td class="body-1">{{ block.settings.part_h_quantity }}</td>
+                </tr>
+              {% endif %}
+            </table>
+          </div>
+          <div class="assembly-instructions__steps">
+            <p class="sh3">How to Assemble {{ current_product.title }}</p>
+            <div class="assembly-instructions__steps-slider-wrapper">
+              <div class="assembly-instructions__steps-slider swiper">
+                <div class="swiper-wrapper">
+                  {% if block.settings.step_1_text != blank %}
+                    <div class="assembly-instructions__steps-item swiper-slide">
+                      <p class="label bold">Step One</p>
+                      <div class="assembly-instructions__steps-image">
+                        {% render 'lazy-image' image: block.settings.step_1_image %}
+                      </div>
+                      <p class="body-1">{{ block.settings.step_1_text }}</p>
+                    </div>
+                  {% endif %}
+                  {% if block.settings.step_2_text != blank %}
+                    <div class="assembly-instructions__steps-item swiper-slide">
+                      <p class="label bold">Step Two</p>
+                      <div class="assembly-instructions__steps-image">
+                        {% render 'lazy-image' image: block.settings.step_2_image %}
+                      </div>
+                      <p class="body-1">{{ block.settings.step_2_text }}</p>
+                    </div>
+                  {% endif %}
+                  {% if block.settings.step_3_text != blank %}
+                    <div class="assembly-instructions__steps-item swiper-slide">
+                      <p class="label bold">Step Three</p>
+                      <div class="assembly-instructions__steps-image">
+                        {% render 'lazy-image' image: block.settings.step_3_image %}
+                      </div>
+                      <p class="body-1">{{ block.settings.step_3_text }}</p>
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+              <div class="assembly-instructions__buttons">
+                <div class="swiper-button swiper-button-prev">
+                  {% render 'svg-arrow-button-left' %}
+                </div>
+                <div class="swiper-button swiper-button-next">
+                  {% render 'svg-arrow-button-right' %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endcomment %}
+        <div class="assembly-instructions__pdf">
+          <a href="{{ block.settings.pdf_link }}" target="_blank" class="button"><span class="hide-mobile">Download</span><span class="hide-desktop"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="20" viewBox="0 0 14 20" fill="none"><path d="M14 20H0V18H14V20ZM7 16L1 10L2.41 8.59L6 12.17V0H8V12.17L11.59 8.59L13 10L7 16Z" fill="white"/></svg></span> assembly instructions</a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% for block in section.blocks %}
+  {% assign current_product = all_products[block.settings.product] %}
+  {% if block.settings.video_url != blank %}
+  <div class="assembly-instructions__video{% if forloop.first %} active{% endif %}" data-product="{{ current_product.handle }}">
+    <div class="page-width">
+      <div class="assembly-instructions__video-header">
+        <p class="label bold">{{ section.settings.video_subtitle }}</p>
+        <h3 class="sh1">{{ section.settings.video_title }}</h3>
+      </div>
+      <div class="assembly-instructions__video-container">
+        <video class="img-fill" loop muted playsinline controls>
+          <source src="{{ block.settings.video_url }}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <button class="assembly-instructions__video-overlay">
+          {% render 'svg-play' %}
+        </button>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+{% endfor %}
+
+<div class="page-width">
+  <div class="assembly-instructions__contact">
+    <p class="btn">Questions?</p>
+    <p class="body-1">{{ section.settings.questions_text }}</p>
+    <a href="{{ section.settings.email_link }}" class="button">Email</a>
+  </div>
+</div>
+
+{% javascript %}
+    const assemblyProductSlider = new Swiper('.assembly-products__container-mobile', {
+      slidesPerView: 2,
+      loop: true,
+      centeredSlides: true
+    });
+
+  const assemblySlider = new Swiper('.assembly-instructions__steps-slider', {
+    slidesPerView: 1,
+    loop: true,
+    spaceBetween: 20,
+    navigation: {
+      nextEl: '.assembly-instructions__buttons .swiper-button-next',
+      prevEl: '.assembly-instructions__buttons .swiper-button-prev',
+    }
+  });
+
+  $('.assembly-products__item').off().click(function() {
+    var product = $(this).data('product');
+    var idx = Number($(this).data('idx'));
+
+    $('.assembly-products__item').removeClass('active');
+    $(this).addClass('active');
+
+    $('.assembly-instructions__product').removeClass('active');
+    $(`.assembly-instructions__product[data-product="${product}"]`).addClass('active');
+
+    $('.assembly-instructions__video').removeClass('active');
+    $(`.assembly-instructions__video[data-product="${product}"]`).addClass('active');
+
+    assemblyProductSlider.slideToLoop(idx)
+  });
+
+  /* assemblyProductSlider.on('slideChange', function (slider) {
+    var idx = slider.realIndex;
+    
+    $('.assembly-products__item').removeClass('active');
+    $(`.assembly-products__item[data-idx="${idx}"]`).addClass('active');
+
+    $('.assembly-instructions__product').removeClass('active');
+    $(`.assembly-instructions__product[data-idx="${idx}"]`).addClass('active');
+
+    $('.assembly-instructions__video').removeClass('active');
+    $(`.assembly-instructions__video[data-idx="${idx}"]`).addClass('active');
+  });  */
+
+  $('.assembly-instructions__video-overlay').click(function() {
+    $(this).hide();
+    $(this).siblings('video').trigger('play');
+  });
+
+{% endjavascript %} 
+
+{% schema %}
+  {
+    "name": "Assembly Products",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "text",
+        "id": "video_subtitle",
+        "label": "Video Subtitle"
+      },
+      {
+        "type": "text",
+        "id": "video_title",
+        "label": "Video Title"
+      },
+      {
+        "type": "textarea",
+        "id": "questions_text",
+        "label": "Questions Text"
+      },
+      {
+        "type": "url",
+        "id": "email_link",
+        "label": "Email Link"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "block",
+        "name": "Block",
+        "settings": [
+          {
+            "type": "product",
+            "id": "product",
+            "label": "Product"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "header",
+            "content": "Part A"
+          },
+          {
+            "type": "text",
+            "id": "part_a_description",
+            "label": "Part A Description"
+          },
+          {
+            "type": "image_picker",
+            "id": "part_a_sketch",
+            "label": "Part A Sketch"
+          },
+          {
+            "type": "text",
+            "id": "part_a_quantity",
+            "label": "Part A Quantity"
+          },
+          {
+            "type": "header",
+            "content": "Part B"
+          },
+          {
+            "type": "text",
+            "id": "part_b_description",
+            "label": "Part B Description"
+          },
+          {
+            "type": "image_picker",
+            "id": "part_b_sketch",
+            "label": "Part B Sketch"
+          },
+          {
+            "type": "text",
+            "id": "part_b_quantity",
+            "label": "Part B Quantity"
+          },
+          {
+            "type": "header",
+            "content": "Part C"
+          },
+          {
+            "type": "text",
+            "id": "part_c_description",
+            "label": "Part C Description"
+          },
+          {
+            "type": "image_picker",
+            "id": "part_c_sketch",
+            "label": "Part C Sketch"
+          },
+          {
+            "type": "text",
+            "id": "part_c_quantity",
+            "label": "Part C Quantity"
+          },
+          {
+            "type": "header",
+            "content": "Part D"
+          },
+          {
+            "type": "text",
+            "id": "part_d_description",
+            "label": "Part D Description"
+          },
+          {
+            "type": "image_picker",
+            "id": "part_d_sketch",
+            "label": "Part D Sketch"
+          },
+          {
+            "type": "text",
+            "id": "part_d_quantity",
+            "label": "Part D Quantity"
+          },
+          {
+            "type": "header",
+            "content": "Part E"
+          },
+          {
+            "type": "text",
+            "id": "part_e_description",
+            "label": "Part E Description"
+          },
+          {
+            "type": "image_picker",
+            "id": "part_e_sketch",
+            "label": "Part E Sketch"
+          },
+          {
+            "type": "text",
+            "id": "part_e_quantity",
+            "label": "Part E Quantity"
+          },
+          {
+            "type": "header",
+            "content": "Part F"
+          },
+          {
+            "type": "text",
+            "id": "part_f_description",
+            "label": "Part F Description"
+          },
+          {
+            "type": "image_picker",
+            "id": "part_f_sketch",
+            "label": "Part F Sketch"
+          },
+          {
+            "type": "text",
+            "id": "part_f_quantity",
+            "label": "Part F Quantity"
+          },
+          {
+            "type": "header",
+            "content": "Part G"
+          },
+          {
+            "type": "text",
+            "id": "part_g_description",
+            "label": "Part G Description"
+          },
+          {
+            "type": "image_picker",
+            "id": "part_g_sketch",
+            "label": "Part G Sketch"
+          },
+          {
+            "type": "text",
+            "id": "part_g_quantity",
+            "label": "Part G Quantity"
+          },
+          {
+            "type": "header",
+            "content": "Part H"
+          },
+          {
+            "type": "text",
+            "id": "part_h_description",
+            "label": "Part H Description"
+          },
+          {
+            "type": "image_picker",
+            "id": "part_h_sketch",
+            "label": "Part H Sketch"
+          },
+          {
+            "type": "text",
+            "id": "part_h_quantity",
+            "label": "Part H Quantity"
+          },
+          {
+            "type": "header",
+            "content": "Step 1"
+          },
+          {
+            "type": "image_picker",
+            "id": "step_1_image",
+            "label": "Step 1 Image"
+          },
+          {
+            "type": "text",
+            "id": "step_1_text",
+            "label": "Step 1 Text"
+          },
+          {
+            "type": "header",
+            "content": "Step 2"
+          },
+          {
+            "type": "image_picker",
+            "id": "step_2_image",
+            "label": "Step 2 Image"
+          },
+          {
+            "type": "text",
+            "id": "step_2_text",
+            "label": "Step 2 Text"
+          },
+          {
+            "type": "header",
+            "content": "Step 3"
+          },
+          {
+            "type": "image_picker",
+            "id": "step_3_image",
+            "label": "Step 3 Image"
+          },
+          {
+            "type": "text",
+            "id": "step_3_text",
+            "label": "Step 3 Text"
+          },
+          {
+            "type": "url",
+            "id": "pdf_link",
+            "label": "PDF Link"
+          },
+          {
+            "type": "text",
+            "id": "video_url",
+            "label": "Video URL (mp4)"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

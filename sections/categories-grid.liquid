@@ -1,0 +1,55 @@
+{{ 'section-categories-grid.css' | asset_url | stylesheet_tag }}
+
+<div class="categories-grid">
+  <div class="page-width">
+    <div class="categories-grid__container swiper">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          <a class="categories-grid__item-wrapper swiper-slide fade-in-up" data-aos data-aos-delay="{{ 100 | times: forloop.index }}" href="{{ block.settings.link }}">
+            <div class="categories-grid__item">
+              {% render 'lazy-image' image: block.settings.image, blur: true %}
+              <p class="btn">{{ block.settings.title }}</p>
+            </div>
+          </a>
+        {% endfor %}
+      </div>
+      <div class="swiper-pagination hide-desktop"></div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Categories Grid",
+    "settings": [
+    ],
+    "blocks": [
+      {
+        "type": "block",
+        "name": "Block",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Categories Grid"
+      }
+    ]
+  }
+{% endschema %}

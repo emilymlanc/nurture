@@ -1,0 +1,370 @@
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css"  />
+<script src="{{ 'faq.js' | asset_url }}" defer></script>
+
+{{ 'section-guide.css' | asset_url | stylesheet_tag }}
+{{ 'faq.css' | asset_url | stylesheet_tag }}
+
+
+
+<div class="faq_tab_wrapper desktop" style="background-color:{{ section.settings.tab_bg_color }}">
+  <div class="guide__dropdowns">
+  <h3 class="body-1" style="background-color:{{ section.settings.tab_bg_color }}">Sort By</h3>
+  {% for block in section.blocks %}
+  {% if block.type == "heading" %}
+  {% if block.settings.heading != blank %}
+  <h2 class="sh2 faq-button tab_heading {% if forloop.index == 1%}active{% endif %}" style="background-color:{{ section.settings.tab_bg_color }}"><a href="#{{ block.settings.heading | replace: ' ', ''}}">{{ block.settings.heading }}</a></h2>
+  {% endif %}
+  {% endif %}
+  {% endfor %}
+</div>
+</div>
+<div class="faq_tab_wrapper mobile" style="background-color:{{ section.settings.tab_bg_color }}">
+  <h2 class="sh2 faq-button tab_heading" style="background-color:{{ section.settings.tab_bg_color }}"><a href="#all">ALL</a></h2>
+  {% for block in section.blocks %}
+  {% if block.type == "heading" %}
+  {% if block.settings.heading != blank %}
+  <h2 class="sh2 faq-button tab_heading {% if forloop.index == 1%}active{% endif %}" style="background-color:{{ section.settings.tab_bg_color }}"><a href="#{{ block.settings.heading |  replace: ' ', ''}}">{{ block.settings.heading }}</a></h2>
+  {% endif %}
+  {% endif %}
+  {% endfor %}
+</div>
+
+<div class="guide__dropdowns faq-wrapper" id="#all">
+  {% for block in section.blocks %}
+    {% if block.type == "heading" %}
+      {% if block.settings.heading != blank %}
+          <h3 class="h3 heading" id="{{ block.settings.heading  | replace: ' ', ''}}">{{ block.settings.heading }}</h3>
+      {% endif %}
+    {% endif %}
+
+    {% if block.settings.title != blank %}
+      <div class="guide__dropdown ">
+        <button class="guide__dropdown-header">
+          <p class="sh6 title">{{ block.settings.title }}</p>
+          <div class="guide__dropdown-control"></div>
+        </button>
+        <div class="guide__dropdown-content">
+          {{ block.settings.subtitle }}
+        </div>
+      </div>
+    {% endif %}
+    {% if block.settings.title_2 != blank %}
+      <div class="guide__dropdown ">
+        <button class="guide__dropdown-header">
+          <p class="sh6 title">{{ block.settings.title_2 }}</p>
+          <div class="guide__dropdown-control"></div>
+        </button>
+        <div class="guide__dropdown-content">
+          {{ block.settings.subtitle_2 }}
+        </div>
+      </div>
+    {% endif %}
+    {% if block.settings.title_3 != blank %}
+      <div class="guide__dropdown ">
+        <button class="guide__dropdown-header">
+          <p class="sh6 title">{{ block.settings.title_3 }}</p>
+          <div class="guide__dropdown-control"></div>
+        </button>
+        <div class="guide__dropdown-content">
+          {{ block.settings.subtitle_3 }}
+        </div>
+      </div>
+    {% endif %}
+    {% if block.settings.title_4 != blank %}
+      <div class="guide__dropdown ">
+        <button class="guide__dropdown-header">
+          <p class="sh6 title">{{ block.settings.title_4 }}</p>
+          <div class="guide__dropdown-control"></div>
+        </button>
+        <div class="guide__dropdown-content">
+          {{ block.settings.subtitle_4 }}
+        </div>
+      </div>
+    {% endif %}
+    {% if block.settings.title_5 != blank %}
+      <div class="guide__dropdown ">
+        <button class="guide__dropdown-header">
+          <p class="sh6 title">{{ block.settings.title_5 }}</p>
+          <div class="guide__dropdown-control"></div>
+        </button>
+        <div class="guide__dropdown-content">
+          {{ block.settings.subtitle_5 }}
+        </div>
+      </div>
+    {% endif %}
+    {% if block.settings.title_6 != blank %}
+      <div class="guide__dropdown ">
+        <button class="guide__dropdown-header">
+          <p class="sh6 title">{{ block.settings.title_6 }}</p>
+          <div class="guide__dropdown-control"></div>
+        </button>
+        <div class="guide__dropdown-content">
+          {{ block.settings.subtitle_6 }}
+        </div>
+      </div>
+    {% endif %}
+    {% if block.settings.title_7 != blank %}
+      <div class="guide__dropdown ">
+        <button class="guide__dropdown-header">
+          <p class="sh6 title">{{ block.settings.title_7 }}</p>
+          <div class="guide__dropdown-control"></div>
+        </button>
+        <div class="guide__dropdown-content">
+          {{ block.settings.subtitle_7 }}
+        </div>
+      </div>
+    {% endif %}
+    {% if block.settings.title_8 != blank %}
+      <div class="guide__dropdown ">
+        <button class="guide__dropdown-header">
+          <p class="sh6 title">{{ block.settings.title_8 }}</p>
+          <div class="guide__dropdown-control"></div>
+        </button>
+        <div class="guide__dropdown-content">
+          {{ block.settings.subtitle_8 }}
+        </div>
+      </div>
+    {% endif %}
+    {% if block.settings.title_9 != blank %}
+      <div class="guide__dropdown ">
+        <button class="guide__dropdown-header">
+          <p class="sh6 title">{{ block.settings.title_9 }}</p>
+          <div class="guide__dropdown-control"></div>
+        </button>
+        <div class="guide__dropdown-content">
+          {{ block.settings.subtitle_9 }}
+        </div>
+      </div>
+    {% endif %}
+    {% if block.settings.title_10 != blank %}
+      <div class="guide__dropdown ">
+        <button class="guide__dropdown-header">
+          <p class="sh6 title">{{ block.settings.title_10 }}</p>
+          <div class="guide__dropdown-control"></div>
+        </button>
+        <div class="guide__dropdown-content">
+          {{ block.settings.subtitle_10 }}
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+
+
+
+{% schema %}
+
+{
+  "name": "Page | faq",
+  "class": "faq-section",
+  "settings": [
+	{
+        "type": "color",
+        "id": "tab_bg_color",
+        "default": "#DC9D70",
+        "label": "Background Color"
+      }
+  ],
+  "blocks": [
+    {
+      "name": "Heading",
+      "type": "heading",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Title"
+        }
+      ]
+    },
+    {
+      "name": "Frequently Asked Question",
+      "type": "dropdown",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Question",
+          "default": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "subtitle",
+          "label": "Answer",
+          "default": "<p>Include a helpful and informative answer to the frequently asked question here.</p>"
+        },
+        {
+          "type": "text",
+          "id": "title_2",
+          "label": "Question 2",
+          "default": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "subtitle_2",
+          "label": "Answer 2",
+          "default": "<p>Include a helpful and informative answer to the frequently asked question here.</p>"
+        },
+        {
+          "type": "text",
+          "id": "title_3",
+          "label": "Question 3",
+          "default": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "subtitle_3",
+          "label": "Answer 3",
+          "default": "<p>Include a helpful and informative answer to the frequently asked question here.</p>"
+        },
+        {
+          "type": "text",
+          "id": "title_4",
+          "label": "Question 4",
+          "default": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "subtitle_4",
+          "label": "Answer 4",
+          "default": "<p>Include a helpful and informative answer to the frequently asked question here.</p>"
+        },
+        {
+          "type": "text",
+          "id": "title_5",
+          "label": "Question 5",
+          "default": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "subtitle_5",
+          "label": "Answer 5",
+          "default": "<p>Include a helpful and informative answer to the frequently asked question here.</p>"
+        },
+        {
+          "type": "text",
+          "id": "title_6",
+          "label": "Question 6",
+          "default": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "subtitle_6",
+          "label": "Answer 6",
+          "default": "<p>Include a helpful and informative answer to the frequently asked question here.</p>"
+        },
+        {
+          "type": "text",
+          "id": "title_7",
+          "label": "Question 7",
+          "default": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "subtitle_7",
+          "label": "Answer 7",
+          "default": "<p>Include a helpful and informative answer to the frequently asked question here.</p>"
+        },
+        {
+          "type": "text",
+          "id": "title_8",
+          "label": "Question 8",
+          "default": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "subtitle_8",
+          "label": "Answer 8",
+          "default": "<p>Include a helpful and informative answer to the frequently asked question here.</p>"
+        },
+        {
+          "type": "text",
+          "id": "title_9",
+          "label": "Question 9",
+          "default": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "subtitle_9",
+          "label": "Answer 9",
+          "default": "<p>Include a helpful and informative answer to the frequently asked question here.</p>"
+        },
+        {
+          "type": "text",
+          "id": "title_10",
+          "label": "Question 10",
+          "default": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "subtitle_10",
+          "label": "Answer 10",
+          "default": "<p>Include a helpful and informative answer to the frequently asked question here.</p>"
+        }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      {
+        "type": "heading",
+        "settings": {
+          "heading": "Section"
+        }
+      },
+      {
+        "type": "dropdown",
+        "settings": {
+          "title": "Title",
+          "subtitle": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac est gravida, fringilla ex vel, viverra eros. Mauris mattis, lectus in facilisis sollicitudin, augue eros laoreet leo, ac maximus ligula nibh in leo. Ut vitae dolor a magna euismod fringilla ac sed eros.</p>"
+        }
+      },
+      {
+        "type": "dropdown",
+        "settings": {
+          "title": "Title",
+          "subtitle": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac est gravida, fringilla ex vel, viverra eros. Mauris mattis, lectus in facilisis sollicitudin, augue eros laoreet leo, ac maximus ligula nibh in leo. Ut vitae dolor a magna euismod fringilla ac sed eros.</p>"
+        }
+      },
+      {
+        "type": "dropdown",
+        "settings": {
+          "title": "Title",
+          "subtitle": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac est gravida, fringilla ex vel, viverra eros. Mauris mattis, lectus in facilisis sollicitudin, augue eros laoreet leo, ac maximus ligula nibh in leo. Ut vitae dolor a magna euismod fringilla ac sed eros.</p>"
+        }
+      },
+      {
+        "type": "heading",
+        "settings": {
+          "heading": "Section"
+        }
+      },
+      {
+        "type": "dropdown",
+        "settings": {
+          "title": "Title",
+          "subtitle": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac est gravida, fringilla ex vel, viverra eros. Mauris mattis, lectus in facilisis sollicitudin, augue eros laoreet leo, ac maximus ligula nibh in leo. Ut vitae dolor a magna euismod fringilla ac sed eros.</p>"
+        }
+      },
+      {
+        "type": "dropdown",
+        "settings": {
+          "title": "Title",
+          "subtitle": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac est gravida, fringilla ex vel, viverra eros. Mauris mattis, lectus in facilisis sollicitudin, augue eros laoreet leo, ac maximus ligula nibh in leo. Ut vitae dolor a magna euismod fringilla ac sed eros..</p>"
+        }
+      },
+      {
+        "type": "dropdown",
+        "settings": {
+          "title": "Title",
+          "subtitle": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ac est gravida, fringilla ex vel, viverra eros. Mauris mattis, lectus in facilisis sollicitudin, augue eros laoreet leo, ac maximus ligula nibh in leo. Ut vitae dolor a magna euismod fringilla ac sed eros.</p>"
+        }
+      }
+    ]
+  }
+}
+
+{% endschema %}

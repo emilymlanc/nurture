@@ -1,0 +1,210 @@
+.page-shop-instagram .content_inner .body-1 {
+  margin: 20px 0 10px;
+  padding: 0;
+  display: block;
+  color: var(--white);
+}
+
+.page-shop-instagram .content_inner{
+  text-align: center;
+}
+
+.page-shop-instagram .banner-insta_handle {
+  color: var(--white);
+}
+
+.shop_instagram_wrapper {
+  max-width: 1320px;
+  padding: 0 20px;
+  margin: 60px auto 80px;
+}
+
+.shop_instagram_wrap {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.shop_instagram_wrapper .insta_item {
+  flex: 0 1 calc(33.33% - 10px);
+  margin: 0 0 60px;
+}
+
+.shop_instagram_wrapper .insta_item_inner {
+  position: relative;
+}
+
+.shop_instagram_wrapper .insta_item .aspect-ratio img {
+  width: 100%;
+  height: inherit;
+}
+
+.shop_instagram_wrapper .featured-product-slider__item {
+  max-width: 356px;
+  width: 90%;
+  padding: 0;
+  display: inline-block;
+  position: absolute;
+  top: 50%; 
+  height: auto;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  transition: all 0.3s;
+  opacity:0;
+}
+
+.shop_instagram_wrapper .insta_item:hover .featured-product-slider__item {
+  opacity:1;
+}
+
+.shop_instagram_wrapper .featured-product-slider__item-wrapper {
+  background: #F8F7F3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 18px 24px 12px;
+}
+
+.shop_instagram_wrapper .price dd {
+  margin:0;
+}
+
+.shop_instagram_wrapper .price dl {
+  display: flex;
+  margin: 0;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.shop_instagram_wrapper .price .price-item--sale{
+  display: none;
+}
+
+.shop_instagram_wrapper .label{
+  margin: 0;
+  font-size: 17px;
+  line-height: 18.7px;
+}
+
+.shop_instagram_wrapper .price_info .button{
+  padding: 13px 22px;
+}
+
+.featured-product-slider__item-image img {
+  width: 90px;
+  height: auto;
+}
+
+.shop_instagram_wrapper .featured-product-slider__item-content {
+  padding-left: 20px;
+  word-break: break-word;
+}
+
+.shop_instagram_wrapper .featured-product-slider__item-content .label {
+  
+}
+
+.shop_instagram_wrapper .featured-product-slider__item-content-container .body-4 {
+  margin: 10px 0 12px;
+  line-height: 21px;
+}
+
+.shop_instagram_wrapper .insta_item .insta_handle {
+  font-size: 15px;
+  line-height: 16.5px;
+  letter-spacing: 0.1em;
+  color: var(--navy);
+  margin-bottom: 0;
+}
+
+.shop_title {
+  display: flex;
+}
+
+.shop_title:after {
+  content: '\2022';
+  padding: 0 7px 0 2px;
+}
+
+.shop_instagram_wrapper .price__regular {
+    margin-right: 6px;
+}
+
+@media screen and (max-width: 1024px) {
+
+  .shop_instagram_wrapper .insta_item {
+    flex: 0 1 calc(50% - 10px);
+  }
+}
+
+@media screen and (max-width: 1320px) and (min-width: 1025px) {
+  .shop_instagram_wrapper .featured-product-slider__item-wrapper{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .shop_instagram_wrapper .featured-product-slider__item-content{
+    margin-top: 20px;
+    margin-left: 0;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .shop_instagram_wrapper .featured-product-slider__item-content .button{
+    font-size: 13px;
+    line-height: 14.3px;
+  }
+  .shop_instagram_wrapper .price_info .button {
+    padding: 11px 18px;
+  }
+  
+}
+
+@media screen and (max-width: 768px) {
+  .shop_instagram_wrapper {
+    margin: 30px auto 60px;
+  }
+
+  .shop_instagram_wrapper .insta_item {
+    flex: 0 1 100%;
+    max-width: 413px;
+    margin: 0 auto 30px;
+  }
+
+  .shop_instagram_wrapper .featured-product-slider__item {
+    padding: 0 17px;
+  }
+  
+  .shop_instagram_wrapper .featured-product-slider__item-wrapper {
+    padding: 30px 12px;
+  }
+  
+  .shop_instagram_wrapper .label {
+    font-size: 15px;
+    line-height: 16px;
+  }
+  
+  .shop_instagram_wrapper .featured-product-slider__item {
+    max-width: 301px;
+    padding: 0;
+  }
+  
+  .shop_instagram_wrapper .featured-product-slider__item-content-container .body-4 {
+    font-size: 12px;
+    line-height: 18px;
+    margin: 9px 0 10px;
+  }
+
+  .featured-product-slider__item-image img {
+    width: 74px;
+    height: auto;
+  }
+  
+  .shop_instagram_wrapper .insta_item_inner .insta_handle {
+    font-size: 13px;
+    line-height: 14.3px;
+  }
+}

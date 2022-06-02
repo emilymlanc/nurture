@@ -1,0 +1,65 @@
+{
+  "sections": {
+    "1635369101fbd78ff0": {
+      "type": "banner-section",
+      "settings": {
+        "banner_title": "Our Nursery Must-Have's",
+        "banner_sub_text": "Shop All",
+        "img_text": false
+      }
+    },
+    "163537122495415f04": {
+      "type": "collection-list",
+      "blocks": {
+        "b645d23a-ba97-4531-92a3-81f72a272d99": {
+          "type": "block",
+          "settings": {
+            "collection": "gliders",
+            "title": "Seating"
+          }
+        },
+        "f882f47f-102e-40f2-af91-faf7e31de98b": {
+          "type": "block",
+          "settings": {
+            "collection": "play",
+            "title": "Play"
+          }
+        },
+        "65829e00-b5be-4faa-8238-1b25913a4eab": {
+          "type": "block",
+          "settings": {
+            "collection": "storage",
+            "title": "Accessories"
+          }
+        },
+        "102b1820-b7bd-4608-a71e-978b3fcea8a8": {
+          "type": "block",
+          "settings": {
+            "collection": "soft-goods",
+            "title": "Bundles"
+          }
+        }
+      },
+      "block_order": [
+        "b645d23a-ba97-4531-92a3-81f72a272d99",
+        "f882f47f-102e-40f2-af91-faf7e31de98b",
+        "65829e00-b5be-4faa-8238-1b25913a4eab",
+        "102b1820-b7bd-4608-a71e-978b3fcea8a8"
+      ],
+      "settings": {}
+    },
+    "163536930704ec48b6": {
+      "type": "newsletter",
+      "settings": {
+        "add_top_border": true,
+        "title": "Our emails are bumpin’",
+        "text": "Be the first to hear about products, launches, and events."
+      }
+    }
+  },
+  "order": [
+    "1635369101fbd78ff0",
+    "163537122495415f04",
+    "163536930704ec48b6"
+  ]
+}

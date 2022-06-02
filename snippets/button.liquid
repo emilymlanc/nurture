@@ -1,0 +1,14 @@
+{% case color %}
+  {%- when 'outline' -%}
+    <a href="{{ link }}" class="button button--outline btn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="21" height="49" viewBox="0 0 21 49" fill="none">
+        <path class="background" d="M15.7395 0.5L0.999977 12.5V36.5L15.7395 48.5H21V0.5H15.7395Z" fill="transparent"/>
+        <path class="line" fill-rule="evenodd" clip-rule="evenodd" d="M21 0H15.5617L0.499977 12.2623V36.7377L15.5617 49H21V48H15.9173L1.49998 36.2623V12.7377L15.9173 1H21V0Z" fill="#3C3C3C"/>
+      </svg>
+      <span>{{ label }}</span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="21" height="49" viewBox="0 0 21 49" fill="none">
+        <path class="background" d="M5.7605 0.5L20.5 12.5V36.5L5.7605 48.5H0.5V0.5H5.7605Z" fill="transparent"/>
+        <path class="line" fill-rule="evenodd" clip-rule="evenodd" d="M0.5 0H5.9383L21 12.2623V36.7377L5.9383 49H0.5V48H5.5827L20 36.2623V12.7377L5.5827 1H0.5V0Z" fill="#3C3C3C"/>
+      </svg>
+    </a>
+{% endcase %}

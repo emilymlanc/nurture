@@ -1,0 +1,201 @@
+{
+  "sections": {
+    "banner": {
+      "type": "assembly-banner",
+      "settings": {
+        "title": "How to Assemble",
+        "text": "Congratulations on your Nurture& purchase - we are so excited for you to join the #madeforthemoments community."
+      }
+    },
+    "marquee": {
+      "type": "marquee",
+      "blocks": {
+        "715f8687-8e4f-42e7-b388-7c92a944b764": {
+          "type": "marquee_item",
+          "settings": {
+            "large_text": "",
+            "small_text": "RIGOROUSLY-TESTED"
+          }
+        },
+        "edcfd91f-ea74-4951-b193-3fec75934193": {
+          "type": "marquee_item",
+          "settings": {
+            "large_text": "",
+            "small_text": "NON-TOXIC"
+          }
+        },
+        "64c37d16-13f7-4f8c-a34b-0767afa0bc5d": {
+          "type": "marquee_item",
+          "settings": {
+            "large_text": "",
+            "small_text": "LIFE-PROOF"
+          }
+        },
+        "b1117dcf-f215-4f44-bbb3-f673f61eca0a": {
+          "type": "marquee_item",
+          "settings": {
+            "large_text": "",
+            "small_text": "AWARD-WINNING"
+          }
+        },
+        "4f2ed0f1-fd52-4232-a595-38932cfa85e7": {
+          "type": "marquee_item",
+          "settings": {
+            "large_text": "",
+            "small_text": "RIGOROUSLY-TESTED"
+          }
+        },
+        "1ad27d73-8a26-45c3-b41c-0bcf4dbf43bb": {
+          "type": "marquee_item",
+          "settings": {
+            "large_text": "",
+            "small_text": "NON-TOXIC"
+          }
+        }
+      },
+      "block_order": [
+        "715f8687-8e4f-42e7-b388-7c92a944b764",
+        "edcfd91f-ea74-4951-b193-3fec75934193",
+        "64c37d16-13f7-4f8c-a34b-0767afa0bc5d",
+        "b1117dcf-f215-4f44-bbb3-f673f61eca0a",
+        "4f2ed0f1-fd52-4232-a595-38932cfa85e7",
+        "1ad27d73-8a26-45c3-b41c-0bcf4dbf43bb"
+      ],
+      "settings": {
+        "bg_color": "#344e62"
+      }
+    },
+    "products": {
+      "type": "assembly-products",
+      "blocks": {
+        "767bdb12-dbd0-4791-9f70-96baa48b57f4": {
+          "type": "block",
+          "settings": {
+            "product": "the-glider-plus",
+            "image": "shopify:\/\/shop_images\/Glider_Plus_transparent.png",
+            "part_a_description": "Seat",
+            "part_a_sketch": "shopify:\/\/shop_images\/Mask_Group.png",
+            "part_a_quantity": "1 pc.",
+            "part_b_description": "Back",
+            "part_b_sketch": "shopify:\/\/shop_images\/Mask_Group_1.png",
+            "part_b_quantity": "1 pc.",
+            "part_c_description": "Connector #1",
+            "part_c_sketch": "shopify:\/\/shop_images\/Mask_Group_2.png",
+            "part_c_quantity": "1 pc.",
+            "part_d_description": "Connector #2",
+            "part_d_sketch": "shopify:\/\/shop_images\/Mask_Group_3.png",
+            "part_d_quantity": "1 pc.",
+            "part_e_description": "Power Cord",
+            "part_e_sketch": "shopify:\/\/shop_images\/Mask_Group_4.png",
+            "part_e_quantity": "1 pc.",
+            "part_f_description": "Transformer",
+            "part_f_sketch": "shopify:\/\/shop_images\/Mask_Group_5.png",
+            "part_f_quantity": "1 pc.",
+            "part_g_description": "",
+            "part_g_quantity": "",
+            "part_h_description": "",
+            "part_h_quantity": "",
+            "step_1_image": "shopify:\/\/shop_images\/Mask_Group_6.png",
+            "step_1_text": "Slide the back (part B) onto the seat (part A) aligning the two brackets. Guide the bracket on the back into the sleeve on the chair, and press the top of the back (part B) down firmly (you’ll hear a noise!). Connect the connectors (part C and D) between sofa back and seat.",
+            "step_2_image": "shopify:\/\/shop_images\/Mask_Group_6.png",
+            "step_2_text": "Slide the back (part B) onto the seat (part A) aligning the two brackets. Guide the bracket on the back into the sleeve on the chair, and press the top of the back (part B) down firmly (you’ll hear a noise!). Connect the connectors (part C and D) between sofa back and seat.",
+            "step_3_image": "shopify:\/\/shop_images\/Mask_Group_6.png",
+            "step_3_text": "Slide the back (part B) onto the seat (part A) aligning the two brackets. Guide the bracket on the back into the sleeve on the chair, and press the top of the back (part B) down firmly (you’ll hear a noise!). Connect the connectors (part C and D) between sofa back and seat.",
+            "pdf_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0283\/0227\/8795\/files\/Glider_Plus.pdf?v=1636526709",
+            "video_url": ""
+          }
+        },
+        "16d4ccda-62c7-4271-a42f-d967186f1d0b": {
+          "type": "block",
+          "settings": {
+            "product": "the-glider",
+            "image": "shopify:\/\/shop_images\/glider_transparent.png",
+            "part_a_description": "Seat",
+            "part_a_sketch": "shopify:\/\/shop_images\/Mask_Group.png",
+            "part_a_quantity": "1 pc.",
+            "part_b_description": "Back",
+            "part_b_sketch": "shopify:\/\/shop_images\/Mask_Group_1.png",
+            "part_b_quantity": "1 pc.",
+            "part_c_description": "Connector #1",
+            "part_c_sketch": "shopify:\/\/shop_images\/Mask_Group_2.png",
+            "part_c_quantity": "1 pc.",
+            "part_d_description": "Connector #2",
+            "part_d_sketch": "shopify:\/\/shop_images\/Mask_Group_3.png",
+            "part_d_quantity": "1 pc.",
+            "part_e_description": "Power Cord",
+            "part_e_sketch": "shopify:\/\/shop_images\/Mask_Group_4.png",
+            "part_e_quantity": "1 pc.",
+            "part_f_description": "Transformer",
+            "part_f_sketch": "shopify:\/\/shop_images\/Mask_Group_5.png",
+            "part_f_quantity": "1 pc.",
+            "part_g_description": "",
+            "part_g_quantity": "",
+            "part_h_description": "",
+            "part_h_quantity": "",
+            "step_1_image": "shopify:\/\/shop_images\/Mask_Group_6.png",
+            "step_1_text": "Slide the back (part B) onto the seat (part A) aligning the two brackets. Guide the bracket on the back into the sleeve on the chair, and press the top of the back (part B) down firmly (you’ll hear a noise!). Connect the connectors (part C and D) between sofa back and seat.",
+            "step_2_image": "shopify:\/\/shop_images\/Mask_Group_6.png",
+            "step_2_text": "Slide the back (part B) onto the seat (part A) aligning the two brackets. Guide the bracket on the back into the sleeve on the chair, and press the top of the back (part B) down firmly (you’ll hear a noise!). Connect the connectors (part C and D) between sofa back and seat.",
+            "step_3_image": "shopify:\/\/shop_images\/Mask_Group_6.png",
+            "step_3_text": "Slide the back (part B) onto the seat (part A) aligning the two brackets. Guide the bracket on the back into the sleeve on the chair, and press the top of the back (part B) down firmly (you’ll hear a noise!). Connect the connectors (part C and D) between sofa back and seat.",
+            "pdf_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0283\/0227\/8795\/files\/The_Glider.pdf?v=1636526682",
+            "video_url": ""
+          }
+        },
+        "c080acfc-2041-47c7-9c51-7a752d6c3008": {
+          "type": "block",
+          "settings": {
+            "product": "the-swivel",
+            "image": "shopify:\/\/shop_images\/swivel_transparent.png",
+            "part_a_description": "Seat",
+            "part_a_sketch": "shopify:\/\/shop_images\/Mask_Group.png",
+            "part_a_quantity": "1 pc.",
+            "part_b_description": "Back",
+            "part_b_sketch": "shopify:\/\/shop_images\/Mask_Group_1.png",
+            "part_b_quantity": "1 pc.",
+            "part_c_description": "Connector #1",
+            "part_c_sketch": "shopify:\/\/shop_images\/Mask_Group_2.png",
+            "part_c_quantity": "1 pc.",
+            "part_d_description": "Connector #2",
+            "part_d_sketch": "shopify:\/\/shop_images\/Mask_Group_3.png",
+            "part_d_quantity": "1 pc.",
+            "part_e_description": "Power Cord",
+            "part_e_sketch": "shopify:\/\/shop_images\/Mask_Group_4.png",
+            "part_e_quantity": "1 pc.",
+            "part_f_description": "Transformer",
+            "part_f_quantity": "",
+            "part_g_description": "",
+            "part_g_quantity": "",
+            "part_h_description": "",
+            "part_h_quantity": "",
+            "step_1_image": "shopify:\/\/shop_images\/Mask_Group_6.png",
+            "step_1_text": "Slide the back (part B) onto the seat (part A) aligning the two brackets. Guide the bracket on the back into the sleeve on the chair, and press the top of the back (part B) down firmly (you’ll hear a noise!). Connect the connectors (part C and D) between sofa back and seat.",
+            "step_2_image": "shopify:\/\/shop_images\/Mask_Group_6.png",
+            "step_2_text": "Slide the back (part B) onto the seat (part A) aligning the two brackets. Guide the bracket on the back into the sleeve on the chair, and press the top of the back (part B) down firmly (you’ll hear a noise!). Connect the connectors (part C and D) between sofa back and seat.",
+            "step_3_image": "shopify:\/\/shop_images\/Mask_Group_6.png",
+            "step_3_text": "Slide the back (part B) onto the seat (part A) aligning the two brackets. Guide the bracket on the back into the sleeve on the chair, and press the top of the back (part B) down firmly (you’ll hear a noise!). Connect the connectors (part C and D) between sofa back and seat.",
+            "pdf_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0283\/0227\/8795\/files\/The_Swivel.pdf?v=1636526716",
+            "video_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "767bdb12-dbd0-4791-9f70-96baa48b57f4",
+        "16d4ccda-62c7-4271-a42f-d967186f1d0b",
+        "c080acfc-2041-47c7-9c51-7a752d6c3008"
+      ],
+      "settings": {
+        "title": "Choose Your Product",
+        "video_subtitle": "Lorem Ipsum",
+        "video_title": "Here’s a video that might help.",
+        "questions_text": "Give us a shout at info@nurtureand.com",
+        "email_link": "mailto:info@nurtureand.com"
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "marquee",
+    "products"
+  ]
+}

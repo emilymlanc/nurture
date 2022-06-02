@@ -1,0 +1,313 @@
+{
+  "sections": {
+    "hero_item": {
+      "type": "insta-banner-section",
+      "settings": {
+        "banner_title": "",
+        "banner_sub_text": "For those #madeformoments moments.",
+        "insta_handle": "@nurture_and",
+        "img_text": false
+      }
+    },
+    "1633001202148591b1": {
+      "type": "marquee",
+      "blocks": {
+        "715f8687-8e4f-42e7-b388-7c92a944b764": {
+          "type": "marquee_item",
+          "settings": {
+            "large_text": "",
+            "small_text": "RIGOROUSLY-TESTED"
+          }
+        },
+        "edcfd91f-ea74-4951-b193-3fec75934193": {
+          "type": "marquee_item",
+          "settings": {
+            "large_text": "",
+            "small_text": "NON-TOXIC"
+          }
+        },
+        "64c37d16-13f7-4f8c-a34b-0767afa0bc5d": {
+          "type": "marquee_item",
+          "settings": {
+            "large_text": "",
+            "small_text": "LIFE-PROOF"
+          }
+        },
+        "b1117dcf-f215-4f44-bbb3-f673f61eca0a": {
+          "type": "marquee_item",
+          "settings": {
+            "large_text": "",
+            "small_text": "AWARD-WINNING"
+          }
+        },
+        "4f2ed0f1-fd52-4232-a595-38932cfa85e7": {
+          "type": "marquee_item",
+          "settings": {
+            "large_text": "",
+            "small_text": "RIGOROUSLY-TESTED"
+          }
+        },
+        "1ad27d73-8a26-45c3-b41c-0bcf4dbf43bb": {
+          "type": "marquee_item",
+          "settings": {
+            "large_text": "",
+            "small_text": "NON-TOXIC"
+          }
+        },
+        "7dd5df1d-0343-4d0d-b345-9bfb0b980197": {
+          "type": "marquee_item",
+          "settings": {
+            "large_text": "",
+            "small_text": "LIFE-PROOF"
+          }
+        },
+        "3a43717b-ad72-4407-bec7-ff3194684428": {
+          "type": "marquee_item",
+          "settings": {
+            "large_text": "",
+            "small_text": "AWARD-WINNING"
+          }
+        },
+        "3f97d3c0-1d47-4791-a482-104b3a732bd1": {
+          "type": "marquee_item",
+          "settings": {
+            "large_text": "",
+            "small_text": "RIGOROUSLY-TESTED"
+          }
+        },
+        "80ec0dd0-d540-4cbd-bf33-ef331a5223c0": {
+          "type": "marquee_item",
+          "settings": {
+            "large_text": "",
+            "small_text": "NON-TOXIC"
+          }
+        },
+        "e1542293-eb9b-471d-8faf-64184084d751": {
+          "type": "marquee_item",
+          "settings": {
+            "large_text": "",
+            "small_text": "LIFE-PROOF"
+          }
+        },
+        "9fa727bc-de5b-47ab-90fa-1763e6e4214b": {
+          "type": "marquee_item",
+          "settings": {
+            "large_text": "",
+            "small_text": "AWARD-WINNING"
+          }
+        },
+        "096dc84a-233a-4689-91cf-198a74ce4461": {
+          "type": "marquee_item",
+          "settings": {
+            "large_text": "",
+            "small_text": "RIGOROUSLY-TESTED"
+          }
+        },
+        "5832e30b-d723-4ef0-ad34-a6464b961667": {
+          "type": "marquee_item",
+          "settings": {
+            "large_text": "",
+            "small_text": "NON-TOXIC"
+          }
+        }
+      },
+      "block_order": [
+        "715f8687-8e4f-42e7-b388-7c92a944b764",
+        "edcfd91f-ea74-4951-b193-3fec75934193",
+        "64c37d16-13f7-4f8c-a34b-0767afa0bc5d",
+        "b1117dcf-f215-4f44-bbb3-f673f61eca0a",
+        "4f2ed0f1-fd52-4232-a595-38932cfa85e7",
+        "1ad27d73-8a26-45c3-b41c-0bcf4dbf43bb",
+        "7dd5df1d-0343-4d0d-b345-9bfb0b980197",
+        "3a43717b-ad72-4407-bec7-ff3194684428",
+        "3f97d3c0-1d47-4791-a482-104b3a732bd1",
+        "80ec0dd0-d540-4cbd-bf33-ef331a5223c0",
+        "e1542293-eb9b-471d-8faf-64184084d751",
+        "9fa727bc-de5b-47ab-90fa-1763e6e4214b",
+        "096dc84a-233a-4689-91cf-198a74ce4461",
+        "5832e30b-d723-4ef0-ad34-a6464b961667"
+      ],
+      "settings": {
+        "bg_color": "#344e62"
+      }
+    },
+    "main": {
+      "type": "main-instagram",
+      "blocks": {
+        "2f7dcb27-87a8-4409-9add-90bc12a891d5": {
+          "type": "Instagram",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2022-03-13_at_4.59.09_PM.png",
+            "insta_handle": "@skinnyhangover",
+            "insta_url": "https:\/\/www.instagram.com\/p\/Ca-DJh4ujE9\/",
+            "product": "the-swivel",
+            "description": "Your New Nursery Assistant"
+          }
+        },
+        "0e063cb4-b4ca-446f-849b-2608ba430f64": {
+          "type": "Instagram",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Ivory_Glider_TiffanyAzmouz.jpg",
+            "insta_handle": "@tiffanyazmouz",
+            "insta_url": "",
+            "product": "the-glider",
+            "description": "Your New Nursery Assistant"
+          }
+        },
+        "7fef523c-bda4-471b-bb0e-43c672f57840": {
+          "type": "Instagram",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/drbetseyptfamilyphotos-67.jpg",
+            "insta_handle": "@drbetseypt",
+            "insta_url": "https:\/\/www.instagram.com\/p\/Cah0itAOsiy\/",
+            "product": "the-glider",
+            "description": "Your New Nursery Assistant"
+          }
+        },
+        "0845996f-097e-4a22-b5ed-336f4f1d74e3": {
+          "type": "Instagram",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2022-03-13_at_5.05.37_PM.png",
+            "insta_handle": "@sliceofjunepie",
+            "insta_url": "",
+            "product": "the-swivel",
+            "description": "Your New Nursery Assistant"
+          }
+        },
+        "2424bee2-4f99-4008-8ef1-c918ec453b29": {
+          "type": "Instagram",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Ivory_Glider_AppAmanda.jpg",
+            "insta_handle": "@appamanda",
+            "insta_url": "",
+            "product": "the-glider-plus",
+            "description": "Your New Nursery Assistant"
+          }
+        },
+        "5a805d6a-f7d5-402c-b6d6-9a7d6c8de1f9": {
+          "type": "Instagram",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Image_10_30253876-ebe0-4137-99d4-39969ff6d798.jpg",
+            "insta_handle": "@janesmith",
+            "insta_url": "",
+            "product": "the-glider",
+            "description": "Your New Nursery Assistant"
+          }
+        },
+        "26ebd50a-d3c2-4324-8a22-c333dc5dc430": {
+          "type": "Instagram",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Image_10_02b423d0-ed84-403f-bb34-eecaff793f1a.jpg",
+            "insta_handle": "@janesmith",
+            "insta_url": "",
+            "product": "the-glider",
+            "description": "Your New Nursery Assistant"
+          }
+        },
+        "7f0f242e-2310-4a80-898f-0ab52a611c2a": {
+          "type": "Instagram",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_8.png",
+            "insta_handle": "@janesmith",
+            "insta_url": "",
+            "product": "the-glider",
+            "description": "Your New Nursery Assistant"
+          }
+        },
+        "01b25771-db7c-408f-b2f2-00bc0bbfb599": {
+          "type": "Instagram",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/insta-4.png",
+            "insta_handle": "@janesmith",
+            "insta_url": "",
+            "product": "the-glider",
+            "description": "Your New Nursery Assistant"
+          }
+        },
+        "0a6ada30-0c23-4c48-975d-fd8709404c1a": {
+          "type": "Instagram",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_8.png",
+            "insta_handle": "@janesmith",
+            "insta_url": "",
+            "product": "the-glider",
+            "description": "Your New Nursery Assistant"
+          }
+        },
+        "d69d0444-00eb-498d-9396-06a41f612c3d": {
+          "type": "Instagram",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Image_11.jpg",
+            "insta_handle": "@janesmith",
+            "insta_url": "",
+            "product": "the-glider",
+            "description": "Your New Nursery Assistant"
+          }
+        },
+        "8a4832a9-c2e7-42e0-aac8-d6006921698f": {
+          "type": "Instagram",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Image_12.jpg",
+            "insta_handle": "@janesmith",
+            "insta_url": "",
+            "product": "the-glider",
+            "description": "Your New Nursery Assistant"
+          }
+        },
+        "6ab0958a-83a1-4fbe-801e-f838b114e96a": {
+          "type": "Instagram",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Image_12_a7ecad62-9edf-4d3c-a645-df53f5fa498b.jpg",
+            "insta_handle": "@janesmith",
+            "insta_url": "",
+            "product": "the-glider",
+            "description": "Your New Nursery Assistant"
+          }
+        },
+        "037f046a-07b4-4e8a-a6c4-328298fff1ff": {
+          "type": "Instagram",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_8.png",
+            "insta_handle": "@janesmith",
+            "insta_url": "",
+            "product": "the-glider",
+            "description": "Your New Nursery Assistant"
+          }
+        },
+        "754e3492-f83d-4927-bd5c-52036e65f1fd": {
+          "type": "Instagram",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/insta-4.png",
+            "insta_handle": "@janesmith",
+            "insta_url": "",
+            "product": "the-glider",
+            "description": "Your New Nursery Assistant"
+          }
+        }
+      },
+      "block_order": [
+        "2f7dcb27-87a8-4409-9add-90bc12a891d5",
+        "0e063cb4-b4ca-446f-849b-2608ba430f64",
+        "7fef523c-bda4-471b-bb0e-43c672f57840",
+        "0845996f-097e-4a22-b5ed-336f4f1d74e3",
+        "2424bee2-4f99-4008-8ef1-c918ec453b29",
+        "5a805d6a-f7d5-402c-b6d6-9a7d6c8de1f9",
+        "26ebd50a-d3c2-4324-8a22-c333dc5dc430",
+        "7f0f242e-2310-4a80-898f-0ab52a611c2a",
+        "01b25771-db7c-408f-b2f2-00bc0bbfb599",
+        "0a6ada30-0c23-4c48-975d-fd8709404c1a",
+        "d69d0444-00eb-498d-9396-06a41f612c3d",
+        "8a4832a9-c2e7-42e0-aac8-d6006921698f",
+        "6ab0958a-83a1-4fbe-801e-f838b114e96a",
+        "037f046a-07b4-4e8a-a6c4-328298fff1ff",
+        "754e3492-f83d-4927-bd5c-52036e65f1fd"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "hero_item",
+    "1633001202148591b1",
+    "main"
+  ]
+}

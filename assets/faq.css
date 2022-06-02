@@ -1,0 +1,199 @@
+.guide__dropdown-content p {
+  font-family: brandon-grotesque;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: 0.02em;
+  color: var(--navy);
+}
+
+.faq_tab_wrapper h3 {
+  color: var(--white);
+}
+.faq-button a {
+  font-family: brandon-grotesque;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 16.5px;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--white);
+  letter-spacing: 0.1em;
+}
+
+.faq-wrapper {
+  max-width:896px;
+}
+
+.faq_tab_wrapper.mobile{
+  display: none;
+}
+
+.faq_tab_wrapper{
+  display: block;
+  width: 100%;
+  overflow:hidden;
+}
+
+.faq_tab_wrapper .guide__dropdowns {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  margin: auto;
+  max-width: 1086px;
+}
+
+.faq_tab_wrapper.mobile{
+  display: none;
+}
+
+.faq_tab_wrapper .tab_heading {
+  display: inline-block;
+  margin: 0;
+}
+
+.faq_tab_wrapper .tab_heading a{
+  margin: 0;
+  display: inline-block;
+  padding: 20px 20px;
+}
+
+.guide__dropdowns{
+  grid-template-columns: 1fr;
+  padding: 0 20px;
+}
+
+.guide__dropdown{
+  border-top: 1px solid var(--sand);
+  border-bottom: 1px solid var(--sand);
+}
+
+.guide__dropdown{
+  color: var(--navy);
+}
+
+.guide__dropdown-control::before,
+.guide__dropdown-control::after{
+  background: #505B71;
+}
+
+.guide__dropdowns .heading{
+  margin: 70px 0 20px;
+  font-weight: 300;
+  color: var(--navy);
+  
+}
+
+.guide__dropdown-header .title {
+  margin:0;
+  text-align:left;
+  width: calc(100% - 10px);
+}
+
+.template-page .hero .slick-dots{
+  display:none;
+}
+.guide__dropdowns > h3.body-1 {
+  color: var(--white);
+  opacity: 0.5;
+  text-transform: uppercase;
+  font-size: 15px;
+  letter-spacing: 0.1em;
+  margin: 2rem 0
+}
+
+
+@media screen and (min-width: 990px) {
+  .guide__dropdown-header .title {
+    font-size: 22px
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .faq_tab_wrapper.desktop{
+    display: none;
+  }
+  
+  .faq_tab_wrapper.mobile {
+    display: block !important;
+  }
+  
+  .faq-button a {
+    font-size: 13px;
+    line-height: 14.3px;
+  }
+  
+  .guide__dropdown-content p {
+    font-size: 16px;
+    line-height: 22px;
+    margin-right: 45px;
+  }
+  
+  .faq_tab_wrapper .tab_heading a{
+    opacity: 0.5;
+  }
+  
+  .faq-button.tab_heading.active a, .faq-button.tab_heading:hover a {
+    opacity: 1;
+  }
+}
+
+
+@media only screen and (max-width: 768px) {
+  .guide__dropdown-header .title {
+    font-size: 18px;
+    line-height: 25px;
+  }
+}
+
+@media screen and (min-width: 991px) {
+  .faq_tab_wrapper .tab_heading{
+    display:inherit;
+  }
+  
+  .faq_tab_wrapper .tab_heading:hover a,
+  .faq_tab_wrapper .tab_heading.active a {
+    position: relative;
+  }
+   .faq_tab_wrapper .tab_heading:hover a:after,
+  .faq_tab_wrapper .tab_heading.active a:after {
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    content: "";
+    height: 2px;
+    width: 100%;
+    background-color: var(--white);
+  }
+
+  .faq_tab_wrapper .tab_heading a{
+    margin: 24px 10px 0px 10px;
+    padding: 0;
+  } 
+  
+}
+
+.mCSB_scrollTools .mCSB_draggerContainer{
+  background: transparent;
+  height: 1px !important;
+  top:initial;
+  bottom: 5px;
+  color: var(--white);
+}
+
+.mCSB_scrollTools .mCSB_dragger{
+  background: var(--white);
+  height: 5px !important;
+  margin-top: -1px;
+}
+
+.mCSB_scrollTools.mCSB_scrollTools_horizontal{
+  height: 14px;
+}
+
+.mCSB_horizontal.mCSB_inside>.mCSB_container{
+  margin-bottom: 0;
+}
+

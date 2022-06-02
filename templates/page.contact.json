@@ -1,0 +1,68 @@
+{
+  "sections": {
+    "banner": {
+      "type": "banner-section",
+      "settings": {
+        "banner_title": "Give Us A Shout!",
+        "banner_sub_text": "Hey There",
+        "img_text": true
+      }
+    },
+    "1633091757782da033": {
+      "type": "marquee",
+      "blocks": {
+        "c5c6383c-2963-47b4-8d6d-58ddcc6cc787": {
+          "type": "marquee_item",
+          "settings": {
+            "large_text": "",
+            "small_text": "RIGOROUSLY-TESTED"
+          }
+        },
+        "fc4ec928-602e-46d2-9add-4014d4b1c6c3": {
+          "type": "marquee_item",
+          "settings": {
+            "large_text": "",
+            "small_text": "NON-TOXIC"
+          }
+        },
+        "a5bcbba0-63ad-404b-a05f-4d642243c79f": {
+          "type": "marquee_item",
+          "settings": {
+            "large_text": "",
+            "small_text": "LIFE-PROOF"
+          }
+        },
+        "b7342a2c-cc3e-4172-8312-3bab220a2edf": {
+          "type": "marquee_item",
+          "settings": {
+            "large_text": "",
+            "small_text": "AWARD-WINNING"
+          }
+        }
+      },
+      "block_order": [
+        "c5c6383c-2963-47b4-8d6d-58ddcc6cc787",
+        "fc4ec928-602e-46d2-9add-4014d4b1c6c3",
+        "a5bcbba0-63ad-404b-a05f-4d642243c79f",
+        "b7342a2c-cc3e-4172-8312-3bab220a2edf"
+      ],
+      "settings": {}
+    },
+    "form": {
+      "type": "contact-form",
+      "settings": {
+        "heading": ""
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {}
+    }
+  },
+  "order": [
+    "banner",
+    "1633091757782da033",
+    "form",
+    "main"
+  ]
+}

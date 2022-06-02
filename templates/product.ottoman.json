@@ -1,0 +1,110 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "settings": {
+        "picker_type": "button",
+        "enable_sticky_info": true,
+        "hide_variants": false,
+        "enable_video_looping": false
+      }
+    },
+    "1643302349106ae575": {
+      "type": "marquee",
+      "blocks": {
+        "6f120990-e533-4c5e-a0eb-383d94d32b87": {
+          "type": "marquee_item",
+          "settings": {
+            "large_text": "",
+            "small_text": "Premium-Fabric"
+          }
+        },
+        "f02a6b0a-084a-424c-8c85-4aa5f96d832c": {
+          "type": "marquee_item",
+          "settings": {
+            "large_text": "",
+            "small_text": "Spill-Proof"
+          }
+        },
+        "288ed711-b5c8-4eee-899d-f5f5aaa016dc": {
+          "type": "marquee_item",
+          "settings": {
+            "large_text": "",
+            "small_text": "Rigorously-tested"
+          }
+        },
+        "2d80facd-4b65-41e6-bd62-37fdfcc4659d": {
+          "type": "marquee_item",
+          "settings": {
+            "large_text": "",
+            "small_text": "Unlimited-Play"
+          }
+        }
+      },
+      "block_order": [
+        "6f120990-e533-4c5e-a0eb-383d94d32b87",
+        "f02a6b0a-084a-424c-8c85-4aa5f96d832c",
+        "288ed711-b5c8-4eee-899d-f5f5aaa016dc",
+        "2d80facd-4b65-41e6-bd62-37fdfcc4659d"
+      ],
+      "settings": {
+        "bg_color": ""
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "add_top_border": true,
+        "heading": "You might love..."
+      }
+    },
+    "1635869636fcde88aa": {
+      "type": "instagram",
+      "blocks": {
+        "5eb5341c-8cee-425b-95e2-e1b3bfdfe759": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Gray_GliderPlus_EveryDayVKY.jpg"
+          }
+        },
+        "da168c9a-617a-42aa-9646-74f83f746a3c": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Navy_Glider_EmmInteriors.png"
+          }
+        },
+        "7228e1ce-cbdd-4a15-b3fc-67004e67c4ef": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Ivory_Glider_Blanca.jpg"
+          }
+        },
+        "cc42eced-bb2c-422c-b570-7dbc0ac07b2b": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Ivory_Glider_TeresaS_0d444f2d-1257-409e-83ca-2b7dcaafe420.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "5eb5341c-8cee-425b-95e2-e1b3bfdfe759",
+        "da168c9a-617a-42aa-9646-74f83f746a3c",
+        "7228e1ce-cbdd-4a15-b3fc-67004e67c4ef",
+        "cc42eced-bb2c-422c-b570-7dbc0ac07b2b"
+      ],
+      "settings": {
+        "add_top_border": true,
+        "handle": "@nurture_and",
+        "text": "Join our community for inspiration, tips & tricks, and more.",
+        "button_label": "Follow Us",
+        "button_link": "https:\/\/www.instagram.com\/nurture_and\/"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1643302349106ae575",
+    "product-recommendations",
+    "1635869636fcde88aa"
+  ]
+}

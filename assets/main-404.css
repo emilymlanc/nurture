@@ -1,0 +1,35 @@
+.template-404 .title + * {
+  margin-top: 1rem;
+}
+.img-404 svg{
+  height: auto;
+  object-fit: cover;
+  margin: 0 auto;
+  display: block;
+}
+.img-404{
+    margin-top: 4rem !important;
+    margin-bottom: 3rem;
+} 
+
+@media screen and (min-width: 769px) {
+  .template-404 .title + * {
+    margin-top: 2rem;
+  }
+  .btn {
+  	margin-top: 5rem;
+  }
+  .img-404 svg{
+    width: auto;
+  } 
+}
+
+@media screen and (max-width: 768px) {
+  .img-404 svg {
+    width: 90%;
+  }
+  
+  .btn {
+  	margin-top: 3rem;
+  }
+}

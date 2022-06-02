@@ -1,0 +1,20 @@
+<h2 class="title_h2">Password recovery</h2>
+{% form 'recover_customer_password' %}
+<input class="devRedirect" type="hidden" name="return_url" value="/account/login#recover" />
+	<div class="form_wrap">
+		<ul class="input_list">
+			<li class="input_item">
+				<div class="input_left">
+					<label for="user_email" class="input_label">Your E-mail:</label>
+					<div class="input_descr">Specified at registration</div>
+				</div>
+				<div class="input_right">
+					<input id="user_email" type="email" placeholder="Enter your e-mail" name="email" class="form_field default_mod">
+				</div>
+			</li>
+		</ul>
+		<div class="btn_wrap">
+			<button type="submit" class="btn">Submit</button>
+		</div>
+	</div>
+{% endform %}

@@ -1,0 +1,166 @@
+
+<div >
+  <header >
+    <link href="https://cdn.shopify.com/s/files/1/0283/0227/8795/files/webflow.css?v=1648578552" rel="stylesheet" type="text/css" media="all">
+    <link href="https://cdn.shopify.com/s/files/1/0283/0227/8795/files/normalize.css?v=1648578552" rel="stylesheet" type="text/css" media="all">
+    <link href="https://cdn.shopify.com/s/files/1/0283/0227/8795/files/webflow_shopify-test.css?v=1650663228" rel="stylesheet" type="text/css" media="all">
+  </header>
+  
+  <div '>
+        
+        
+  <div class="blog-post__main wf-section">
+    <div class="blog-post__info-wrap lower-margin--20px">
+      <div class="blog-post__info">Publicado: {{ article.created_at | date: "%a, %b %d, %y" }}</div>
+      <div></div>
+    </div>
+    <h1 data-w-id="731c0793-491a-44d7-e0db-58e588ad0a89" class="blog-post__title">{{ article.title }}</h1>
+    <div class="blog-post__info-wrap wrapper">
+      <div class="blog-post__info-wrap">
+        <div class="blog-post__info">Por {{ article.author }}</div>
+        <div></div>
+      </div>
+    </div><img src={{ article.image.src | img_url: 'medium' }} loading="lazy" alt="" class="blog-post__image rounded-corners-8px"> 
+    <p class="blog-post__meta-description"></p>
+  </div>
+        
+        
+  <div class="blog-post__content-section wf-section">
+    <div class="blogcontain">
+        
+      <div class="left-column">
+        <div class="table-of-contents">
+          <div class="tableofcontents__title">Tabla de Contenidos</div>
+          <ul role="list" class="tableofcontents__list">
+          </ul>
+        </div>
+        <div class="share-wrapper">
+          <div>Compártelo</div>
+          <div class="share-buttons-html">
+            <div class="w-embed">
+              <a class="w-inline-block social-share-icon facebook" href="https://www.facebook.com/sharer/sharer.php?u=&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&t=' + encodeURIComponent(document.URL)); return false;"> <img src="https://uploads-ssl.webflow.com/614cf582249767ca6d30a78f/61a9093a3e7e626910f72690_facebook.svg" loading="lazy"></a>
+            </div>
+            <div class="w-embed">
+              <a class="w-inline-block social-share-icon tw" href="https://twitter.com/intent/tweet?" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20 ' + encodeURIComponent(document.URL)); return false;"> <img src="https://uploads-ssl.webflow.com/614cf582249767ca6d30a78f/61a9093a5ad2be30a2f524d1_twitter.svg" loading="lazy"></a>
+            </div>
+            <div class="w-embed">
+              <a class="w-inline-block social-share-icon wa" href="https://web.whatsapp.com//send?text=" title="Share On Whatsapp" onclick="window.open('whatsapp://send?text=' + encodeURIComponent(document.title) + '%20' + encodeURIComponent(document.URL)); return false;"> <img src="https://uploads-ssl.webflow.com/614cf582249767ca6d30a78f/61a92040d12245681bca1d44_whatsapp.svg" loading="lazy"></a>
+            </div>
+            <div class="w-embed">
+              <a class="w-inline-block social-share-icon linkedin" href="http://www.linkedin.com/shareArticle?mini=true&url=&title=&summary=&source=" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(document.URL) + '&title=' + encodeURIComponent(document.title)); return false;"> <img src="https://uploads-ssl.webflow.com/6165ed3d14364c7f8297fe2e/616979525bca0fb5cf89d530_in.svg" loading="lazy"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="blog-post__wrapper">
+        <div class="blog-post__content"> 
+        	{{ article.content }}
+        </div>
+      </div>
+      
+      <div class="right-wrapper">
+        <div class="about-sanarai__wrap"><img src="https://uploads-ssl.webflow.com/62431999393bd3b90ad4ec30/62431999393bd338f2d4ecff_sloth-in-couch.png" loading="lazy" alt="" class="about-sanarai_image">
+          <div class="semi-bold lower-margin--10px">¿Qué es Sanarai?</div>
+          <div class="lower-margin--20px">Es una plataforma donde puedes conectar con psicólogos de México para obtener sesiones de apoyo emocional.</div>
+          <a href="#" class="button w-button">Conócenos</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="blog-post__info-section wf-section">
+    <div class="blog-post__author-block">
+      <div class="blog-post__author__wrap"> 
+      	{% assign authorImage = article.user.first_name | append:'_' | append: article.user.last_name | append:'.jpg' %}
+		<img src="{{ authorImage | file_img_url }}" class="blog-post__author-image" />
+        <div class="blog-post__author__content">
+      		<class="blog-post__author__name">{{article.user.first_name}} {{article.user.last_name}}
+          	<p class="blog-post__author__description">{{article.user.bio}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div id="Subscribe-Section" class="section-basic backcolor-lightpurple wf-section">
+    <div class="flex-vertical flex-align-center text-align-center">
+      <h2 class="lower-margin--45px">¡Únete a nuestra comunidad!</h2>
+      <div class="subscribe-form-block w-form">
+        <form accept-charset="UTF-8" action="https://www.formbackend.com/f/a2d2d83dcc508996" id="subscribe-form" name="wf-form-subscribe-form" data-name="subscribe-form" method="POST">
+          <div class="subscribe-form__wrapper"><input type="email" class="subscribe-form__text-field w-input" maxlength="256" name="Email" data-name="Email" placeholder="Correo electrónico" id="Email" required=""><input type="submit" value="Empezar ahora" data-wait="Por favor espera..." class="button button--small w-button"></div>
+        </form>
+        <div class="success-message w-form-done">
+          <div>¡Gracias por suscribirte! Pronto recibirás nuestro primer correo.</div>
+        </div>
+        <div class="w-form-fail">
+          <div>Oops! Hubo algún error. Por favor, vuelve a intentar.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  <div class="section-basic wf-section">
+    <div class="container100 flex-vertical flex-align-center">
+      <h2>Sigue aprendiendo</h2>
+      <div class="collection-list-wrapper w-dyn-list">
+        <div role="list" class="keep-reading__collection-list w-dyn-items w-row">
+        {% for article in blog.articles %}
+          <div role="listitem" class="keep-reading__item w-dyn-item w-col w-col-6">
+            <a href="{{ article.url }}" class="keep-reading__wrapper w-inline-block"><img loading="lazy" alt="" src={{ article.image.src | img_url: 'medium' }} class="keep-reading__image">
+              <div class="keep-reading__content">
+                <div class="keep-reading__title">{{ article.title }}</div>
+                <div class="keep-reading_time">
+                  <div class="right-margin--5px">Tiempo -</div>
+                </div>
+                <p class="keep-reading__paragraph"></p>
+              </div>
+            </a>
+          </div>
+        {% endfor %}
+        </div>
+        {% if blog.articles_count == 0 %}
+          <div class="w-dyn-empty">
+            <div>No items found.</div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<script>
+    // Creamos un nuevo array vacío para agregar posteriormente todos los títulos.
+    var titleArray = [];
+    // Extraemos listado de h2 en el contenido del artículo.
+    const titleObject = $(".blog-post__content").find("h2");
+    // Rellenamos el Array solo con el contenido de texto de los h2 encontrados.
+    for (var i = 0; i < titleObject.length; i++) {
+        titleArray[i] = titleObject[i].innerText;
+        $(titleObject[i]).attr("id", `subsection_${i}`);
+        $(titleObject[i]).css({marginTop : "-100px", paddingTop: "100px"
+    });
+    }
+
+    // Buscamos el objeto con los títulos del panel de navegación.
+    const panelItemsObject = document.getElementsByClassName('tableofcontents__list')[0];
+
+    for (title in titleArray){
+        createListElement(titleArray[title], title)
+    }
+
+    function createListElement (text, index){
+        const li = document.createElement('li');
+        li.setAttribute('class','tableofcontents__item-jump-to');
+        const a = document.createElement('a');
+        a.setAttribute('class','tableofcontents__section-link');
+        a.setAttribute('href',`#subsection_${index}`);
+        a.textContent=text;
+        li.appendChild(a);
+        panelItemsObject.appendChild(li);
+    }
+</script>

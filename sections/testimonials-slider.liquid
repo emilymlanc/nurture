@@ -1,0 +1,90 @@
+{{ 'section-testimonials-slider.css' | asset_url | stylesheet_tag }}
+
+<div class="testimonials-slider">
+  <div class="page-width">
+    <div class="testimonials-slider__header">
+      <p class="sh4">{{ section.settings.title }}</p>
+      {% render 'svg-wave' %}
+    </div>
+    <div class="testimonials-slider__container swiper">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          <div class="testimonials-slider__item swiper-slide">
+            <div class="testimonials-slider__item-container">
+              {% render 'svg-stars' %}
+              <p class="sh2">{{ block.settings.text }}</p>
+              <p class="btn">{{ block.settings.author }}</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="testimonials-slider__buttons">
+        <div class="swiper-button swiper-button-prev">
+          {% render 'svg-arrow-button-left' %}
+        </div>
+        <div class="swiper-button swiper-button-next">
+          {% render 'svg-arrow-button-right' %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% javascript %}
+const testimonialsSlider = new Swiper('.testimonials-slider__container', {
+  slidesPerView: 1.15,
+  loop: true,
+  spaceBetween: 20,
+  centeredSlides: true,
+  breakpoints: {
+    769: {
+      slidesPerView: 1,
+      loop: true,
+      navigation: {
+        nextEl: '.testimonials-slider__buttons .swiper-button-next',
+        prevEl: '.testimonials-slider__buttons .swiper-button-prev',
+      },
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      }
+    }
+  }
+});
+{% endjavascript %}
+
+{% schema %}
+  {
+    "name": "Testimonials Slider",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "testimonial",
+        "name": "Testimonial",
+        "settings": [
+          {
+            "type": "textarea",
+            "id": "text",
+            "label": "Quote"
+          },
+          {
+            "type": "text",
+            "id": "author",
+            "label": "Author"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Testimonials Slider"
+      }
+    ]
+  }
+{% endschema %}

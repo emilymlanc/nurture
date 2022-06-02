@@ -1,0 +1,200 @@
+{{ 'section-product-features.css' | asset_url | stylesheet_tag }}
+
+<div class="product-features product-section" data-section="key-features">
+  {% if section.blocks.size > 1 %}
+    <div class="product-features__mobile-nav hide-desktop swiper fade-in-up" data-aos data-aos-delay="100">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          {% assign current_product = all_products[block.settings.product] %}
+          <button class="product-features__mobile-nav-item swiper-slide btn" data-tab="{{ forloop.index }}">{{ current_product.title }}</button>
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+      
+  <div class="page-width">
+    <div class="product-features__header">
+      <h2 class="fade-in-up" data-aos data-aos-delay="100">{{ section.settings.title }}</h2>
+      {% if section.blocks.size > 1 %}
+        <div class="product-features__nav fade-in-up" data-aos data-aos-delay="200">
+          {% for block in section.blocks %}
+            {% assign current_product = all_products[block.settings.product] %}
+            <button class="product-features__nav-item btn{% if forloop.first %} active{% endif %}" data-tab="{{ forloop.index }}">{{ current_product.title }}</button>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+    <div class="product-features__container">
+      {% for block in section.blocks %}
+        {% assign current_product = all_products[block.settings.product] %}
+        {% if current_product.handle contains 'plus' %}
+          {% render 'product-feature-glider-plus', current_product: current_product, current_image: block.settings.image, idx: forloop.index %}
+        {% elsif current_product.handle contains 'glider' %}
+          {% render 'product-feature-glider', current_product: current_product, current_image: block.settings.image, idx: forloop.index %}
+        {% elsif current_product.handle contains 'swivel' %}
+        {% render 'product-feature-swivel', current_product: current_product, current_image: block.settings.image, idx: forloop.index %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<div class="product-features__count">
+  <div class="page-width">
+    <div class="product-features__count-container">
+      <div class="product-features__spacer"></div>
+      <p class="label bold hide-mobile">New Moms Spend</p>
+      <p class="label bold big hide-mobile"><span class="countUp" data-count="930">0</span>+</p>
+      <p class="label bold hide-mobile">Hours In A Glider</p>
+      <p class="label bold hide-desktop">New Moms Spend <span class="countUp" data-count="930">0</span>+<br> Hours In A Glider</p> 
+      <div class="product-features__spacer"></div>
+    </div>
+  </div>
+</div>
+
+{% javascript %}
+  // Mobile Nav 
+  const mobileNavSlider = new Swiper('.product-features__mobile-nav', {
+    slidesPerView: 2.5,
+    spaceBetween: 40,
+    centeredSlides: true,
+    slideToClickedSlide: true 
+  });
+
+  mobileNavSlider.on('slideChange', function (slider) {
+    var idx = slider.activeIndex + 1;
+
+    $('.product-features__nav-item').removeClass('active');
+    $(`.product-features__nav-item[data-tab="${idx}"]`).addClass('active');
+
+    $('.product-features__item').removeClass('active');
+    $(`.product-features__item[data-num="${idx}"]`).addClass('active');
+  });
+
+  // Desktop Nav
+  $('.product-features__nav-item').click(function() {
+    var num = $(this).data('tab');
+
+    $('.product-features__nav-item').removeClass('active');
+    $(this).addClass('active');
+
+    $('.product-features__item').removeClass('active');
+    $(`.product-features__item[data-num="${num}"]`).addClass('active');
+
+    // Mobile sync
+    mobileNavSlider.slideTo(Number(num) - 1);
+  });
+
+  // Badge Sliders
+  var sliderConfig = {
+    effect: 'fade',
+    loop: true,
+    allowTouchMove: false,
+    fadeEffect: {
+      crossFade: true
+    }
+  }
+
+  const featureBadgeSlider1 = new Swiper('.product-features__badge-groups--1', sliderConfig);
+  const featureBadgeSlider2 = new Swiper('.product-features__badge-groups--2', sliderConfig);
+  const featureBadgeSlider3 = new Swiper('.product-features__badge-groups--3', sliderConfig);
+
+  // Handle feature on click
+  $('.product-features__feature').hover(function() { 
+    var num = Number($(this).data('num'));
+    var sliderNum = $(this).parent().parent().data('num');
+
+    // $('.product-features__feature').addClass('tab-switch');
+    $('.product-features__badge-group svg').addClass('feature-switch');
+    // $('.product-features__image-container .product-image').addClass('tab-switch');
+
+    if (sliderNum == 1) {
+      featureBadgeSlider1.slideTo(num);
+    } else if (sliderNum == 2) {
+      featureBadgeSlider2.slideTo(num);
+    } else if (sliderNum == 3) {
+      featureBadgeSlider3.slideTo(num);
+    }
+
+    $(this).parent().parent().find('.product-features__feature').removeClass('active');
+    $(this).addClass('active');
+
+    // $('.product-features__feature').removeClass('tab-switch');
+    setTimeout(function() {
+      $('.product-features__badge-group svg').removeClass('feature-switch');
+    }, 800);
+    // $('.product-features__image-container .product-image').removeClass('tab-switch');
+  });
+
+  // Mobile features sliders
+  const mobileFeatureSlider1 = new Swiper('.product-features__item[data-num="1"] .product-features__mobile-slider', {
+    spaceBetween: 20,
+    loop: true,
+    pagination: {
+      el: '.product-features__item[data-num="1"] .swiper-pagination',
+      clickable: true,
+    },
+    thumbs: {
+      swiper: featureBadgeSlider1
+    }
+  });
+
+  const mobileFeatureSlider2 = new Swiper('.product-features__item[data-num="2"] .product-features__mobile-slider', {
+    spaceBetween: 20,
+    loop: true,
+    pagination: {
+      el: '.product-features__item[data-num="2"] .swiper-pagination',
+      clickable: true,
+    },
+    thumbs: {
+      swiper: featureBadgeSlider2
+    }
+  });
+
+  const mobileFeatureSlider3 = new Swiper('.product-features__item[data-num="3"] .product-features__mobile-slider', {
+    spaceBetween: 20,
+    loop: true,
+    pagination: {
+      el: '.product-features__item[data-num="3"] .swiper-pagination',
+      clickable: true,
+    },
+    thumbs: {
+      swiper: featureBadgeSlider3
+    }
+  });
+{% endjavascript %}
+
+{% schema %}
+  {
+    "name": "Product Features",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "product",
+        "name": "Product",
+        "settings": [
+          {
+            "type": "product",
+            "id": "product",
+            "label": "Product"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Product Features"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,39 @@
+.registry .image-with-text__grid {
+  margin-bottom: 0;
+  height: 100vh;
+  max-height: 700px;
+}
+
+.image-with-text__content .babylist {
+  width: 100%;
+  max-width: 185px;
+}
+
+.registry .image-with-text__media {
+  position: relative; 
+}
+
+.registry .image-with-text__content .btn:hover {
+  color: inherit;
+}
+
+@media (max-width: 768px) {
+  .registry .image-with-text__grid {
+    max-height: 100%;
+    height: auto;
+  }
+  
+  .image-with-text__content .babylist {
+    max-width: 125px;
+  }
+  
+  .registry .image-with-text__media {
+    padding-bottom: 80%;
+  }
+}
+
+@media (max-width: 640px) {
+  .image-with-text__content .babylist {
+    max-width: 105px;
+  }
+}

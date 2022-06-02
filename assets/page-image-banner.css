@@ -1,0 +1,33 @@
+.page-image-banner {
+  height: 357px;
+  position: relative;
+}
+
+.page-image-banner__container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(84, 84, 84, .3);
+  color: white;
+  text-align: center;
+}
+
+.page-image-banner__container .btn {
+  margin: 0 0 20px;
+}
+
+.page-image-banner__container h1 {
+  font-size: 66px;
+  margin: 0 0 20px;
+}
+
+@media only screen and (max-width: 768px) {
+  .page-image-banner {
+    height: 175px;
+  }
+}

@@ -1,0 +1,391 @@
+/* Banner */
+.assembly-banner {
+  padding: 65px 0;
+  background: var(--blue);
+  color: white;
+  text-align: center;
+}
+
+.assembly-banner .h2 {
+  margin: 0 0 20px;
+}
+
+.assembly-banner p {
+  max-width: 475px;
+  margin: 0 auto;
+}
+
+/* Products */
+.assembly-products {
+  padding: 40px 0 30px;
+  background: linear-gradient(180deg, var(--cream) 65%, transparent 65%);
+}
+
+.assembly-products .label {
+  margin: 0 0 10px;
+  text-align: center;
+}
+
+.assembly-products__container {
+  max-width: 980px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+}
+
+.assembly-products__item {
+  cursor: pointer;
+}
+
+.assembly-products__item .aspect-ratio {
+  max-width: 175px !important;
+  opacity: .4;
+  transition: opacity .4s ease;
+}
+
+.assembly-products__item.active .aspect-ratio {
+  opacity: 1;
+}
+
+.assembly-products__item:hover .aspect-ratio {
+  opacity: 1;
+}
+
+.assembly-products__item .btn {
+  margin: 15px 0 0;
+  padding-bottom: 8px;
+  display: inline-block;
+  border-bottom: 2px solid transparent;
+  color: var(--blue); 
+  transition: color .4s ease, border .4s ease;
+}
+
+.assembly-products__item.active .btn {
+  color: var(--navy);
+  border-color: var(--blue);
+}
+
+/* Instructions */
+.assembly-instructions__product {
+  padding: 30px 0 80px;
+  display: none;
+}
+
+.assembly-instructions__product.active {
+  display: block;
+}
+
+.assembly-instructions__header {
+/*   padding-bottom: 20px; */
+  padding-bottom: 50px;
+  text-align: center;
+/*   border-bottom: 1px solid var(--sand); */
+  border-bottom: 0;
+}
+
+.assembly-instructions__header h2 {
+  margin: 0 0 10px;
+}
+
+.assembly-instructions__header p {
+  margin: 0;
+}
+
+.assembly-instructions__content {
+  padding: 40px 0 50px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 100px;
+  display: none;
+}
+
+.assembly-instructions__parts table {
+  width: 100%;
+}
+
+.assembly-instructions__parts .sh3 {
+  margin: 0 0 40px;
+  text-align: center;
+}
+
+.assembly-instructions__parts th {
+  padding: 20px 0;
+  text-align: center;
+  border-bottom: 1px solid var(--sand) !important;
+}
+
+.assembly-instructions__parts td {
+  padding: 20px 0;
+  text-align: center;
+  border-bottom: 1px solid var(--sand) !important;
+}
+
+.assembly-instructions__parts-image {
+  height: 35px;
+  width: 60px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.assembly-instructions__parts-image img {
+  object-fit: contain;
+}
+
+.assembly-instructions__steps .sh3 {
+  margin: 0 0 16px;
+  text-align: center;
+}
+
+.assembly-instructions__steps-slider-wrapper {
+  position: relative;
+}
+
+.assembly-instructions__steps-slider {
+  padding: 40px 50px 60px;
+  background: #FBF5F1;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.assembly-instructions__steps-item {
+  opacity: 0;
+  transition: opacity .4s ease;
+}
+
+.assembly-instructions__steps-item.swiper-slide-active {
+  opacity: 1;
+}
+
+.assembly-instructions__steps-item p {
+  margin: 0 auto;
+}
+
+.assembly-instructions__steps-item .body-1 {
+  max-width: 418px;
+}
+
+.assembly-instructions__steps-image {
+  max-width: 275px;
+  margin: 30px auto;
+}
+
+.assembly-instructions__buttons {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -10px;
+  display: flex;
+  justify-content: center;
+}
+
+.assembly-instructions__buttons .swiper-button {
+  height: unset;
+  width: unset;
+  margin: 0 15px;
+  position: unset;
+  z-index: 2;
+}
+
+.assembly-instructions__buttons .swiper-button::after {
+  content: none;
+}
+
+.assembly-instructions__pdf {
+  text-align: center;
+}
+
+/* Video */
+.assembly-instructions__video {
+  padding-top: 60px;
+  border-top: 1px solid var(--sand);
+  display: none;
+}
+
+.assembly-instructions__video.active {
+  display: block;
+}
+
+.assembly-instructions__video-header {
+  padding-bottom: 40px;
+  text-align: center;
+}
+
+.assembly-instructions__video-header .label {
+  margin: 0 0 20px;
+}
+
+.assembly-instructions__video-header .sh1 {
+  margin: 0;
+}
+
+.assembly-instructions__video-container {
+  max-width: 1064px;
+  margin: 0 auto;
+  padding-bottom: 56%;
+  position: relative;
+}
+
+.assembly-instructions__video-container video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.assembly-instructions__video-overlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Contact */
+.assembly-instructions__contact {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.assembly-instructions__contact p {
+  margin: 0 0 20px;
+}
+
+.assembly-products__container-mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 1150px) {
+  .assembly-instructions__content {
+    gap: 50px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .assembly-banner {
+    padding: 30px 0;
+  }
+
+  .assembly-banner .h2 {
+    margin-bottom: 10px;
+  }
+
+  .assembly-instructions__content {
+/*     display: block; */
+    display: none;
+  }
+
+  .assembly-instructions__parts .sh3 {
+    margin-bottom: 10px;
+    text-align: left;
+    font-size: 13px;
+  }
+
+  .assembly-instructions__parts th {
+    padding: 20px 5px !important;
+  }
+
+  .assembly-instructions__parts-image {
+    height: 25px;
+    width: 50px;
+  }
+
+  .assembly-instructions__parts th:nth-child(2) {
+    width: 39%;
+  }
+
+  .assembly-instructions__steps {
+    padding-top: 60px;
+  }
+
+  .assembly-instructions__steps .sh3 {
+    margin-bottom: 30px;
+    text-align: left;
+    font-size: 13px;
+  }
+
+  .assembly-instructions__steps-slider {
+    padding: 30px 30px 60px;
+  }
+
+  .assembly-instructions__steps-image {
+    max-width: 200px;
+  }
+
+  .assembly-instructions__pdf .button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .assembly-instructions__pdf .button svg {
+    margin-right: 10px;
+  }
+
+  .assembly-instructions__video-header {
+    padding-bottom: 30px;
+  }
+
+  .assembly-instructions__contact {
+    padding-bottom: 40px;
+  }
+
+  .assembly-instructions__video-overlay svg {
+    width: 42px;
+    height: 42px;
+  }
+
+  .assembly-products__container {
+    display: none;
+  }
+
+  .assembly-products__container-mobile {
+    display: block;
+  }
+
+  .assembly-products {
+    overflow: hidden;
+  }
+
+  .assembly-products__container-mobile {
+    overflow: visible;
+  }
+
+  .assembly-products__container-mobile-item {
+    text-align: center;
+  }
+
+  .assembly-products__container-mobile-item .btn {
+    margin: 17px auto 0;
+    padding-bottom: 8px;
+    display: inline-block;
+    border-bottom: 2px solid transparent;
+    color: var(--blue); 
+    transition: color .4s ease, border .4s ease, opacity .3s ease;
+    opacity: 0;
+  }
+  
+  .assembly-products__container-mobile-item.swiper-slide-active .btn {
+    color: var(--navy);
+    border-color: var(--blue);
+  }
+
+  .assembly-products__container-mobile-item .aspect-ratio {
+    transition: transform .3s ease;
+  }
+
+  .assembly-products__container-mobile-item:not(.swiper-slide-active) .aspect-ratio {
+    transform: scale(.7);
+  }
+
+  .assembly-products__container-mobile-item.swiper-slide-active .btn {
+    opacity: 1;
+  }
+}

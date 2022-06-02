@@ -1,0 +1,72 @@
+{{ 'section-marquee.css' | asset_url | stylesheet_tag }}
+
+<div class="marquee {% if section.settings.bg_color %}add_bg{% endif %}">
+  <div class="marquee__container">
+    {% for block in section.blocks %}
+      <div class="marquee__item">
+        {% if block.settings.large_text != blank %}
+          <p class="h5{% if block.settings.small_text == blank %} no-small-text{% endif %}">{{ block.settings.large_text }}</p>
+        {% endif %}
+        {% if block.settings.small_text != blank %}
+          <p class="label-2">{{ block.settings.small_text }}</p>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+  <div class="marquee__container">
+    {% for block in section.blocks %}
+    <div class="marquee__item">
+      {% if block.settings.large_text != blank %}
+        <p class="marquee__large h5{% if block.settings.small_text == blank %} no-small-text{% endif %}">{{ block.settings.large_text }}</p>
+      {% endif %}
+      {% if block.settings.small_text != blank %}
+        <p class="marquee__small label-2">{{ block.settings.small_text }}</p>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+  
+  .marquee.add_bg{
+    background: {{ section.settings.bg_color }};
+  } 
+  
+</style>
+
+{% schema %}
+  {
+    "name": "Marquee",
+    "settings": [
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "background"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "marquee_item",
+        "name": "Marquee Item",
+        "settings": [
+          {
+            "type": "text",
+            "id": "large_text",
+            "label": "Large Text"
+          },
+          {
+            "type": "text",
+            "id": "small_text",
+            "label": "Small Text"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Marquee"
+      }
+    ]
+  }
+{% endschema %}

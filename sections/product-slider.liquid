@@ -1,0 +1,75 @@
+{{ 'section-product-slider.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+
+<div class="product-slider{% if section.settings.show_borders %} show-borders{% endif %}">
+  <div class="page-width">
+    {% if section.settings.show_badge %}
+      <div class="product-slider__badge">
+        {% render 'svg-parents-badge' %}
+      </div>
+    {% endif %}
+    <div class="product-slider__header">
+      <p class="btn fade-in-up" data-aos>{{ section.settings.subtitle }}</p>
+      <h2 class="fade-in-up" data-aos data-aos-delay="100">{{ section.settings.title }}</h2>
+    </div>
+    <div class="product-slider__wrapper">
+      <div class="product-slider__container swiper">
+        <div class="swiper-wrapper">
+          {% assign current_collection = collections[section.settings.collection] %}
+          {% for product in current_collection.products %}
+            <div class="product-slider__item swiper-slide fade-in-up" data-aos data-aos-delay="{{ 100 | times: forloop.index }}">
+              {% render 'product-card', product_card_product: product, media_size: 'square' %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% if current_collection.size > 3 %}
+        <div class="swiper-button swiper-button-next">
+          {% render 'svg-arrow-button-right' %}
+        </div>
+        <div class="swiper-button swiper-button-prev">
+          {% render 'svg-arrow-button-left' %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Product Slider",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_borders",
+        "label": "Show Borders"
+      },
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "collection",
+        "id": "collection",
+        "label": "Collection"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_badge",
+        "label": "Show Badge"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Product Slider"
+      }
+    ]
+  }
+{% endschema %}

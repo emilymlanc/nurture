@@ -1,0 +1,157 @@
+.newsletter {
+  margin: 60px 0;
+}
+
+.newsletter__container {
+  width: 100%;
+  text-align: center;
+}
+
+.newsletter__container.add-top-border {
+  padding-top: 60px;
+  border-top: 1px solid var(--sand);
+}
+
+.newsletter__container .h3 {
+  margin: 0 0 48px;
+  text-align: center;
+}
+
+.newsletter__container .body-1 {
+  margin: 0 0 20px;
+  text-align: center;
+}
+
+.newsletter__container .newsletter-form {
+  max-width: 485px;
+}
+
+.newsletter__container .newsletter-form__field-wrapper {
+  max-width: 100%;
+}
+
+.newsletter__container input {
+  height: 100%;
+  padding: 16px 20px !important;
+  font-family: brandon-grotesque;
+  font-style: normal;
+  font-weight: 700 !important;
+  font-size: 14px;
+  line-height: 1.1;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--navy);
+  border-bottom: 1px solid var(--sand);
+}
+
+.newsletter__container input::placeholder {
+  font-family: brandon-grotesque;
+  font-style: normal;
+  font-weight: 700 !important;
+  font-size: 14px;
+  line-height: 1.1;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+
+.newsletter__container .newsletter-form__button {
+  width: unset;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .newsletter {
+    margin: 40px 0;
+  }
+  
+  .newsletter__container.add-top-border {
+    padding-top: 40px;
+  }
+
+  .newsletter__container .h3 {
+    margin-bottom: 24px;
+  }
+
+  .newsletter__container .body-1 {
+    margin-bottom: 30px;
+  }
+}
+
+/* Klaviyo */
+.klaviyo-form.klaviyo-form.klaviyo-form {
+  max-width: 485px;
+  margin: 0 auto;
+}
+
+.kl-private-reset-css-Xuajs1 input[type='email'] {
+  padding: 16px 20px !important;
+  font-family: brandon-grotesque !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  font-size: 14px !important;
+  line-height: 1.1 !important;
+  letter-spacing: 0.09em !important;
+  background-color: var(--field) !important;
+  text-transform: uppercase !important;
+  border-radius: 0 !important;
+  color: var(--navy) !important;
+  border-bottom: 1px solid var(--sand) !important;
+}
+
+.kl-private-reset-css-Xuajs1 input[type='email']::placeholder {
+  font-family: brandon-grotesque !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  font-size: 14px !important;
+  line-height: 1.1 !important;
+  letter-spacing: 0.09em !important;
+  text-transform: uppercase !important;
+  color: var(--navy) !important;
+}
+
+.go1074592472.go1074592472.go1074592472.go1074592472.go1074592472.go1074592472:hover {
+  border-top: 1px solid #FCFBF7 !important;
+  border-left: 1px solid #FCFBF7 !important;
+  border-right: 1px solid #FCFBF7 !important;
+  border-bottom: 1px solid var(--sand) !important;
+}
+
+.go1074592472.go1074592472.go1074592472.go1074592472.go1074592472.go1074592472:focus {
+  border-top: 1px solid #FCFBF7 !important;
+  border-left: 1px solid #FCFBF7 !important;
+  border-right: 1px solid #FCFBF7 !important;
+  border-bottom: 1px solid var(--sand) !important;
+}
+
+.go1074592472.go1074592472.go1074592472.go1074592472.go1074592472.go1074592472:active {
+  border-top: 1px solid #FCFBF7 !important;
+  border-left: 1px solid #FCFBF7 !important;
+  border-right: 1px solid #FCFBF7 !important;
+  border-bottom: 1px solid var(--sand) !important;
+}
+
+.kl-private-reset-css-Xuajs1 button {
+  padding: 18px 40px !important;
+  display: inline-block !important;
+  background-color: var(--blue) !important;
+  color: #fff !important;
+  font-family: brandon-grotesque !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  font-size: 15px !important;
+  line-height: 1.1 !important;
+  letter-spacing: .1em !important;
+  text-transform: uppercase !important;
+  cursor: pointer !important;
+  transition: background-color .3s ease !important;
+}
+
+.kl-private-quill-wrapper-Lkqws1.kl-private-quill-wrapper-Lkqws1.kl-private-quill-wrapper-Lkqws1 .ql-container.ql-container.ql-container p, .kl-private-quill-wrapper-Lkqws1.kl-private-quill-wrapper-Lkqws1.kl-private-quill-wrapper-Lkqws1 .ql-container.ql-container.ql-container a {
+  font-family: brandon-grotesque !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  line-height: 1.1 !important;
+  letter-spacing: .1em !important;
+  text-transform: uppercase !important;
+}

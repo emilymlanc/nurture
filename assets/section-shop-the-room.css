@@ -1,0 +1,243 @@
+.shop-the-room {
+  padding-top: 66px;
+  position: relative;
+  background: var(--blue);
+  overflow: hidden;
+}
+
+.shop-the-room .page-width {
+  position: relative;
+}
+
+.shop-the-room .background-pattern-left {
+  position: absolute;
+  top: 50%;
+  left: -100px;
+  transform: translateY(-50%);
+}
+
+.shop-the-room .background-pattern-right {
+  position: absolute;
+  top: 50%;
+  right: -100px;
+  transform: translateY(-50%);
+}
+
+.shop-the-room h2 {
+  margin: 0 0 16px;
+  color: white;
+  text-align: center;
+}
+
+/* Tabs Desktop */
+.shop-the-room__tabs-desktop {
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.shop-the-room__tabs-desktop .btn {
+  margin: 0;
+  padding: 0 20px;
+  color: white;
+  position: relative;
+  cursor: pointer;
+}
+
+.shop-the-room__tabs-desktop .btn::after {
+  content: '';
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: -14px;
+  border-bottom: 5px solid transparent;
+  transition: border .2s ease;
+}
+
+.shop-the-room__tabs-desktop .btn.active::after {
+  border-color: white;
+}
+
+/* Tabs Mobile */
+.shop-the-room__tabs {
+  margin: 0 -20px 30px;
+  color: white;
+}
+
+.shop-the-room__tabs .btn {
+  padding-bottom: 15px;
+}
+
+.shop-the-room__tabs .btn::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: -20px; 
+  bottom: 0;
+  border-bottom: 1px solid var(--sand);
+}
+
+.shop-the-room__tabs .btn:last-child:before {
+  right: 0;
+}
+
+.shop-the-room__tabs .btn::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0; 
+  bottom: 0;
+  border-bottom: 5px solid transparent;
+  transition: border .2s ease;
+}
+
+.shop-the-room__tabs .btn.swiper-slide-active::after {
+  border-color: var(--sand);
+}
+
+.shop-the-room__room {
+  height: 0;
+  padding-bottom: 47%;
+  position: relative;
+}
+
+.shop-the-room__room-point-wrapper {
+  position: absolute;
+}
+
+.shop-the-room__room-point-wrapper .mini-product-card__wrapper {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 10px);
+  transform: translateX(-50%);
+}
+
+.shop-the-room__room-point-wrapper.active .mini-product-card__wrapper {
+  z-index: 9;
+}
+
+.shop-the-room__room-point-wrapper .mini-product-card {
+  width: 260px;
+  transform: translateY(10px);
+  opacity: 0;
+  transition: transform .3s ease, opacity .3s ease;
+}
+
+.shop-the-room__room-point-wrapper.active .mini-product-card  {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.shop-the-room__room-point {
+  width: 43px;
+  height: 43px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, .04);
+  cursor: pointer;
+  transition: background-color .2s ease;
+}
+
+.shop-the-room__room-point-control {
+  height: 10px;
+  width: 10px;
+  position: relative;
+  color: var(--navy);
+  transition: color .2s ease, transform .2s ease;
+}
+
+.shop-the-room__room-point-control::before {
+  content: '';
+  width: 100%;
+  position: absolute;
+  top: 4px;
+  left: 0;
+  border-bottom: 2px solid currentColor;
+  transition: color .2s ease, top .2s ease;
+}
+
+
+.shop-the-room__room-point-control::after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  left: 4px;
+  top: 0;
+  border-right: 2px solid currentColor;
+  transition: color .2s ease, left .2s ease;
+}
+
+.shop-the-room__room-point-wrapper.active .shop-the-room__room-point {
+  background-color: var(--orange);
+}
+
+.shop-the-room__room-point-wrapper.active .shop-the-room__room-point .shop-the-room__room-point-control {
+  transform: rotate(135deg) translate(1px, 1px);
+}
+
+.shop-the-room__room-point-wrapper.active .shop-the-room__room-point .shop-the-room__room-point-control::before {
+  top: 0;
+  color: white;
+}
+
+.shop-the-room__room-point-wrapper.active .shop-the-room__room-point .shop-the-room__room-point-control::after {
+  left: 0;
+  color: white;
+}
+
+/* Mobile Slider */
+.shop-the-room__mobile-products {
+  padding-top: 20px;
+  display: none;
+  overflow: visible;
+}
+
+.shop-the-room__mobile-products.active {
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .shop-the-room {
+    padding: 40px 0 20px;
+  }
+
+  .shop-the-room .background-pattern-left {
+    width: 400px;
+    left: -250px;
+    top: -50px;
+  }
+
+  .shop-the-room .background-pattern-right {
+    width: 400px;
+    right: -250px;
+    top: -50px;
+  }
+
+  .shop-the-room h2 {
+    margin-bottom: 30px;
+  }
+
+  .shop-the-room__tabs-desktop {
+    display: none;
+  }
+
+  .shop-the-room__room-point-wrapper .mini-product-card__wrapper {
+    display: none;
+  }
+
+  .shop-the-room__room-point {
+    width: 34px;
+    height: 34px;
+  }
+
+  .shop-the-room .mini-product-card .aspect-ratio {
+    max-width: 60px !important;
+  }
+
+  .shop-the-room .mini-product-card__content {
+    padding-left: 15px;
+  }
+}

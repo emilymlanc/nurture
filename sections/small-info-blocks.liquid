@@ -1,0 +1,60 @@
+{{ 'section-sm-info-blocks.css' | asset_url | stylesheet_tag }}
+
+<div class="sm-info-blocks{% if section.settings.hide_mobile %} hide-mobile{% endif %}">
+  <div class="page-width">
+    <div class="sm-info-blocks__container">
+      {% for block in section.blocks %}
+        <div class="sm-info-blocks__item fade-in-up" data-aos data-aos-delay="{{ 100 | times: forloop.index }}">
+          <div class="sm-info-blocks__item-icon">
+            {{ block.settings.icon }}
+          </div>
+          <div class="sm-info-blocks__item-content">
+            <p class="btn">{{ block.settings.title }}</p>
+            <p class="body-3">{{ block.settings.text }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Small Info Blocks",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "hide_mobile",
+        "label": "Hide Mobile"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "block",
+        "name": "Block",
+        "settings": [
+          {
+            "type": "textarea",
+            "id": "icon",
+            "label": "Icon (SVG)"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "textarea",
+            "id": "text",
+            "label": "text"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Small Info Blocks"
+      }
+    ]
+  }
+{% endschema %}

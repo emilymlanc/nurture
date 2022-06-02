@@ -1,0 +1,244 @@
+{{ 'section-image-content.css' | asset_url | stylesheet_tag }}
+
+{% assign current_product = all_products[section.settings.featured_product] %}
+
+<div class="image-content">
+  <div class="page-width">
+    <div class="image-content__container">
+      <div class="image-content__content">
+        <div class="image-content__content-container">
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when 'header' %}
+                <div class="image-content__header">
+                  <h3 class="sh3 fade-in-up" data-aos data-aos-delay="100">{{ block.settings.title }}</h3>
+                </div>
+              {% when 'subheader' %}
+                <h4 class="sh1 image-content__subheader fade-in-up" data-aos data-aos-delay="150">{{ block.settings.title }}</h4>
+              {% when 'text' %}
+                <p class="body-2 image-content__text fade-in-up" data-aos data-aos-delay="200">{{ block.settings.text }}</p>
+              {% when 'button' %}
+                <a href="{{ current_product.url }}" class="button fade-in-up" data-aos data-aos-delay="250">Shop&nbsp;&nbsp;·&nbsp;&nbsp;{{ current_product.price | money_without_trailing_zeros }}</a>
+              {% when 'reviews_header' %}
+                <div class="image-content__reviews-header fade-in-up" data-aos data-aos-delay="100">
+                  {% render 'svg-reviews-quotes' %}
+                  <h3 class="sh3">{{ block.settings.title }}</h3>
+                </div>
+              {% when 'reviews' %}
+                <div class="image-content__reviews fade-in-up" data-aos data-aos-delay="200">
+                  <div class="image-content__reviews-slider swiper">
+                    <div class="swiper-wrapper">
+                      {% if block.settings.review_1_header != blank %}
+                        <div class="image-content__review swiper-slide">
+                          <h3 class="sh2">{{ block.settings.review_1_header }}</h3>
+                          <p class="body-2">{{ block.settings.review_1_text }}</p>
+                          <p class="btn">{{ block.settings.review_1_author }}</p>
+                        </div>
+                      {% endif %}
+                      {% if block.settings.review_2_header != blank %}
+                        <div class="image-content__review swiper-slide">
+                          <h3 class="sh2">{{ block.settings.review_2_header }}</h3>
+                          <p class="body-2">{{ block.settings.review_2_text }}</p>
+                          <p class="btn">{{ block.settings.review_2_author }}</p>
+                        </div>
+                      {% endif %}
+                      {% if block.settings.review_3_header != blank %}
+                        <div class="image-content__review swiper-slide">
+                          <h3 class="sh2">{{ block.settings.review_3_header }}</h3>
+                          <p class="body-2">{{ block.settings.review_3_text }}</p>
+                          <p class="btn">{{ block.settings.review_3_author }}</p>
+                        </div>
+                      {% endif %}
+                    </div>
+                  </div>
+                  <div class="swiper-pagination"></div>
+                </div>
+            {% endcase %}
+          {% endfor %}
+        </div>
+      </div>
+      <div class="image-content__image">
+        <div class="image-content__image-container">
+          {% render 'lazy-image' image: section.settings.image %}
+
+          {% if section.settings.show_badge %}
+            {% render 'svg-elevate-badge' %}
+          {% endif %}
+
+          {% if section.settings.featured_product != blank %}
+            {% render 'mini-product-card' current_product: current_product, shop_btn: true %}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% javascript %}
+  var contentReviewsSlider = new Swiper('.image-content__reviews-slider', {
+    spaceBetween: 20,
+    loop: true,
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true
+    },
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: '.image-content .swiper-pagination',
+      clickable: true,
+    }
+  });
+{% endjavascript %}
+
+{% schema %}
+  {
+    "name": "Image / Content",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "product",
+        "id": "featured_product",
+        "label": "Featured Product"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_badge",
+        "label": "Show Badge"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "header",
+        "name": "Header",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+		  {
+            "type": "checkbox",
+            "id": "show_stars",
+            "label": "Show Review Stars",
+            "default": true
+          }
+        ]
+      },
+      {
+        "type": "subheader",
+        "name": "Subheader",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "name": "Text",
+        "settings": [
+          {
+            "type": "textarea",
+            "id": "text",
+            "label": "Text"
+          }
+        ]
+      },
+      {
+        "type": "button",
+        "name": "Button",
+        "settings": [
+
+        ]
+      },
+      {
+        "type": "reviews_header",
+        "name": "Reviews Header",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          }
+        ]
+      },
+      {
+        "type": "reviews",
+        "name": "Reviews",
+        "settings": [
+          {
+            "type": "header",
+            "content": "Review 1"
+          },
+          {
+            "type": "textarea",
+            "id": "review_1_header",
+            "label": "Review 1 Header"
+          },
+          {
+            "type": "textarea",
+            "id": "review_1_text",
+            "label": "Review 1 Text"
+          },
+          {
+            "type": "text",
+            "id": "review_1_author",
+            "label": "Review 1 Author"
+          },
+          {
+            "type": "header",
+            "content": "Review 2"
+          },
+          {
+            "type": "textarea",
+            "id": "review_2_header",
+            "label": "Review 2 Header"
+          },
+          {
+            "type": "textarea",
+            "id": "review_2_text",
+            "label": "Review 2 Text"
+          },
+          {
+            "type": "text",
+            "id": "review_2_author",
+            "label": "Review 2 Author"
+          },
+          {
+            "type": "header",
+            "content": "Review 3"
+          },
+          {
+            "type": "textarea",
+            "id": "review_3_header",
+            "label": "Review 3 Header"
+          },
+          {
+            "type": "textarea",
+            "id": "review_3_text",
+            "label": "Review 3 Text"
+          },
+          {
+            "type": "text",
+            "id": "review_3_author",
+            "label": "Review 3 Author"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Image / Content"
+      }
+    ]
+  }
+{% endschema %}

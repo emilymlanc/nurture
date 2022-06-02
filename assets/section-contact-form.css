@@ -1,0 +1,152 @@
+.contact img {
+  max-width: 100%;
+}
+
+.contact .form__message {
+  align-items: flex-start;
+}
+
+.contact .icon-success {
+  margin-top: 0.2rem;
+}
+
+.contact .field {
+  margin-bottom: 1.5rem;
+}
+
+.contact .field {
+  display: flex;
+  flex-direction: column-reverse;
+  margin-bottom: 2rem;
+}
+
+.contact .field label.field__label {
+  margin-bottom: 1rem;
+  font-size: 14px !important;
+  line-height: 1.1;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.contact .field .field__input {
+  font-weight: 400 !important;
+}
+
+.contact-form {
+  max-width: 630px;
+  margin: 0 auto;
+}
+
+.contact-form .text-area {
+  height: 27.3rem;
+}
+
+.contact__button {
+  margin-top: 3rem;
+}
+
+.page-contact .button {
+  line-height: 110%;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+/* contact bottom */
+.contact-btm {
+  margin-top: 6rem;
+}
+
+.page-contact.template-page main .page-width {
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-btm .row {
+  display: flex;
+  flex: 0 0 100%;
+  width: 100%;
+}
+
+.contact-btm .row .column {
+  flex: 0 0 50%;
+  padding: 58px 0 80px;
+  background: #dc9d70;
+}
+
+.contact-btm .row .column:last-child {
+  background: #ece8de;
+}
+
+.page-contact .contact-btm p.button {
+  padding: 0;
+  background: transparent;
+  min-height: auto;
+  border: none;
+}
+
+address {
+  margin-bottom: 2rem;
+  color: var(--white) !important;
+}
+
+.contact-btm .row .column:last-child p.button,
+.contact-btm .row .column:last-child address {
+  color: var(--navy) !important;
+}
+
+.grecaptcha-badge {
+  visibility: hidden;
+}
+
+.form-status {
+  width: 100%;
+}
+
+@media screen and (min-width: 769px) {
+  .contact__button {
+    margin-top: 4rem;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .contact__fields {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .spaced-section {
+    margin-top: 3rem;
+  }
+  .contact-form {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  .contact-btm .row {
+    flex-direction: column;
+  }
+
+  .contact-btm .row .column {
+    flex: 0 0 100%;
+    padding: 40px 0;
+  }
+  
+  .contact .field label.field__label {
+    font-size: 13px !important;
+    line-height: 14px;
+  }
+  
+  .contact .field .field__input {
+    font-size: 16px !important;
+    line-height: 22px !important;
+  }
+  
+  .contact .field .field__input::placeholder {
+    font-size: 16px !important;
+    line-height: 22px !important;
+  }
+}

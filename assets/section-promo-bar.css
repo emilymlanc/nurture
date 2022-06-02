@@ -1,0 +1,28 @@
+.promo-bar {
+  padding: 16px 0;
+  color: white;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+
+.promo-bar .background-pattern {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.promo-bar .sh1 {
+  margin: 0 0 5px;
+}
+
+.promo-bar .btn {
+  margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .promo-bar .background-pattern {
+    transform: translateX(-43%);
+  }
+}

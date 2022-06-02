@@ -1,0 +1,143 @@
+{
+  "sections": {
+    "hero_item": {
+      "type": "banner-section",
+      "settings": {
+        "banner_title": "",
+        "banner_sub_text": "legal",
+        "img_text": false
+      }
+    },
+    "1633001202148591b1": {
+      "type": "marquee",
+      "blocks": {
+        "715f8687-8e4f-42e7-b388-7c92a944b764": {
+          "type": "marquee_item",
+          "settings": {
+            "large_text": "",
+            "small_text": "RIGOROUSLY-TESTED`"
+          }
+        },
+        "edcfd91f-ea74-4951-b193-3fec75934193": {
+          "type": "marquee_item",
+          "settings": {
+            "large_text": "",
+            "small_text": "NON-TOXIC"
+          }
+        },
+        "64c37d16-13f7-4f8c-a34b-0767afa0bc5d": {
+          "type": "marquee_item",
+          "settings": {
+            "large_text": "",
+            "small_text": "LIFE-PROOF"
+          }
+        },
+        "b1117dcf-f215-4f44-bbb3-f673f61eca0a": {
+          "type": "marquee_item",
+          "settings": {
+            "large_text": "",
+            "small_text": "AWARD-WINNING"
+          }
+        },
+        "4f2ed0f1-fd52-4232-a595-38932cfa85e7": {
+          "type": "marquee_item",
+          "settings": {
+            "large_text": "",
+            "small_text": "RIGOROUSLY-TESTED"
+          }
+        },
+        "1ad27d73-8a26-45c3-b41c-0bcf4dbf43bb": {
+          "type": "marquee_item",
+          "settings": {
+            "large_text": "",
+            "small_text": "NON-TOXIC"
+          }
+        },
+        "7dd5df1d-0343-4d0d-b345-9bfb0b980197": {
+          "type": "marquee_item",
+          "settings": {
+            "large_text": "",
+            "small_text": "LIFE-PROOF"
+          }
+        },
+        "3a43717b-ad72-4407-bec7-ff3194684428": {
+          "type": "marquee_item",
+          "settings": {
+            "large_text": "",
+            "small_text": "AWARD-WINNING"
+          }
+        },
+        "3f97d3c0-1d47-4791-a482-104b3a732bd1": {
+          "type": "marquee_item",
+          "settings": {
+            "large_text": "",
+            "small_text": "RIGOROUSLY-TESTED"
+          }
+        },
+        "80ec0dd0-d540-4cbd-bf33-ef331a5223c0": {
+          "type": "marquee_item",
+          "settings": {
+            "large_text": "",
+            "small_text": "NON-TOXIC"
+          }
+        },
+        "e1542293-eb9b-471d-8faf-64184084d751": {
+          "type": "marquee_item",
+          "settings": {
+            "large_text": "",
+            "small_text": "LIFE-PROOF"
+          }
+        },
+        "9fa727bc-de5b-47ab-90fa-1763e6e4214b": {
+          "type": "marquee_item",
+          "settings": {
+            "large_text": "",
+            "small_text": "AWARD-WINNING"
+          }
+        },
+        "096dc84a-233a-4689-91cf-198a74ce4461": {
+          "type": "marquee_item",
+          "settings": {
+            "large_text": "",
+            "small_text": "RIGOROUSLY-TESTED"
+          }
+        },
+        "5832e30b-d723-4ef0-ad34-a6464b961667": {
+          "type": "marquee_item",
+          "settings": {
+            "large_text": "",
+            "small_text": "NON-TOXIC"
+          }
+        }
+      },
+      "block_order": [
+        "715f8687-8e4f-42e7-b388-7c92a944b764",
+        "edcfd91f-ea74-4951-b193-3fec75934193",
+        "64c37d16-13f7-4f8c-a34b-0767afa0bc5d",
+        "b1117dcf-f215-4f44-bbb3-f673f61eca0a",
+        "4f2ed0f1-fd52-4232-a595-38932cfa85e7",
+        "1ad27d73-8a26-45c3-b41c-0bcf4dbf43bb",
+        "7dd5df1d-0343-4d0d-b345-9bfb0b980197",
+        "3a43717b-ad72-4407-bec7-ff3194684428",
+        "3f97d3c0-1d47-4791-a482-104b3a732bd1",
+        "80ec0dd0-d540-4cbd-bf33-ef331a5223c0",
+        "e1542293-eb9b-471d-8faf-64184084d751",
+        "9fa727bc-de5b-47ab-90fa-1763e6e4214b",
+        "096dc84a-233a-4689-91cf-198a74ce4461",
+        "5832e30b-d723-4ef0-ad34-a6464b961667"
+      ],
+      "settings": {
+        "bg_color": "#dc9d70"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {}
+    }
+  },
+  "order": [
+    "hero_item",
+    "1633001202148591b1",
+    "main"
+  ]
+}

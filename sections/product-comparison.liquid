@@ -1,0 +1,41 @@
+{{ 'section-product-comparison.css' | asset_url | stylesheet_tag }}
+
+<div class="product-comparison product-section" data-section="comparison">
+  <div class="page-width">
+    <div class="product-comparison__container">
+      <h2>{{ section.settings.title }}</h2>
+      <div class="product-comparison__chart no-scrollbar">
+        {% render 'lazy-image' image: section.settings.comparison_chart, blur: true, classes: 'hide-mobile' %}
+        {% render 'lazy-image' image: section.settings.comparison_chart_mobile, blur: true, classes: 'hide-desktop' %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Product Comparison",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "image_picker",
+        "id": "comparison_chart",
+        "label": "Comparison Chart"
+      },
+      {
+        "type": "image_picker",
+        "id": "comparison_chart_mobile",
+        "label": "Comparison Chart Mobile"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Product Comparison"
+      }
+    ]
+  }
+{% endschema %}

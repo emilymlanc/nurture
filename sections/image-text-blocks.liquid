@@ -1,0 +1,132 @@
+{{ 'section-image-text-blocks.css' | asset_url | stylesheet_tag }}
+
+<div class="page-width">
+  {% for block in section.blocks %}
+    <div class="image-text-block{% if block.settings.reversed %} reversed{% endif %}">
+      <div class="image-text-block__image">
+        {% render 'lazy-image' image: block.settings.image, blur: true %}
+      </div>
+      <div class="image-text-block__content">
+        <div class="image-text-block__content-container">
+          <h2 class="h3">{{ block.settings.title }}</h2>
+          <p class="body-1">{{ block.settings.text }}</p>
+          {% if block.settings.bullet_1 != blank %}
+            <div class="image-text-block__content-bullets">
+              <div class="image-text-block__content-bullet">
+                <div class="image-text-block__content-bullet-icon">
+                  {{ block.settings.bullet_icon_1 }}
+                </div>
+                <p class="btn">{{ block.settings.bullet_1 }}</p>
+              </div>
+              {% if block.settings.bullet_2 != blank %}
+                <div class="image-text-block__content-bullet">
+                  <div class="image-text-block__content-bullet-icon">
+                    {{ block.settings.bullet_icon_2 }}
+                  </div>
+                  <p class="btn">{{ block.settings.bullet_2 }}</p>
+                </div>
+              {% endif %}
+              {% if block.settings.bullet_3 != blank %}
+                <div class="image-text-block__content-bullet">
+                  <div class="image-text-block__content-bullet-icon">
+                    {{ block.settings.bullet_icon_3 }}
+                  </div>
+                  <p class="btn">{{ block.settings.bullet_3 }}</p>
+                </div>
+              {% endif %}
+              {% if block.settings.bullet_4 != blank %}
+                <div class="image-text-block__content-bullet">
+                  <div class="image-text-block__content-bullet-icon">
+                    {{ block.settings.bullet_icon_4 }}
+                  </div>
+                  <p class="btn">{{ block.settings.bullet_4 }}</p>
+                </div>
+              {% endif %}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+{% schema %}
+  {
+    "name": "Image / Text Blocks",
+    "settings": [
+    ],
+    "blocks": [
+      {
+        "type": "block",
+        "name": "Block",
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "reversed",
+            "label": "Reversed Layout"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "textarea",
+            "id": "text",
+            "label": "Text"
+          },
+          {
+            "type": "textarea",
+            "id": "bullet_icon_1",
+            "label": "Bullet Icon 1"
+          },
+          {
+            "type": "text",
+            "id": "bullet_1",
+            "label": "Bullet 1"
+          },
+          {
+            "type": "textarea",
+            "id": "bullet_icon_2",
+            "label": "Bullet Icon 2"
+          },
+          {
+            "type": "text",
+            "id": "bullet_2",
+            "label": "Bullet 2"
+          },
+          {
+            "type": "textarea",
+            "id": "bullet_icon_3",
+            "label": "Bullet Icon 3"
+          },
+          {
+            "type": "text",
+            "id": "bullet_3",
+            "label": "Bullet 3"
+          },
+          {
+            "type": "textarea",
+            "id": "bullet_icon_4",
+            "label": "Bullet Icon 4"
+          },
+          {
+            "type": "text",
+            "id": "bullet_4",
+            "label": "Bullet 4"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Image / Text Blocks"
+      }
+    ]
+  }
+{% endschema %}

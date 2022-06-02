@@ -1,0 +1,127 @@
+{% comment %}
+    Renders a product card
+
+    Accepts:
+    - product_card_product: {Object} Product Liquid object (optional)
+    - media_size: {String} Size of the product image card. Values are "square" and "portrait". Default is "square" (optional)
+    - show_secondary_image: {Boolean} Show the secondary image on hover. Default: false (optional)
+    - add_image_padding: {Boolean} Enables padding on the image to space out the grid
+    - show_vendor: {Boolean} Show the product vendor. Default: false
+    - show_image_outline: {Boolean} Show card outline. Default: true (optional)
+
+    Usage:
+    {% render 'product-card', show_vendor: section.settings.show_vendor %}
+{% endcomment %}
+
+<product-card>
+  <div class="card-wrapper">
+    <span class="visually-hidden">{{ product_card_product.title | escape }}</span>
+
+    <div class="card card--product" tabindex="-1">
+      <div class="card__inner">
+        <a href="{{ product_card_product.url | default: '#' }}" class="card__link full-unstyled-link">
+            {% if product_card_product.metafields.my_fields.product_card_badge != blank %}
+            <div class="product-tag">
+              <p class="body-4 bold">{{ product_card_product.metafields.my_fields.product_card_badge }}</p>
+            </div>
+            {% endif %}
+          {% render 'lazy-image' image: product_card_product.featured_image, blur: true %}
+        </a>
+
+        {% comment %}
+          <div class="card__badge">
+            {%- if product_card_product.available == false -%}
+              <span class="badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}" aria-hidden="true">{{ 'products.product.sold_out' | t }}</span>
+            {%- elsif product_card_product.compare_at_price > product_card_product.price and product_card_product.available -%}
+              <span class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}" aria-hidden="true">{{ 'products.product.on_sale' | t }}</span>
+            {%- endif -%}
+          </div>
+        {% endcomment %}
+      </div>
+    </div>
+
+    <div class="card-information">
+      <div class="card-information__wrapper">
+        <div class="card-information__title-price">
+          <a href="{{ product_card_product.url | default: '#' }}" class="card__link full-unstyled-link">
+            <h3 class="card-information__title sh1">
+              {{ product_card_product.title | escape }}
+            </h3>
+          </a>
+
+          {% render 'price', product: product_card_product, price_class: 'label bold' %}
+        </div>
+
+        <div class="card-information__reviews-swatches">
+          <div class="card-information__reviews">
+            <div class="yotpo bottomLine nav"
+              data-appkey="P3ppHFODI45UdcU4EDf74Cb6VxZcPOF3xSEqzmsq"
+              data-domain="{{shop.permanent_domain | escape }}"
+              data-product-id="{{ product_card_product.id }}"
+              data-product-models="{{ product_card_product.id }}"
+              data-name="{{ product_card_product.title | escape }}"
+              data-url="{{ shop.url }}{{ product_card_product.url }}"
+              data-image-url="{{ product_card_product.featured_image | product_img_url: 'large' |replace: '?', '%3F' | replace: '&','%26'}}"
+              data-description="{{ product_card_product.description | escape }}"
+              data-bread-crumbs="{% for tag in product_card_product.tags %}{{ tag | escape }};{% endfor %}">
+            </div>
+          </div>
+
+          {%- assign color_label = 'color,colour,couleur,colore,farbe,색,色,färg,farve' | split: ',' -%}
+          {%- assign cord_color_label = 'cord color' | split: ',' -%}
+          {%- assign metal_label = 'metal' | split: ',' -%}
+          {%- assign active_color = '' -%}
+
+
+          {%- capture color_swatches -%}
+            {%- for option in product_card_product.options_with_values -%}
+              {%- assign downcase_option = option.name | downcase -%}
+
+              {%- if color_label contains downcase_option or metal_label contains downcase_option or cord_color_label contains downcase_option -%}
+                {%- assign variant_option = 'option' | append: forloop.index -%}
+
+                {%- for value in option.values -%}
+                  {%- assign downcase_value = value | downcase -%}
+                  {%- capture color_id -%}{{ section.id }}-{{ product.id }}-{{ forloop.index }}{%- endcapture -%}
+
+                  <!-- Find colors within variants -->
+                  {%- for variant in product_card_product.variants -%}
+                    {%- if variant[variant_option] == value -%}
+                      {%- assign variant_for_value = variant -%}
+                      {%- break -%}
+                    {%- endif -%}
+                  {%- endfor -%}
+
+                  <!-- Get variant image -->
+                  {%- if variant_for_value.image -%}
+                    {%- capture supported_sizes -%}{%- render 'image-size', sizes: '200,400,600,700,800,900,1000,1200', image: variant_for_value.image -%}{%- endcapture -%}
+                    {%- assign variant_image_url = variant_for_value.featured_image | img_url: '600x' -%}
+                  {%- endif -%}
+
+                  <!-- Get active variant color -->
+                  {% if value == option.selected_value %}
+                    {%- assign active_color = value -%}
+                  {% endif %}
+
+                  {%- assign color_swatch_name = value | handleize | append: '.jpg' -%}
+                  {%- assign color_swatch_image = images[color_swatch_name] -%}
+
+                  <button class="card-information__swatch{% if value == option.selected_value %} active{% endif %}" data-value="{{ value | escape }}" data-option-position="{{ option.position }}" data-variant-url="{{ variant_for_value.url  | within: collection }}" data-variant-id="{{ variant_for_value.id }}" data-image-url="{{ variant_image_url }}">
+                    <div class="card-information__swatch-color" style="background-image: url({{ color_swatch_image | img_url: '20x20' }});"></div>
+                    <span class="visually-hidden">{{ value }}</span>
+                  </button>
+
+                  {% assign color_count = color_count | plus: 1 %}
+                {%- endfor -%}
+              {%- endif -%}
+            {%- endfor -%}
+          {%- endcapture -%}
+
+          <div class="card-information__swatches">
+            {{ color_swatches }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</product-card>

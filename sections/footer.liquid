@@ -1,0 +1,197 @@
+{% comment %}theme-check-disable UndefinedObject{% endcomment %}
+{{ 'section-footer.css' | asset_url | stylesheet_tag }}
+<link rel="stylesheet" href="{{ 'component-accordion.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-list-menu.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-list-payment.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-list-social.css' | asset_url }}" media="print" onload="this.media='all'">
+
+<noscript>{{ 'component-accordion.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-list-menu.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-list-payment.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-list-social.css' | asset_url | stylesheet_tag }}</noscript>
+
+<footer class="footer color-{{ section.settings.color_scheme }}">
+  <div class="footer__content-image">
+    {% render 'lazy-image' image: section.settings.image, classes: 'img-fill' %}
+    <div class="footer__content-logo">
+      {% if section.settings.logo != blank %}
+      {{ section.settings.logo }}
+      {% endif %}
+      {% if section.settings.logo_png != blank %}
+      {% render 'lazy-image' image: section.settings.logo_png %}
+      {% endif %}
+    </div>
+    <div class="footer__content-badge">
+      {% if section.settings.badge != blank %}
+      {{ section.settings.badge }}
+      {% endif %}
+      {% if section.settings.badge_png != blank %}
+      {% render 'lazy-image' image: section.settings.badge_png, blur: true %}
+      {% endif %}
+    </div>
+  </div>
+
+  {%- if section.blocks.size > 0 or section.settings.newsletter_enable or section.settings.show_social -%}
+    <div class="footer__content-links">
+      <div class="footer__blocks-wrapper">
+        {%- for block in section.blocks -%}
+          <div class="footer-block {% if block.type == 'link_list' and block.settings.heading != blank %} footer-block--menu{% endif %}" {{ block.shopify_attributes }}>
+            {%- if block.settings.heading != blank -%}
+              <div class="footer-block__heading">
+                <h2 class="btn">{{- block.settings.heading | escape -}}</h2>
+                <div class="footer-block__heading-control hide-desktop"></div>
+              </div>
+            {%- endif -%}
+
+            {%- case block.type -%}
+              {%- when 'text' -%}
+                <div class="footer-block__details-content rte">
+                  {{ block.settings.subtext }}
+                </div>
+              {%- when 'link_list' -%}
+                {%- if block.settings.menu != blank and block.settings.heading != blank -%}
+                  <div class="footer-block__details-content-container">
+                    <ul class="footer-block__details-content list-unstyled">
+                      {%- for link in block.settings.menu.links -%}
+                        <li>
+                          <a href="{{ link.url }}" class="link link--text list-menu__item list-menu__item--link body-3 medium">
+                            {{ link.title }}
+                          </a>
+                        </li>
+                      {%- endfor -%}
+                    </ul>
+                  </div>
+                {%- endif -%}
+              {%- when 'image' -%}
+                <div class="footer-block__details-content footer-block-image {{ block.settings.alignment }}">
+                  {%- if block.settings.image != blank -%}
+                    {%- assign image_size = block.settings.image_width | append: 'x' -%}
+                    <img
+                      srcset= "{{ block.settings.image | img_url: image_size }}, {{ block.settings.image | img_url: image_size, scale: 2 }} 2x"
+                      src="{{ block.settings.image | img_url: '400x' }}"
+                      alt="{{ block.settings.image.alt | escape }}"
+                      loading="lazy"
+                      width="{{ block.settings.image.width }}"
+                      height="{{ block.settings.image.height }}"
+                      style="max-width: min(100%, {{ block.settings.image_width }}px);"
+                    >
+                  {%- else -%}
+                    {{ 'image' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
+                  {%- endif -%}
+                </div>
+              {%- endcase -%}
+          </div>
+        {%- endfor -%}
+      </div>
+
+      <div class="footer__bottom-wrapper">
+        <div class="footer__bottom-info">
+          <div class="footer__bottom-info-links" {% if section.settings.legal_links == false%}style="visibility: hidden;"{% endif %}>
+            <a href="{{ section.settings.legal_link1 }}" class="body-4">{{ section.settings.legal_link1_label }}</a>
+            <div class="link-spacer"></div>
+            <a href="{{ section.settings.legal_link2 }}" class="body-4">{{ section.settings.legal_link2_label }}</a>
+          </div>
+          {% include 'social' %}
+        </div>
+        <div class="footer__bottom-credits">
+          <p class="body-4">&copy; {{ 'now' | date: "%Y" }} Nurture&. All Rights Reserved</p>
+          <div class="footer__bottom-credits-container">
+            <a href="https://www.lustre.nyc/" class="body-4" target="_blank">Design by Lustre</a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  {%- endif -%}
+
+</footer>
+
+{% javascript %}
+  $('.footer-block__heading').click(function() {
+    if ($(window).width() < 769) {
+      $(this).toggleClass('active');
+      $(this).siblings('.footer-block__details-content-container').slideToggle(300);
+    }
+  });
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "t:sections.footer.name",
+  "blocks": [
+    {
+      "type": "link_list",
+      "name": "t:sections.footer.blocks.link_list.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "Quick links",
+          "label": "t:sections.footer.blocks.link_list.settings.heading.label",
+          "info": "t:sections.footer.blocks.link_list.settings.heading.info"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "default": "footer",
+          "label": "t:sections.footer.blocks.link_list.settings.menu.label",
+          "info": "t:sections.footer.blocks.link_list.settings.menu.info"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "textarea",
+      "id": "logo",
+      "label": "Logo (SVG)"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo_png",
+      "label": "Logo (PNG)"
+    },
+    {
+      "type": "textarea",
+      "id": "badge",
+      "label": "Badge (SVG)"
+    },
+    {
+      "type": "image_picker",
+      "id": "badge_png",
+      "label": "Badge (PNG)"
+    },
+    {
+      "type": "checkbox",
+      "id": "legal_links",
+      "label": "Show Legal Links?",
+      "default": true                          
+    },
+    {
+      "type": "url",
+      "id": "legal_link1",
+      "label": "Legal Link 1"
+    },
+    {
+      "type": "text",
+      "id": "legal_link1_label",
+      "label": "Legal Link 1 Label"
+    },
+    {
+      "type": "url",
+      "id": "legal_link2",
+      "label": "Legal Link 2"
+    },
+    {
+      "type": "text",
+      "id": "legal_link2_label",
+      "label": "Legal Link 2 Label"
+    }                              
+  ]
+}
+{% endschema %}

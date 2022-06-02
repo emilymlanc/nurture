@@ -1,0 +1,97 @@
+{{ 'section-product-dimensions.css' | asset_url | stylesheet_tag }}
+
+<div class="product-dimensions product-section" data-section="dimensions">
+  <div class="page-width">
+    <h2 class="sh1 hide-desktop">{{ section.settings.title }}</h2>
+    <div class="product-dimensions__container{% if section.settings.add_bottom_border %} add-bottom-border{% endif %}">
+      <div class="product-dimensions__content">
+        <div class="product-dimensions__content-container">
+          <h2 class="sh1 hide-mobile">{{ section.settings.title }}</h2>
+          {% for block in section.blocks %}
+            <div class="product-dimensions__row">
+              <p class="nav">{{ block.settings.title }}</p>
+              <p class="body-1">{{ block.settings.description }}</p>
+            </div>
+          {% endfor %}
+          <div class="product-dimensions__buttons">
+            {% if section.settings.button_1_label != blank %}
+              <a href="{{ section.settings.button_1_link }}" class="button button--outline">{{ section.settings.button_1_label }}</a>
+            {% endif %}
+            {% if section.settings.button_2_label != blank %}
+              <a href="{{ section.settings.button_2_link }}" class="button button--outline">{{ section.settings.button_2_label }}</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      <div class="product-dimensions__image">
+        {% render 'lazy-image' image: section.settings.image, blur: true %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Product Dimensions",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "text",
+        "id": "button_1_label",
+        "label": "Button 1 Label"
+      },
+      {
+        "type": "url",
+        "id": "button_1_link",
+        "label": "Button 1 Link"
+      },
+      {
+        "type": "text",
+        "id": "button_2_label",
+        "label": "Button 2 Label"
+      },
+      {
+        "type": "url",
+        "id": "button_2_link",
+        "label": "Button 2 Link"
+      },
+      {
+        "type": "checkbox",
+        "id": "add_bottom_border",
+        "label": "Add Bottom Border"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "block",
+        "name": "Block",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "textarea",
+            "id": "description",
+            "label": "Description"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Product Dimensions"
+      }
+    ]
+  }
+{% endschema %}

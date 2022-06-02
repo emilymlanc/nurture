@@ -1,0 +1,71 @@
+{{ 'page-banner.css' | asset_url | stylesheet_tag }}
+
+
+<div class="banner-color">
+  <div class="banner-img desktop" >
+    <img src="{{ 'bg-banner-mob.svg' | asset_url }}" alt="" class="mobile-bg mobile all-pg-mobile">
+    <img src="{{ 'bg-banner.svg' | asset_url }}" alt="" class="mobile-bg mobile faq-mobile ">
+    <div class="content_inner">
+      <div class="banner-title-wrap">
+        <h1 id="login" tabindex="-1" class="banner-title policy-banner-title h2">
+          {%- if section.settings.banner_title != blank -%}
+          {{ section.settings.banner_title | escape }}
+          {%- else -%}
+          {{ page.title }}
+          {%- endif -%}
+        </h1>
+        {%- if section.settings.img_text == true -%}
+        <div class="text-after-img"  style="background-image: url({{ 'curve.svg' | asset_url }});" >
+        </div>
+        {%- endif -%}
+
+      </div>
+      {%- if section.settings.banner_sub_text != blank -%}
+      <span class="body-1">
+        {{ section.settings.banner_sub_text | escape }}
+      </span>
+      {%- endif -%}
+      {%- if section.settings.insta_handle != blank -%}
+      <span class="banner-insta_handle sh3">
+        {{ section.settings.insta_handle | escape }}
+      </span>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Page Banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "banner_title",
+      "label": "Banner Title"
+    },
+    {
+      "type": "text",
+      "id": "banner_sub_text",
+      "label": "Banner Sub Text"
+    },
+	{
+      "type": "text",
+      "id": "insta_handle",
+      "label": "Insta Handle"
+    },
+	{
+	  "type": "checkbox",
+	  "id": "img_text",
+	  "label": "Image After Text",
+	  "default": false
+	}
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

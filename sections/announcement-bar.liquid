@@ -1,0 +1,62 @@
+<div class="announcement-bar" role="region" aria-label="{{ 'sections.header.announcement' | t }}" {{ section.shopify_attributes }}>
+  <div class="announcement-bar__container page-width">
+    <div class="announcement-bar__message-wrapper">
+    <div class="announcement-bar__message-container swiper">
+      <div class="swiper-wrapper">
+        <p class="announcement-bar__message swiper-slide body-4">
+          {{ section.settings.text }}
+        </p>
+        {% if section.settings.text_2 != blank %}
+          <p class="announcement-bar__message swiper-slide body-4">
+            {{ section.settings.text_2 }}
+          </p>
+        {% endif %}
+        {% if section.settings.text_3 != blank %}
+          <p class="announcement-bar__message swiper-slide body-4">
+            {{ section.settings.text_3 }}
+          </p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+    <div class="announcement-bar__menu-container">
+      {% for link in section.settings.menu.links %}
+        <a href="{{ link.url }}" class="nav">{{ link.title }}</a>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "t:sections.announcement-bar.name",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text",
+      "default": "Welcome to our store",
+      "label": "Announcement"
+    },
+    {
+      "type": "text",
+      "id": "text_2",
+      "default": "Welcome to our store",
+      "label": "Announcement 2",
+      "info": "Optional"
+    },
+    {
+      "type": "text",
+      "id": "text_3",
+      "default": "Welcome to our store",
+      "label": "Announcement 3",
+      "info": "Optional"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu"
+    }
+  ]
+}
+{% endschema %}

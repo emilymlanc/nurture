@@ -1,0 +1,49 @@
+{{ 'page-image-banner.css' | asset_url | stylesheet_tag }}
+
+<div class="page-image-banner">
+  {% render 'lazy-image' image: section.settings.image, blur: true, classes: 'img-fill hide-mobile' %}
+  {% render 'lazy-image' image: section.settings.mobile_image, blur: true, classes: 'img-fill hide-desktop' %}
+  <div class="page-image-banner__container">      
+    <div class="page-width">
+      <p class="btn">{{ section.settings.subtitle }}</p>
+      <h1>{{ section.settings.title }}</h1>
+      {% render 'svg-wave' %}
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Page Image Banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile Image"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    }
+  ],
+  "presets": [
+    {
+    	"name": "Page Image Banner"
+    }
+  ]
+}
+{% endschema %}
+
+

@@ -1,0 +1,91 @@
+{{ 'section-founders.css' | asset_url | stylesheet_tag }}
+
+<div class="founders{% if section.settings.add_top_border %} add-top-border{% endif %}">
+  <div class="page-width">
+    <h2>{{ section.settings.title }}</h2>
+    {% for block in section.blocks %}
+      <div class="founders__item{% if block.settings.reversed %} reversed{% endif %}">
+        <div class="founders__item__image">
+          {% render 'lazy-image' image: block.settings.image, blur: true %}
+        </div>
+        <div class="founders__item__content">
+          <div class="founders__item__content-container">
+            <h3 class="sh1">{{ block.settings.title }}</h3>
+            {% if block.settings.sub_svg %}
+              {{ block.settings.sub_svg }}
+            {% endif %}
+            <p class="btn">{{ block.settings.role }}</p>
+            <p class="body-1">{{ block.settings.text }}</p>
+            {% render 'lazy-image' image: block.settings.signature, fade: true %}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Founders",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "checkbox",
+        "id": "add_top_border",
+        "label": "Add Top Border"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "block",
+        "name": "Block",
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "reversed",
+            "label": "Reverse Layout"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "textarea",
+            "id": "sub_svg",
+            "label": "Sub SVG"
+          },
+          {
+            "type": "text",
+            "id": "role",
+            "label": "Role"
+          },
+          {
+            "type": "textarea",
+            "id": "text",
+            "label": "Text"
+          },
+          {
+            "type": "image_picker",
+            "id": "signature",
+            "label": "Signature"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Founders"
+      }
+    ]
+  }
+{% endschema %}

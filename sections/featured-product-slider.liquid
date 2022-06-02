@@ -1,0 +1,223 @@
+{{ 'section-featured-product-slider.css' | asset_url | stylesheet_tag }}
+
+<div class="featured-product-slider">
+  <div class="page-width">
+    <div class="featured-product-slider__header">
+      <h2 class="fade-in-up" data-aos data-aos-delay="100">{{ section.settings.title }}</h2>
+      <div class="featured-product-slider__tabs fade-in-up" data-aos data-aos-delay="200">
+        {% for block in section.blocks %}
+          {% assign current_product = all_products[block.settings.product] %}
+          <button class="featured-product-slider__tab btn{% if forloop.first %} active{% endif %}" data-tab="{{ forloop.index }}">{{ current_product.title }}</button>
+        {% endfor %}
+      </div>
+      <div class="featured-product-slider__mobile-tabs hide-desktop swiper fade-in-up" data-aos data-aos-delay="200">
+        <div class="swiper-wrapper">
+          {% for block in section.blocks %}
+            {% assign current_product = all_products[block.settings.product] %}
+            <button class="featured-product-slider__mobile-tab btn swiper-slide" data-tab="{{ forloop.index }}">{{ current_product.title }}</button>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <div class="featured-product-slider__slider-wrapper">
+      <div class="featured-product-slider__slider swiper">
+        <div class="swiper-wrapper">
+          {% for block in section.blocks %}
+            {% assign current_product = all_products[block.settings.product] %}
+            <div class="featured-product-slider__item swiper-slide">
+              <div class="featured-product-slider__item-wrapper">
+                <div class="featured-product-slider__item-image fade-in-up" data-aos data-aos-delay="200">
+                  {% render 'lazy-image' image: current_product.featured_image %}
+                </div>
+
+                <div class="featured-product-slider__item-content">
+                  <div class="featured-product-slider__item-content-container">
+                    <h2 class="fade-in-up" data-aos data-aos-delay="200">{{ current_product.title }}</h2>
+                    <div class="fade-in-up" data-aos data-aos-delay="250">
+                      <div class="yotpo bottomLine"
+                        data-appkey="P3ppHFODI45UdcU4EDf74Cb6VxZcPOF3xSEqzmsq"
+                        data-domain="{{shop.permanent_domain | escape }}"
+                        data-product-id="{{ current_product.id }}"
+                        data-product-models="{{ current_product.id }}"
+                        data-name="{{ current_product.title | escape }}"
+                        data-url="{{ shop.url }}{{ current_product.url }}"
+                        data-image-url="{{ current_product.featured_image | product_img_url: 'large' |replace: '?', '%3F' | replace: '&','%26'}}"
+                        data-description="{{ current_product.description | escape }}"
+                        data-bread-crumbs="{% for tag in current_product.tags %}{{ tag | escape }};{% endfor %}">
+                      </div>
+                    </div>
+                    <div class="fade-in-up" data-aos data-aos-delay="300">
+                      {% render 'price', product: current_product, price_class: 'sh2' %}
+                    </div>
+                    <div class="featured-product-slider__item-description fade-in-up" data-aos data-aos-delay="350">
+                      <p class="body-1 medium">{{ block.settings.subheader }}</p>
+                      <p class="body-1">{{ block.settings.description }}</p>
+                    </div>
+                    <div class="featured-product-slider__item-props fade-in-up" data-aos data-aos-delay="400">
+                      <div class="featured-product-slider__item-prop">
+                        <div class="featured-product-slider__item-prop-icon">
+                          {{ block.settings.prop_1_icon }}
+                        </div>
+                        <p class="body-3">{{ block.settings.prop_1_text }}</p>
+                      </div>
+                      <div class="featured-product-slider__item-prop">
+                        <div class="featured-product-slider__item-prop-icon">
+                          {{ block.settings.prop_2_icon }}
+                        </div>
+                        <p class="body-3">{{ block.settings.prop_2_text }}</p>
+                      </div>
+                      <div class="featured-product-slider__item-prop">
+                        <div class="featured-product-slider__item-prop-icon">
+                          {{ block.settings.prop_3_icon }}
+                        </div>
+                        <p class="body-3">{{ block.settings.prop_3_text }}</p>
+                      </div>
+                    </div>
+                    <a href="{{ current_product.url }}" class="button fade-in-up" data-aos data-aos-delay="400">Explore</a>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      <button class="swiper-button swiper-button-next hide-mobile">{% render 'svg-arrow-button-right' %}</button>
+      <button class="swiper-button swiper-button-prev hide-mobile">{% render 'svg-arrow-button-left' %}</button>
+    </div>
+  </div>
+</div>
+
+{% javascript %}
+  var featuredProductSlider = new Swiper('.featured-product-slider__slider', {
+    spaceBetween: 20,
+    loop: false,
+    breakpoints: {
+      769: {
+        navigation: {
+          nextEl: '.featured-product-slider__slider-wrapper .swiper-button-next',
+          prevEl: '.featured-product-slider__slider-wrapper .swiper-button-prev',
+        },
+        spaceBetween: 20,
+        loop: true,
+      }
+    }
+  });
+
+  // Mobile tabs
+  const featuredProductTabSlider = new Swiper('.featured-product-slider__mobile-tabs', {
+    slidesPerView: 2.2,
+    spaceBetween: 20,
+    centeredSlides: true,
+    slideToClickedSlide: true,
+    thumbs: {
+      swiper: featuredProductSlider,
+    },
+  }); 
+
+  featuredProductSlider.on('slideChange', function (slider) {
+    var idx = slider.realIndex;
+
+    featuredProductTabSlider.slideTo(idx);
+  });
+
+  $('.featured-product-slider__tab').click(function() {
+    if (!$(this).hasClass('active')) {
+      var tab = $(this).data('tab');
+
+      $('.featured-product-slider__tab').removeClass('active');
+      $(this).addClass('active');
+
+      featuredProductSlider.slideTo(tab);
+    }
+  });
+
+  featuredProductSlider.on('slideChange', function (swiper) {
+    $('.featured-product-slider__tab').removeClass('active');
+    $(`.featured-product-slider__tab[data-tab="${swiper.realIndex + 1}"]`).addClass('active');
+  });
+{% endjavascript %}
+
+{% schema %}
+  {
+    "name": "Featured Product Slider",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Featured Products"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "product",
+        "name": "Product",
+        "settings": [
+          {
+            "type": "product",
+            "id": "product",
+            "label": "Product"
+          },
+          {
+            "type": "text",
+            "id": "subheader",
+            "label": "Subheader"
+          },
+          {
+            "type": "textarea",
+            "id": "description",
+            "label": "Description"
+          },
+          {
+            "type": "header",
+            "content": "Value Prop 1"
+          },
+          {
+            "type": "textarea",
+            "id": "prop_1_icon",
+            "label": "Prop 1 Icon"
+          },
+          {
+            "type": "text",
+            "id": "prop_1_text",
+            "label": "Prop 1 Text"
+          },
+          {
+            "type": "header",
+            "content": "Value Prop 2"
+          },
+          {
+            "type": "textarea",
+            "id": "prop_2_icon",
+            "label": "Prop 2 Icon"
+          },
+          {
+            "type": "text",
+            "id": "prop_2_text",
+            "label": "Prop 2 Text"
+          },
+          {
+            "type": "header",
+            "content": "Value Prop 3"
+          },
+          {
+            "type": "textarea",
+            "id": "prop_3_icon",
+            "label": "Prop 3 Icon"
+          },
+          {
+            "type": "text",
+            "id": "prop_3_text",
+            "label": "Prop 3 Text"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Featured Product Slider"
+      }
+    ]
+  }
+{% endschema %}

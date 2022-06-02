@@ -1,0 +1,27 @@
+<a href="{{ current_product.url }}">
+  <div class="mini-product-card">
+    {% render 'lazy-image' image: current_product.featured_image %}
+    <div class="mini-product-card__content">
+      <p class="label-2 bold">{{ current_product.title }}</p>
+      <div class="yotpo bottomLine nav"
+        data-appkey="P3ppHFODI45UdcU4EDf74Cb6VxZcPOF3xSEqzmsq"
+        data-domain="{{shop.permanent_domain | escape }}"
+        data-product-id="{{ current_product.id }}"
+        data-product-models="{{ current_product.id }}"
+        data-name="{{ current_product.title | escape }}"
+        data-url="{{ shop.url }}{{ current_product.url }}"
+        data-image-url="{{ current_product.featured_image | product_img_url: 'large' |replace: '?', '%3F' | replace: '&','%26'}}"
+        data-description="{{ current_product.description | escape }}"
+        data-bread-crumbs="{% for tag in current_product.tags %}{{ tag | escape }};{% endfor %}">
+      </div>
+      {% if tagline != blank %}
+        <p class="body-4">{{ tagline }}</p>
+      {% endif %}
+    </div>
+    {% if shop_btn %}
+      <div class="mini-product-card__shop">
+        <div class="button">Shop<span>&nbsp;&nbsp;·&nbsp;&nbsp;{% if current_product.compare_at_price > current_product.price %}<strike>{{ current_product.compare_at_price | money_without_trailing_zeros }}</strike> {% endif %}{{ current_product.price | money_without_trailing_zeros }}</span></div>
+      </div>
+    {% endif %}
+  </div>
+</a>

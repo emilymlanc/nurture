@@ -1,0 +1,652 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "layout": "left",
+        "image": "shopify:\/\/shop_images\/Untitled_design.png",
+        "mobile_image": "shopify:\/\/shop_images\/GGlider_Plus_angle_full_recl_no_model_RS11_-_Homepage_for_Sales_-_Mobile_3.jpg",
+        "add_overlay": true,
+        "subtitle": "Rethink the Nursery",
+        "title": "We've thought of every little thing",
+        "show_wave": true,
+        "text": "Award-winning, rigorously tested, and intuitive designs created for parents, by parents.",
+        "button_label": "Shop All Nursery",
+        "button_link": "shopify:\/\/collections",
+        "button_color": "white",
+        "review_badge": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"157\" height=\"157\" viewbox=\"0 0 157 157\" fill=\"none\">\n<circle opacity=\"0.4\" cx=\"78.7296\" cy=\"78.3866\" r=\"64.6071\" transform=\"rotate(7.10461 78.7296 78.3866)\" fill=\"#F8F7F3\" stroke=\"#F8F7F3\" stroke-width=\"0.863124\"><\/circle>\n<circle cx=\"78.7308\" cy=\"78.3864\" r=\"69.4478\" transform=\"rotate(7.10461 78.7308 78.3864)\" stroke=\"#F8F7F3\" stroke-width=\"0.888889\"><\/circle>\n<style type=\"text\/css\">\n\t.st0{opacity:0.4;fill:#F8F7F3;stroke:#F8F7F3;stroke-width:0.8631;enable-background:new    ;}\n\t.st1{fill:none;stroke:#F8F7F3;stroke-width:0.8889;}\n\t.st2{fill:#344E62;}\n\t.st3{fill:#5F6063;}\n\t.st4{font-family:'BrandonGrotesque-Bold';}\n\t.st5{font-size:12px;}\n<\/style>\n<circle class=\"st0\" cx=\"78.7\" cy=\"78.4\" r=\"64.6\"><\/circle>\n<circle class=\"st1\" cx=\"78.7\" cy=\"78.4\" r=\"69.4\"><\/circle>\n<path class=\"st2\" d=\"M64.3,61.4h9.2l-3.5-2v-3.9h4.6l0.3-0.9H70v-5.4l-2.1,0.8v4.6h-8.4l9.6-12.5h-3.7l-7.1,13.4h9.6v3.9L64.3,61.4z   M78.6,61.7c1,0,1.7-0.7,1.7-1.7c0-1-0.8-1.7-1.7-1.7c-1,0-1.7,0.7-1.7,1.7C76.8,61,77.6,61.7,78.6,61.7z M88.8,61.7  c5.5,0,8.3-5.1,8.3-10.4c0-5.3-2.7-9.5-7.6-9.5c-4,0-6.6,2.9-6.6,6.6c0,3.2,2,6.2,5.9,6.2c2.1,0,4.2-1,5.7-3.2  c0,5.5-2.4,9.4-5.7,9.5l-3.8-3.8l-2,2.2C84.9,60.8,86.5,61.7,88.8,61.7z M85.5,47.8c0-2.9,1.3-5.2,3.9-5.2c2.9,0,5,3.1,5.2,7.8  c-1.3,1.8-3.1,2.4-4.7,2.4C86.8,52.8,85.5,50.4,85.5,47.8z\"><\/path>\n<path class=\"st2\" d=\"M47.7,72.4l1.5,4.8h4.7l-3.8,3l1.5,4.8l-3.8-3l-3.8,3l1.5-4.8l-3.8-3h4.7L47.7,72.4z\"><\/path>\n<path class=\"st2\" d=\"M62.7,72.4l1.5,4.8h4.7l-3.8,3l1.5,4.8l-3.8-3l-3.8,3l1.5-4.8l-3.8-3h4.7L62.7,72.4z\"><\/path>\n<path class=\"st2\" d=\"M78.2,72.4l1.6,4.8h5.1l-4.1,3l1.6,4.8l-4.1-3l-4.1,3l1.6-4.8l-4.1-3h5.1L78.2,72.4z\"><\/path>\n<path class=\"st2\" d=\"M93.7,72.4l1.5,4.8h4.7l-3.8,3l1.5,4.8l-3.8-3l-3.8,3l1.5-4.8l-3.8-3h4.7L93.7,72.4z\"><\/path>\n<path class=\"st2\" d=\"M108.7,72.4l1.5,4.8h4.7l-3.8,3l1.5,4.8l-3.8-3l-3.8,3l1.5-4.8l-3.8-3h4.7L108.7,72.4z\"><\/path>\n<text transform=\"matrix(1 0 0 1 39.121 102.7564)\" class=\"st3 st4 st5\">205+ REVIEWS<\/text>\n<\/svg>",
+        "promo": false,
+        "split_bg_color": "#dc9d70",
+        "promo_title": "Memorial Day Sale!",
+        "promo_text1": "",
+        "promo_text2": "$100 Off The Glider & The Glider Plus",
+        "promo_text3": "",
+        "promo_text4": "",
+        "promo_button_label": "Shop All Nursery",
+        "promo_button_link": "shopify:\/\/collections",
+        "promo_button_color": "navy"
+      }
+    },
+    "1634220250c6629c41": {
+      "type": "promo-bar",
+      "settings": {
+        "bg_color": "blue",
+        "title": "Free Shipping ($250 Value!)",
+        "text": "Shop Gliders now",
+        "link": "shopify:\/\/collections"
+      }
+    },
+    "16347581471ff1d7ef": {
+      "type": "product-features",
+      "blocks": {
+        "611f90e8-9fe6-4144-9290-224513a5b1c9": {
+          "type": "product",
+          "settings": {
+            "product": "the-glider-plus",
+            "image": "shopify:\/\/shop_images\/ivory_straight_on_transparent_-_New_resized_9f7e57ba-7ce2-4b55-8223-054f6f20e811.png"
+          }
+        },
+        "5d5f3e63-62db-4733-a33d-13fdb65c2700": {
+          "type": "product",
+          "settings": {
+            "product": "the-glider",
+            "image": "shopify:\/\/shop_images\/glider_transparent_17b0a8a9-7761-4700-800f-3feb279269a2.png"
+          }
+        },
+        "4d251179-54ec-44cb-b1a5-60ae3bd4ad50": {
+          "type": "product",
+          "settings": {
+            "product": "the-swivel",
+            "image": "shopify:\/\/shop_images\/swivel_transparent_f1b91b10-a5f2-4eb5-9e9a-990b035a50fc.png"
+          }
+        }
+      },
+      "block_order": [
+        "611f90e8-9fe6-4144-9290-224513a5b1c9",
+        "5d5f3e63-62db-4733-a33d-13fdb65c2700",
+        "4d251179-54ec-44cb-b1a5-60ae3bd4ad50"
+      ],
+      "settings": {
+        "title": "Designed for life’s moments."
+      }
+    },
+    "163422646004fc7602": {
+      "type": "categories-grid",
+      "blocks": {
+        "58ef42e3-f263-4a94-8309-9ebeb083d4d1": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Untitled_design_7.jpg",
+            "title": "Shop Seating",
+            "link": "shopify:\/\/collections\/gliders"
+          }
+        },
+        "23e3b83a-e89a-45ed-827f-bbacd8ab1377": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/homepage.png",
+            "title": "Shop Hideout",
+            "link": "shopify:\/\/products\/the-hideout"
+          }
+        },
+        "1400a2e3-35b4-4058-b36c-166536667141": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Untitled_design_f958827c-f327-4835-8c7f-a3d20ab9d3a5.png",
+            "title": "Shop PlayPad",
+            "link": "\/collections#play"
+          }
+        }
+      },
+      "block_order": [
+        "58ef42e3-f263-4a94-8309-9ebeb083d4d1",
+        "23e3b83a-e89a-45ed-827f-bbacd8ab1377",
+        "1400a2e3-35b4-4058-b36c-166536667141"
+      ],
+      "settings": {}
+    },
+    "1634229698d8303517": {
+      "type": "product-slider",
+      "settings": {
+        "show_borders": true,
+        "subtitle": "Supports Tummy Time, Tumbles and Baby's First Steps",
+        "title": "Made with Premium, Wipeable Leather",
+        "collection": "play",
+        "show_badge": true
+      }
+    },
+    "163423206288466992": {
+      "type": "small-info-blocks",
+      "blocks": {
+        "3fbb2793-37f0-499f-b4ee-23d3bd108365": {
+          "type": "block",
+          "settings": {
+            "icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"143\" height=\"33\" viewbox=\"0 0 143 33\" fill=\"none\">\n<path d=\"M11.6529 5.35474L14.0629 12.7719L21.8618 12.7719L15.5524 17.356L17.9624 24.7731L11.6529 20.1891L5.34351 24.7731L7.7535 17.356L1.44407 12.7719L9.24295 12.7719L11.6529 5.35474Z\" fill=\"#9DBAE5\"><\/path>\n<path d=\"M39.1214 5.35474L41.5314 12.7719L49.3303 12.7719L43.0209 17.356L45.4309 24.7731L39.1214 20.1891L32.812 24.7731L35.222 17.356L28.9126 12.7719L36.7115 12.7719L39.1214 5.35474Z\" fill=\"#9DBAE5\"><\/path>\n<path d=\"M71.9445 0L75.5568 11.1173H87.2462L77.7892 17.9881L81.4015 29.1054L71.9445 22.2346L62.4876 29.1054L66.0998 17.9881L56.6429 11.1173H68.3323L71.9445 0Z\" fill=\"#9DBAE5\"><\/path>\n<path d=\"M104.768 5.35474L107.178 12.7719L114.977 12.7719L108.667 17.356L111.077 24.7731L104.768 20.1891L98.4585 24.7731L100.868 17.356L94.5591 12.7719L102.358 12.7719L104.768 5.35474Z\" fill=\"#9DBAE5\"><\/path>\n<path d=\"M132.236 5.35474L134.646 12.7719L142.445 12.7719L136.136 17.356L138.546 24.7731L132.236 20.1891L125.927 24.7731L128.337 17.356L122.028 12.7719L129.826 12.7719L132.236 5.35474Z\" fill=\"#9DBAE5\"><\/path>\n<\/svg>",
+            "title": "250+ 5-star reviews",
+            "text": "The best piece of furniture you’ll ever own."
+          }
+        },
+        "b53da311-7930-4181-a4ee-6fc275c433ba": {
+          "type": "block",
+          "settings": {
+            "icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"55\" height=\"51\" viewbox=\"0 0 55 51\" fill=\"none\">\n<path d=\"M42.7145 19.9996L47.3344 19.945C47.4576 19.9445 47.5785 19.9775 47.6843 20.0405C47.79 20.1035 47.8766 20.1942 47.9347 20.3028L52.6213 28.9909C53.0274 29.7435 53.2399 30.5852 53.2397 31.4404L53.749 49.3745C53.7485 49.6589 53.6352 49.9316 53.4341 50.1327C53.233 50.3339 52.9603 50.4471 52.6759 50.4476H45.5216C45.3775 50.447 45.235 50.4175 45.1026 50.3606C44.9702 50.3037 44.8506 50.2207 44.751 50.1166C44.6514 50.0124 44.5738 49.8893 44.5229 49.7545C44.472 49.6197 44.4487 49.476 44.4545 49.332L45.1942 32.1073C45.2495 30.8052 45.0729 29.5037 44.6728 28.2634L42.0657 20.8909C42.0318 20.7886 42.0227 20.6797 42.0393 20.5732C42.0559 20.4667 42.0976 20.3657 42.1611 20.2785C42.2245 20.1914 42.3078 20.1206 42.404 20.0721C42.5003 20.0236 42.6067 19.9988 42.7145 19.9996V19.9996Z\" stroke=\"#9DBAE5\" stroke-miterlimit=\"10\"><\/path>\n<path d=\"M12.0962 19.9452H7.63992C7.51681 19.9446 7.39586 19.9776 7.2901 20.0406C7.18434 20.1037 7.09776 20.1943 7.03968 20.3029L2.35304 28.9911C1.94692 29.7436 1.73441 30.5854 1.73463 31.4405L1.26172 49.3807C1.26224 49.6651 1.37547 49.9378 1.57661 50.1389C1.77775 50.34 2.0504 50.4533 2.33485 50.4538H9.5376C9.6817 50.4532 9.82421 50.4236 9.95661 50.3668C10.089 50.3099 10.2086 50.2269 10.3082 50.1228C10.4078 50.0186 10.4854 49.8955 10.5363 49.7607C10.5873 49.6259 10.6105 49.4822 10.6047 49.3382L9.82862 32.1135C9.77336 30.8114 9.94991 29.5099 10.35 28.2696L12.7388 20.8486C12.774 20.7461 12.7842 20.6367 12.7687 20.5294C12.7531 20.4222 12.7123 20.3202 12.6494 20.2319C12.5866 20.1436 12.5037 20.0715 12.4075 20.0217C12.3112 19.9718 12.2045 19.9456 12.0962 19.9452V19.9452Z\" stroke=\"#9DBAE5\" stroke-miterlimit=\"10\"><\/path>\n<path d=\"M10.7526 38.2733L44.123 38.2551C44.2902 38.2553 44.4509 38.3195 44.5721 38.4345C44.6934 38.5496 44.766 38.7067 44.775 38.8736C44.8647 40.4499 44.6558 44.5712 44.4704 47.5845C44.3448 49.6277 43.1839 50.381 42.3585 50.4052C39.6489 50.4841 16.3871 50.3386 14.6525 50.3386C12.9179 50.3386 10.6868 50.8357 10.6031 48.7743C10.5074 46.4643 10.1844 40.6318 10.2083 38.8129C10.2103 38.6696 10.2685 38.5329 10.3703 38.432C10.472 38.3311 10.6093 38.2741 10.7526 38.2733Z\" stroke=\"#9DBAE5\" stroke-miterlimit=\"10\"><\/path>\n<path d=\"M10.4258 38.346C10.7605 35.9767 11.8638 33.7828 13.566 32.1012C13.566 32.1012 14.3436 30.9432 27.3532 30.9796C39.6092 31.0099 41.8352 31.9011 41.8352 31.9011C41.8352 31.9011 44.1132 34.29 44.6755 38.534\" stroke=\"#9DBAE5\" stroke-miterlimit=\"10\"><\/path>\n<path d=\"M41.7844 14.3672C41.7299 16.0527 41.6389 19.2903 41.6389 19.2903L41.9014 31.7193C34.3484 30.833 26.7308 30.6301 19.1412 31.113C17.1904 31.2253 15.2553 31.5279 13.3633 32.0164C13.3633 32.0164 13.2681 17.5381 13.2438 16.5802C13.1953 14.8947 13.1832 13.7791 13.2074 13.4154C13.2181 12.9533 13.4004 12.5118 13.7186 12.1768C14.0369 11.8417 14.4685 11.637 14.9293 11.6025C15.9782 11.4813 39.5593 11.6025 39.5593 11.6025C41.8026 11.554 41.8147 13.379 41.7844 14.3672Z\" stroke=\"#9DBAE5\" stroke-miterlimit=\"10\"><\/path>\n<path d=\"M20.8203 28.1786C20.8203 27.2788 23.8794 26.5493 27.653 26.5493C31.4265 26.5493 34.4856 27.2788 34.4856 28.1786\" stroke=\"#9DBAE5\" stroke-miterlimit=\"10\" stroke-linecap=\"round\"><\/path>\n<path d=\"M34.4856 19.8711C34.4856 20.7709 31.4265 21.5004 27.653 21.5004C23.8794 21.5004 20.8203 20.7709 20.8203 19.8711\" stroke=\"#9DBAE5\" stroke-miterlimit=\"10\" stroke-linecap=\"round\"><\/path>\n<path d=\"M39.5686 1.25964H15.2104C14.1299 1.25964 13.2539 2.13561 13.2539 3.21617V9.48627C13.2539 10.5668 14.1299 11.4428 15.2104 11.4428H39.5686C40.6492 11.4428 41.5251 10.5668 41.5251 9.48627V3.21617C41.5251 2.13561 40.6492 1.25964 39.5686 1.25964Z\" stroke=\"#9DBAE5\" stroke-miterlimit=\"10\"><\/path>\n<\/svg>",
+            "title": "Parent Approved",
+            "text": "Clean lines meet functional design that seamlessly fits into your life and evolves as your family grows."
+          }
+        },
+        "058c7072-2eae-4062-90c3-6fa1cb88e324": {
+          "type": "block",
+          "settings": {
+            "icon": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"140\" height=\"30\" viewbox=\"0 0 140 30\" fill=\"none\">\n<path d=\"M8.06033 21.3491H3.62243V16.005H0.1604V29.5975H3.62243V24.2302H8.06033V29.5975H11.0344V16.005H8.06033V21.3491Z\" fill=\"#9DBAE5\"><\/path>\n<path d=\"M85.0615 29.5976H93.31V26.7164H88.0356V24.207H93.31V21.3259H88.0356V18.863H93.31V15.9818H85.0615V29.5976Z\" fill=\"#9DBAE5\"><\/path>\n<path d=\"M35.4776 24.9737C35.4776 26.089 34.5946 26.972 33.4561 26.972C32.3408 26.972 31.5044 26.1123 31.5044 24.9737V16.005H28.5303V24.8111C28.5303 27.8781 30.4355 29.7834 33.5026 29.7834C36.5696 29.7834 38.4749 27.8781 38.4749 24.8111V16.005H35.5008V24.9737\" fill=\"#9DBAE5\"><\/path>\n<path d=\"M19.7707 15.8192C15.9369 15.8192 12.8467 18.9559 12.8467 22.7897C12.8467 26.6235 15.9602 29.7603 19.7707 29.7603C23.6045 29.7603 26.718 26.6235 26.718 22.7897C26.718 18.9559 23.6045 15.8192 19.7707 15.8192ZM19.7707 26.8326C17.5866 26.8326 15.7975 25.0203 15.7975 22.813C15.7975 20.5824 17.5866 18.7933 19.7707 18.7933C21.9781 18.7933 23.7672 20.6056 23.7672 22.813C23.7439 25.0203 21.9548 26.8326 19.7707 26.8326Z\" fill=\"#9DBAE5\"><\/path>\n<path d=\"M132.275 21.7209V24.6021H136.295C135.784 26.0194 134.529 26.8559 132.926 26.8559C130.602 26.8559 128.86 25.1132 128.86 22.7897C128.86 20.5592 130.649 18.7236 132.856 18.7236C134.459 18.7236 135.621 19.4206 136.388 20.8612L136.504 21.0936L139.106 19.5136L138.99 19.3045C137.759 17.1204 135.458 15.8192 132.833 15.8192C128.883 15.8192 125.909 18.8165 125.909 22.7897C125.909 26.7629 128.929 29.7603 132.949 29.7603C136.736 29.7603 139.594 26.8326 139.594 22.9756V21.7209H132.275Z\" fill=\"#9DBAE5\"><\/path>\n<path d=\"M121.006 24.207L115.825 16.005H112.618V29.5975H115.592V21.0935L120.96 29.5975H124.003V16.005H121.029V24.207\" fill=\"#9DBAE5\"><\/path>\n<path d=\"M107.135 16.005H110.109V29.5975H107.135V16.005Z\" fill=\"#9DBAE5\"><\/path>\n<path d=\"M74.4663 29.5976H82.7148V26.7164H77.4404V24.207H82.7148V21.3259H77.4404V18.863H82.7148V15.9818H74.4663V29.5976Z\" fill=\"#9DBAE5\"><\/path>\n<path d=\"M46.0496 21.3259L45.7708 21.233C44.3999 20.7915 43.5635 20.4662 43.5635 19.7459C43.5635 19.0024 44.1676 18.5377 45.1202 18.5377C46.0496 18.5377 46.7467 18.9095 47.2579 19.6762L47.3973 19.8854L49.8834 18.0033L49.6975 17.7942C48.7449 16.8183 47.467 15.8192 45.1202 15.8192C42.4947 15.8192 40.5197 17.5386 40.5197 19.8389C40.5197 22.6039 42.7735 23.3009 44.3999 23.8121L44.6091 23.8818C45.8638 24.2535 46.9326 24.5788 46.9326 25.4385C46.9326 26.1588 46.3982 26.9256 45.2132 26.9256C44.1444 26.9256 43.1917 26.3215 42.5876 25.2991L42.4482 25.0435L39.7529 27.1812L39.9156 27.367C41.3561 28.9935 43.0988 29.8067 45.2364 29.8067C47.5599 29.8067 50.0228 28.2964 50.0228 25.4618C49.9996 22.6039 47.5134 21.8139 46.0496 21.3259Z\" fill=\"#9DBAE5\"><\/path>\n<path d=\"M100.396 16.005H95.6565V29.5975H98.6306V25.8567H100.373C103.161 25.8567 105.346 23.6958 105.346 20.9308C105.369 18.1659 103.185 16.005 100.396 16.005ZM98.6306 18.8165H100.211C101.442 18.8165 102.348 19.6994 102.348 20.9308C102.348 22.1623 101.442 23.0452 100.211 23.0452H98.6306V18.8165Z\" fill=\"#9DBAE5\"><\/path>\n<path d=\"M51.8352 29.5976H60.0837V26.7164H54.8325V24.207H60.1069V21.3259H54.8325V18.863H60.1069V15.9818H51.8584V29.5976\" fill=\"#9DBAE5\"><\/path>\n<path d=\"M72.9559 16.005H69.2848L65.4045 20.8379V16.005H62.4304V29.5975H65.4045V24.8808L66.4733 23.5332L69.7959 29.5975H73.1883L68.5877 21.3723L72.9559 16.005Z\" fill=\"#9DBAE5\"><\/path>\n<path d=\"M98.4215 7.68687C98.4215 3.62073 95.5404 0.902222 91.2651 0.902222H87.4546V14.4947H91.3813C95.4475 14.4715 98.4215 11.6136 98.4215 7.68687ZM90.9631 3.69043C93.7978 3.69043 95.4242 5.15424 95.4242 7.68687C95.4242 10.0801 93.6816 11.6833 91.056 11.6833H90.4054V3.71367H90.9631V3.69043Z\" fill=\"#9DBAE5\"><\/path>\n<path d=\"M63.4061 14.6575C67.2399 14.6575 70.3534 11.5207 70.3534 7.68695C70.3534 3.82993 67.2399 0.716431 63.4061 0.716431C59.5723 0.716431 56.4821 3.85317 56.4821 7.68695C56.4588 11.5207 59.5723 14.6575 63.4061 14.6575ZM63.4061 3.64404C65.6134 3.64404 67.4025 5.45638 67.4025 7.66372C67.4025 9.87105 65.6134 11.6834 63.4061 11.6834C61.222 11.6834 59.4329 9.87105 59.4329 7.66372C59.4329 5.45638 61.1988 3.64404 63.4061 3.64404Z\" fill=\"#9DBAE5\"><\/path>\n<path d=\"M78.6252 0.693237C74.7914 0.693237 71.7012 3.82997 71.7012 7.66376C71.7012 11.4975 74.8147 14.6343 78.6252 14.6343C82.459 14.6343 85.5725 11.4975 85.5725 7.66376C85.5725 3.82997 82.459 0.693237 78.6252 0.693237ZM78.6252 11.7067C76.4411 11.7067 74.652 9.89433 74.652 7.687C74.652 5.47966 76.4411 3.66732 78.6252 3.66732C80.8326 3.66732 82.6217 5.47966 82.6217 7.687C82.6217 9.89433 80.8326 11.7067 78.6252 11.7067Z\" fill=\"#9DBAE5\"><\/path>\n<path d=\"M48.4661 14.6575C52.2534 14.6575 55.1113 11.7299 55.1113 7.87287V6.59494H47.8155V9.47609H51.8352C51.3008 10.8934 50.0693 11.7299 48.4661 11.7299C46.1426 11.7299 44.4 9.98726 44.4 7.66376C44.4 5.43319 46.1891 3.59762 48.3964 3.59762C49.9996 3.59762 51.1614 4.29467 51.9281 5.73524L52.0443 5.96759L54.6466 4.38761L54.5305 4.1785C53.299 1.9944 50.9987 0.693237 48.3732 0.693237C44.4232 0.693237 41.4491 3.69056 41.4491 7.66376C41.4259 11.6602 44.4464 14.6575 48.4661 14.6575Z\" fill=\"#9DBAE5\"><\/path>\n<\/svg>",
+            "title": "“Best High-Tech Glider”",
+            "text": "Glider boasts stain-resistant fabric and made with non-toxic materials. But the coolest thing about it is its high-tech features."
+          }
+        }
+      },
+      "block_order": [
+        "3fbb2793-37f0-499f-b4ee-23d3bd108365",
+        "b53da311-7930-4181-a4ee-6fc275c433ba",
+        "058c7072-2eae-4062-90c3-6fa1cb88e324"
+      ],
+      "settings": {
+        "hide_mobile": true
+      }
+    },
+    "16342440668cfe2682": {
+      "type": "shop-the-room",
+      "blocks": {
+        "f205bf14-d97d-471a-9cb5-e302e1d6be79": {
+          "type": "room",
+          "settings": {
+            "title": "The Modern Nursery",
+            "image": "shopify:\/\/shop_images\/Modern_Nursery_CGI.jpg",
+            "p1": "the-glider-plus",
+            "p1_tagline": "Your New Nursery Assistant",
+            "p1_position_x": 76,
+            "p1_position_y": 67,
+            "p2": "pillows",
+            "p2_tagline": "The Perfect Lumbar Pillow",
+            "p2_position_x": 83,
+            "p2_position_y": 48,
+            "p3": "dots-premium-wallpaper",
+            "p3_tagline": "Stick and Peel",
+            "p3_position_x": 27,
+            "p3_position_y": 20,
+            "p4": "stay-cozy-bundle",
+            "p4_tagline": "100% Organic Pima Cotton",
+            "p4_position_x": 12,
+            "p4_position_y": 56,
+            "p5": "",
+            "p5_tagline": "",
+            "p5_position_x": 83,
+            "p5_position_y": 48,
+            "p6": "the-playpad-circle",
+            "p6_tagline": "",
+            "p6_position_x": 43,
+            "p6_position_y": 82,
+            "p7": "",
+            "p7_tagline": "",
+            "p7_position_x": 50,
+            "p7_position_y": 50,
+            "p8": "",
+            "p8_tagline": "",
+            "p8_position_x": 50,
+            "p8_position_y": 50,
+            "p9": "",
+            "p9_tagline": "",
+            "p9_position_x": 50,
+            "p9_position_y": 50,
+            "p10": "",
+            "p10_tagline": "",
+            "p10_position_x": 50,
+            "p10_position_y": 50
+          }
+        },
+        "b1e01811-158e-450d-a0e4-abe544dcbd4c": {
+          "type": "room",
+          "settings": {
+            "title": "The Play Room",
+            "image": "shopify:\/\/shop_images\/278255_v03_2_-_Shop_The_Room.jpg",
+            "p1": "the-hideout",
+            "p1_tagline": "",
+            "p1_position_x": 62,
+            "p1_position_y": 62,
+            "p2": "the-glider-plus",
+            "p2_tagline": "Your New Nursery Assistant",
+            "p2_position_x": 13,
+            "p2_position_y": 64,
+            "p3": "rainbows-wallpaper",
+            "p3_tagline": "",
+            "p3_position_x": 26,
+            "p3_position_y": 20,
+            "p4": "pillows",
+            "p4_tagline": "",
+            "p4_position_x": 20,
+            "p4_position_y": 50,
+            "p5": "the-playpad-medium",
+            "p5_tagline": "",
+            "p5_position_x": 57,
+            "p5_position_y": 86,
+            "p6": "",
+            "p6_tagline": "",
+            "p6_position_x": 50,
+            "p6_position_y": 50,
+            "p7": "",
+            "p7_tagline": "",
+            "p7_position_x": 50,
+            "p7_position_y": 50,
+            "p8": "",
+            "p8_tagline": "",
+            "p8_position_x": 50,
+            "p8_position_y": 50,
+            "p9": "",
+            "p9_tagline": "",
+            "p9_position_x": 50,
+            "p9_position_y": 50,
+            "p10": "",
+            "p10_tagline": "",
+            "p10_position_x": 50,
+            "p10_position_y": 50
+          }
+        },
+        "7d3280d8-04ad-4e1a-9860-b731e4247349": {
+          "type": "room",
+          "settings": {
+            "title": "The Chic Nursery",
+            "image": "shopify:\/\/shop_images\/swivel_glider_otto_angle_no_models_RS_2_f15098e5-fa2a-4e91-a3ab-c3a205d2c882.jpg",
+            "p1": "the-swivel",
+            "p1_tagline": "",
+            "p1_position_x": 74,
+            "p1_position_y": 50,
+            "p2": "ottoman",
+            "p2_tagline": "",
+            "p2_position_x": 54,
+            "p2_position_y": 72,
+            "p3": "",
+            "p3_tagline": "",
+            "p3_position_x": 50,
+            "p3_position_y": 50,
+            "p4": "",
+            "p4_tagline": "",
+            "p4_position_x": 50,
+            "p4_position_y": 50,
+            "p5": "",
+            "p5_tagline": "",
+            "p5_position_x": 50,
+            "p5_position_y": 50,
+            "p6": "",
+            "p6_tagline": "",
+            "p6_position_x": 50,
+            "p6_position_y": 50,
+            "p7": "",
+            "p7_tagline": "",
+            "p7_position_x": 50,
+            "p7_position_y": 50,
+            "p8": "",
+            "p8_tagline": "",
+            "p8_position_x": 50,
+            "p8_position_y": 50,
+            "p9": "",
+            "p9_tagline": "",
+            "p9_position_x": 50,
+            "p9_position_y": 50,
+            "p10": "",
+            "p10_tagline": "",
+            "p10_position_x": 50,
+            "p10_position_y": 50
+          }
+        },
+        "a5da8a88-08e4-4273-bba9-5e6f170b5e2c": {
+          "type": "room",
+          "settings": {
+            "title": "The Blue Nursery",
+            "image": "shopify:\/\/shop_images\/196020_Navy_01_f_58cb8873-a690-461a-bb9a-55e81bfc1bbd.jpg",
+            "p1": "the-glider",
+            "p1_tagline": "",
+            "p1_position_x": 65,
+            "p1_position_y": 50,
+            "p2": "",
+            "p2_tagline": "",
+            "p2_position_x": 50,
+            "p2_position_y": 50,
+            "p3": "",
+            "p3_tagline": "",
+            "p3_position_x": 50,
+            "p3_position_y": 50,
+            "p4": "",
+            "p4_tagline": "",
+            "p4_position_x": 50,
+            "p4_position_y": 50,
+            "p5": "",
+            "p5_tagline": "",
+            "p5_position_x": 50,
+            "p5_position_y": 50,
+            "p6": "",
+            "p6_tagline": "",
+            "p6_position_x": 50,
+            "p6_position_y": 50,
+            "p7": "",
+            "p7_tagline": "",
+            "p7_position_x": 50,
+            "p7_position_y": 50,
+            "p8": "",
+            "p8_tagline": "",
+            "p8_position_x": 50,
+            "p8_position_y": 50,
+            "p9": "",
+            "p9_tagline": "",
+            "p9_position_x": 50,
+            "p9_position_y": 50,
+            "p10": "",
+            "p10_tagline": "",
+            "p10_position_x": 50,
+            "p10_position_y": 50
+          }
+        }
+      },
+      "block_order": [
+        "f205bf14-d97d-471a-9cb5-e302e1d6be79",
+        "b1e01811-158e-450d-a0e4-abe544dcbd4c",
+        "7d3280d8-04ad-4e1a-9860-b731e4247349",
+        "a5da8a88-08e4-4273-bba9-5e6f170b5e2c"
+      ],
+      "settings": {
+        "title": "Shop the Room"
+      }
+    },
+    "1634664717be5f02af": {
+      "type": "marquee",
+      "blocks": {
+        "c5c6383c-2963-47b4-8d6d-58ddcc6cc787": {
+          "type": "marquee_item",
+          "settings": {
+            "large_text": "",
+            "small_text": "RIGOROUSLY-TESTED"
+          }
+        },
+        "fc4ec928-602e-46d2-9add-4014d4b1c6c3": {
+          "type": "marquee_item",
+          "settings": {
+            "large_text": "",
+            "small_text": "NON-TOXIC"
+          }
+        },
+        "a5bcbba0-63ad-404b-a05f-4d642243c79f": {
+          "type": "marquee_item",
+          "settings": {
+            "large_text": "",
+            "small_text": "LIFE-PROOF"
+          }
+        },
+        "b7342a2c-cc3e-4172-8312-3bab220a2edf": {
+          "type": "marquee_item",
+          "settings": {
+            "large_text": "",
+            "small_text": "AWARD-WINNING"
+          }
+        }
+      },
+      "block_order": [
+        "c5c6383c-2963-47b4-8d6d-58ddcc6cc787",
+        "fc4ec928-602e-46d2-9add-4014d4b1c6c3",
+        "a5bcbba0-63ad-404b-a05f-4d642243c79f",
+        "b7342a2c-cc3e-4172-8312-3bab220a2edf"
+      ],
+      "settings": {
+        "bg_color": ""
+      }
+    },
+    "1634682464ef9d53e9": {
+      "type": "featured-product-slider",
+      "blocks": {
+        "e6fc471b-5ac0-4c86-accd-a774448f1293": {
+          "type": "product",
+          "settings": {
+            "product": "the-glider",
+            "subheader": "Your New Nursery Assistant",
+            "description": "A premium-quality reclining nursery glider built with a thoughtful combination of design, function, and comfort.",
+            "prop_1_icon": "",
+            "prop_1_text": "",
+            "prop_2_icon": "",
+            "prop_2_text": "",
+            "prop_3_icon": "",
+            "prop_3_text": ""
+          }
+        },
+        "6798af65-a776-4cfa-8dfe-21c72f79a0fc": {
+          "type": "product",
+          "settings": {
+            "product": "the-glider-plus",
+            "subheader": "Your New Nursery Assistant",
+            "description": ".All the features of our original reclining nursery glider, plus swivel functionality, a power lumbar support, and a slightly larger seat. Our pièce de résistance, The Glider Plus has all the features you could ever need from your nursery chair.",
+            "prop_1_icon": "",
+            "prop_1_text": "",
+            "prop_2_icon": "",
+            "prop_2_text": "",
+            "prop_3_icon": "",
+            "prop_3_text": ""
+          }
+        },
+        "f3a203d5-081b-48dc-b245-fd42f0156f87": {
+          "type": "product",
+          "settings": {
+            "product": "the-swivel",
+            "subheader": "Your New Nursery Assistant",
+            "description": "Our design-forward glider that is built for compact spaces (without sacrificing quality).",
+            "prop_1_icon": "",
+            "prop_1_text": "",
+            "prop_2_icon": "",
+            "prop_2_text": "",
+            "prop_3_icon": "",
+            "prop_3_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "e6fc471b-5ac0-4c86-accd-a774448f1293",
+        "6798af65-a776-4cfa-8dfe-21c72f79a0fc",
+        "f3a203d5-081b-48dc-b245-fd42f0156f87"
+      ],
+      "settings": {
+        "title": "Best Sellers"
+      }
+    },
+    "1634698141b1d8542f": {
+      "type": "image-content",
+      "blocks": {
+        "248ef8c2-0564-427e-8b12-59ce0b919df6": {
+          "type": "reviews_header",
+          "settings": {
+            "title": "The Reviews Are In"
+          }
+        },
+        "365aa75f-f871-4929-b8e9-e032fd5fd064": {
+          "type": "reviews",
+          "settings": {
+            "review_1_header": "\"This is most definitely the Rolls-Royce of nursery gliders. So comfortable, functional & beautiful! Can’t wait to rock my grandson in it! 💙\"",
+            "review_1_text": "",
+            "review_1_author": "Susan M.",
+            "review_2_header": "\"Surpassed all expectations. Since it arrived, I have been living in this chair! Making feeding and bedtime that much more comfortable. Couldn't recommend it enough! The power lumbar and adjustable headrest are what sold me and have definitely come in handy. Also the chair has a beautiful design that can definitely move to our TV room in the future. 10 out 10!\"",
+            "review_2_text": "",
+            "review_2_author": "Michelle C.",
+            "review_3_header": "\"This rocker\/recliner is fantastic! Had a hard time finding a chair that checked all the boxes until I found the Glider+: comfortable for me (5’4”) and my husband (6’2”), attractive\/stylish, rocking, reclining, and lumbar support. Great for breastfeeding, soothing, and snuggling with our newborn.\"",
+            "review_3_text": "",
+            "review_3_author": "Jaclyn J."
+          }
+        }
+      },
+      "block_order": [
+        "248ef8c2-0564-427e-8b12-59ce0b919df6",
+        "365aa75f-f871-4929-b8e9-e032fd5fd064"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Gray_GliderPlus_EveryDayVKY.jpg",
+        "featured_product": "the-glider-plus",
+        "show_badge": true
+      }
+    },
+    "163470234670a335e1": {
+      "type": "instagram",
+      "blocks": {
+        "5eb5341c-8cee-425b-95e2-e1b3bfdfe759": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Ivory_Glider_BrooklynCalvert.jpg"
+          }
+        },
+        "7228e1ce-cbdd-4a15-b3fc-67004e67c4ef": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Navy_Glider_EmmInteriors.png"
+          }
+        },
+        "da168c9a-617a-42aa-9646-74f83f746a3c": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Ivory_Glider_Blanca.jpg"
+          }
+        },
+        "cc42eced-bb2c-422c-b570-7dbc0ac07b2b": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Ivory_Glider_TeresaS_0d444f2d-1257-409e-83ca-2b7dcaafe420.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "5eb5341c-8cee-425b-95e2-e1b3bfdfe759",
+        "7228e1ce-cbdd-4a15-b3fc-67004e67c4ef",
+        "da168c9a-617a-42aa-9646-74f83f746a3c",
+        "cc42eced-bb2c-422c-b570-7dbc0ac07b2b"
+      ],
+      "settings": {
+        "add_top_border": true,
+        "handle": "@nurture_and",
+        "text": "Join our community for inspiration, tips & tricks, and more.",
+        "button_label": "Follow Us",
+        "button_link": "https:\/\/www.instagram.com\/nurture_and\/"
+      }
+    },
+    "16347429577f6eb36d": {
+      "type": "newsletter",
+      "settings": {
+        "add_top_border": true,
+        "title": "Our emails are bumpin’",
+        "text": "Be the first to hear about products, launches, and events."
+      }
+    },
+    "16473806250053b7bd": {
+      "type": "categories-grid",
+      "blocks": {
+        "5fd9020f-a617-454b-8498-f75f92390873": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Untitled_design_17.png",
+            "title": "Your Third Trimester of Pregnancy: Preparing to Meet Your Baby!",
+            "link": "https:\/\/blog.nurtureand.com\/articles\/your-third-trimester-of-pregnancy"
+          }
+        },
+        "991ed0d9-77fe-446e-bfed-237e8ff3554d": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Untitled_design_18.png",
+            "title": "Why is The Nursery Glider One of The Most Important Purchases?",
+            "link": "https:\/\/blog.nurtureand.com\/articles\/why-is-the-nursery-glider-one-of-the-most-important-purchase"
+          }
+        },
+        "a6b45c11-5363-40fc-8d87-9a8a23bdea7d": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Untitled_design_26.png",
+            "title": "Glider Vs. Rocker: Which One Best Suits Your Needs?",
+            "link": "https:\/\/nurtureand.com\/blogs\/posts\/glider-vs-rocker-which-one-best-suits-your-needs"
+          }
+        },
+        "3534a72d-1f33-427a-be1b-dcc79cf7eab7": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Untitled_design_19.png",
+            "title": "The Best Maternity Clothes and Brands for Comfort and Fashion",
+            "link": "https:\/\/blog.nurtureand.com\/articles\/the-best-maternity-clothes-and-brands-for-comfort-and-fashion"
+          }
+        },
+        "29689a21-0fa8-4a1e-8ec8-8ca50ff68a9b": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/nursery_glider.png",
+            "title": "Why is The Nursery Glider One of The Most Important Purchases?",
+            "link": "https:\/\/blog.nurtureand.com\/articles\/why-is-the-nursery-glider-one-of-the-most-important-purchase"
+          }
+        },
+        "9749ba28-aaf0-47fd-8532-1138399815ca": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/pregnancy_work_outs_2.png",
+            "title": "Pregnancy Workouts",
+            "link": "https:\/\/blog.nurtureand.com\/articles\/pregnancy-workouts"
+          }
+        }
+      },
+      "block_order": [
+        "5fd9020f-a617-454b-8498-f75f92390873",
+        "991ed0d9-77fe-446e-bfed-237e8ff3554d",
+        "a6b45c11-5363-40fc-8d87-9a8a23bdea7d",
+        "3534a72d-1f33-427a-be1b-dcc79cf7eab7",
+        "29689a21-0fa8-4a1e-8ec8-8ca50ff68a9b",
+        "9749ba28-aaf0-47fd-8532-1138399815ca"
+      ],
+      "settings": {}
+    },
+    "165169473328a47c1d": {
+      "type": "categories-grid",
+      "blocks": {
+        "76324142-f681-4a60-b8ca-436b9c726e31": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Untitled_design_20.png",
+            "title": "What Causes Dizziness During Pregnancy?",
+            "link": "https:\/\/blog.nurtureand.com\/articles\/dizziness-during-pregnancy"
+          }
+        },
+        "dec8bbc9-108e-438a-8c6d-4b0d7190a4ea": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Untitled_design_21.png",
+            "title": "Newborn Baby Guide for New Parents",
+            "link": "https:\/\/blog.nurtureand.com\/articles\/newborn-baby-guide-for-new-parents"
+          }
+        },
+        "bc8a8e2c-3ddc-4d76-9d33-63fc245e34d6": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Untitled_design_22.png",
+            "title": "Everything Breastfeeding: Info, tips, and challenges",
+            "link": "https:\/\/blog.nurtureand.com\/articles\/everything-breastfeeding-info-tips-and-challenges"
+          }
+        }
+      },
+      "block_order": [
+        "76324142-f681-4a60-b8ca-436b9c726e31",
+        "dec8bbc9-108e-438a-8c6d-4b0d7190a4ea",
+        "bc8a8e2c-3ddc-4d76-9d33-63fc245e34d6"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "hero",
+    "1634220250c6629c41",
+    "16347581471ff1d7ef",
+    "163422646004fc7602",
+    "1634229698d8303517",
+    "163423206288466992",
+    "16342440668cfe2682",
+    "1634664717be5f02af",
+    "1634682464ef9d53e9",
+    "1634698141b1d8542f",
+    "163470234670a335e1",
+    "16347429577f6eb36d",
+    "16473806250053b7bd",
+    "165169473328a47c1d"
+  ]
+}

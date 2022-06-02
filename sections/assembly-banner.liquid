@@ -1,0 +1,27 @@
+
+{{ 'template-assembly.css' | asset_url | stylesheet_tag }}
+
+<div class="assembly-banner">
+  <div class="page-width">
+    <h1 class="h2">{{ section.settings.title }}</h1>
+    <p class="body-1">{{ section.settings.text }}</p>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Assembly Banner",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "textarea",
+        "id": "text",
+        "label": "Text"
+      }
+    ]
+  }
+{% endschema %}

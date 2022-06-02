@@ -1,0 +1,87 @@
+{{ 'section-promo-bar.css' | asset_url | stylesheet_tag }}
+
+<a href="{{ section.settings.link }}">
+  <div class="promo-bar">    
+    <svg class="background-pattern" xmlns="http://www.w3.org/2000/svg" width="1571" height="85" viewBox="0 0 1571 85" fill="none">
+      <mask id="mask0_617:91" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="1571" height="85">
+      <rect width="1571" height="85" fill="#DC9D70"/>
+      </mask>
+      <g mask="url(#mask0_617:91)">
+      <path d="M1260.75 24.5751C1190.85 46.2167 1223.48 85.4014 1190.69 95.8036C1157.89 106.206 1133.16 68.6086 1173.34 9.0004C1223.57 -65.5099 1291.08 -58.1159 1346.64 -50.1817C1402.21 -42.2475 1429.1 -7.30334 1395.05 12.7177C1361 32.7388 1330.64 2.93338 1260.75 24.5751Z" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M1462.77 66.6678C1442.2 86.265 1363.81 41.1914 1363.81 82.3455C1357.93 113.701 1401.04 129.379 1436.32 137.218C1471.59 145.057 1544.1 136.238 1565.66 56.8692C1587.21 -22.4995 1515.68 -58.7544 1475.51 -31.3183C1435.34 -3.88219 1483.35 47.0706 1462.77 66.6678Z" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M407.755 24.3544C364.252 83.1864 338.036 39.4518 317.39 66.9759C296.744 94.5 324.069 130.255 393.601 112.003C480.515 89.1885 495.823 23.0211 506.676 -32.046C517.53 -87.113 493.422 -124.033 463.283 -98.5021C433.144 -72.971 451.257 -34.4776 407.755 24.3544Z" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M56.1198 84.4363C-4.01663 105.757 38.5077 155.629 105.724 135.184C172.94 114.738 208.921 59.513 190.844 13.7456C172.766 -32.0217 111.976 23.1225 95.9858 -21.9798C79.9956 -67.0821 125.973 -90.152 103.148 -128.233C80.3228 -166.314 0.673652 -142.929 -21.9533 -135.418C-44.5803 -127.907 -38.3056 -94.1769 2.59778 -92.6487C43.5012 -91.1206 27.2656 -61.799 6.67946 -15.9271C-13.9067 29.9447 26.1803 32.5926 72.2855 29.3388C118.391 26.085 116.256 63.1161 56.1198 84.4363Z" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle r="59.2715" transform="matrix(1 0 0 -1 300.863 -29.9317)" stroke="white"/>
+      <circle r="59.2715" transform="matrix(1 0 0 -1 1043.77 56.7705)" stroke="white"/>
+      </g>
+    </svg>    
+    <div class="page-width">
+      <h2 class="sh1">{{ section.settings.title }}</h2>
+      <p class="btn">{{ section.settings.text }} {% render 'icon-chevron-right' %}</p>
+    </div>
+  </div>
+</a>
+
+<style>
+.promo-bar {
+  {% if section.settings.bg_color == 'orange' %}
+  background: #DC9D70;
+  {% endif %}
+    
+  {% if section.settings.bg_color == 'blue' %}
+  background: #9DBAE5;
+  {% endif %}
+  
+  {% if section.settings.bg_color == 'navy' %}
+  background: #344E62;
+  {% endif %}
+}
+</style>
+
+{% schema %}
+  {
+    "name": "Promo Bar",
+    "settings": [
+	  {
+        "type": "select",
+        "id": "bg_color",
+        "options": [
+          {
+            "value": "orange",
+            "label": "Orange"
+          },
+          {
+            "value": "blue",
+            "label": "Blue"
+          },
+          {
+            "value": "navy",
+            "label": "Navy"
+          }
+        ],
+        "default": "orange",
+        "label": "Background Color"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "textarea",
+        "id": "text",
+        "label": "Text"
+      },
+      {
+        "type": "url",
+        "id": "link",
+        "label": "Link"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Promo Bar"
+      }
+    ]
+  }
+{% endschema %}

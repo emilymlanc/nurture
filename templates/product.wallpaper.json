@@ -1,0 +1,100 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "settings": {
+        "picker_type": "button",
+        "enable_sticky_info": true,
+        "hide_variants": false,
+        "enable_video_looping": false
+      }
+    },
+    "1635874208e28ba17d": {
+      "type": "product-bar",
+      "blocks": {
+        "a84259a4-9eb1-4992-ac9b-18d74737286d": {
+          "type": "nav_item",
+          "settings": {
+            "title": "Reviews"
+          }
+        },
+        "a81cad99-e90a-40ba-a567-41c8003313a8": {
+          "type": "nav_item",
+          "settings": {
+            "title": "Recommended"
+          }
+        }
+      },
+      "block_order": [
+        "a84259a4-9eb1-4992-ac9b-18d74737286d",
+        "a81cad99-e90a-40ba-a567-41c8003313a8"
+      ],
+      "settings": {
+        "title": ""
+      }
+    },
+    "1635872486c9ad3ea7": {
+      "type": "product-reviews",
+      "disabled": true,
+      "settings": {
+        "title": "Customer Reviews"
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "add_top_border": true,
+        "heading": "You might love..."
+      }
+    },
+    "1635869636fcde88aa": {
+      "type": "instagram",
+      "blocks": {
+        "5eb5341c-8cee-425b-95e2-e1b3bfdfe759": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Gray_GliderPlus_EveryDayVKY.jpg"
+          }
+        },
+        "da168c9a-617a-42aa-9646-74f83f746a3c": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Ivory_Glider_Blanca.jpg"
+          }
+        },
+        "7228e1ce-cbdd-4a15-b3fc-67004e67c4ef": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Navy_Glider_EmmInteriors.png"
+          }
+        },
+        "cc42eced-bb2c-422c-b570-7dbc0ac07b2b": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Ivory_Glider_TeresaS_0d444f2d-1257-409e-83ca-2b7dcaafe420.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "5eb5341c-8cee-425b-95e2-e1b3bfdfe759",
+        "da168c9a-617a-42aa-9646-74f83f746a3c",
+        "7228e1ce-cbdd-4a15-b3fc-67004e67c4ef",
+        "cc42eced-bb2c-422c-b570-7dbc0ac07b2b"
+      ],
+      "settings": {
+        "add_top_border": true,
+        "handle": "@nurture_and",
+        "text": "Join our community for inspiration, tips & tricks, and more.",
+        "button_label": "Follow Us",
+        "button_link": "https:\/\/www.instagram.com\/nurture_and\/"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1635874208e28ba17d",
+    "1635872486c9ad3ea7",
+    "product-recommendations",
+    "1635869636fcde88aa"
+  ]
+}

@@ -1,0 +1,131 @@
+<div class="product-features__item{% if idx == 1 %} active{% endif %}" data-aos data-num="{{ idx }}">
+  <div class="product-features__column left size--3 hide-mobile">
+    <button class="product-features__feature active" data-num="1">
+      <div class="product-features__feature-icon">
+        {% render 'icon-easy-swivel-swivel' %}
+        {% render 'svg-arrows-6-feature' num: 1 %}
+      </div>
+      <p class="label-2">Easy Swivel</p>
+    </button>
+    <button class="product-features__feature" data-num="2">
+      <div class="product-features__feature-icon">
+        {% render 'icon-smooth-glide' %}
+        {% render 'svg-arrows-6-feature' num: 2 %}
+      </div>
+      <p class="label-2">Adjustable Head Support</p>
+    </button>
+    <button class="product-features__feature" data-num="3">
+      <div class="product-features__feature-icon">
+        {% render 'icon-stain-resistant-fabric' %}
+        {% render 'svg-arrows-6-feature' num: 3 %}
+      </div>
+      <p class="label-2">Stain-Resistant Fabric</p>
+    </button>
+  </div>
+  <div class="product-features__image">
+    <div class="product-features__image-container">
+      {% render 'lazy-image' image: current_image, classes: 'img-fill product-image', fade: true %}
+
+      <div class="product-features__badge-groups-wrapper">
+        <div class="product-features__badge-groups product-features__badge-groups--{{ idx }} swiper">
+          <div class="swiper-wrapper">
+            <div class="product-features__badge-group size--3 swiper-slide" data-num="1">
+              {% render 'svg-feature-badges' feature: 'sleep-training-helper' %}
+              {% render 'svg-feature-badges' feature: 'ultra-comfort' %}
+              {% render 'svg-feature-badges' feature: 'fully-adaptable' %}
+            </div>
+            <div class="product-features__badge-group size--3 size--3-alt swiper-slide" data-num="2">
+              {% render 'svg-feature-badges' feature: 'c-section-approved' %}
+              {% render 'svg-feature-badges' feature: 'sleep-training-helper' %}
+              {% render 'svg-feature-badges' feature: 'ultra-comfort' %}
+            </div>
+            <div class="product-features__badge-group size--2 swiper-slide" data-num="3">
+              {% render 'svg-feature-badges' feature: 'safety-first' %}
+              {% render 'svg-feature-badges' feature: 'ultra-comfort' %}
+            </div>
+            <div class="product-features__badge-group size--2 swiper-slide" data-num="4">
+              {% render 'svg-feature-badges' feature: 'feeding-friendly' %}
+              {% render 'svg-feature-badges' feature: 'fully-adaptable' %}
+            </div>
+            <div class="product-features__badge-group size--2 size--2-alt swiper-slide" data-num="5">
+              {% render 'svg-feature-badges' feature: 'fully-adaptable' %}
+              {% render 'svg-feature-badges' feature: 'ultra-comfort' %}
+            </div>
+            <div class="product-features__badge-group size--2 swiper-slide" data-num="6">
+              {% render 'svg-feature-badges' feature: 'safety-first' %}
+              {% render 'svg-feature-badges' feature: 'ultra-comfort' %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <a href="{{ current_product.url }}" class="button hide-mobile">Shop&nbsp;&nbsp;·&nbsp;&nbsp;{% if current_product.compare_at_price > current_product.price %}<strike>{{ current_product.compare_at_price | money_without_trailing_zeros }}</strike> {% endif %}{{ current_product.price | money_without_trailing_zeros }}</a>
+  </div>
+  <div class="product-features__column right size--3 hide-mobile">
+    <button class="product-features__feature" data-num="4">
+      <div class="product-features__feature-icon">
+        {% render 'icon-spacious-seat' %}
+        {% render 'svg-arrows-6-feature' num: 4 %}
+      </div>
+      <p class="label-2">Spacious Seat</p>
+    </button>
+    <button class="product-features__feature" data-num="5">
+      <div class="product-features__feature-icon">
+        {% render 'icon-built-in-usb' %}
+        {% render 'svg-arrows-6-feature' num: 5 %}
+      </div>
+      <p class="label-2">Built-In USB</p>
+    </button>
+    <button class="product-features__feature" data-num="6">
+      <div class="product-features__feature-icon">
+        {% render 'icon-spacious-and-non-toxic' %}
+        {% render 'svg-arrows-6-feature' num: 6 %}
+      </div>
+      <p class="label-2">Spacious and Non-Toxic</p>
+    </button>
+  </div>
+
+  <div class="product-features__mobile-slider swiper">
+    <div class="swiper-wrapper">
+      <div class="product-features__mobile-feature swiper-slide" data-num="1">
+        <div class="product-features__feature-icon">
+          {% render 'icon-easy-swivel-swivel' %}
+        </div>
+        <p class="label-2">Easy Swivel</p>
+      </div>
+      <div class="product-features__feature swiper-slide" data-num="2">
+        <div class="product-features__feature-icon">
+          {% render 'icon-smooth-glide' %}
+        </div>
+        <p class="label-2">Adjustable Head Support</p>
+      </div>
+      <div class="product-features__feature swiper-slide" data-num="3">
+        <div class="product-features__feature-icon">
+          {% render 'icon-stain-resistant-fabric' %}
+        </div>
+        <p class="label-2">Stain-Resistant Fabric</p>
+      </div>
+      <div class="product-features__feature swiper-slide" data-num="4">
+        <div class="product-features__feature-icon">
+          {% render 'icon-spacious-seat' %}
+        </div>
+        <p class="label-2">Spacious Seat</p>
+      </div>
+      <div class="product-features__feature swiper-slide" data-num="5">
+        <div class="product-features__feature-icon">
+          {% render 'icon-built-in-usb' %}
+        </div>
+        <p class="label-2">Built-In USB</p>
+      </div>
+      <div class="product-features__feature swiper-slide" data-num="6">
+        <div class="product-features__feature-icon">
+          {% render 'icon-spacious-and-non-toxic' %}
+        </div>
+        <p class="label-2">Spacious and Non-Toxic</p>
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+  <a href="{{ current_product.url }}" class="button hide-desktop">Shop&nbsp;&nbsp;·&nbsp;&nbsp;{% if current_product.compare_at_price > current_product.price %}<strike>{{ current_product.compare_at_price | money_without_trailing_zeros }}</strike> {% endif %}{{ current_product.price | money_without_trailing_zeros }}</a>
+</div>

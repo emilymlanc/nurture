@@ -1,0 +1,37 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-registry",
+      "blocks": {
+        "dc9f5e84-5bc0-43cc-9325-25c09660b749": {
+          "type": "text",
+          "settings": {
+            "text": "<h1 class=\"h1\">Build Your Registry<\/h1>\n<p class=\"field\">with<\/p>\n<img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0283\/0227\/8795\/files\/babylist.svg?v=1633013023\" class=\"babylist\">\n<p class=\"body-1\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Placerat eu dui ac facilisi mauris. A tempor platea lorem sit sed ipsum. Proin aliquet congue eleifend molestie. Ultrices curabitur lacus.<\/p>\n<ul class=\"body-1 medium\">\n<li>Lorem Ipsum<\/li>\n<li>Lorem Ipsum<\/li>\n<li>Lorem Ipsum<\/li>\n<li>Lorem Ipsum<\/li>\n<\/ul>"
+          }
+        },
+        "56fd1dd3-0686-45fc-ac54-9321ec1d27cc": {
+          "type": "button",
+          "settings": {
+            "button_label": "get started",
+            "button_link": "#",
+            "button_style_secondary": true
+          }
+        }
+      },
+      "block_order": [
+        "dc9f5e84-5bc0-43cc-9325-25c09660b749",
+        "56fd1dd3-0686-45fc-ac54-9321ec1d27cc"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/registry-banner.png",
+        "image_mob": "shopify:\/\/shop_images\/registry_mob.jpg",
+        "height": "adapt",
+        "layout": "text_first",
+        "background": "#9dbae5"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

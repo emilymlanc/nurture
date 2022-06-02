@@ -1,0 +1,44 @@
+<div class="legal-popup" data-day="{% if section.settings.legal_popup_days != blank %} {{ section.settings.legal_popup_days }}{% else %}1{% endif %} ">
+  <div class="page-width">
+    <div class="legal-popup__container">
+      <p class="body-2">{{ section.settings.text }}</p>
+      <button class="legal-popup__close btn">
+        Accept
+      </button>
+    </div>
+  </div>
+</div>
+
+{% javascript %}
+  if (getCookie('legalCookie')){
+    $('.legal-popup').fadeOut(400);
+  } else{
+    $('.legal-popup').fadeIn(400);
+  }
+
+  $('.legal-popup__close').click(function () {
+    var day = $('.legal-popup').attr('data-day');
+
+    $('.legal-popup').fadeOut(400);
+    setCookie('legalCookie', true, day)
+  });
+{% endjavascript %}
+
+{% schema %}
+  {
+    "name": "Legal Popup",
+    "settings": [
+      {
+        "type": "text",
+        "id": "legal_popup_days",
+        "label": "Legal popup days",
+        "default": "4"
+      },
+      {
+        "type": "textarea",
+        "id": "text",
+        "label": "Legal text"
+      }
+    ]
+  }
+{% endschema %}

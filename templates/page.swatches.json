@@ -1,0 +1,36 @@
+{
+  "sections": {
+    "1636083372383017ae": {
+      "type": "main-swatches",
+      "blocks": {
+        "964fa48b-3871-4ac9-ac3e-25f763cc457d": {
+          "type": "text",
+          "settings": {
+            "text": "<p class=\"button\"><\/p>\n<h1 class=\"h1\">Free Swatches<\/h1>\n<p class=\"sh2\"><\/p>\n<p class=\"body-1\">We’re happy to send you fabric swatches of all of our colors so you can see them in person, and run them through your own testing.\n<br><br>\nMake sure to look at the color through different lighting so you can see what the fabric looks like at all times of the day.<br><br>Swatch packets ship through USPS and take 7-10 days to deliver.<\/p>"
+          }
+        },
+        "56e8754e-7b0c-4104-a23d-1d757763b3cf": {
+          "type": "button",
+          "settings": {
+            "button_label": "Request Now",
+            "button_link": "#"
+          }
+        }
+      },
+      "block_order": [
+        "964fa48b-3871-4ac9-ac3e-25f763cc457d",
+        "56e8754e-7b0c-4104-a23d-1d757763b3cf"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Natureand11_a5df9c15-4dc4-4c10-92ae-d4e3175f4873.jpg",
+        "image_mob": "shopify:\/\/shop_images\/Natureand11_a5df9c15-4dc4-4c10-92ae-d4e3175f4873.jpg",
+        "height": "adapt",
+        "layout": "text_first",
+        "background": "#dc9d70"
+      }
+    }
+  },
+  "order": [
+    "1636083372383017ae"
+  ]
+}

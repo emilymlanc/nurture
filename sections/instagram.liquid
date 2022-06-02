@@ -1,0 +1,107 @@
+{{ 'section-instagram.css' | asset_url | stylesheet_tag }}
+
+<div class="instagram">
+  {% if section.settings.add_top_border %}
+    <div class="page-width">
+      <div class="instagram-top-border"></div>
+    </div>
+  {% endif %}
+  <div class="instagram__container">
+    <div class="instagram__info">
+      <div class="instagram__info-container">
+        <h2 class="sh3 fade-in-up" data-aos data-aos-delay="100">{{ section.settings.handle }}</h2>
+        <p class="body-1 fade-in-up" data-aos data-aos-delay="150">{{ section.settings.text }}</p>
+        <a href="{{ section.settings.button_link }}" class="button fade-in-up" data-aos data-aos-delay="200">{{ section.settings.button_label }}</a>
+        <div class="instagram__navigation">
+          <button class="swiper-button swiper-button-prev">{% render 'icon-chevron-left' %}</button>
+          <button class="swiper-button swiper-button-next">{% render 'icon-chevron-right' %}</button>
+        </div>
+      </div>
+    </div>
+    <div class="instagram__slider-wrapper">
+      <div class="instagram__slider swiper">
+        <div class="swiper-wrapper">
+          {% for block in section.blocks %}
+            <div class="instagram__image swiper-slide">
+              {% render 'lazy-image' image: block.settings.image %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% javascript %}
+  var instagramSlider = new Swiper('.instagram__slider', {
+    slidesPerView: 1.5,
+      spaceBetween: 20,
+      loop: true,
+      navigation: {
+        nextEl: '.instagram .swiper-button-next',
+        prevEl: '.instagram .swiper-button-prev',
+      },
+    breakpoints: {
+      1000: {
+        slidesPerView: 2.6,
+        spaceBetween: 20,
+        loop: true,
+        navigation: {
+          nextEl: '.instagram .swiper-button-next',
+          prevEl: '.instagram .swiper-button-prev',
+        }
+      }
+    }
+  });
+{% endjavascript %}
+
+{% schema %}
+  {
+    "name": "Instagram",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "add_top_border",
+        "label": "Add Top Border"
+      },
+      {
+        "type": "text",
+        "id": "handle",
+        "label": "Handle"
+      },
+      {
+        "type": "textarea",
+        "id": "text",
+        "label": "Text"
+      },
+      {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button Label"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "name": "Image",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Instagram"
+      }
+    ]
+  }
+{% endschema %}

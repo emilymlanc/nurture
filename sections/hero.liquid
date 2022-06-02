@@ -1,0 +1,231 @@
+{{ 'section-hero.css' | asset_url | stylesheet_tag }}
+
+<div class="hero hero--{{ section.settings.layout }}">
+  {% render 'lazy-image' image: section.settings.image, classes: 'hide-mobile img-fill', blur: true %}
+  {% render 'lazy-image' image: section.settings.mobile_image, classes: 'hide-desktop img-fill', blur: true %}
+  <div class="hero__container{% if section.settings.add_overlay %} overlay{% endif %}">
+    {% if section.settings.promo %}
+    <div class="page-width">
+      <h2 class="promo-title">{{ section.settings.promo_title }}</h2>
+      <div class="promo-text__container">
+        {% if section.settings.promo_text1 != blank %}
+          <p class="body-2">{{ section.settings.promo_text1 }}</p>
+        {% endif %}
+        {% if section.settings.promo_text2 != blank %}
+          <hr class="promo-hr">
+          <p class="body-2">{{ section.settings.promo_text2 }}</p>
+        {% endif %}
+        {% if section.settings.promo_text3 != blank %}
+          <hr class="promo-hr">
+          <p class="body-2">{{ section.settings.promo_text3 }}</p>
+        {% endif %}
+        {% if section.settings.promo_text4 != blank %}
+          <hr class="promo-hr">
+          <p class="body-2">{{ section.settings.promo_text4 }}</p>
+        {% endif %}
+      </div>
+      {% if section.settings.promo_button_label != blank %}
+        <div class="button__container">
+          <a href="{{ section.settings.promo_button_link }}" class="button {% if section.settings.promo_button_color == 'navy' %}button--navy{% else %}button--white{% endif %}">{{ section.settings.promo_button_label }}</a>
+      </div>
+      {% endif %}
+    </div>
+    {% else %}
+    <div class="page-width">
+      {% if section.settings.subtitle != blank %}
+        <p class="btn">{{ section.settings.subtitle }}</p>
+      {% endif %}
+        <h2 class="h1">{{ section.settings.title }}</h2>
+      {% if section.settings.show_wave %}
+        {% render 'svg-wave' %}
+      {% endif %}
+      {% if section.settings.text != blank %}
+        <p class="body-1 hide-mobile">{{ section.settings.text }}</p>
+      {% endif %}
+      {% if section.settings.button_label != blank %}
+        <div class="button__container">
+          <a href="{{ section.settings.button_link }}" class="button {% if section.settings.button_color == 'navy' %}button--navy{% else %}button--white{% endif %}">{{ section.settings.button_label }}</a>
+      </div>
+      {% endif %}
+      {% if section.settings.review_badge != blank %}
+        <div class="hero__badge {% if section.settings.layout == 'split' %}hero__badge--split{% endif %}">
+          {{ section.settings.review_badge }}
+        </div>
+      {% endif %}
+    </div>
+    {% endif %}
+  </div>
+</div>
+
+<style>
+.hero--split .hero__container {
+  background: {{ section.settings.split_bg_color }};
+}
+</style>
+
+{% schema %}
+  {
+    "name": "Hero",
+    "settings": [
+      {
+        "type": "select",
+        "id": "layout",
+        "options": [
+          {
+            "value": "center",
+            "label": "Center Aligned"
+          },
+          {
+            "value": "left",
+            "label": "Left Aligned"
+          },
+          {
+            "value": "split",
+            "label": "Split Screen"
+          }
+        ],
+        "default": "center",
+        "label": "Layout"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "mobile_image",
+        "label": "Mobile Image"
+      },
+      {
+        "type": "checkbox",
+        "id": "add_overlay",
+        "label": "Add Overlay To Image"
+      },
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_wave",
+        "label": "Show Wave?",
+		"default": true
+      },
+      {
+        "type": "textarea",
+        "id": "text",
+        "label": "Text"
+      },
+      {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button Label"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
+      },
+	  {
+        "type": "select",
+        "id": "button_color",
+        "options": [
+          {
+            "value": "navy",
+            "label": "Navy"
+          },
+          {
+            "value": "white",
+            "label": "White"
+          }
+        ],
+        "default": "white",
+        "label": "Button Color"
+      },
+      {
+        "type": "textarea",
+        "id": "review_badge",
+        "label": "Review Badge"
+      },
+      {
+        "type": "header",
+        "content": "Spit Screen Promo"
+      },
+	  {
+        "type": "checkbox",
+        "id": "promo",
+        "label": "Use Promo Layout?",
+		"default": false
+      },
+	  {
+        "type": "color",
+        "id": "split_bg_color",
+        "label": "Split Screen Background Color",
+		"default": "#9dbae5"
+      },
+	  {
+        "type": "text",
+        "id": "promo_title",
+        "label": "Promo Title"
+      },
+	  {
+        "type": "text",
+        "id": "promo_text1",
+        "label": "Promo Text 1"
+      },
+	  {
+        "type": "text",
+        "id": "promo_text2",
+        "label": "Promo Text 2"
+      },
+	  {
+        "type": "text",
+        "id": "promo_text3",
+        "label": "Promo Text 3"
+      },
+	  {
+        "type": "text",
+        "id": "promo_text4",
+        "label": "Promo Text 4"
+      },
+      {
+        "type": "text",
+        "id": "promo_button_label",
+        "label": "Promo Button Label"
+      },
+      {
+        "type": "url",
+        "id": "promo_button_link",
+        "label": "Promo Button Link"
+      },
+	  {
+        "type": "select",
+        "id": "promo_button_color",
+        "options": [
+          {
+            "value": "navy",
+            "label": "Navy"
+          },
+          {
+            "value": "white",
+            "label": "White"
+          }
+        ],
+        "default": "white",
+        "label": "Promo Button Color"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Hero"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="{{ 'section-product-reviews.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'section-product-reviews.css' | asset_url | stylesheet_tag }}</noscript>
+
+<div class="product-reviews product-section" data-section="reviews">
+  <div class="product-reviews__svg hide-mobile">
+    {% render 'svg-every-thing-badge' %}
+  </div>
+  <div class="page-width">
+    <h2>{{ section.settings.title }}</h2>
+    <div class="product-reviews__container">
+      <div class="yotpo yotpo-main-widget" data-product-id="{{ product.id }}" data-name="{{ product.title | escape }}" data-url="{{ shop.url }}{{ product.url }}" data-image-url="{{ product.featured_image | product_img_url: "large" |replace: '?', '%3F' | replace: '&','%26'}}" data-description="{{ product.description | escape }}"></div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Product Reviews",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Customer Reviews"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Product Reviews"
+      }
+    ]
+  }
+{% endschema %}

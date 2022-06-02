@@ -1,0 +1,115 @@
+.card {
+  display: block;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.card__inner {
+  position: relative;
+}
+
+.card__inner .aspect-ratio::before {
+  padding-bottom: 100%;
+}
+
+.card__link {
+  position: relative;
+}
+
+.card__badge {
+  bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  left: 1rem;
+  position: absolute;
+}
+
+.card-information {
+  margin-top: 30px;
+}
+
+.card-information__title-price {
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-information__title-price .price dd {
+  margin: 0;
+}
+
+.card-information__title-price .price__compare {
+  margin-right: 5px !important;
+}
+
+.card-information__title {
+  margin: 0;
+  padding-right: 20px;
+}
+
+.card-information__reviews-swatches {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-information__reviews-swatches .yotpo-bottomline .text-m {
+  font-family: brandon-grotesque;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 1.1;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--navy) !important;
+}
+
+.card-information__reviews-swatches .yotpo-bottomline .yotpo-stars {
+  margin-right: 8px;
+}
+
+.card-information__reviews-swatches .yotpo-bottomline .yotpo-icon.yotpo-icon-star {
+  font-size: 11px;
+  color: var(--navy) !important;
+}
+
+.card-information__swatches {
+  /* margin-right: -7px; */
+}
+
+.card-information__swatch {
+  padding: 0 5px;
+  cursor: pointer;
+}
+
+.card-information__swatch-color {
+  height: 16px;
+  width: 16px;
+  border-radius: 100%;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+.card-information__swatch-color::after {
+  content: '';
+  height: 24px;
+  width: 24px;
+  border-radius: 100%;
+  border: 1px solid transparent;
+  position: absolute;
+  left: -4px;
+  top: -4px;
+  transition: border .3s ease;
+}
+
+.card-information__swatch.active .card-information__swatch-color::after {
+  border-color: var(--sand);
+}
+
+@media (max-width: 768px) {
+  .card-information__reviews-swatches {
+    height: 26px;
+  }
+}

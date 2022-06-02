@@ -1,0 +1,87 @@
+{{ 'section-press-quotes.css' | asset_url | stylesheet_tag }}
+
+<div class="press-quotes">
+  <div class="page-width">
+    <div class="press-quotes__container swiper">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          <div class="press-quotes__item swiper-slide">
+            {% if block.settings.logo != blank %}
+            <div class="press-quotes__image">
+              {% render 'lazy-image' image: block.settings.logo, fade: true %}
+            </div>
+            {% endif %}
+            {% if block.settings.logo_svg != blank %}
+            <div class="press-quotes__svg">
+              {{ block.settings.logo_svg }}
+            </div>
+            {% endif %}
+            {% if block.settings.subheader != blank %}
+            <p class="sh2">{{ block.settings.subheader }}</p>
+            {% endif %}
+            <p class="body-1">{{ block.settings.text }}</p>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="swiper-pagination hide-desktop"></div>
+    </div>
+  </div>
+</div>
+
+{% javascript %}
+  const pressQuotesSlider = new Swiper('.press-quotes__container', {
+    slidesPerView: 1,
+    loop: true,
+    spaceBetween: 20,
+    pagination: {
+      el: '.press-quotes .swiper-pagination'
+    },
+    breakpoints: {
+      769: {
+        slidesPerView: 3,
+        allowTouchMove: false,
+      }
+    }
+  });
+{% endjavascript %}
+
+{% schema %}
+  {
+    "name": "Press Quotes",
+    "settings": [
+    ],
+    "blocks": [
+      {
+        "type": "block",
+        "name": "Block",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "logo",
+            "label": "Logo"
+          },
+          {
+            "type": "textarea",
+            "id": "logo_svg",
+            "label": "SVG Logo (if no png)"
+          },
+          {
+            "type": "text",
+            "id": "subheader",
+            "label": "(Optional) Header Text"
+          },
+          {
+            "type": "textarea",
+            "id": "text",
+            "label": "Text"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Press Quotes"
+      }
+    ]
+  }
+{% endschema %}

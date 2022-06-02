@@ -1,0 +1,87 @@
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'section-collection-list.css' | asset_url | stylesheet_tag }}
+
+<div class="collection-list__bar no-scrollbar">
+  <div class="page-width">
+    <div class="collection-list__bar-wrapper">
+      <div class="collection-list__bar-container">
+        <p class="filter-title btn">Filter By</p>
+        <div class="collection-list__bar-filters">
+          {% for block in section.blocks %}
+            <button class="collection-list__bar-filter btn{% if forloop.first %} active{% endif %}" data-filter="{{ block.settings.title | handleize }}">{{ block.settings.title }}</button>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
+
+<div class="collection-list">
+  <div class="page-width">
+    {% for block in section.blocks %}
+      <div id="{{ block.settings.title | handleize }}" class="collection-list__item" data-filter="{{ block.settings.title | handleize }}">
+        <p class="sh3">Shop {{ block.settings.title }}</p>
+        <div class="collection-list__item-products">
+          {% assign current_collection = collections[block.settings.collection] %}
+          {% for product in current_collection.products %}
+            <div class="collection-list__item-product">
+              {% render 'product-card', product_card_product: product %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% javascript %}
+  var headerHeight = $('.sticky-header').outerHeight();
+  var barHeight = $('.collection-list__bar').outerHeight();
+
+  $(window).scroll(function() {
+    $('.collection-list__item').each(function(i, el) {
+      if ($(el).offset().top - headerHeight - 2 - barHeight < $(window).scrollTop()) {
+        var filter = $(el).data('filter');
+        
+        $('.collection-list__bar-filter').removeClass('active');
+        $(`.collection-list__bar-filter[data-filter="${filter}"]`).addClass('active');
+      }
+    });
+  });
+
+  $('.collection-list__bar-filter').click(function() {
+    var filter = $(this).data('filter');
+
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $(`.collection-list__item[data-filter="${filter}"]`).offset().top - headerHeight - barHeight
+    }, 2000);
+  });
+{% endjavascript %}
+
+{% schema %}
+  {
+    "name": "Collection List",
+    "settings": [
+
+    ],
+    "blocks": [
+      {
+        "type": "block",
+        "name": "Block",
+        "settings": [
+          {
+            "type": "collection",
+            "id": "collection",
+            "label": "Collection"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

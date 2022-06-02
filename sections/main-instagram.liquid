@@ -1,0 +1,99 @@
+{{ 'shop-instagram.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight-min.js"></script>
+<script src="{{ 'shop-instagram.js' | asset_url }}"></script>
+
+
+<div class="shop_instagram_wrapper">
+  <div class="shop_instagram_wrap">
+    {% for block in section.blocks %}
+    <div class="insta_item">
+      <div class="insta_item_inner">
+      {%- if block.settings.image != blank -%}
+        {% render 'lazy-image' image: block.settings.image %}
+      {%- else -%}
+        {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+      {%- endif -%}
+
+        {% assign current_product = all_products[block.settings.product] %}
+        <div class="featured-product-slider__item swiper-slide">
+          <div class="featured-product-slider__item-wrapper">
+            <div class="featured-product-slider__item-image">
+              <img src="{{ current_product.featured_image | img_url: '100x'}}">
+            </div>
+
+            <div class="featured-product-slider__item-content">
+              <div class="featured-product-slider__item-content-container">
+                <p class="label bold ">{{ current_product.title }}</p>
+                <div class="featured-product-slider__item-description">
+                  <p class="body-4">{{ block.settings.description }}</p>
+                </div>
+                <a href="{{ current_product.url }}" class="price_info">{% render 'price', product: current_product, price_class: 'button' , title: "shop" %}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      {% if block.settings.insta_handle != blank %}
+      <p class="label-2 insta_handle">
+        {% if block.settings.insta_url != blank %}
+        <a href="{{ block.settings.insta_url }}">
+          {% endif %}
+          {{ block.settings.insta_handle }}
+          {% if block.settings.insta_url != blank %}
+        </a>
+        {% endif %}
+      </p>
+      {% endif %}
+
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Shop Instagram",
+    "settings": [
+    ],
+    "blocks": [
+      {
+        "type": "Instagram",
+        "name": "Instagram",
+        "settings": [
+		  {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+		  {
+            "type": "text",
+            "id": "insta_handle",
+            "label": "Instagram Handle"
+          },
+		  {
+            "type": "url",
+            "id": "insta_url",
+            "label": "Instagram URL"
+          },
+          {
+            "type": "product",
+            "id": "product",
+            "label": "Product"
+          },
+          {
+            "type": "text",
+            "id": "description",
+            "label": "Product Short Description"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Shop Instagram"
+      }
+    ]
+  }
+{% endschema %}

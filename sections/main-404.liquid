@@ -1,0 +1,17 @@
+{{ 'main-404.css' | asset_url | stylesheet_tag }}
+
+
+<div class="template-404 page-width page-margin center">
+
+  <h1 class="title bold label-2 title-404">
+    {{ 'templates.404.title' | t }}
+  </h1>
+  <div class="img-404"> {% render '404' %}</div>
+    <p class="body-1">
+    {{ 'templates.404.subtext' | t }}
+  </p>
+  
+  <a href="{{ shop.url }}" class="button btn back-to-home-btn">
+    {{ 'general.continue_shopping' | t }}
+  </a>
+</div>

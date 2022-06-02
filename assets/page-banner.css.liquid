@@ -1,0 +1,141 @@
+.banner-img.desktop {
+  display: block;
+  background-image: url({{"white-frame.png"|asset_url}});
+}
+
+.page-faq .banner-img.desktop,
+.page-contact .banner-img.desktop {
+  background-image: url({{"faq-contact-banner.png"|asset_url}});
+  background-size: contain;
+  background-position: top right;
+}
+
+.page-faq .content_inner:before,
+.page-contact .content_inner:before {
+  display: none;
+}
+
+.page-faq .banner-title,
+.page-contact .banner-title {
+  font-size: 60px;
+  line-height: 110%;
+}
+
+.custome-banner-color {
+  background-color: var(--orange);
+}
+
+.banner-color {
+  background-color: var(--blue);
+}
+
+.banner-img {
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.text-after-img {
+  background-position: top center;
+  background-repeat: no-repeat;
+  min-height: 10px;
+  margin: 20px 0 0 0;
+}
+
+.banner-title {
+  text-align: center;
+  color: var(--white);
+  font-weight: 300;
+  margin: 0;
+}
+
+.content_inner {
+  max-width: 1012px;
+  position: relative;
+  margin: 0 auto;
+  height: 100%;
+  padding: 60px 0;
+}
+
+.content_inner:before {
+  content: "";
+  background-image: url(https://cdn.shopify.com/s/files/1/0283/0227/8795/files/page-logo.svg?v=1633004701);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-position: right bottom;
+  background-repeat: no-repeat;
+}
+
+.banner-subtext {
+  font-family: brandon-grotesque;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--white);
+  text-align: center;
+  display: block;
+  padding: 0 0 20px;
+}
+
+.banner-update {
+  padding: 45px 0 25px 0;
+  color: var(--grey);
+}
+
+/*  FAQ Banner */
+.faq-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .content_inner:before {
+    display: none;
+  }
+  
+  .banner-subtext {
+    font-size: 13px;
+    line-height: 110%;
+    font-weight: bold;
+  }
+  
+  .banner-img.desktop {
+    background: none;
+    position: relative;
+  }
+  
+  .mobile-bg {
+    width: 100%;
+    height: auto;
+  }
+  
+  .content_inner {
+    max-width: 100%;
+    position: absolute;
+    margin: 0 auto;
+    height: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .page-faq .all-pg-mobile,
+  .page-contact .all-pg-mobile {
+    display: none;
+  }
+  
+  .page-faq .faq-mobile,
+  .page-contact .faq-mobile {
+    display: block;
+  }
+}

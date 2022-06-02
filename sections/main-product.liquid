@@ -1,0 +1,854 @@
+{% comment %}theme-check-disable TemplateLength{% endcomment %}
+{{ 'section-main-product.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'component-rte.css' | asset_url | stylesheet_tag }}
+
+<link rel="stylesheet" href="{{ 'component-deferred-media.css' | asset_url }}" media="print" onload="this.media='all'">
+
+<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+
+{%- assign first_3d_model = product.media | where: "media_type", "model" | first -%}
+{%- if first_3d_model -%}
+  {{ 'component-product-model.css' | asset_url | stylesheet_tag }}
+  <link id="ModelViewerStyle" rel="stylesheet" href="https://cdn.shopify.com/shopifycloud/model-viewer-ui/assets/v1.0/model-viewer-ui.css" media="print" onload="this.media='all'">
+  <link id="ModelViewerOverride" rel="stylesheet" href="{{ 'component-model-viewer-ui.css' | asset_url }}" media="print" onload="this.media='all'">
+{%- endif -%}
+
+<section class="page-width">
+  <div class="product">
+    <div class="product__media-wrapper">
+      <div class="product__media-container">
+        <a class="skip-to-content-link button visually-hidden" href="#ProductInfo-{{ section.id }}">
+          {{ "accessibility.skip_to_product_info" | t }}
+        </a>
+        <ul class="product__media-list swiper" role="list">
+          {% if product.metafields.my_fields.product_card_badge != blank %}
+                  <div class="product-tag">
+                    <p class="body-4 bold">{{ product.metafields.my_fields.product_card_badge }}</p>
+                  </div>
+                  {% endif %}
+          <div class="swiper-wrapper">
+            {%- for media in product.media -%}
+              {% assign alt_strip = media.alt | strip | downcase %}
+              {% assign curr_varriant = product.selected_or_first_available_variant.title | downcase %}
+              {% if curr_varriant contains alt_strip %}
+                <li class="product__media-item swiper-slide{% if media.media_type != 'image' %} product__media-item--full{% endif %}" data-media-id="{{ section.id }}-{{ media.id }}">
+                  
+                  {% render 'product-thumbnail', media: media, position: forloop.index, loop: section.settings.enable_video_looping, modal_id: section.id, xr_button: true %}
+                </li>
+              {% endif %}
+            {%- endfor -%}
+          </div> 
+    
+          <div class="product__media-thumbnails">
+            {% assign thumb_counter = 0 %}
+            {%- assign featured_media = product.selected_or_first_available_variant.featured_media -%}
+            {% for media in product.media %}
+              {% assign alt_strip = media.alt | strip | downcase %}
+              {% assign curr_varriant = product.selected_or_first_available_variant.title | downcase %}
+              {% if curr_varriant contains alt_strip %}
+                <div class="product__slider-thumbnail-item{% if thumb_counter == 0 %} active{% endif %}" data-media-id="{{ section.id }}-{{ media.id }}" data-slideid="{{ thumb_counter }}">
+                  {% render 'lazy-image' image: media.preview_image, blur: true, classes: 'img-fill' %}
+                </div>
+
+                {% assign thumb_counter = thumb_counter | plus: 1 %}
+              {% endif %}
+            {% endfor %}  
+          </div>
+        </ul>
+
+        <div class="product__media-arrows">
+          <div class="swiper-button swiper-button-next">
+            {% render 'svg-arrow-button-right' %}
+          </div>
+          <div class="swiper-button swiper-button-prev">
+            {% render 'svg-arrow-button-left' %}
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="product__info-wrapper">
+      <div id="ProductInfo-{{ section.id }}" class="product__info-container{% if section.settings.enable_sticky_info %} product__info-container--sticky{% endif %}">
+        {%- assign product_form_id = 'product-form-' | append: section.id -%}
+
+        <h1 class="product__title h2">
+          {{ product.title | escape }}
+        </h1>
+
+        <div class="yotpo bottomLine"
+          data-appkey="P3ppHFODI45UdcU4EDf74Cb6VxZcPOF3xSEqzmsq"
+          data-domain="{{shop.permanent_domain | escape }}"
+          data-product-id="{{ product.id }}"
+          data-product-models="{{ product.id }}"
+          data-name="{{ product.title | escape }}"
+          data-url="{{ shop.url }}{{ product.url }}"
+          data-image-url="{{ product.featured_image | product_img_url: 'large' |replace: '?', '%3F' | replace: '&','%26'}}"
+          data-description="{{ product.description | escape }}"
+          data-bread-crumbs="{% for tag in product.tags %}{{ tag | escape }};{% endfor %}">
+        </div>
+      
+
+        <div class="no-js-hidden" id="price-{{ section.id }}">
+          {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'sh2' -%}
+        </div>
+    
+        <div>
+          {%- form 'product', product, id: 'product-form-installment', class: 'body-2' -%}
+            <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+            {{ form | payment_terms }}
+          {%- endform -%}
+        </div>
+    
+        {% comment %}
+        <div class="product__description-wrapper">
+          {% if product.metafields.my_fields.mini_card_description != blank %}
+            <p class="body medium">{{ product.metafields.my_fields.mini_card_description }}</p>
+          {% endif %}
+
+          {%- if product.description != blank -%}
+            <div class="product__description body-1">
+              {{ product.description }}
+            </div>
+          {%- endif -%}
+        </div>
+
+        {% if product.metafields.my_fields.shipping_date != blank %}
+          <p class="product__shipping nav">{{ product.metafields.my_fields.shipping_date }}</p>
+        {% endif %}
+        {% endcomment %}
+
+
+        {%- unless product.has_only_default_variant -%}
+          {%- if section.settings.picker_type == 'button' -%}
+            <variant-radios class="no-js-hidden" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
+              {%- for option in product.options_with_values -%}
+
+                {%- assign color_label = 'color,colour,couleur,colore,farbe,색,色,färg,farve' | split: ',' -%}
+                {%- assign downcase_option = option.name | downcase -%}
+                {%- assign variant_option = 'option' | append: forloop.index -%}
+
+                  <fieldset class="js product-form__input{% if color_label contains downcase_option %} product-form__color-swatches{% endif %}"> 
+                    {% comment %}
+                      <legend class="form__label">{{ option.name }}</legend>
+                    {% endcomment %}
+
+                    <div class="product-form__variant-container">
+                      <div class="product-form__variant-list">
+                        
+                        {%- for value in option.values -%}
+
+                          {%- assign current_variant = '' -%}
+
+                          <!-- Find colors within variants -->
+                          {% for variant in product.variants %}
+                            {%- if variant[variant_option] == value -%}
+                              {%- assign current_variant = variant -%}
+                              {%- assign active_color = value -%}
+                            {%- endif -%}
+                          {% endfor %}
+
+                          {%- assign color_swatch_name = value | handleize | append: '.jpg' -%}
+                          {%- assign color_swatch_image = images[color_swatch_name] -%}
+
+                          <input type="radio" id="{{ section.id }}-{{ option.name }}-{{ forloop.index0 }}"
+                                name="{{ option.name }}"
+                                value="{{ value | escape }}"
+                                form="product-form-{{ section.id }}"
+                                data-name="{{ active_color }}"
+                                data-id="{{product.variants[forloop.index0].id}}"
+                                
+                                {% if option.selected_value == value %}checked{% endif %}
+                          >
+                          <label {% if product.type == 'Gift Card' %}class="gift-card__label"{% endif %} for="{{ section.id }}-{{ option.name }}-{{ forloop.index0 }}"{% if color_label contains downcase_option %} style="background-image: url({{ color_swatch_image | img_url: '20x20' }});"{% endif %}>
+                            {{ value }}
+                          </label>
+                        {%- endfor -%}
+                      </div>
+
+                      {% if color_label contains downcase_option %}
+                        <div class="product-form__variant-active">
+                          <p class="body-4 medium caps">{{ product.selected_or_first_available_variant[variant_option] }}</p>
+                        </div>
+                      {% endif %}
+
+                    </div>
+                    {% if product.type == 'Seating' %}
+                    <div class="freeswatch__atc nav swatch-link">Try a Swatch</div>
+                    {% endif %}
+              </fieldset>
+              {%- endfor -%}
+              <script type="application/json">
+                {{ product.variants | json }}
+              </script>
+            </variant-radios>
+          {%- else -%}
+            <variant-selects class="no-js-hidden" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
+              {%- for option in product.options_with_values -%}
+                <div class="product-form__input product-form__input--dropdown">
+                  <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
+                    {{ option.name }}
+                  </label>
+                  <div class="select">
+                    <select id="Option-{{ section.id }}-{{ forloop.index0 }}"
+                      class="select__select"
+                      name="options[{{ option.name | escape }}]"
+                      form="product-form-{{ section.id }}"
+                    >
+                      {%- for value in option.values -%}
+                        <option value="{{ value | escape }}" {% if option.selected_value == value %}selected="selected"{% endif %}>
+                          {{ value }}
+                        </option>
+                      {%- endfor -%}
+                    </select>
+                    {% render 'icon-caret' %}
+                  </div>
+                </div>
+              {%- endfor -%}
+
+              <script type="application/json">
+                {{ product.variants | json }}
+              </script>
+            </variant-selects>
+          {%- endif -%}
+        {%- endunless -%}
+
+        <noscript>
+          <div class="product-form__input{% if product.has_only_default_variant %} hidden{% endif %}">
+            <label class="form__label" for="Variants-{{ section.id }}">{{ 'products.product.product_variants' | t }}</label>
+            <div class="select">
+              <select name="id" id="Variants-{{ section.id }}" class="select__select" form="product-form">
+                {%- for variant in product.variants -%}
+                  <option
+                    {% if variant == product.selected_or_first_available_variant %}selected="selected"{% endif %}
+                    {% if variant.available == false %}disabled{% endif %}
+                    value="{{ variant.id }}"
+                  >
+                    {{ variant.title }}
+                    {%- if variant.available == false %} - {{ 'products.product.sold_out' | t }}{% endif %}
+                    - {{ variant.price | money | strip_html }}
+                  </option>
+                {%- endfor -%}
+              </select>
+              {% render 'icon-caret' %}
+            </div>
+          </div>
+        </noscript>
+        
+        <div class="product__description-wrapper">
+          {% if product.metafields.my_fields.mini_card_description != blank %}
+            <p class="body medium">{{ product.metafields.my_fields.mini_card_description }}</p>
+          {% endif %}
+
+          {%- if product.description != blank -%}
+            <div class="product__description body-1">
+              {{ product.description }}
+            </div>
+          {%- endif -%}
+        </div>
+        
+        {% for variant in product.variants %}
+        {% if variant.metafields.my_fields.delivery_tag != blank %}
+        <p style="{% if product.selected_or_first_available_variant.id == variant.id and variant.metafields.my_fields.delivery_tag != blank %}display: inline-block;{% endif %}" data-id="{{variant.id}}" class="product__shipping nav">{{ variant.metafields.my_fields.delivery_tag }}</p>
+        {% endif %}
+        {% endfor %}
+        
+        {% if product.metafields.my_fields.upgrade_product_1 != blank %}
+        <div class="upgrade-products">
+          <p>Upgrades</p>          
+          {% assign upgrade_product1 = all_products[product.metafields.my_fields.upgrade_product_1] %}
+          <div class="upgrade-product">
+            <div class="upgrade-product__left">
+              <p class="label-2 bold"><a href="{{ upgrade_product1.url }}" style="border: 0;">{{ upgrade_product1.title }}</a></p>
+              <div class="upgrade-left-flex">
+                <p class="body-2"> +{{upgrade_product1.price | money_without_trailing_zeros}}</p>
+                <img class="question-mark" src="https://cdn.shopify.com/s/files/1/0283/0227/8795/files/Group_10.png?v=1636227142"/>
+                <div class="product-info__hover">
+                  {% for variant in upgrade_product1.variants %}
+                  <img class="hover-img" style="{% if forloop.index0 == 0 %}display: block;{% else %}display: none;{% endif %}" data-index="{{ forloop.index0 }}" src="{{variant.featured_media | img_url: 'master' }}"/>
+                  {% endfor %}
+                  <div class="hover-info">
+                    <p class="label-2 bold">{{ upgrade_product1.title }}</p>
+                    <p class="body-4">{{ product.metafields.my_fields.upgrade_product_1_text }}</p>
+                    <variant-radios class="no-js-hidden">
+                      {%- for option in upgrade_product1.options_with_values -%}
+
+                      {%- assign color_label = 'color,colour,couleur,colore,farbe,색,色,färg,farve' | split: ',' -%}
+                      {%- assign downcase_option = option.name | downcase -%}
+                      {%- assign variant_option = 'option' | append: forloop.index -%}
+
+                      <fieldset class="js product-form__input{% if color_label contains downcase_option %} product-form__color-swatches{% endif %}"> 
+
+                        <div class="hover-values-container product-form__variant-container">
+                          <div class="product-form__variant-list">
+                            {%- for value in option.values -%}
+
+                            {%- assign current_variant = '' -%}
+
+                            <!-- Find colors within variants -->
+                            {% for variant in upgrade_product1.variants %}
+                            {%- if variant[variant_option] == value -%}
+                            {%- assign current_variant = variant -%}
+                            {%- assign active_color = value -%}
+                            {%- endif -%}
+                            {% endfor %}
+
+                            {%- assign color_swatch_name = value | handleize | append: '.jpg' -%}
+                            {%- assign color_swatch_image = images[color_swatch_name] -%}
+
+                            <input type="radio" id="upgrade1-{{ forloop.index0 }}"
+                                   name="{{ option.name }}"
+                                   value="{{ value | escape }}"
+
+
+                                   {% if option.selected_value == value %}checked{% endif %}
+                                   >
+                            <label 
+                                   for="upgrade1-{{ forloop.index0 }}"
+                                   {% if color_label contains downcase_option %} style="background-image: url({{ color_swatch_image | img_url: '20x20' }});"{% endif %}
+                                   {% if option.name == 'Color' %} class="hover-swatch upgrade-swatch {% if option.selected_value == value %}selectedColor{% endif %}"
+                                   data-varid="{{upgrade_product1.variants[forloop.index0].id}}"
+                                   data-index="{{forloop.index0}}"
+                                   data-name="{{value}}"
+                                   {% endif %}
+                                   >
+                              {{ value }}
+                            </label>
+                            {%- endfor -%}
+                          </div>
+                          <div class="product-form__variant-active">
+                            <p class="body-4 medium caps">{{ upgrade_product1.selected_or_first_available_variant[variant_option] }}</p>
+                          </div>
+                        </div>
+                      </fieldset>
+                      {%- endfor -%}
+
+                    </variant-radios>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="upgrade-product__right">
+              <variant-radios class="no-js-hidden">
+                {%- for option in upgrade_product1.options_with_values -%}
+
+                {%- assign color_label = 'color,colour,couleur,colore,farbe,색,色,färg,farve' | split: ',' -%}
+                {%- assign downcase_option = option.name | downcase -%}
+                {%- assign variant_option = 'option' | append: forloop.index -%}
+
+                  <fieldset class="js product-form__input{% if color_label contains downcase_option %} product-form__color-swatches{% endif %}"> 
+
+                    <div class="product-form__variant-container">
+                      <div class="product-form__variant-list">
+                        {%- for value in option.values -%}
+
+                          {%- assign current_variant = '' -%}
+
+                          <!-- Find colors within variants -->
+                          {% for variant in upgrade_product1.variants %}
+                            {%- if variant[variant_option] == value -%}
+                              {%- assign current_variant = variant -%}
+                              {%- assign active_color = value -%}
+                            {%- endif -%}
+                          {% endfor %}
+
+                          {%- assign color_swatch_name = value | handleize | append: '.jpg' -%}
+                          {%- assign color_swatch_image = images[color_swatch_name] -%}
+
+                          <input type="radio" id="upgrade11-{{ forloop.index0 }}"
+                                name="{{ option.name }}"
+                                value="{{ value | escape }}"
+                                
+                                
+                                {% if option.selected_value == value %}checked{% endif %}
+                          >
+                          <label 
+                                 for="upgrade11-{{ forloop.index0 }}"
+                                 {% if color_label contains downcase_option %} style="background-image: url({{ color_swatch_image | img_url: '20x20' }});"{% endif %}
+                                 {% if option.name == 'Color' %} class="upgrade-swatch {% if option.selected_value == value %}selectedColor{% endif %}"
+                                 data-varid="{{upgrade_product1.variants[forloop.index0].id}}"
+                                 {% endif %}
+                                 >
+                            {{ value }}
+                          </label>
+                        {%- endfor -%}
+                      </div>
+                    </div>
+                  </fieldset>
+              {%- endfor -%}
+
+            </variant-radios>
+            <a class="nav upgrade__atc" href="#">Add to Cart</a>
+            </div>
+          </div>
+          {% if product.metafields.my_fields.upgrade_product_2 != blank %}
+          {% assign upgrade_product2 = all_products[product.metafields.my_fields.upgrade_product_2] %}
+          <div class="upgrade-product">
+            <div class="upgrade-product__left">
+              <p class="label-2 bold">{{upgrade_product2.title}}</p>
+              <div class="upgrade-left-flex">
+                <p class="body-2"> +{{upgrade_product2.price | money_without_trailing_zeros}}</p>
+                <img class="question-mark" src="https://cdn.shopify.com/s/files/1/0283/0227/8795/files/Group_10.png?v=1636227142"/>
+                <div class="product-info__hover">
+                  {% for variant in upgrade_product2.variants %}
+                  <img class="hover-img" style="{% if forloop.index0 == 0 %}display: block;{% else %}display: none;{% endif %}" data-index="{{forloop.index0}}" src="{{variant.featured_media | img_url: 'master' }}"/>
+                  {% endfor %}                 
+                  <div class="hover-info">
+                    <p class="label-2 bold">{{upgrade_product2.title}}</p>
+                    <p class="body-4">{{ product.metafields.my_fields.upgrade_product_2_text }}</p>
+                    <variant-radios class="no-js-hidden">
+                      {%- for option in upgrade_product2.options_with_values -%}
+
+                      {%- assign color_label = 'color,colour,couleur,colore,farbe,색,色,färg,farve' | split: ',' -%}
+                      {%- assign downcase_option = option.name | downcase -%}
+                      {%- assign variant_option = 'option' | append: forloop.index -%}
+
+                      <fieldset class="js product-form__input{% if color_label contains downcase_option %} product-form__color-swatches{% endif %}"> 
+
+                        <div class="product-form__variant-container">
+                          <div class="product-form__variant-list">
+                            {%- for value in option.values -%}
+
+                            {%- assign current_variant = '' -%}
+
+                            <!-- Find colors within variants -->
+                            {% for variant in upgrade_product2.variants %}
+                            {%- if variant[variant_option] == value -%}
+                            {%- assign current_variant = variant -%}
+                            {%- assign active_color = value -%}
+                            {%- endif -%}
+                            {% endfor %}
+
+                            {%- assign color_swatch_name = value | handleize | append: '.jpg' -%}
+                            {%- assign color_swatch_image = images[color_swatch_name] -%}
+
+                            <input type="radio" id="upgrade2-{{ forloop.index0 }}"
+                                   name="{{ option.name }}"
+                                   value="{{ value | escape }}"
+
+
+                                   {% if option.selected_value == value %}checked{% endif %}
+                                   >
+                            <label 
+                                   for="upgrade2-{{ forloop.index0 }}"
+                                   {% if color_label contains downcase_option %} style="background-image: url({{ color_swatch_image | img_url: '20x20' }});"{% endif %}
+                                   {% if option.name == 'Color' %} class="hover-swatch upgrade-swatch {% if option.selected_value == value %}selectedColor{% endif %}"
+                                   data-varid="{{upgrade_product2.variants[forloop.index0].id}}"
+                                   data-index="{{forloop.index0}}"
+                                   data-name="{{value}}"
+                                   {% endif %}
+                                   >
+                              {{ value }}
+                            </label>
+                            {%- endfor -%}
+                          </div>
+                          <div class="product-form__variant-active">
+                            <p class="body-4 medium caps">{{ upgrade_product2.selected_or_first_available_variant[variant_option] }}</p>
+                          </div>
+                        </div>
+                      </fieldset>
+                      {%- endfor -%}
+
+                    </variant-radios>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="upgrade-product__right">
+              <variant-radios class="no-js-hidden">
+                {%- for option in upgrade_product2.options_with_values -%}
+
+                {%- assign color_label = 'color,colour,couleur,colore,farbe,색,色,färg,farve' | split: ',' -%}
+                {%- assign downcase_option = option.name | downcase -%}
+                {%- assign variant_option = 'option' | append: forloop.index -%}
+
+                  <fieldset class="js product-form__input{% if color_label contains downcase_option %} product-form__color-swatches{% endif %}"> 
+
+                    <div class="product-form__variant-container">
+                      <div class="product-form__variant-list">
+                        {%- for value in option.values -%}
+
+                          {%- assign current_variant = '' -%}
+
+                          <!-- Find colors within variants -->
+                          {% for variant in upgrade_product2.variants %}
+                            {%- if variant[variant_option] == value -%}
+                              {%- assign current_variant = variant -%}
+                              {%- assign active_color = value -%}
+                            {%- endif -%}
+                          {% endfor %}
+
+                          {%- assign color_swatch_name = value | handleize | append: '.jpg' -%}
+                          {%- assign color_swatch_image = images[color_swatch_name] -%}
+
+                          <input type="radio" id="upgrade22-{{ forloop.index0 }}"
+                                name="{{ option.name }}"
+                                value="{{ value | escape }}"
+                                
+                                
+                                {% if option.selected_value == value %}checked{% endif %}
+                          >
+                          <label 
+                                 for="upgrade22-{{ forloop.index0 }}"
+                                 {% if color_label contains downcase_option %} style="background-image: url({{ color_swatch_image | img_url: '20x20' }});"{% endif %}
+                                 {% if option.name == 'Color' %} class="upgrade-swatch {% if option.selected_value == value %}selectedColor{% endif %}"
+                                 data-varid="{{upgrade_product2.variants[forloop.index0].id}}"
+                                 {% endif %}
+                                 >
+                            {{ value }}
+                          </label>
+                        {%- endfor -%}
+                      </div>
+                    </div>
+                  </fieldset>
+              {%- endfor -%}
+
+            </variant-radios>
+            <a class="nav upgrade__atc" href="#">Add to Cart</a>
+            </div>
+          </div>
+          {% endif %}
+          {% if product.metafields.my_fields.upgrade_product_3 != blank %}
+          {% assign upgrade_product3 = all_products[product.metafields.my_fields.upgrade_product_3] %}
+          <div class="upgrade-product">
+            <div class="upgrade-product__left">
+              <p class="label-2 bold">{{upgrade_product3.title}}</p>
+              <div class="upgrade-left-flex">
+                <p class="body-2"> +{{upgrade_product3.price | money_without_trailing_zeros}}</p>
+                <img class="question-mark" src="https://cdn.shopify.com/s/files/1/0283/0227/8795/files/Group_10.png?v=1636227142"/>
+                <div class="product-info__hover">
+                  {% for variant in upgrade_product3.variants %}
+                  <img class="hover-img" style="{% if forloop.index0 == 0 %}display: block;{% else %}display: none;{% endif %}" data-index="{{forloop.index0}}" src="{{variant.featured_media | img_url: 'master' }}"/>
+                  {% endfor %}      
+                  <div class="hover-info">
+                    <p class="label-2 bold">{{upgrade_product3.title}}</p>
+                    <p class="body-4">{{ product.metafields.my_fields.upgrade_product_3_text }}</p>
+                    <variant-radios class="no-js-hidden">
+                      {%- for option in upgrade_product3.options_with_values -%}
+
+                      {%- assign color_label = 'color,colour,couleur,colore,farbe,색,色,färg,farve' | split: ',' -%}
+                      {%- assign downcase_option = option.name | downcase -%}
+                      {%- assign variant_option = 'option' | append: forloop.index -%}
+
+                      <fieldset class="js product-form__input{% if color_label contains downcase_option %} product-form__color-swatches{% endif %}"> 
+
+                        <div class="product-form__variant-container">
+                          <div class="product-form__variant-list">
+                            {%- for value in option.values -%}
+
+                            {%- assign current_variant = '' -%}
+
+                            <!-- Find colors within variants -->
+                            {% for variant in upgrade_product3.variants %}
+                            {%- if variant[variant_option] == value -%}
+                            {%- assign current_variant = variant -%}
+                            {%- assign active_color = value -%}
+                            {%- endif -%}
+                            {% endfor %}
+
+                            {%- assign color_swatch_name = value | handleize | append: '.jpg' -%}
+                            {%- assign color_swatch_image = images[color_swatch_name] -%}
+
+                            <input type="radio" id="upgrade33-{{ forloop.index0 }}"
+                                   name="{{ option.name }}"
+                                   value="{{ value | escape }}"
+
+
+                                   {% if option.selected_value == value %}checked{% endif %}
+                                   >
+                            <label 
+                                   for="upgrade33-{{ forloop.index0 }}"
+                                   {% if color_label contains downcase_option %} style="background-image: url({{ color_swatch_image | img_url: '20x20' }});"{% endif %}
+                                   {% if option.name == 'Color' %} class="hover-swatch upgrade-swatch {% if option.selected_value == value %}selectedColor{% endif %}"
+                                   data-varid="{{upgrade_product3.variants[forloop.index0].id}}"
+                                   data-index="{{forloop.index0}}"
+                                   data-name="{{value}}"
+                                   {% endif %}
+                                   >
+                              {{ value }}
+                            </label>
+                            {%- endfor -%}
+                          </div>
+                          <div class="product-form__variant-active">
+                            <p class="body-4 medium caps">{{ upgrade_product3.selected_or_first_available_variant[variant_option] }}</p>
+                          </div>
+                        </div>
+                      </fieldset>
+                      {%- endfor -%}
+
+                    </variant-radios>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="upgrade-product__right">
+              <variant-radios class="no-js-hidden">
+                {%- for option in upgrade_product3.options_with_values -%}
+
+                {%- assign color_label = 'color,colour,couleur,colore,farbe,색,色,färg,farve' | split: ',' -%}
+                {%- assign downcase_option = option.name | downcase -%}
+                {%- assign variant_option = 'option' | append: forloop.index -%}
+
+                  <fieldset class="js product-form__input{% if color_label contains downcase_option %} product-form__color-swatches{% endif %}"> 
+
+                    <div class="product-form__variant-container">
+                      <div class="product-form__variant-list">
+                        {%- for value in option.values -%}
+
+                          {%- assign current_variant = '' -%}
+
+                          <!-- Find colors within variants -->
+                          {% for variant in upgrade_product3.variants %}
+                            {%- if variant[variant_option] == value -%}
+                              {%- assign current_variant = variant -%}
+                              {%- assign active_color = value -%}
+                            {%- endif -%}
+                          {% endfor %}
+
+                          {%- assign color_swatch_name = value | handleize | append: '.jpg' -%}
+                          {%- assign color_swatch_image = images[color_swatch_name] -%}
+
+                          <input type="radio" id="upgrade33-{{ forloop.index0 }}"
+                                name="{{ option.name }}"
+                                value="{{ value | escape }}"
+                                
+                                
+                                {% if option.selected_value == value %}checked{% endif %}
+                          >
+                          <label 
+                                 for="upgrade33-{{ forloop.index0 }}"
+                                 {% if color_label contains downcase_option %} style="background-image: url({{ color_swatch_image | img_url: '20x20' }});"{% endif %}
+                                 {% if option.name == 'Color' %} class="upgrade-swatch {% if option.selected_value == value %}selectedColor{% endif %}"
+                                 data-varid="{{upgrade_product3.variants[forloop.index0].id}}"
+                                 {% endif %}
+                                 >
+                            {{ value }}
+                          </label>
+                        {%- endfor -%}
+                      </div>
+                    </div>
+                  </fieldset>
+              {%- endfor -%}
+
+            </variant-radios>
+            <a class="nav upgrade__atc" href="#">Add to Cart</a>
+            </div>
+          </div>
+          {% endif %}
+        </div>
+        {% endif %}
+        <product-form class="product-form">
+          {%- form 'product', product, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+            <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+            <div class="product-form__buttons">
+
+              <div class="product-form__qty-btn">
+                <div class="product-form__input product-form__quantity">
+                  <quantity-input class="quantity">
+                    <button class="quantity__button no-js-hidden" name="minus" type="button">
+                      <span class="visually-hidden">{{ 'products.product.quantity.decrease' | t: product: product.title | escape }}</span>
+                      {% render 'icon-minus' %}
+                    </button>
+                    <input class="quantity__input btn"
+                        type="number"
+                        name="quantity"
+                        id="Quantity-{{ section.id }}"
+                        min="1"
+                        value="1"
+                        form="product-form-{{ section.id }}"
+                      >
+                    <button class="quantity__button no-js-hidden" name="plus" type="button">
+                      <span class="visually-hidden">{{ 'products.product.quantity.increase' | t: product: product.title | escape }}</span>
+                      {% render 'icon-plus' %}
+                    </button>
+                  </quantity-input>
+                </div>
+                <button
+                  type="submit"
+                  name="add"
+                  class="product-form__submit button button--full-width {% if block.settings.show_dynamic_checkout and product.selling_plan_groups == empty %}button--secondary{% else %}button--primary{% endif %}"
+                {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}
+                >
+                    {%- if product.selected_or_first_available_variant.available -%}
+                      {{ 'products.product.add_to_cart' | t }}
+                    {%- else -%}
+                      {{ 'products.product.sold_out' | t }}
+                    {%- endif -%}
+                </button>
+              </div>
+
+              {%- if block.settings.show_dynamic_checkout -%}
+                {{ form | payment_button }}
+              {%- endif -%}
+            </div>
+          {%- endform -%}
+        </product-form>
+
+        <div class="product__props">
+          {% assign props_list = product.metafields.my_fields.value_props_list | split: ',' %}
+          {% for prop in props_list %}
+            <div class="product__prop-item">
+              {% render 'icon-check' %}
+              <p class="body-1 medium">{{ prop }}</p>
+            </div>
+          {% endfor %}
+        </div>
+
+        <div class="product__dropdowns">
+          {% if product.metafields.my_fields.product_materials != blank %}
+            <div class="product__dropdown-item">
+              <button class="product__dropdown-header">
+                <p class="field">Product Materials</p>
+                <div class="product__dropdown-control"></div>
+              </button>
+              <div class="product__dropdown-content">
+                <p class="body-1">{{ product.metafields.my_fields.product_materials }}</p>
+              </div>
+            </div>
+          {% endif %}
+
+          {% if product.metafields.my_fields.safety != blank %}
+            <div class="product__dropdown-item">
+              <button class="product__dropdown-header">
+                <p class="field">Safety</p>
+                <div class="product__dropdown-control"></div>
+              </button>
+              <div class="product__dropdown-content">
+                <p class="body-1">{{ product.metafields.my_fields.safety }}</p>
+              </div>
+            </div>
+          {% endif %}
+
+          {% if product.metafields.my_fields.product_care != blank %}
+            <div class="product__dropdown-item">
+              <button class="product__dropdown-header">
+                <p class="field">Product Care</p>
+                <div class="product__dropdown-control"></div>
+              </button>
+              <div class="product__dropdown-content">
+                <p class="body-1">{{ product.metafields.my_fields.product_care }}</p>
+              </div>
+            </div>
+          {% endif %}
+
+          {% if product.metafields.my_fields.returns_warranty != blank %}
+            <div class="product__dropdown-item">
+              <button class="product__dropdown-header">
+                <p class="field">Returns & Warranty</p>
+                <div class="product__dropdown-control"></div>
+              </button>
+              <div class="product__dropdown-content">
+                <p class="body-1">{{ product.metafields.my_fields.returns_warranty }}</p>
+              </div>
+            </div>
+          {% endif %}
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="visually-hidden" data-variant-images>
+    {% for image in product.images %}
+      {% assign variant_name = image.alt %}
+
+      {% assign count = 1 %}
+      {% if image.alt contains variant_name %}
+        <div data-variant-name="{{ image.alt }}" data-variant-url="{{ image.src | img_url: '1000x', crop: 'center' }}" data-media-id="{{ image.id }}" data-media-position="{{ count }}" data-media-aspect="{{ image.aspect_ratio }}"></div>
+        {% assign count = count | plus: 1 %}
+      {% endif %}
+    {% endfor %}
+  </div>
+
+</section>
+
+{% javascript %}
+  // Initialize Slider
+  const pdpSlider = new Swiper('.product__media-list', {
+    slidesPerView: 1,
+    loop: true,
+    spaceBetween: 20,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    }
+  });
+
+  window.pdpSlider = pdpSlider;
+
+  // On thumbnail click
+  $('.product').on('click', '.product__slider-thumbnail-item', function() {
+    console.log($(this));
+    var idx = $(this).data('slideid');
+
+    $('.product__slider-thumbnail-item').removeClass('active');
+    $(this).addClass('active');
+
+    pdpSlider.slideToLoop(idx); 
+  });
+
+  // On slide change
+  pdpSlider.on('slideChange', function (slider) {
+    var idx = slider.realIndex;
+
+    $('.product__slider-thumbnail-item').removeClass('active');
+    $(`.product__slider-thumbnail-item[data-slideid="${idx}"]`).addClass('active');
+  });
+
+  // Dropdowns
+  $('.product__dropdown-header').click(function() {
+    $(this).toggleClass('active');
+    $(this).siblings('.product__dropdown-content').slideToggle(400);
+  });
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "t:sections.main-product.name",
+  "class": "product-section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "picker_type",
+      "options": [
+        {
+          "value": "dropdown",
+          "label": "t:sections.main-product.blocks.variant_picker.settings.picker_type.options__1.label"
+        },
+        {
+          "value": "button",
+          "label": "t:sections.main-product.blocks.variant_picker.settings.picker_type.options__2.label"
+        }
+      ],
+      "default": "button",
+      "label": "t:sections.main-product.blocks.variant_picker.settings.picker_type.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sticky_info",
+      "default": true,
+      "label": "t:sections.main-product.settings.enable_sticky_info.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.main-product.settings.header.content",
+      "info": "t:sections.main-product.settings.header.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_variants",
+      "default": false,
+      "label": "t:sections.main-product.settings.hide_variants.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_video_looping",
+      "default": false,
+      "label": "t:sections.main-product.settings.enable_video_looping.label"
+    }
+  ]
+}
+{% endschema %}
+

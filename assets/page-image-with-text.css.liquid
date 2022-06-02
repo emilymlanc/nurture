@@ -1,0 +1,194 @@
+.page-iwt div,
+.page-iwt p,
+.page-iwt span,
+.page-iwt h1,
+.page-iwt h2,
+.page-iwt h3,
+.page-iwt h4,
+.page-iwt h5,
+.page-iwt h6,
+.page-iwt p,
+.page-iwt ul,
+.page-iwt li,
+.page-iwt a {
+  color: var(--white);
+}
+
+.page-iwt .content_item,
+.page-iwt .image-with-text__content,
+.page-iwt p {
+  text-align: center;
+  align-items: center;
+}
+
+.page-iwt p {
+  width: 100%;
+  text-align: center;
+  display: block;
+  margin: 18px 0;
+}
+
+.page-iwt p.button {
+  background: none;
+  border: none;
+  padding: 0;
+  text-transform: uppercase;
+  margin: 0;
+  pointer-events: none;
+}
+
+.page-iwt .h1,
+.page-iwt h1 {
+  margin: 20px 0 0;
+  font-weight: 300;
+}
+
+.page-iwt .sh2{
+  margin: 30px 0 0;
+  font-weight: 300;
+}
+
+.page-iwt .body-1 {
+  margin: 34px 0 0;
+}
+
+.page-iwt a.button {
+  margin: 40px 0 0 !important;
+  text-transform: uppercase !important;
+}
+
+.page-iwt .content_item{
+  position:relative;
+}
+
+.page-iwt ul.body-1,
+.page-iwt ul{
+  max-width: 350px;
+  margin: 20px auto 0;
+}
+
+.page-iwt li {
+  text-align: left;
+  padding-left: 25px;
+  position: relative;
+  width: 50%;
+  float: left;
+  margin-top: 20px;
+}
+
+.page-iwt li:first-child,
+.page-iwt li:nth-child(2) {
+  margin-top: 0;
+}
+
+.page-iwt li:before {
+  content: '';
+  background: url({{ 'blue-right.svg' | asset_url }}) no-repeat;
+  width: 17px;
+  height: 15px;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.page-iwt li::marker {
+  font-size: 0;
+}
+
+.sustenance-logo {
+  position: absolute;
+  top: -64px;
+  right: 10px;
+}
+
+.sustenance-logo.mobile {
+  display:block;
+}
+
+.sustenance-logo.desktop {
+  display:none;
+}
+
+.button--secondary {
+    background: var(--navy);
+    border-color: var(--navy);
+}
+
+.button--secondary:hover{
+    background: transparent;
+    border-color: var(--navy);
+    color: var(--navy);
+}
+
+
+@media (min-width: 769px) {
+
+  .sustenance-logo{
+    top: 16%;
+    right: -126px;
+  }
+
+  .sustenance-logo.mobile {
+    display:none; 
+  }
+
+  .sustenance-logo.desktop {
+    display:block;
+  }
+  .page-iwt p.body-1{
+    max-width: 495px;
+    margin: 40px auto 20px;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .page-iwt .image-with-text__content {
+    justify-content: flex-start;
+  }
+  
+  .sustenance-logo.mobile {
+    width: 125px;
+    height: 125px;
+  }
+  
+  .sustenance-logo.mobile img {
+    max-width: 100%;
+  }
+  
+  .page-iwt p.button{
+    font-size: 13px;
+    line-height: 110%;
+    letter-spacing: 0.1em;
+  }
+  .registry .sustenance-logo {
+    position: absolute;
+    top: -56px;
+    left: 10px;
+    right: initial;
+  }
+  .image-with-text__content {
+    padding: 2rem 2rem 6rem;
+  }
+  .page-iwt p.body-1 {
+    max-width: 100%;
+    margin: 25px auto 30px;
+  }
+
+}
+
+@media (max-width: 375px) {
+  .page-iwt .image-with-text__text br {
+    display: none;
+  }
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,27 @@
+.product-reviews {
+  padding: 50px 0 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-reviews__svg {
+  position: absolute;
+  top: 40px;
+  right: -50px;
+}
+
+.product-reviews h2 {
+  margin: 0 0 18px;
+  text-align: center;
+}
+
+.product-reviews__container {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+  .product-reviews {
+    padding: 40px 0;
+  }
+}
