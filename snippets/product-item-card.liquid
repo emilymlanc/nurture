@@ -1,0 +1,65 @@
+{% liquid 
+  assign product = all_products[block.settings.product]
+  assign label = product.title | prepend: 'Shop '
+  if block.settings.label != blank
+    assign label = block.settings.label
+  endif
+  assign image = product.featured_image
+  if block.settings.image != blank
+    assign image = block.settings.image
+  endif
+  assign has_props = false
+  for i in (1..3)
+    assign icon_svg_key = i | prepend: 'prop_' | append: '_icon_svg'
+    assign icon_png_key = i | prepend: 'prop_' | append: '_icon_png'
+    assign text_key = i | prepend: 'prop_' | append: '_text'
+    if block.settings[icon_svg_key] != blank or block.settings[icon_png_key] != blank
+      if block.settings[text_key] != blank
+        assign has_props = true
+      endif
+    endif
+  endfor
+%}
+
+<div class="item-wrapper">
+  <span class="visually-hidden">{{ title | escape }}</span>
+
+  <div class="item" tabindex="-1">
+    <div class="item__inner">
+      <a href="{{ product.url | default: '#' }}" class="card__link full-unstyled-link">
+        <span class="item__badge">
+          {% if block.settings.badge_svg != blank %}
+            {{ block.settings.badge_svg }}
+          {% elsif block.settings.badge_png != blank %}
+            {% render 'lazy-image' image: block.settings.badge_png, blur: true %}
+          {% endif %}
+        </span>
+        {% render 'lazy-image' image: image, blur: true %}
+        <p class="label">{{ label }}</p>
+        {% if has_props %}
+          <span class="item__props">
+            {% for i in (1..3) %}
+              {% assign icon_svg_key = i | prepend: 'prop_' | append: '_icon_svg' %}
+              {% assign icon_png_key = i | prepend: 'prop_' | append: '_icon_png' %}
+              {% assign text_key = i | prepend: 'prop_' | append: '_text' %}
+              {% if block.settings[icon_svg_key] != blank or block.settings[icon_png_key] != blank %}
+                {% if block.settings[text_key] != blank %}
+                  <span class="item__prop">
+                    <span class="item__prop-icon">
+                      {% if block.settings[icon_svg_key] != blank %}
+                        {{ block.settings[icon_svg_key] }}
+                      {% elsif block.settings[icon_png_key] != blank %}
+                        {% render 'lazy-image' image: block.settings[icon_png_key], blur: true %}
+                      {% endif %}
+                    </span>
+                    <span class="item__prop-text">{{ block.settings[text_key] }}</span>
+                  </span>
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+          </span>
+        {% endif %}
+      </a>
+    </div>
+  </div>
+</div>

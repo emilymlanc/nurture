@@ -1,0 +1,153 @@
+{{ 'section-product-slider.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+  assign has_products = false
+  for block in section.blocks
+    if block.settings.product != blank
+      assign has_products = true
+    endif
+  endfor
+%}
+
+{% if has_products %}
+<div class="product-slider product-item-slider{% if section.settings.show_borders %} show-borders{% endif %}">
+  <div class="page-width">
+    {% if section.settings.show_badge %}
+      <div class="product-slider__badge">
+        {% render 'svg-parents-badge' %}
+      </div>
+    {% endif %}
+    <div class="product-slider__header">
+      <h2 class="fade-in-up" data-aos data-aos-delay="100">{{ section.settings.title }}</h2>
+    </div>
+    <div class="product-slider__wrapper">
+      <div class="product-slider__container swiper">
+        <div class="swiper-wrapper">
+          {% assign idx = 0 %}
+          {% for block in section.blocks %}
+            {% if block.settings.product != blank %}
+              {% assign idx = idx | plus: 1 %}
+              <div class="product-slider__item swiper-slide fade-in-up" data-aos data-aos-delay="{{ 100 | times: idx }}">
+                {% render 'product-item-card', block: block %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% if idx > 3 %}
+      <div class="item-nav">
+        <button class="swiper-button swiper-button-prev">
+          {% render 'icon-chevron-left' %}
+        </button>
+        <button class="swiper-button swiper-button-next">
+          {% render 'icon-chevron-right' %}
+        </button>
+      </div>
+    {% endif %}
+  </div>
+</div>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Product Item Slider",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_borders",
+        "label": "Show Borders"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "product_item",
+        "name": "Product Item",
+        "settings": [
+          {
+            "type": "product",
+            "id": "product",
+            "label": "Item Product"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Item Image"
+          },
+          {
+            "type": "textarea",
+            "id": "badge_svg",
+            "label": "Item Badge (SVG)"
+          },
+          {
+            "type": "image_picker",
+            "id": "badge_png",
+            "label": "Item Badge (PNG)"
+          },
+          {
+            "type": "text",
+            "id": "label",
+            "label": "Item Label"
+          },
+          {
+            "type": "textarea",
+            "id": "prop_1_icon_svg",
+            "label": "Prop 1 Icon (SVG)"
+          },
+          {
+            "type": "image_picker",
+            "id": "prop_1_icon_png",
+            "label": "Prop 1 Icon (PNG)"
+          },
+          {
+            "type": "text",
+            "id": "prop_1_text",
+            "label": "Prop 1 Text"
+          },
+          {
+            "type": "textarea",
+            "id": "prop_2_icon_svg",
+            "label": "Prop 2 Icon (SVG)"
+          },
+          {
+            "type": "image_picker",
+            "id": "prop_2_icon_png",
+            "label": "Prop 2 Icon (PNG)"
+          },
+          {
+            "type": "text",
+            "id": "prop_2_text",
+            "label": "Prop 2 Text"
+          },
+          {
+            "type": "textarea",
+            "id": "prop_3_icon_svg",
+            "label": "Prop 3 Icon (SVG)"
+          },
+          {
+            "type": "image_picker",
+            "id": "prop_3_icon_png",
+            "label": "Prop 3 Icon (PNG)"
+          },
+          {
+            "type": "text",
+            "id": "prop_3_text",
+            "label": "Prop 3 Text"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Product Item Slider"
+      }
+    ]
+  }
+{% endschema %}
