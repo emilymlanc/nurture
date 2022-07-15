@@ -27,12 +27,14 @@
     <div class="product-features__container">
       {% for block in section.blocks %}
         {% assign current_product = all_products[block.settings.product] %}
-        {% if current_product.handle contains 'plus' %}
+        {% if current_product.handle contains 'the-glider-plus' %}
           {% render 'product-feature-glider-plus', current_product: current_product, current_image: block.settings.image, idx: forloop.index %}
-        {% elsif current_product.handle contains 'glider' %}
+        {% elsif current_product.handle contains 'the-glider' %}
           {% render 'product-feature-glider', current_product: current_product, current_image: block.settings.image, idx: forloop.index %}
         {% elsif current_product.handle contains 'swivel' %}
-        {% render 'product-feature-swivel', current_product: current_product, current_image: block.settings.image, idx: forloop.index %}
+          {% render 'product-feature-swivel', current_product: current_product, current_image: block.settings.image, idx: forloop.index %}
+        {% elsif current_product.handle contains 'the-manual-glider' %}
+          {% render 'product-feature-manual-glider', current_product: current_product, current_image: block.settings.image, idx: forloop.index %}
         {% endif %}
       {% endfor %}
     </div>

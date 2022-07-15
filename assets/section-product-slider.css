@@ -123,6 +123,7 @@
   top: 0;
   right: 0;
   display: block;
+  z-index: 1;
 }
 .product-item-slider .item__badge svg,
 .product-item-slider .item__badge img {
