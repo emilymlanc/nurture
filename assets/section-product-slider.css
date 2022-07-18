@@ -173,6 +173,7 @@
   line-height: 1;
   letter-spacing: 0.04em;
   text-transform: capitalize;
+  height: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
