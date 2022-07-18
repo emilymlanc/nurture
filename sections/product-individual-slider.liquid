@@ -1,0 +1,87 @@
+{{ 'section-product-slider.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+
+<div class="product-slider{% if section.settings.show_borders %} show-borders{% endif %}">
+  <div class="page-width">
+    {% if section.settings.show_badge %}
+      <div class="product-slider__badge">
+        {% render 'svg-parents-badge' %}
+      </div>
+    {% endif %}
+    <div class="product-slider__header">
+      <p class="btn fade-in-up" data-aos>{{ section.settings.subtitle }}</p>
+      <h2 class="fade-in-up" data-aos data-aos-delay="100">{{ section.settings.title }}</h2>
+    </div>
+    <div class="product-slider__wrapper">
+      <div class="product-slider__container swiper">
+        <div class="swiper-wrapper">
+          {% assign idx = 0 %}
+          {% for block in section.blocks %}
+            {% if block.settings.product != blank %}
+              {% assign idx = idx | plus: 1 %}
+              {% assign product = all_products[block.settings.product] %}
+              <div class="product-slider__item swiper-slide fade-in-up" data-aos data-aos-delay="{{ 100 | times: idx }}">
+                {% render 'product-card', product_card_product: product, media_size: 'square' %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      {% if idx > 3 %}
+        <div class="swiper-button swiper-button-next">
+          {% render 'svg-arrow-button-right' %}
+        </div>
+        <div class="swiper-button swiper-button-prev">
+          {% render 'svg-arrow-button-left' %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Product Individual Slider",
+    "blocks": [
+      {
+        "type": "individual_product",
+        "name": "Individual Product",
+        "settings": [
+          {
+            "type": "product",
+            "id": "product",
+            "label": "Product"
+          }
+        ]
+      }
+    ],
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_borders",
+        "label": "Show Borders"
+      },
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_badge",
+        "label": "Show Badge"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Product Individual Slider"
+      }
+    ]
+  }
+{% endschema %}

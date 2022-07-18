@@ -102,6 +102,7 @@
   left: -4px;
   top: -4px;
   transition: border .3s ease;
+  box-sizing: border-box;
 }
 
 .card-information__swatch.active .card-information__swatch-color::after {
