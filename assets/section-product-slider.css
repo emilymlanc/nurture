@@ -136,11 +136,18 @@
   object-fit: cover;
 }
 .product-item-slider .item__inner .label {
+  box-sizing: border-box;
   text-align: center;
+  border-bottom: 1px solid var(--blue);
+  font-size: 15px;
+  letter-spacing: 0.1em;
+  font-weight: 450;
+  padding: 23px 0;
+  margin: 0;
 }
 .product-item-slider .item__props {
-  border-top: 1px solid var(--blue);
   display: flex;
+  background-color: #F8F7F3;
   font-family: brandon-grotesque;
   font-size: 14px;
   letter-spacing: 0.5px;
