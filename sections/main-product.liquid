@@ -254,6 +254,7 @@
         {% endif %}
         {% endfor %}
         
+        {%- comment -%}
         {% if product.metafields.my_fields.upgrade_product_1 != blank %}
         <div class="upgrade-products">
           <p>Upgrades</p>          
@@ -638,6 +639,8 @@
           {% endif %}
         </div>
         {% endif %}
+        {%- endcomment -%}
+        {% render 'pdp-upgrade-products' product: product %}
         <product-form class="product-form">
           {%- form 'product', product, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
             <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
