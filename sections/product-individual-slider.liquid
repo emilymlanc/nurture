@@ -2,7 +2,6 @@
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 
-{% if section.settings.collection != blank %}
 <div class="product-slider{% if section.settings.show_borders %} show-borders{% endif %}">
   <div class="page-width">
     {% if section.settings.show_badge %}
@@ -17,15 +16,19 @@
     <div class="product-slider__wrapper">
       <div class="product-slider__container swiper">
         <div class="swiper-wrapper">
-          {% assign current_collection = collections[section.settings.collection] %}
-          {% for product in current_collection.products %}
-            <div class="product-slider__item swiper-slide fade-in-up" data-aos data-aos-delay="{{ 100 | times: forloop.index }}">
-              {% render 'product-card', product_card_product: product, media_size: 'square' %}
-            </div>
+          {% assign idx = 0 %}
+          {% for block in section.blocks %}
+            {% if block.settings.product != blank %}
+              {% assign idx = idx | plus: 1 %}
+              {% assign product = all_products[block.settings.product] %}
+              <div class="product-slider__item swiper-slide fade-in-up" data-aos data-aos-delay="{{ 100 | times: idx }}">
+                {% render 'product-card', product_card_product: product, media_size: 'square' %}
+              </div>
+            {% endif %}
           {% endfor %}
         </div>
       </div>
-      {% if current_collection.products.size > 3 %}
+      {% if idx > 3 %}
         <div class="swiper-button swiper-button-next">
           {% render 'svg-arrow-button-right' %}
         </div>
@@ -36,11 +39,23 @@
     </div>
   </div>
 </div>
-{% endif %}
 
 {% schema %}
   {
-    "name": "Product Slider",
+    "name": "Product Individual Slider",
+    "blocks": [
+      {
+        "type": "individual_product",
+        "name": "Individual Product",
+        "settings": [
+          {
+            "type": "product",
+            "id": "product",
+            "label": "Product"
+          }
+        ]
+      }
+    ],
     "settings": [
       {
         "type": "checkbox",
@@ -58,11 +73,6 @@
         "label": "Title"
       },
       {
-        "type": "collection",
-        "id": "collection",
-        "label": "Collection"
-      },
-      {
         "type": "checkbox",
         "id": "show_badge",
         "label": "Show Badge"
@@ -70,7 +80,7 @@
     ],
     "presets": [
       {
-        "name": "Product Slider"
+        "name": "Product Individual Slider"
       }
     ]
   }
