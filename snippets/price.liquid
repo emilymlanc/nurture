@@ -60,6 +60,14 @@
       </dd>
     </div>
     <div class="price__sale">
+      <dt>
+        <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.sale_price' | t }}</span>
+      </dt>
+      <dd {% if show_badges == false %}class="price__last"{% endif %}>
+        <span class="price-item price-item--sale">
+          {{ money_price }}
+        </span>
+      </dd>
       <dt class="price__compare">
         <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
       </dt>
@@ -71,14 +79,6 @@
             {{ compare_at_price | money }}
           {% endif %}
         </s>
-      </dd>
-      <dt>
-        <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.sale_price' | t }}</span>
-      </dt>
-      <dd {% if show_badges == false %}class="price__last"{% endif %}>
-        <span class="price-item price-item--sale">
-          {{ money_price }}
-        </span>
       </dd>
     </div>
     <small class="unit-price caption{% if product.selected_or_first_available_variant.unit_price_measurement == nil %} hidden{% endif %}">
@@ -98,7 +98,7 @@
   </dl>
   {%- if show_badges -%}
     <span class="badge price__badge-sale btn" aria-hidden="true">
-      Save {{ compare_at_price | minus: price | times: 100 | divided_by: compare_at_price }}%
+      {{ compare_at_price | minus: price | money }} saved
     </span>
 
     <span class="badge price__badge-sold-out btn color-{{ settings.sold_out_badge_color_scheme }}" aria-hidden="true">
