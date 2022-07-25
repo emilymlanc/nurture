@@ -228,18 +228,15 @@
   top: 10%;
   left: 5%; 
 }
-
 .product-features__badge-group.size--2-alt svg:nth-child(1) {
   top: 10%;
   left: unset;
   right: 5% 
 }
-
 .product-features__badge-group.size--2 svg:nth-child(2) {
   right: 8%;
   bottom: 11%;
 }
-
 .product-features__badge-group.size--2-alt svg:nth-child(2) {
   right: unset;
   left: 8%;
@@ -250,23 +247,19 @@
   top: 3%;
   left: 11%;
 }
-
 .product-features__badge-group.size--3 svg:nth-child(2) {
   right: 3%;
   top: 30%;
 }
-
 .product-features__badge-group.size--3 svg:nth-child(3) {
   left: 0;
   bottom: 0;
 }
-
 .product-features__badge-group.size--3-alt svg:nth-child(2) {
   right: 3%;
   bottom: 2%;
   top: unset;
 }
-
 .product-features__badge-group.size--3-alt svg:nth-child(3) {
   bottom: 3%;
 }
@@ -277,34 +270,27 @@
   top: 0;
   left: 11%;
 }
-
 .product-features__badge-group.size--4 svg:nth-child(2) {
   top: 20%;
   right: -5%;
 }
-
 .product-features__badge-group.size--4-close svg:nth-child(2) {
   right: 5%;
 }
-
 .product-features__badge-group.size--4-alt svg:nth-child(2) {
   top: 3%;
 }
-
 .product-features__badge-group.size--4 svg:nth-child(3) {
   left: -5%;
   bottom: 15%;
 }
-
 .product-features__badge-group.size--4-close svg:nth-child(3) {
   left: 5%;
 }
-
 .product-features__badge-group.size--4 svg:nth-child(4) {
   right: -1%;
   bottom: 4%;
 }
-
 .product-features__badge-group.size--4-close svg:nth-child(4) {
   right: 1%;
 }
@@ -341,6 +327,89 @@
 .product-features__badge-group.size--5 svg:nth-child(5) {
   top: -5%;
   right: 15%;
+}
+
+
+/* Badges for Crib */
+.product-features__badge-group.size--2-crib svg:nth-child(1) {
+  top: 5%;
+  left: 3%; 
+}
+.product-features__badge-group.size--2-crib svg:nth-child(2) {
+  right: 0%;
+  bottom: 20%;
+}
+
+.product-features__badge-group.size--3-crib svg:nth-child(1) {
+  top: 5%;
+  left: 3%;
+}
+.product-features__badge-group.size--3-crib svg:nth-child(2) {
+  top: 26%;
+  right: 3%;
+}
+.product-features__badge-group.size--3-crib svg:nth-child(3) {
+  left: 10%;
+  bottom: 14%;
+}
+
+.product-features__badge-group.size--4-crib svg:nth-child(1) {
+  top: 5%;
+  left: 3%;
+}
+.product-features__badge-group.size--4-crib svg:nth-child(2) {
+  top: 20%;
+  right: 3%;
+}
+.product-features__badge-group.size--4-crib svg:nth-child(3) {
+  left: 9%;
+  bottom: 19%;
+}
+.product-features__badge-group.size--4-crib svg:nth-child(4) {
+  right: 5%;
+  bottom: 10%;
+}
+
+
+/* Badges for Changing Table */
+.product-features__badge-group.size--2-table svg:nth-child(1) {
+  top: 5%;
+  left: 5%;
+}
+.product-features__badge-group.size--2-table svg:nth-child(2) {
+  right: 5%;
+  bottom: 5%;
+}
+
+.product-features__badge-group.size--3-table svg:nth-child(1) {
+  top: 5%;
+  left: 5%;
+}
+.product-features__badge-group.size--3-table svg:nth-child(2) {
+  top: auto;
+  bottom: 5%;
+  right: 5%;
+}
+.product-features__badge-group.size--3-table svg:nth-child(3) {
+  left: 5%;
+  bottom: 5%;
+}
+
+.product-features__badge-group.size--4-table svg:nth-child(1) {
+  top: 5%;
+  left: 5%;
+}
+.product-features__badge-group.size--4-table svg:nth-child(2) {
+  top: 5%;
+  right: 5%;
+}
+.product-features__badge-group.size--4-table svg:nth-child(3) {
+  left: 5%;
+  bottom: 5%;
+}
+.product-features__badge-group.size--4-table svg:nth-child(4) {
+  right: 5%;
+  bottom: 5%;
 }
 
 
