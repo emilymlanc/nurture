@@ -331,85 +331,80 @@
 
 
 /* Badges for Crib */
-.product-features__badge-group.size--2-crib svg:nth-child(1) {
-  top: 5%;
-  left: 3%; 
+.product-features__badge-group.size--2-crib svg,
+.product-features__badge-group.size--3-crib svg,
+.product-features__badge-group.size--4-crib svg {
+  width: 80px;
+  height: 80px;
+}
+.product-features__badge-group.size--2-crib svg:nth-child(1),
+.product-features__badge-group.size--3-crib svg:nth-child(1),
+.product-features__badge-group.size--4-crib svg:nth-child(1) {
+  top: 11%;
+  left: 8%;
+  transform: scale(1.2) rotate(-15deg) !important;
 }
 .product-features__badge-group.size--2-crib svg:nth-child(2) {
-  right: 0%;
-  bottom: 20%;
-}
-
-.product-features__badge-group.size--3-crib svg:nth-child(1) {
-  top: 5%;
-  left: 3%;
+  right: 2%;
+  bottom: 24%;
+  transform: scale(1.2) rotate(15deg) !important;
 }
 .product-features__badge-group.size--3-crib svg:nth-child(2) {
-  top: 26%;
-  right: 3%;
-}
-.product-features__badge-group.size--3-crib svg:nth-child(3) {
-  left: 10%;
-  bottom: 14%;
-}
-
-.product-features__badge-group.size--4-crib svg:nth-child(1) {
-  top: 5%;
-  left: 3%;
+  top: 29%;
+  right: 6%;
+  transform: rotate(15deg) !important;
 }
 .product-features__badge-group.size--4-crib svg:nth-child(2) {
-  top: 20%;
-  right: 3%;
+  top: 24%;
+  right: 7%;
+  transform: scale(1.2) rotate(15deg) !important;
 }
+.product-features__badge-group.size--3-crib svg:nth-child(3),
 .product-features__badge-group.size--4-crib svg:nth-child(3) {
-  left: 9%;
-  bottom: 19%;
+  left: 15%;
+  bottom: 16%;
+  transform: scale(1.2) rotate(-15deg) !important;
 }
 .product-features__badge-group.size--4-crib svg:nth-child(4) {
-  right: 5%;
-  bottom: 10%;
+  right: 9%;
+  bottom: 13%;
+  transform: rotate(15deg) !important;
 }
 
 
 /* Badges for Changing Table */
-.product-features__badge-group.size--2-table svg:nth-child(1) {
-  top: 5%;
-  left: 5%;
+.product-features__badge-group.size--2-table svg,
+.product-features__badge-group.size--3-table svg,
+.product-features__badge-group.size--4-table svg {
+  width: 80px;
+  height: 80px;
 }
-.product-features__badge-group.size--2-table svg:nth-child(2) {
-  right: 5%;
-  bottom: 5%;
-}
-
-.product-features__badge-group.size--3-table svg:nth-child(1) {
-  top: 5%;
-  left: 5%;
-}
-.product-features__badge-group.size--3-table svg:nth-child(2) {
-  top: auto;
-  bottom: 5%;
-  right: 5%;
-}
-.product-features__badge-group.size--3-table svg:nth-child(3) {
-  left: 5%;
-  bottom: 5%;
-}
-
+.product-features__badge-group.size--2-table svg:nth-child(1),
+.product-features__badge-group.size--3-table svg:nth-child(1),
 .product-features__badge-group.size--4-table svg:nth-child(1) {
-  top: 5%;
+  top: 15%;
   left: 5%;
+  transform: scale(1.2) rotate(-15deg) !important;
+}
+.product-features__badge-group.size--2-table svg:nth-child(2),
+.product-features__badge-group.size--3-table svg:nth-child(3),
+.product-features__badge-group.size--4-table svg:nth-child(4) {
+  left: auto;
+  right: 10%;
+  bottom: 16%;
+  transform: scale(1.2) rotate(15deg) !important;
+}
+.product-features__badge-group.size--3-table svg:nth-child(2),
+.product-features__badge-group.size--4-table svg:nth-child(3) {
+  top: auto;
+  left: 8%;
+  bottom: 17%;
+  transform: rotate(-15deg) !important;
 }
 .product-features__badge-group.size--4-table svg:nth-child(2) {
-  top: 5%;
-  right: 5%;
-}
-.product-features__badge-group.size--4-table svg:nth-child(3) {
-  left: 5%;
-  bottom: 5%;
-}
-.product-features__badge-group.size--4-table svg:nth-child(4) {
-  right: 5%;
-  bottom: 5%;
+  top: 17%;
+  right: 18%;
+  transform: rotate(15deg) !important;
 }
 
 
