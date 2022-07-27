@@ -497,7 +497,7 @@ variant-radios {
 
 .product__info-container .price {
   margin: 0 0 8px;
-  align-items: flex-start;
+  align-items: center;
 }
 
 #product-form-installment {
