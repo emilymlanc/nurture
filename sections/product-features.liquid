@@ -15,7 +15,7 @@
   <div class="page-width">
     <div class="product-features__header">
       <h2 class="fade-in-up" data-aos data-aos-delay="100">{{ section.settings.title }}</h2>
-      {% if section.blocks.size > 1 %}
+      {% if section.blocks.size > 0 %}
         <div class="product-features__nav fade-in-up" data-aos data-aos-delay="200">
           {% for block in section.blocks %}
             {% assign current_product = all_products[block.settings.product] %}
