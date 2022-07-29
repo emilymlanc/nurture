@@ -48,8 +48,11 @@
 
 .product-features__item {
   display: none;
-  grid-template-columns: 1fr 1.3333fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 30px;
+}
+.product-features__item.dresser {
+  grid-template-columns: 1fr 1.33fr 1fr;
 }
 
 .product-features__item.active {
