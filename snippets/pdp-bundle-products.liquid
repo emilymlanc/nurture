@@ -1,30 +1,14 @@
 {% liquid
-  assign group_bundles = ''
-  assign bundles = ''
-  for tag in product.tags
-    if tag contains 'bundle:'
-      if tag contains 'bundle:group:'
-        assign group_bundles = tag | remove: 'bundle:group:' | prepend: ',' | prepend: group_bundles
-      else
-        assign bundles = tag | remove: 'bundle:' | prepend: ',' | prepend: bundles
-      endif
-    endif
-  endfor
-  assign group_bundles = group_bundles | remove_first: ','
-  assign bundles = bundles | remove_first: ','
-
+  assign group_bundles = product.metafields.custom.bundle_main_product_alt.value
+  assign bundles = product.metafields.custom.bundle_product_list.value
   assign has_seating = false
-  assign handles = group_bundles | split: ','
-  for handle in handles
-    assign p = all_products[handle]
-    if p != blank and p.type == 'Seating'
+  for bundle in group_bundles
+    if bundle.type == 'Seating'
       assign has_seating = true
     endif
   endfor
-  assign handles = bundles | split: ','
-  for handle in handles
-    assign p = all_products[handle]
-    if p != blank and p.type == 'Seating'
+  for bundle in bundles
+    if bundle.type == 'Seating'
       assign has_seating = true
     endif
   endfor
@@ -37,7 +21,6 @@
       {%- render 'pdp-group-bundle' group_bundles: group_bundles -%}
     {%- endif -%}
     {%- if bundles != blank -%}
-      {%- assign bundles = bundles | split: ',' -%}
       {%- for bundle in bundles -%}
         {%- render 'pdp-bundle' bundle: bundle -%}
       {%- endfor -%}
