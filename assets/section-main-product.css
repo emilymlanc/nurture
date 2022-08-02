@@ -764,9 +764,6 @@ variant-radios {
   padding: 20px 0;
   margin: 20px 0 0;
 }
-.product-bundles__save-value {
-  font-weight: 900;
-}
 .product-bundle__group {
   border-top: 1px solid var(--cream);
   padding: 20px 0;

@@ -10,7 +10,7 @@
       <div class="product-bundle__info">
         <p class="product-bundle__title">{{ bundle.title | escape }}</p>
         <div class="product-bundle__price">
-          {%- render 'price', product: bundle, use_variant: true, show_badges: true -%}
+          {%- render 'price', product: bundle, use_variant: true -%}
           {%- render 'icon-question-circle' %}
         </div>
         {%- render 'pdp-bundle-variant' product: bundle -%}

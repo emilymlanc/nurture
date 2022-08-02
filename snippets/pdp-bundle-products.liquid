@@ -1,4 +1,5 @@
 {% liquid
+  assign announcement = product.metafields.custom.bundle_announcement.value
   assign group_bundles = product.metafields.custom.bundle_main_product_alt.value
   assign bundles = product.metafields.custom.bundle_product_list.value
   assign has_seating = false
@@ -16,7 +17,9 @@
 
 {%- if group_bundles != blank or bundles != blank -%}
   <div class="product-bundles">
-    <p class="product-bundles__save">You save <span class="product-bundles__save-value">$390.00</span> by bundling these items</p>
+    {%- if announcement != blank -%}
+      <p class="product-bundles__save">{{ announcement }}</p>
+    {%- endif -%}  
     {%- if group_bundles != blank -%}
       {%- render 'pdp-group-bundle' group_bundles: group_bundles -%}
     {%- endif -%}
