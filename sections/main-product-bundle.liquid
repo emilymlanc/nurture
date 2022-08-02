@@ -153,7 +153,7 @@
                           {%- assign color_swatch_image = images[color_swatch_name] -%}
 
                           <input type="radio" id="{{ section.id }}-{{ option.name }}-{{ forloop.index0 }}"
-                                name="{{ option.name }}"
+                                name="main_{{ option.name }}"
                                 value="{{ value | escape }}"
                                 form="product-form-{{ section.id }}"
                                 data-name="{{ active_color }}"
@@ -796,17 +796,36 @@
   });
 
   // On slide change
-  pdpSlider.on('slideChange', function (slider) {
-    var idx = slider.realIndex;
-
-    $('.product__slider-thumbnail-item').removeClass('active');
-    $(`.product__slider-thumbnail-item[data-slideid="${idx}"]`).addClass('active');
-  });
+  if (Array.isArray(pdpSlider)) {
+    pdpSlider.forEach(slider => {
+      slider.on('slideChange', function (swiper) {
+        var idx = swiper.realIndex;
+        $(swiper.el).find('.product__slider-thumbnail-item').removeClass('active');
+        $(swiper.el).find(`.product__slider-thumbnail-item[data-slideid="${idx}"]`).addClass('active');
+      });
+    })
+  } else {
+    pdpSlider.on('slideChange', function (slider) {
+      var idx = slider.realIndex;
+      $('.product__slider-thumbnail-item').removeClass('active');
+      $(`.product__slider-thumbnail-item[data-slideid="${idx}"]`).addClass('active');
+    });
+  }
 
   // Dropdowns
   $('.product__dropdown-header').click(function() {
     $(this).toggleClass('active');
     $(this).siblings('.product__dropdown-content').slideToggle(400);
+  });
+
+  // Main Bundle Product Alternatives
+  $('.product-bundle__group-tab').on('click', function() {
+    $(this).siblings().removeClass('active');
+    $(this).addClass('active');
+    let idx = $(this).index();
+    let item = $(this).closest('.product-bundle__group').find('.product-bundle').get(idx)
+    $(item).siblings().addClass('hidden');
+    $(item).removeClass('hidden');
   });
 {% endjavascript %}
 

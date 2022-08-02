@@ -154,6 +154,7 @@
       var $section = $(`.product-section[data-section="${sectionName}"]`);
       
       if (
+        $section.length &&
         ($section.offset().top - navHeight) <= fromTop &&
         ($section.offset().top - navHeight) + $section.outerHeight() > fromTop
       ) {
@@ -168,10 +169,13 @@
   $('.product-bar__nav-container button').click(function(e) {
     e.preventDefault();
     var section = $(this).data('section');
+    var $section = $(`.product-section[data-section="${section}"]`);
 
-    $('html, body').animate({
-      scrollTop: $(`.product-section[data-section="${section}"]`).offset().top - navHeight + 5
-    }, 500);
+    if ($section.length) {
+      $('html, body').animate({
+        scrollTop: $section.offset().top - navHeight + 5
+      }, 500);
+    }
   });
 {% endjavascript %}
 

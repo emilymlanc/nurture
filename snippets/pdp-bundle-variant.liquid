@@ -1,59 +1,58 @@
-<variant-radios class="no-js-hidden" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
+<div class="product-bundle__options">
   {%- for option in product.options_with_values -%}
 
     {%- assign color_label = 'color,colour,couleur,colore,farbe,색,色,färg,farve' | split: ',' -%}
     {%- assign downcase_option = option.name | downcase -%}
     {%- assign variant_option = 'option' | append: forloop.index -%}
 
-    <fieldset class="js product-form__input{% if color_label contains downcase_option %} product-form__color-swatches{% endif %}"> 
-      {% comment %}
-        <legend class="form__label">{{ option.name }}</legend>
-      {% endcomment %}
+    {%- if color_label contains downcase_option -%}
+      <fieldset class="product-form__input product-form__color-swatches">
+        {% comment %}
+          <legend class="form__label">{{ option.name }}</legend>
+        {% endcomment %}
 
-      <div class="product-form__variant-container">
-        <div class="product-form__variant-list">
-          
-          {%- for value in option.values -%}
+        <div class="product-form__variant-container">
+          <div class="product-form__variant-list">
+            
+            {%- for value in option.values -%}
 
-            {%- assign current_variant = '' -%}
+              {%- assign current_variant = '' -%}
 
-            <!-- Find colors within variants -->
-            {% for variant in product.variants %}
-              {%- if variant[variant_option] == value -%}
-                {%- assign current_variant = variant -%}
-                {%- assign active_color = value -%}
-              {%- endif -%}
-            {% endfor %}
+              <!-- Find colors within variants -->
+              {% for variant in product.variants %}
+                {%- if variant[variant_option] == value -%}
+                  {%- assign current_variant = variant -%}
+                  {%- assign active_color = value -%}
+                {%- endif -%}
+              {% endfor %}
 
-            {%- assign color_swatch_name = value | handleize | append: '.jpg' -%}
-            {%- assign color_swatch_image = images[color_swatch_name] -%}
+              {%- assign color_swatch_name = value | handleize | append: '.jpg' -%}
+              {%- assign color_swatch_image = images[color_swatch_name] -%}
 
-            <input type="radio" id="{{ current_variant.id }}-{{ option.name }}-{{ forloop.index0 }}"
-                  name="{{ option.name }}"
-                  value="{{ value | escape }}"
-                  form="product-form-{{ current_variant.id }}"
-                  data-name="{{ active_color }}"
-                  data-id="{{product.variants[forloop.index0].id}}"
-                  
-                  {% if option.selected_value == value %}checked{% endif %}
-            >
-            <label {% if product.type == 'Gift Card' %}class="gift-card__label"{% endif %} for="{{ current_variant.id }}-{{ option.name }}-{{ forloop.index0 }}"{% if color_label contains downcase_option %} style="background-image: url({{ color_swatch_image | img_url: '20x20' }});"{% endif %}>
-              {{ value }}
-            </label>
-          {%- endfor -%}
-        </div>
-
-        {% if color_label contains downcase_option %}
-          <div class="product-form__variant-active">
-            <p class="body-4 medium caps">{{ product.selected_or_first_available_variant[variant_option] }}</p>
+              <input type="radio" 
+                id="{{ current_variant.id }}-{{ option.name }}-{{ forloop.index0 }}"
+                name="{{ product.handle }}_{{ option.name | handleize }}"
+                value="{{ value | escape }}"
+                form="product-form-{{ current_variant.id }}"
+                data-name="{{ active_color }}"
+                data-id="{{product.variants[forloop.index0].id}}"
+                {% if forloop.first %}checked{% endif %}
+              >
+              <label {% if product.type == 'Gift Card' %}class="gift-card__label"{% endif %} for="{{ current_variant.id }}-{{ option.name }}-{{ forloop.index0 }}"{% if color_label contains downcase_option %} style="background-image: url({{ color_swatch_image | img_url: '20x20' }});"{% endif %}>
+                {{ value }}
+              </label>
+            {%- endfor -%}
           </div>
-        {% endif %}
 
-      </div>
-      
-    </fieldset>
+          {% if color_label contains downcase_option %}
+            <div class="product-form__variant-active">
+              <p class="body-4 medium caps">{{ product.selected_or_first_available_variant[variant_option] }}</p>
+            </div>
+          {% endif %}
+
+        </div>
+        
+      </fieldset>
+    {%- endif -%}
   {%- endfor -%}
-  <script type="application/json">
-    {{ product.variants | json }}
-  </script>
-</variant-radios>
+</div>

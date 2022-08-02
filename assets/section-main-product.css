@@ -788,6 +788,7 @@ variant-radios {
   border: 1px solid var(--blue);
   padding: 14px 10px 10px;
   background-color: var(--white);
+  cursor: pointer;
 }
 .product-bundle__group-tab + .product-bundle__group-tab {
   margin-top: -1px;
