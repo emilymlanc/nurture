@@ -751,3 +751,113 @@ variant-radios {
   letter-spacing: .04em !important;
   text-transform: uppercase !important;
 }
+
+
+/* Product Bundle */
+.product-bundles__save {
+  font-weight: 420;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+  text-align: center;
+  border-top: 1px solid var(--cream);
+  padding: 20px 0;
+  margin: 20px 0 0;
+}
+.product-bundles__save-value {
+  font-weight: 900;
+}
+.product-bundle__group {
+  border-top: 1px solid var(--cream);
+  padding: 20px 0;
+}
+.product-bundle__group-label {
+  font-weight: 420;
+  line-height: 1.6;
+  letter-spacing: 00.02em;
+  text-transform: capitalize;
+  text-align: center;
+  margin: 0 0 10px;
+}
+.product-bundle__group-tabs {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.product-bundle__group-tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--blue);
+  padding: 14px 10px 10px;
+  background-color: var(--white);
+}
+.product-bundle__group-tab + .product-bundle__group-tab {
+  margin-top: -1px;
+}
+.product-bundle__group-tab.active {
+  background-color: var(--blue);
+  color: var(--white);
+}
+.product-bundle__group-tab p {
+  font-weight: 450;
+  font-size: 13px;
+  line-height: 1.1;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  margin: 0 10px 0 0;
+}
+.product-bundles .price {
+  font-family: brandon-grotesque;
+  font-weight: 390;
+  font-size: 16px;
+  line-height: 23px;
+  margin: 0;
+}
+.product-bundles .price dd {
+  margin-right: 4px;
+}
+.product-bundles .price dd:last-child {
+  margin: 0;
+}
+.product-bundle {
+  border-top: 1px solid var(--cream);
+  padding: 20px 0 0;
+  margin-top: 20px;
+}
+.product-bundle__wrapper {
+  display: flex;
+  align-items: flex-start;
+}
+.product-bundle__image {
+  width: 150px;
+  margin-right: 20px;
+}
+.product-bundle__info {
+  flex-grow: 1;
+}
+.product-bundle__title {
+  font-weight: 450;
+  font-size: 16px;
+  line-height: 1.1;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  margin: 0 0 10px;
+}
+.product-bundle__price {
+  display: flex;
+  margin-bottom: 20px;
+}
+.product-bundle__price svg {
+  cursor: pointer;
+  color: var(--beige);
+  margin-left: 10px;
+}
+.product-bundle__price svg:hover {
+  color: var(--navy-light);
+}
+.product-bundles .freeswatch__atc {
+  display: inline-block;
+  padding-bottom: 6px;
+  margin: 20px 0 0;
+}

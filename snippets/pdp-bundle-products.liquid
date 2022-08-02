@@ -1,0 +1,49 @@
+{% liquid
+  assign group_bundles = ''
+  assign bundles = ''
+  for tag in product.tags
+    if tag contains 'bundle:'
+      if tag contains 'bundle:group:'
+        assign group_bundles = tag | remove: 'bundle:group:' | prepend: ',' | prepend: group_bundles
+      else
+        assign bundles = tag | remove: 'bundle:' | prepend: ',' | prepend: bundles
+      endif
+    endif
+  endfor
+  assign group_bundles = group_bundles | remove_first: ','
+  assign bundles = bundles | remove_first: ','
+
+  assign has_seating = false
+  assign handles = group_bundles | split: ','
+  for handle in handles
+    assign p = all_products[handle]
+    if p != blank and p.type == 'Seating'
+      assign has_seating = true
+    endif
+  endfor
+  assign handles = bundles | split: ','
+  for handle in handles
+    assign p = all_products[handle]
+    if p != blank and p.type == 'Seating'
+      assign has_seating = true
+    endif
+  endfor
+%}
+
+{%- if group_bundles != blank or bundles != blank -%}
+  <div class="product-bundles">
+    <p class="product-bundles__save">You save <span class="product-bundles__save-value">$390.00</span> by bundling these items</p>
+    {%- if group_bundles != blank -%}
+      {%- render 'pdp-group-bundle' group_bundles: group_bundles -%}
+    {%- endif -%}
+    {%- if bundles != blank -%}
+      {%- assign bundles = bundles | split: ',' -%}
+      {%- for bundle in bundles -%}
+        {%- render 'pdp-bundle' bundle: bundle -%}
+      {%- endfor -%}
+    {%- endif -%}
+    {%- if has_seating -%}
+      <div class="freeswatch__atc nav swatch-link">Try a Swatch</div>
+    {%- endif -%}
+  </div>
+{%- endif -%}

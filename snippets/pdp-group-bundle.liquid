@@ -1,0 +1,27 @@
+{%- if group_bundles != blank -%}
+  {%- assign bundles = group_bundles | split: ',' -%}
+  <div class="product-bundle__group">
+    <p class="product-bundle__group-label">Start With...</p>
+    <ul class="product-bundle__group-tabs">
+      {%- for bundle in bundles -%}
+        {%- assign bundle_product = all_products[bundle] -%}
+        {%- if bundle_product != blank -%}
+          <li class="product-bundle__group-tab{% if forloop.last %} active{% endif %}">
+            <p>{{ bundle_product.title | escape }}</p>
+            {%- render 'price', product: bundle_product, use_variant: true -%}
+          </li>
+        {%- endif -%}
+      {%- endfor -%}
+    </ul>
+    <div class="product-bundle__group-content">
+      {%- for bundle in bundles -%}
+        {%- assign hidden = false -%}
+        {%- unless forloop.last -%}
+          {%- assign hidden = true -%}
+        {%- endunless -%}
+        {%- render 'pdp-bundle' bundle: bundle, hidden: hidden -%}
+      {%- endfor -%}
+    </div>
+  </div>
+
+{%- endif -%}
