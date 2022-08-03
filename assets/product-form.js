@@ -6,11 +6,12 @@ class ProductForm extends HTMLElement {
     this.form && this.form.addEventListener('submit', this.onSubmitHandler.bind(this));
     this.cartNotification = document.querySelector('cart-notification');
     this.cartDrawer = document.querySelector('cart-drawer');
-    this.bundles = document.querySelectorAll('.product-bundle:not(.hidden)')
   }
 
   onSubmitHandler(evt) {
     evt.preventDefault();
+
+    this.bundles = document.querySelectorAll('.product-bundle:not(.hidden)');
     
     const submitButton = this.querySelector('[type="submit"]');
 
