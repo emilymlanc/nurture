@@ -30,15 +30,15 @@
               {%- assign color_swatch_image = images[color_swatch_name] -%}
 
               <input type="radio" 
-                id="{{ current_variant.id }}-{{ option.name }}-{{ forloop.index0 }}"
-                name="{{ product.handle }}_{{ option.name | handleize }}"
+                id="{% if modal %}modal_{% endif %}{{ current_variant.id }}-{{ option.name }}-{{ forloop.index0 }}"
+                name="{% if modal %}modal_{% endif %}{{ product.handle }}_{{ option.name | handleize }}"
                 value="{{ value | escape }}"
                 form="product-form-{{ current_variant.id }}"
                 data-name="{{ active_color }}"
                 data-id="{{product.variants[forloop.index0].id}}"
                 {% if forloop.first %}checked{% endif %}
               >
-              <label {% if product.type == 'Gift Card' %}class="gift-card__label"{% endif %} for="{{ current_variant.id }}-{{ option.name }}-{{ forloop.index0 }}"{% if color_label contains downcase_option %} style="background-image: url({{ color_swatch_image | img_url: '20x20' }});"{% endif %}>
+              <label {% if product.type == 'Gift Card' %}class="gift-card__label"{% endif %} for="{% if modal %}modal_{% endif %}{{ current_variant.id }}-{{ option.name }}-{{ forloop.index0 }}"{% if color_label contains downcase_option %} style="background-image: url({{ color_swatch_image | img_url: '20x20' }});"{% endif %}>
                 {{ value }}
               </label>
             {%- endfor -%}

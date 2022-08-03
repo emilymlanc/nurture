@@ -677,11 +677,11 @@
                   class="product-form__submit button button--full-width {% if block.settings.show_dynamic_checkout and product.selling_plan_groups == empty %}button--secondary{% else %}button--primary{% endif %}"
                 {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}
                 >
-                    {%- if product.selected_or_first_available_variant.available -%}
-                      {{ 'products.product.add_to_cart' | t }}
-                    {%- else -%}
-                      {{ 'products.product.sold_out' | t }}
-                    {%- endif -%}
+                  {%- if product.selected_or_first_available_variant.available -%}
+                    {{ 'products.product.add_to_cart' | t }}
+                  {%- else -%}
+                    {{ 'products.product.sold_out' | t }}
+                  {%- endif -%}
                 </button>
               </div>
 
@@ -827,6 +827,33 @@
     $(item).siblings().addClass('hidden');
     $(item).removeClass('hidden');
   });
+
+  // Bundle Variant Selection
+  $('.product-bundle input[type="radio"]').change(function() {
+    let $bundleOptions = $(this).closest('.product-bundle__options');
+    let $activeOption = $bundleOptions?.find('.product-form__variant-active p');
+    $activeOption?.text(this.value);
+    $(document).trigger('bundle:updated');
+  });
+  $('.product-bundle modal-opener').click(function() {
+    let $bundle = $(this).closest('.product-bundle__wrapper');
+    let $selectedVariant = $bundle?.find('input[type="radio"]:checked');
+    let $modal = $($(this).data('modal'));
+    $modal?.find(`.product-bundle__options input[type="radio"][data-id="${$selectedVariant.data('id')}"]`).prop('checked', true);
+    $modal?.find('.product-form__variant-active p').text($selectedVariant.val());
+  });
+  $('.product-bundle__modal-submit').click(function() {
+    let $modal = $(this).closest('.product-bundle__modal');
+    let $selectedVariant = $modal.find('input[type="radio"]:checked');
+    let $bundle = $modal.siblings('.product-bundle__wrapper');
+    $bundle?.find(`.product-bundle__options input[type="radio"][data-id="${$selectedVariant.data('id')}"]`).prop('checked', true);
+    $bundle?.find('.product-form__variant-active p').text($selectedVariant.val());
+    $modal.trigger('click');
+    $(document).trigger('bundle:updated');
+  });
+  $(document).on('bundle:updated', function() {
+    // update bundle price & ATC button price
+  })
 {% endjavascript %}
 
 {% schema %}

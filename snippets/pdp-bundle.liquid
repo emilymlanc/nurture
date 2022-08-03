@@ -11,13 +11,13 @@
         <p class="product-bundle__title">{{ bundle.title | escape }}</p>
         <div class="product-bundle__price">
           {%- render 'price', product: bundle, use_variant: true -%}
-          {%- render 'icon-question-circle' %}
+          <modal-opener data-modal="#BundleModal-{{ bundle.id }}">
+            <button>{%- render 'icon-question-circle' %}</button>
+          </modal-opener>
         </div>
         {%- render 'pdp-bundle-variant' product: bundle -%}
       </div>
     </div>
-    <div class="product-bundle__modal hidden">
-      {%- render 'pdp-bundle-modal' product: bundle %}
-    </div>
+    {%- render 'pdp-bundle-modal' product: bundle %}
   </div>
 {% endif %}

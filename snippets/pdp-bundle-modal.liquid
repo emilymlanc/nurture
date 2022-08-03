@@ -1,13 +1,14 @@
-<div class="product-bundle__modal">
-  <div class="product">
+<modal-dialog id="BundleModal-{{ product.id }}" class="product-bundle__modal">
+  <div class="product" role="dialog">
+    <button id="ModalClose-{{ product.id }}" type="button" class="product-bundle__modal-close" aria-label="{{ 'accessibility.close' | t }}">{% render 'icon-close' %}</button>
     <div class="product__media-wrapper">
       <div class="product__media-container">
         <ul class="product__media-list swiper" role="list">
           {% if product.metafields.my_fields.product_card_badge != blank %}
-                  <div class="product-tag">
-                    <p class="body-4 bold">{{ product.metafields.my_fields.product_card_badge }}</p>
-                  </div>
-                  {% endif %}
+            <div class="product-tag">
+              <p class="body-4 bold">{{ product.metafields.my_fields.product_card_badge }}</p>
+            </div>
+          {% endif %}
           <div class="swiper-wrapper">
             {%- for media in product.media -%}
               {% assign alt_strip = media.alt | strip | downcase %}
@@ -54,9 +55,7 @@
       <div id="ProductInfo-{{ product.id }}" class="product__info-container">
         {%- assign product_form_id = 'product-form-' | append: product.id -%}
 
-        <h1 class="product__title h2">
-          {{ product.title | escape }}
-        </h1>
+        <h3 class="product__title h3">{{ product.title | escape }}</h3>
 
         <div class="yotpo bottomLine"
           data-appkey="P3ppHFODI45UdcU4EDf74Cb6VxZcPOF3xSEqzmsq"
@@ -70,7 +69,6 @@
           data-bread-crumbs="{% for tag in product.tags %}{{ tag | escape }};{% endfor %}">
         </div>
       
-
         <div class="no-js-hidden" id="price-{{ product.id }}">
           {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'sh2' -%}
         </div>
@@ -82,11 +80,6 @@
           {%- endform -%}
         </div>
     
-        {%- unless product.has_only_default_variant -%}
-          {%- render 'pdp-bundle-variant' product: product -%}
-        {%- endunless -%}
-
-        
         <div class="product__description-wrapper">
           {% if product.metafields.my_fields.mini_card_description != blank %}
             <p class="body medium">{{ product.metafields.my_fields.mini_card_description }}</p>
@@ -105,18 +98,17 @@
           {% endif %}
         {% endfor %}
         
+        {%- unless product.has_only_default_variant -%}
+          {%- render 'pdp-bundle-variant' product: product, modal: true -%}
+        {%- endunless -%}
+
         <product-form class="product-form">
-          <button
-            type="submit"
-            name="add"
-            class="product-form__submit button button--full-width {% if block.settings.show_dynamic_checkout and product.selling_plan_groups == empty %}button--secondary{% else %}button--primary{% endif %}"
+          <button type="button" class="product-bundle__modal-submit button button--full-width button--primary"
             {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}
-          >
-              Select
-          </button>
+          >Select</button>
         </product-form>
 
       </div>
     </div>
   </div>
-</div>
+</modal-dialog>

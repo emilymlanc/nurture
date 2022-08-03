@@ -6,6 +6,7 @@ class ProductForm extends HTMLElement {
     this.form && this.form.addEventListener('submit', this.onSubmitHandler.bind(this));
     this.cartNotification = document.querySelector('cart-notification');
     this.cartDrawer = document.querySelector('cart-drawer');
+    this.bundles = document.querySelectorAll('.product-bundle:not(.hidden)')
   }
 
   onSubmitHandler(evt) {
@@ -16,11 +17,26 @@ class ProductForm extends HTMLElement {
     submitButton.setAttribute('disabled', true);
     submitButton.classList.add('loading');
 
-    const body = JSON.stringify({
+    let body = JSON.stringify({
       ...JSON.parse(serializeForm(this.form)),
       sections: this.getSectionsToRender().map((section) => section.section),
       sections_url: window.location.pathname
     });
+    if (this.bundles.length) {
+      let items = [];
+      this.bundles.forEach(bundle => {
+        let selectedVariant = bundle.querySelector('.product-bundle__options input[type="radio"]:checked');
+        items.push({
+          id: selectedVariant.dataset.id,
+          quantity: this.form.querySelector('.quantity__input').value
+        });
+      })
+      body = JSON.stringify({
+        items,
+        sections: this.getSectionsToRender().map((section) => section.section),
+        sections_url: window.location.pathname
+      });
+    }
 
     fetch(`${routes.cart_add_url}`, { ...fetchConfig('javascript'), body })
       .then((response) => response.json())
