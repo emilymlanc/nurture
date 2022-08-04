@@ -781,18 +781,18 @@ variant-radios {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
 }
 .product-bundle__group-tab {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   border: 1px solid var(--blue);
   padding: 14px 10px 10px;
   background-color: var(--white);
   cursor: pointer;
+  flex: 1 1 0px;
+  text-align: center;
 }
 .product-bundle__group-tab + .product-bundle__group-tab {
-  margin-top: -1px;
+  margin-left: -1px;
 }
 .product-bundle__group-tab.active {
   background-color: var(--blue);
@@ -804,7 +804,7 @@ variant-radios {
   line-height: 1.1;
   letter-spacing: 0.09em;
   text-transform: uppercase;
-  margin: 0 10px 0 0;
+  margin: 0;
 }
 .product-bundle__group-tab .price,
 .product-bundle__price .price {
@@ -813,6 +813,7 @@ variant-radios {
   font-size: 16px;
   line-height: 23px;
   margin: 0;
+  justify-content: center;
 }
 .product-bundle__group-tab .price dd,
 .product-bundle__price .price dd {
@@ -938,6 +939,13 @@ variant-radios {
   }
 }
 @media screen and (max-width: 500px) {
+  .product-bundle__group-tab {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .product-bundle__group-tab p {
+    font-size: 10px;
+  }
   .product-bundle__modal-close {
   
   }
