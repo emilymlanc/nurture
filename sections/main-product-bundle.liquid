@@ -438,9 +438,12 @@
     $(this).siblings().removeClass('active');
     $(this).addClass('active');
     let idx = $(this).index();
-    let item = $(this).closest('.product-bundle__group').find('.product-bundle').get(idx)
+    let item = $(this).closest('.product-bundle__group').find('.product-bundle').get(idx);
+    let announcement = $(this).closest('.product-bundles').find('.product-bundles__save').get(idx);
     $(item).siblings().addClass('hidden');
     $(item).removeClass('hidden');
+    $(announcement).siblings().addClass('hidden');
+    $(announcement).removeClass('hidden');
 
     $(document).trigger('bundle:updated');
   });

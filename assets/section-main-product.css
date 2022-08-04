@@ -896,6 +896,7 @@ variant-radios {
   background-color: var(--white);
   overflow-y: auto;
   position: relative;
+  flex-wrap: wrap;
 }
 .product-bundle__modal-close {
   background-color: var(--white);
@@ -905,11 +906,8 @@ variant-radios {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  position: absolute;
   padding: 1.2rem;
   z-index: 2;
-  top: 20px;
-  right: 20px;
   width: 4rem;
   margin: 0 0 0 auto;
 }
@@ -933,9 +931,29 @@ variant-radios {
   padding: 20px 0 8px;
   margin: 20px 0;
 }
-@media screen and (max-width: 768px) {
+.product-bundle__modal-submit {
+  justify-content: center;
+}
+@media screen and (min-width: 1024px) {
   .product-bundle__modal-close {
-  
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .product-bundle__modal .product__media-wrapper,
+  .product-bundle__modal .product__info-wrapper {
+    width: 100%;
+  }
+  .product-bundle__modal .product__info-wrapper {
+    padding-left: 0;
+    padding-top: 20px;
+  }
+  .product-bundle__modal-close {
+    position: sticky;
+    top: -40px;
+    margin: -40px -35px -40px auto;
   }
 }
 @media screen and (max-width: 500px) {
@@ -946,7 +964,18 @@ variant-radios {
   .product-bundle__group-tab p {
     font-size: 10px;
   }
+  .product-bundle__modal [role="dialog"] {
+    padding: 15px;
+  }
   .product-bundle__modal-close {
-  
+    top: -7px;
+    margin: -7px -7px -33px auto;
+  }
+  .product-form__quantity .quantity {
+    max-width: 110px;
+  }
+  .product-form__submit {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
