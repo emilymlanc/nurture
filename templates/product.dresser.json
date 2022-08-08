@@ -1,0 +1,350 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "settings": {
+        "picker_type": "button",
+        "enable_sticky_info": true,
+        "hide_variants": false,
+        "enable_video_looping": false
+      }
+    },
+    "16363860202ad86fd5": {
+      "type": "product-features",
+      "blocks": {
+        "07df352c-a472-4889-b6db-1983f16bb59c": {
+          "type": "product",
+          "disabled": true,
+          "settings": {
+            "product": "the-glider",
+            "image": "shopify:\/\/shop_images\/Image_6.png"
+          }
+        },
+        "5ff138a9-f194-4078-9a9c-5e27b7232fca": {
+          "type": "product",
+          "disabled": true,
+          "settings": {
+            "product": "the-glider-plus"
+          }
+        },
+        "5a454e10-dc13-4b67-9ae1-c70402460c9f": {
+          "type": "product",
+          "disabled": true,
+          "settings": {
+            "product": "the-swivel",
+            "image": "shopify:\/\/shop_images\/swivel_transparent.png"
+          }
+        },
+        "8612fdf1-4380-406f-b660-e01cd86ed557": {
+          "type": "product",
+          "settings": {
+            "product": "the-dresser",
+            "image": "shopify:\/\/shop_images\/Large_Product_Image.png"
+          }
+        }
+      },
+      "block_order": [
+        "07df352c-a472-4889-b6db-1983f16bb59c",
+        "5ff138a9-f194-4078-9a9c-5e27b7232fca",
+        "5a454e10-dc13-4b67-9ae1-c70402460c9f",
+        "8612fdf1-4380-406f-b660-e01cd86ed557"
+      ],
+      "settings": {
+        "title": "Designed for life’s moments."
+      }
+    },
+    "16585027037023c92b": {
+      "type": "press-quotes",
+      "blocks": {
+        "a7280bb9-2ffc-4439-abff-c538e577bb3c": {
+          "type": "block",
+          "settings": {
+            "logo_svg": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"133\" height=\"81\" viewbox=\"0 0 133 81\" fill=\"none\">\n<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M0.699219 23.0017C0.699219 21.9379 1.56157 21.0756 2.62533 21.0756L91.5542 21.0757C92.6588 21.0757 93.5542 21.9711 93.5542 23.0757V24.914V78.5719C93.5542 79.6764 92.6588 80.5719 91.5542 80.5719H90.816C89.7114 80.5719 88.816 79.6764 88.816 78.5719V72.2269C88.816 71.1223 87.9206 70.2269 86.816 70.2269H7.45887C6.3543 70.2269 5.45887 71.1223 5.45887 72.2269V78.5719C5.45887 79.6764 4.56344 80.5719 3.45887 80.5719H2.72064C1.61607 80.5719 0.720639 79.6764 0.720639 78.5719V24.9248C0.720639 24.9188 0.715857 24.914 0.709929 24.914V24.914C0.704001 24.9139 0.699219 24.9091 0.699219 24.9032V23.0017ZM5.45761 24.9087C5.45761 24.9117 5.45523 24.914 5.45229 24.914V24.914C5.44935 24.914 5.44696 24.9164 5.44696 24.9194V35.0349C5.44696 36.1394 6.34239 37.0349 7.44696 37.0349H29.4676C30.5721 37.0349 31.4676 36.1394 31.4676 35.0349V26.879C31.4676 25.7744 30.5721 24.879 29.4676 24.879H5.47514C5.46546 24.879 5.45761 24.8868 5.45761 24.8965V24.9087ZM45.7358 41.6791C45.7358 40.5745 44.8404 39.6791 43.7358 39.6791H7.46006C6.35549 39.6791 5.46006 40.5745 5.46006 41.6791V49.835C5.46006 50.9396 6.35549 51.835 7.46006 51.835H43.7358C44.8404 51.835 45.7358 50.9396 45.7358 49.835V41.6791ZM48.6109 41.6791C48.6109 40.5745 49.5063 39.6791 50.6109 39.6791H86.8866C87.9912 39.6791 88.8866 40.5745 88.8866 41.6791V49.835C88.8866 50.9396 87.9912 51.835 86.8866 51.835H50.6109C49.5063 51.835 48.6109 50.9396 48.6109 49.835V41.6791ZM34.2102 26.879C34.2102 25.7744 35.1057 24.879 36.2102 24.879H58.2309C59.3354 24.879 60.2309 25.7744 60.2309 26.879V35.0349C60.2309 36.1394 59.3354 37.0349 58.2309 37.0349H36.2102C35.1057 37.0349 34.2102 36.1394 34.2102 35.0349V26.879ZM88.9953 26.879C88.9953 25.7744 88.0999 24.879 86.9953 24.879H64.9747C63.8701 24.879 62.9747 25.7744 62.9747 26.879V35.0349C62.9747 36.1394 63.8701 37.0349 64.9747 37.0349H86.9953C88.0999 37.0349 88.9953 36.1394 88.9953 35.0349V26.879ZM5.46006 56.5608C5.46006 55.4562 6.35549 54.5608 7.46006 54.5608H43.7358C44.8404 54.5608 45.7358 55.4562 45.7358 56.5608V64.7167C45.7358 65.8213 44.8404 66.7167 43.7358 66.7167H7.46006C6.35549 66.7167 5.46006 65.8213 5.46006 64.7167V56.5608ZM88.8866 56.5608C88.8866 55.4562 87.9912 54.5608 86.8866 54.5608H50.6109C49.5063 54.5608 48.6109 55.4562 48.6109 56.5608V64.7167C48.6109 65.8213 49.5063 66.7167 50.6109 66.7167H86.8866C87.9912 66.7167 88.8866 65.8213 88.8866 64.7167V56.5608Z\" fill=\"white\"><\/path>\n<circle cx=\"18.2238\" cy=\"31.012\" r=\"1.85267\" fill=\"white\"><\/circle>\n<circle cx=\"25.4816\" cy=\"45.3701\" r=\"1.85267\" fill=\"white\"><\/circle>\n<circle cx=\"69.0167\" cy=\"45.3701\" r=\"1.85267\" fill=\"white\"><\/circle>\n<circle cx=\"25.4816\" cy=\"59.7283\" r=\"1.85267\" fill=\"white\"><\/circle>\n<circle cx=\"69.0167\" cy=\"59.7283\" r=\"1.85267\" fill=\"white\"><\/circle>\n<circle cx=\"47.1378\" cy=\"31.012\" r=\"1.85267\" fill=\"white\"><\/circle>\n<circle cx=\"75.2355\" cy=\"31.012\" r=\"1.85267\" fill=\"white\"><\/circle>\n<path d=\"M28.9724 5.62119C28.9798 5.51308 30.4918 3.84669 30.5079 3.14949C30.5079 3.08652 30.4857 3.01997 30.4445 2.9599C30.4033 2.89983 30.3455 2.84954 30.2798 2.81663L27.2037 1.9342\" stroke=\"white\" stroke-width=\"2\" stroke-miterlimit=\"10\" stroke-linecap=\"round\"><\/path>\n<path d=\"M21.632 15.4557C21.9861 10.6453 24.2923 4.7738 29.8478 3.55628\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"round\"><\/path>\n<rect x=\"41.0312\" y=\"0.5\" width=\"92.855\" height=\"4.94686\" rx=\"1\" transform=\"rotate(11.2567 41.0312 0.5)\" fill=\"white\"><\/rect>\n<\/svg>",
+            "subheader": "Matching Changing Topper",
+            "text": "Effortless conversion from changing table to dresser when the diaper days are over."
+          }
+        },
+        "af060529-f922-48f2-9ab3-cd2306eb0993": {
+          "type": "block",
+          "settings": {
+            "logo_svg": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"81\" height=\"81\" viewbox=\"0 0 81 81\" fill=\"none\">\n<path d=\"M40.7188 40.5C42.31 40.5 43.8362 41.1321 44.9614 42.2574C46.0866 43.3826 46.7187 44.9087 46.7188 46.5C46.7187 48.0913 46.0866 49.6174 44.9614 50.7426C43.8362 51.8679 42.31 52.5 40.7188 52.5C39.1275 52.5 37.6013 51.8679 36.4761 50.7426C35.3509 49.6174 34.7188 48.0913 34.7188 46.5C34.7188 44.9087 35.3509 43.3826 36.4761 42.2574C37.6013 41.1321 39.1275 40.5 40.7188 40.5ZM40.7188 0.5C45.9716 0.5 51.1731 1.53463 56.0261 3.54482C60.8791 5.55501 65.2887 8.50139 69.003 12.2157C72.7174 15.9301 75.6637 20.3396 77.6739 25.1927C79.6841 30.0457 80.7187 35.2471 80.7188 40.5C80.7187 51.1087 76.5045 61.2828 69.003 68.7843C61.5016 76.2857 51.3274 80.5 40.7188 80.5C35.4659 80.5 30.2644 79.4654 25.4114 77.4552C20.5584 75.445 16.1488 72.4986 12.4345 68.7843C4.93302 61.2828 0.71875 51.1087 0.71875 40.5C0.71875 29.8913 4.93302 19.7172 12.4345 12.2157C19.9359 4.71427 30.1101 0.5 40.7188 0.5V0.5ZM40.7188 56.5C43.5988 56.5 46.3187 57.1 48.8787 58.5C51.4387 59.7 52.7188 61.3 52.7188 63.18V70.14C58.0788 67.74 60.7188 64.82 60.7188 61.3V43.7C60.7188 40.5 58.7187 37.9 54.5187 35.7C50.3187 33.54 45.7188 32.5 40.7188 32.5C35.7188 32.5 31.1188 33.54 26.9188 35.7C22.7188 37.9 20.7188 40.5 20.7188 43.7V61.3C20.7188 64.5 22.8388 67.26 27.2388 69.38C31.5988 71.5 36.0788 72.5 40.7188 72.5L44.7188 72.18V64.14L40.7188 64.5C36.7188 64.5 32.7188 63.7 28.9188 62.06C29.3988 60.5 30.8388 59.26 33.2388 58.14C35.5988 57.02 38.0787 56.5 40.7188 56.5ZM40.7188 8.5C38.0666 8.5 35.523 9.55357 33.6477 11.4289C31.7723 13.3043 30.7188 15.8478 30.7188 18.5C30.7188 21.1522 31.7723 23.6957 33.6477 25.5711C35.523 27.4464 38.0666 28.5 40.7188 28.5C43.3709 28.5 45.9145 27.4464 47.7898 25.5711C49.6652 23.6957 50.7188 21.1522 50.7188 18.5C50.7188 15.8478 49.6652 13.3043 47.7898 11.4289C45.9145 9.55357 43.3709 8.5 40.7188 8.5V8.5Z\" fill=\"white\"><\/path>\n<\/svg>",
+            "subheader": "Grows With Your Baby",
+            "text": "Versatile design, built to seamlessly integrate into spaces beyond the nursery"
+          }
+        },
+        "7c98dbdd-4385-4d50-83f3-7cd1868ca8fb": {
+          "type": "block",
+          "settings": {
+            "logo_svg": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"154\" height=\"81\" viewbox=\"0 0 154 81\" fill=\"none\">\n<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M6.42188 12.6711C6.42188 11.6112 7.2811 10.752 8.34103 10.752H145.535C146.595 10.752 147.454 11.6112 147.454 12.6711V12.6711C147.454 13.731 146.595 14.5903 145.535 14.5903H125.262C124.158 14.5903 123.262 15.4857 123.262 16.5903V68.2481C123.262 69.3527 122.367 70.2481 121.262 70.2481H120.524C119.419 70.2481 118.524 69.3527 118.524 68.2481V61.9032C118.524 60.7986 117.629 59.9032 116.524 59.9032H37.1669C36.0623 59.9032 35.1669 60.7986 35.1669 61.9032V68.2481C35.1669 69.3527 34.2715 70.2481 33.1669 70.2481H32.4287C31.3241 70.2481 30.4287 69.3527 30.4287 68.2481V16.5903C30.4287 15.4857 29.5332 14.5903 28.4287 14.5903H8.34104C7.28111 14.5903 6.42188 13.731 6.42188 12.6711V12.6711ZM35.1656 14.585C35.1656 14.5879 35.1633 14.5903 35.1603 14.5903V14.5903C35.1574 14.5903 35.155 14.5927 35.155 14.5956V24.7111C35.155 25.8157 36.0504 26.7111 37.155 26.7111H59.1756C60.2802 26.7111 61.1756 25.8157 61.1756 24.7111V16.5552C61.1756 15.4507 60.2802 14.5552 59.1756 14.5552H35.1832C35.1735 14.5552 35.1656 14.5631 35.1656 14.5728V14.585ZM75.4438 31.3554C75.4438 30.2508 74.5484 29.3554 73.4438 29.3554H37.1681C36.0635 29.3554 35.1681 30.2508 35.1681 31.3554V39.5113C35.1681 40.6158 36.0635 41.5113 37.1681 41.5113H73.4438C74.5484 41.5113 75.4438 40.6158 75.4438 39.5113V31.3554ZM78.3189 31.3554C78.3189 30.2508 79.2144 29.3554 80.3189 29.3554H116.595C117.699 29.3554 118.595 30.2508 118.595 31.3554V39.5113C118.595 40.6158 117.699 41.5113 116.595 41.5113H80.3189C79.2144 41.5113 78.3189 40.6158 78.3189 39.5113V31.3554ZM63.9183 16.5552C63.9183 15.4507 64.8137 14.5552 65.9183 14.5552H87.9389C89.0434 14.5552 89.9389 15.4507 89.9389 16.5552V24.7111C89.9389 25.8157 89.0434 26.7111 87.9389 26.7111H65.9183C64.8137 26.7111 63.9183 25.8157 63.9183 24.7111V16.5552ZM118.703 16.5552C118.703 15.4507 117.808 14.5552 116.703 14.5552H94.6827C93.5781 14.5552 92.6827 15.4507 92.6827 16.5552V24.7111C92.6827 25.8157 93.5781 26.7111 94.6827 26.7111H116.703C117.808 26.7111 118.703 25.8157 118.703 24.7111V16.5552ZM35.1681 46.2371C35.1681 45.1325 36.0635 44.2371 37.1681 44.2371H73.4438C74.5484 44.2371 75.4438 45.1325 75.4438 46.2371V54.393C75.4438 55.4975 74.5484 56.393 73.4438 56.393H37.1681C36.0635 56.393 35.1681 55.4975 35.1681 54.393V46.2371ZM118.595 46.2371C118.595 45.1325 117.699 44.2371 116.595 44.2371H80.3189C79.2144 44.2371 78.3189 45.1325 78.3189 46.2371V54.393C78.3189 55.4975 79.2144 56.393 80.3189 56.393H116.595C117.699 56.393 118.595 55.4975 118.595 54.393V46.2371Z\" fill=\"white\"><\/path>\n<circle cx=\"47.9318\" cy=\"20.6882\" r=\"1.85267\" fill=\"white\"><\/circle>\n<circle cx=\"55.1876\" cy=\"35.0464\" r=\"1.85267\" fill=\"white\"><\/circle>\n<circle cx=\"98.7247\" cy=\"35.0464\" r=\"1.85267\" fill=\"white\"><\/circle>\n<circle cx=\"55.1876\" cy=\"49.4045\" r=\"1.85267\" fill=\"white\"><\/circle>\n<circle cx=\"98.7247\" cy=\"49.4045\" r=\"1.85267\" fill=\"white\"><\/circle>\n<circle cx=\"76.8439\" cy=\"20.6882\" r=\"1.85267\" fill=\"white\"><\/circle>\n<circle cx=\"104.943\" cy=\"20.6882\" r=\"1.85267\" fill=\"white\"><\/circle>\n<path d=\"M140.27 22.2967C140.38 22.3061 142.279 21.0703 142.979 21.1625C143.042 21.1722 143.105 21.2045 143.159 21.2545C143.212 21.3045 143.254 21.3694 143.277 21.4395L143.689 24.6162\" stroke=\"white\" stroke-width=\"2\" stroke-miterlimit=\"10\" stroke-linecap=\"round\"><\/path>\n<path d=\"M129.503 28.0546C134.311 28.4412 140.467 27.0613 142.521 21.7577\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"round\"><\/path>\n<path d=\"M14.3663 22.2967C14.257 22.3061 12.3582 21.0703 11.6581 21.1625C11.5951 21.1722 11.5319 21.2045 11.4781 21.2545C11.4243 21.3045 11.3829 21.3694 11.36 21.4395L10.9481 24.6162\" stroke=\"white\" stroke-width=\"2\" stroke-miterlimit=\"10\" stroke-linecap=\"round\"><\/path>\n<path d=\"M25.1362 28.583C20.3282 28.9696 14.1728 27.5897 12.119 22.2861\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"round\"><\/path>\n<\/svg>",
+            "subheader": "Extra Space",
+            "text": "Designed to maximize function and organization during the years you need it most."
+          }
+        }
+      },
+      "block_order": [
+        "a7280bb9-2ffc-4439-abff-c538e577bb3c",
+        "af060529-f922-48f2-9ab3-cd2306eb0993",
+        "7c98dbdd-4385-4d50-83f3-7cd1868ca8fb"
+      ],
+      "settings": {
+      }
+    },
+    "16363859020c8ea576": {
+      "type": "product-bar",
+      "blocks": {
+        "32c35e5d-d883-4937-9b92-0cb9dc26b015": {
+          "type": "nav_item",
+          "settings": {
+            "title": "Key Features"
+          }
+        },
+        "be0dc619-0848-4e1d-ae7c-95a3048820f9": {
+          "type": "nav_item",
+          "settings": {
+            "title": "Reviews"
+          }
+        },
+        "03e34ceb-bfff-4567-bea9-1daa6cb1d071": {
+          "type": "nav_item",
+          "settings": {
+            "title": "Dimensions"
+          }
+        },
+        "5a25fc8b-8336-4627-bd9a-a57a4982c6ce": {
+          "type": "nav_item",
+          "settings": {
+            "title": "Comparison"
+          }
+        },
+        "b312c0d2-91f3-48f8-997b-44295c730ff3": {
+          "type": "nav_item",
+          "settings": {
+            "title": "Recommended"
+          }
+        }
+      },
+      "block_order": [
+        "32c35e5d-d883-4937-9b92-0cb9dc26b015",
+        "be0dc619-0848-4e1d-ae7c-95a3048820f9",
+        "03e34ceb-bfff-4567-bea9-1daa6cb1d071",
+        "5a25fc8b-8336-4627-bd9a-a57a4982c6ce",
+        "b312c0d2-91f3-48f8-997b-44295c730ff3"
+      ],
+      "settings": {
+        "title": ""
+      }
+    },
+    "163638631812bdfaea": {
+      "type": "product-reviews",
+      "settings": {
+        "title": "Customer Reviews"
+      }
+    },
+    "165850275053c24bdb": {
+      "type": "product-dimensions",
+      "blocks": {
+        "8fd9856f-c12d-4325-af6a-fb46d406ab8d": {
+          "type": "block",
+          "settings": {
+            "title": "Dimensions",
+            "description": "Overall: 32.5\"H x 54.5\"W x 19\"D"
+          }
+        },
+        "6f5761e2-12d2-4f78-94c6-56257347e6fe": {
+          "type": "block",
+          "settings": {
+            "title": "Box Dimensions",
+            "description": "57.65 in x 22.25 in x 36.65 in"
+          }
+        },
+        "81f8fed9-849a-4c31-8eb7-95c203a1c3ae": {
+          "type": "block",
+          "settings": {
+            "title": "Weight",
+            "description": "207 Lbs"
+          }
+        },
+        "6f4d3cbc-64db-4201-aeab-b1535b79a53a": {
+          "type": "block",
+          "settings": {
+            "title": "Drawers",
+            "description": "7"
+          }
+        }
+      },
+      "block_order": [
+        "8fd9856f-c12d-4325-af6a-fb46d406ab8d",
+        "6f5761e2-12d2-4f78-94c6-56257347e6fe",
+        "81f8fed9-849a-4c31-8eb7-95c203a1c3ae",
+        "6f4d3cbc-64db-4201-aeab-b1535b79a53a"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Emery_Changing_Table_in_Natural.png",
+        "title": "A beautiful, safe, and functional showpiece.",
+        "button_1_label": "",
+        "button_1_link": "",
+        "button_2_label": "",
+        "button_2_link": "",
+        "add_bottom_border": false
+      }
+    },
+    "165850289832f657e6": {
+      "type": "marquee",
+      "blocks": {
+        "35bd3ca2-8b12-4837-87bd-0824fdc8e934": {
+          "type": "marquee_item",
+          "settings": {
+            "large_text": "",
+            "small_text": "AWARD WINNING"
+          }
+        },
+        "2655c841-7096-4cb8-919d-216aa18cf2e4": {
+          "type": "marquee_item",
+          "settings": {
+            "large_text": "",
+            "small_text": "NON-TOXIC"
+          }
+        },
+        "c83c4908-db27-472f-9d7d-011dea175ade": {
+          "type": "marquee_item",
+          "settings": {
+            "large_text": "",
+            "small_text": "LIFE-PROOF"
+          }
+        },
+        "bb622137-b40d-4051-b9be-9b2d908073c4": {
+          "type": "marquee_item",
+          "settings": {
+            "large_text": "",
+            "small_text": "RIGOROUSLY-TESTED"
+          }
+        },
+        "95f9651e-9fb8-4713-b399-2f312e8e4bad": {
+          "type": "marquee_item",
+          "disabled": true,
+          "settings": {
+            "large_text": "",
+            "small_text": "AWARD-WINNING"
+          }
+        }
+      },
+      "block_order": [
+        "35bd3ca2-8b12-4837-87bd-0824fdc8e934",
+        "2655c841-7096-4cb8-919d-216aa18cf2e4",
+        "c83c4908-db27-472f-9d7d-011dea175ade",
+        "bb622137-b40d-4051-b9be-9b2d908073c4",
+        "95f9651e-9fb8-4713-b399-2f312e8e4bad"
+      ],
+      "settings": {
+        "bg_color": ""
+      }
+    },
+    "16585027918c618449": {
+      "type": "image-text-blocks",
+      "blocks": {
+        "52cba6e5-14fb-4d40-890b-59c84042e9ea": {
+          "type": "block",
+          "settings": {
+            "reversed": false,
+            "image": "shopify:\/\/shop_images\/Untitled_design_71.png",
+            "title": "A Life Well Organized",
+            "text": "From onesies to diapers and everything in between, think of your changing table as the nursery HQ – especially during those early days. As moms ourselves, we took note of every function we wish our nursery dressers had, and then created the ultimate staple item. Designed to maximize function in the first few years, but in a beautiful and sophisticated design, so it can seamlessly integrate into a big kid’s space (or in any room in the house) for years to come.",
+            "bullet_icon_1": "",
+            "bullet_1": "✓ Extender Panels for extra space",
+            "bullet_icon_2": "",
+            "bullet_2": "✓ Removable Changing Topper",
+            "bullet_icon_3": "",
+            "bullet_3": "✓ Modern, Premium Design",
+            "bullet_icon_4": "",
+            "bullet_4": "✓ No Assembly Required"
+          }
+        },
+        "973cd498-a714-4ad6-86e0-1dbd9fa0b8e8": {
+          "type": "block",
+          "settings": {
+            "reversed": true,
+            "image": "shopify:\/\/shop_images\/Untitled_design_69.png",
+            "title": "Made with safety and sustainability in mind",
+            "text": "Crafted with sustainably sourced wood and non-toxic materials, The Dresser was built with safety and durability in mind.",
+            "bullet_icon_1": "",
+            "bullet_1": "✓ Premium Construction",
+            "bullet_icon_2": "",
+            "bullet_2": "✓ Non-Toxic & Sustainable",
+            "bullet_icon_3": "",
+            "bullet_3": "✓ Matching Nursery Furniture",
+            "bullet_icon_4": "",
+            "bullet_4": "✓ Built to Last"
+          }
+        }
+      },
+      "block_order": [
+        "52cba6e5-14fb-4d40-890b-59c84042e9ea",
+        "973cd498-a714-4ad6-86e0-1dbd9fa0b8e8"
+      ],
+      "settings": {
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "add_top_border": false,
+        "heading": "You may also like"
+      }
+    },
+    "1658952296876889d8": {
+      "type": "instagram",
+      "blocks": {
+        "920f586c-3d17-476b-9670-1af0391945c0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Gray_GliderPlus_EveryDayVKY.webp"
+          }
+        },
+        "80514f73-4d09-40ab-85a9-201bbdeb77e5": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Navy_Glider_EmmInteriors.webp"
+          }
+        },
+        "e22c3477-6960-41fd-aeca-568f920142c5": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Ivory_Glider_Blanca.webp"
+          }
+        },
+        "79c386fb-6d6f-4907-90d0-a79aa70ee786": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Ivory_Glider_JessicaL.webp"
+          }
+        }
+      },
+      "block_order": [
+        "920f586c-3d17-476b-9670-1af0391945c0",
+        "80514f73-4d09-40ab-85a9-201bbdeb77e5",
+        "e22c3477-6960-41fd-aeca-568f920142c5",
+        "79c386fb-6d6f-4907-90d0-a79aa70ee786"
+      ],
+      "settings": {
+        "add_top_border": true,
+        "handle": "@nurture_and",
+        "text": "Join our community for inspiration, tips & tricks, and more.",
+        "button_label": "Follow Us",
+        "button_link": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "16363860202ad86fd5",
+    "16585027037023c92b",
+    "16363859020c8ea576",
+    "163638631812bdfaea",
+    "165850275053c24bdb",
+    "165850289832f657e6",
+    "16585027918c618449",
+    "product-recommendations",
+    "1658952296876889d8"
+  ]
+}

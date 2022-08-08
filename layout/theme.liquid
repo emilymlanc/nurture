@@ -27,7 +27,7 @@
     <script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'aos.min.js' | asset_url }}" defer="defer"></script> 
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
-    <script src="{{ 'customHoverCarrousel.js' | asset_url }}" defer="defer"></script>
+    <!-- <script src="{{ 'customHoverCarrousel.js' | asset_url }}" defer="defer"></script> -->
  
     {{ content_for_header }}
 
@@ -203,6 +203,7 @@
     <!--Gorgias Chat Widget End-->
 
   <script>window.KlarnaThemeGlobals={};{%case template.name%} {%when"product"%} window.KlarnaThemeGlobals.data_purchase_amount={{product.first_available_variant.price}};window.KlarnaThemeGlobals.productVariants={{product.variants|json}};window.KlarnaThemeGlobals.documentCopy=document.cloneNode(true);{%when"cart"%} window.KlarnaThemeGlobals.data_purchase_amount={{cart.total_price}};window.KlarnaThemeGlobals.documentCopy=document.cloneNode(true);{%endcase%}</script>
+{% include 'adroll' %}
 {% include 'adroll' %}
 </body>
 </html>
