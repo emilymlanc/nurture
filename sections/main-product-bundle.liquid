@@ -16,7 +16,7 @@
 {%- endif -%}
 
 <section class="page-width">
-  <div class="product">
+  <div class="product product--bundle">
     <div class="product__media-wrapper">
       <div class="product__media-container">
         <a class="skip-to-content-link button visually-hidden" href="#ProductInfo-{{ section.id }}">
@@ -32,7 +32,7 @@
             {%- for media in product.media -%}
               {% assign alt_strip = media.alt | strip | downcase %}
               {% assign curr_varriant = product.selected_or_first_available_variant.title | downcase %}
-              {% if curr_varriant contains alt_strip %}
+              {% if curr_varriant == 'default title' or curr_varriant contains alt_strip %}
                 <li class="product__media-item swiper-slide{% if media.media_type != 'image' %} product__media-item--full{% endif %}" data-media-id="{{ section.id }}-{{ media.id }}">
                   
                   {% render 'product-thumbnail', media: media, position: forloop.index, loop: section.settings.enable_video_looping, modal_id: section.id, xr_button: true %}
@@ -47,7 +47,7 @@
             {% for media in product.media %}
               {% assign alt_strip = media.alt | strip | downcase %}
               {% assign curr_varriant = product.selected_or_first_available_variant.title | downcase %}
-              {% if curr_varriant contains alt_strip %}
+              {% if curr_varriant == 'default title' or curr_varriant contains alt_strip %}
                 <div class="product__slider-thumbnail-item{% if thumb_counter == 0 %} active{% endif %}" data-media-id="{{ section.id }}-{{ media.id }}" data-slideid="{{ thumb_counter }}">
                   {% render 'lazy-image' image: media.preview_image, blur: true, classes: 'img-fill' %}
                 </div>
@@ -102,141 +102,6 @@
           {%- endform -%}
         </div>
     
-        {% comment %}
-        <div class="product__description-wrapper">
-          {% if product.metafields.my_fields.mini_card_description != blank %}
-            <p class="body medium">{{ product.metafields.my_fields.mini_card_description }}</p>
-          {% endif %}
-
-          {%- if product.description != blank -%}
-            <div class="product__description body-1">
-              {{ product.description }}
-            </div>
-          {%- endif -%}
-        </div>
-
-        {% if product.metafields.my_fields.shipping_date != blank %}
-          <p class="product__shipping nav">{{ product.metafields.my_fields.shipping_date }}</p>
-        {% endif %}
-        {% endcomment %}
-
-
-        {%- unless product.has_only_default_variant -%}
-          {%- if section.settings.picker_type == 'button' -%}
-            <variant-radios class="no-js-hidden" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
-              {%- for option in product.options_with_values -%}
-
-                {%- assign color_label = 'color,colour,couleur,colore,farbe,색,色,färg,farve' | split: ',' -%}
-                {%- assign downcase_option = option.name | downcase -%}
-                {%- assign variant_option = 'option' | append: forloop.index -%}
-
-                  <fieldset class="js product-form__input{% if color_label contains downcase_option %} product-form__color-swatches{% endif %}"> 
-                    {% comment %}
-                      <legend class="form__label">{{ option.name }}</legend>
-                    {% endcomment %}
-
-                    <div class="product-form__variant-container">
-                      <div class="product-form__variant-list">
-                        
-                        {%- for value in option.values -%}
-
-                          {%- assign current_variant = '' -%}
-
-                          <!-- Find colors within variants -->
-                          {% for variant in product.variants %}
-                            {%- if variant[variant_option] == value -%}
-                              {%- assign current_variant = variant -%}
-                              {%- assign active_color = value -%}
-                            {%- endif -%}
-                          {% endfor %}
-
-                          {%- assign color_swatch_name = value | handleize | append: '.jpg' -%}
-                          {%- assign color_swatch_image = images[color_swatch_name] -%}
-
-                          <input type="radio" id="{{ section.id }}-{{ option.name }}-{{ forloop.index0 }}"
-                                name="main_{{ option.name }}"
-                                value="{{ value | escape }}"
-                                form="product-form-{{ section.id }}"
-                                data-name="{{ active_color }}"
-                                data-id="{{product.variants[forloop.index0].id}}"
-                                
-                                {% if option.selected_value == value %}checked{% endif %}
-                          >
-                          <label {% if product.type == 'Gift Card' %}class="gift-card__label"{% endif %} for="{{ section.id }}-{{ option.name }}-{{ forloop.index0 }}"{% if color_label contains downcase_option %} style="background-image: url({{ color_swatch_image | img_url: '20x20' }});"{% endif %}>
-                            {{ value }}
-                          </label>
-                        {%- endfor -%}
-                      </div>
-
-                      {% if color_label contains downcase_option %}
-                        <div class="product-form__variant-active">
-                          <p class="body-4 medium caps">{{ product.selected_or_first_available_variant[variant_option] }}</p>
-                        </div>
-                      {% endif %}
-
-                    </div>
-                    {% if product.type == 'Seating' %}
-                    <div class="freeswatch__atc nav swatch-link">Try a Swatch</div>
-                    {% endif %}
-              </fieldset>
-              {%- endfor -%}
-              <script type="application/json">
-                {{ product.variants | json }}
-              </script>
-            </variant-radios>
-          {%- else -%}
-            <variant-selects class="no-js-hidden" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
-              {%- for option in product.options_with_values -%}
-                <div class="product-form__input product-form__input--dropdown">
-                  <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
-                    {{ option.name }}
-                  </label>
-                  <div class="select">
-                    <select id="Option-{{ section.id }}-{{ forloop.index0 }}"
-                      class="select__select"
-                      name="options[{{ option.name | escape }}]"
-                      form="product-form-{{ section.id }}"
-                    >
-                      {%- for value in option.values -%}
-                        <option value="{{ value | escape }}" {% if option.selected_value == value %}selected="selected"{% endif %}>
-                          {{ value }}
-                        </option>
-                      {%- endfor -%}
-                    </select>
-                    {% render 'icon-caret' %}
-                  </div>
-                </div>
-              {%- endfor -%}
-
-              <script type="application/json">
-                {{ product.variants | json }}
-              </script>
-            </variant-selects>
-          {%- endif -%}
-        {%- endunless -%}
-
-        <noscript>
-          <div class="product-form__input{% if product.has_only_default_variant %} hidden{% endif %}">
-            <label class="form__label" for="Variants-{{ section.id }}">{{ 'products.product.product_variants' | t }}</label>
-            <div class="select">
-              <select name="id" id="Variants-{{ section.id }}" class="select__select" form="product-form">
-                {%- for variant in product.variants -%}
-                  <option
-                    {% if variant == product.selected_or_first_available_variant %}selected="selected"{% endif %}
-                    {% if variant.available == false %}disabled{% endif %}
-                    value="{{ variant.id }}"
-                  >
-                    {{ variant.title }}
-                    {%- if variant.available == false %} - {{ 'products.product.sold_out' | t }}{% endif %}
-                    - {{ variant.price | money | strip_html }}
-                  </option>
-                {%- endfor -%}
-              </select>
-              {% render 'icon-caret' %}
-            </div>
-          </div>
-        </noscript>
-        
         <div class="product__description-wrapper">
           {% if product.metafields.my_fields.mini_card_description != blank %}
             <p class="body medium">{{ product.metafields.my_fields.mini_card_description }}</p>
@@ -250,13 +115,14 @@
         </div>
         
         {% for variant in product.variants %}
-        {% if variant.metafields.my_fields.delivery_tag != blank %}
-        <p style="{% if product.selected_or_first_available_variant.id == variant.id and variant.metafields.my_fields.delivery_tag != blank %}display: inline-block;{% endif %}" data-id="{{variant.id}}" class="product__shipping nav">{{ variant.metafields.my_fields.delivery_tag }}</p>
-        {% endif %}
+          {% if variant.metafields.my_fields.delivery_tag != blank %}
+            <p style="{% if product.selected_or_first_available_variant.id == variant.id and variant.metafields.my_fields.delivery_tag != blank %}display: inline-block;{% endif %}"
+              data-id="{{variant.id}}" class="product__shipping nav">
+              {{ variant.metafields.my_fields.delivery_tag }}
+            </p>
+          {% endif %}
         {% endfor %}
         
-        {% render 'pdp-upgrade-products' product: product %}
-
         {%- comment -%} Bundle {%- endcomment -%}
         {% render 'pdp-bundle-products' %}
         
@@ -306,16 +172,6 @@
             </div>
           {%- endform -%}
         </product-form>
-
-        <div class="product__props">
-          {% assign props_list = product.metafields.my_fields.value_props_list | split: ',' %}
-          {% for prop in props_list %}
-            <div class="product__prop-item">
-              {% render 'icon-check' %}
-              <p class="body-1 medium">{{ prop }}</p>
-            </div>
-          {% endfor %}
-        </div>
 
         <div class="product__dropdowns">
           {% if product.metafields.my_fields.product_materials != blank %}
@@ -400,15 +256,26 @@
   window.pdpSlider = pdpSlider;
 
   // On thumbnail click
-  $('.product').on('click', '.product__slider-thumbnail-item', function() {
-    console.log($(this));
-    var idx = $(this).data('slideid');
+  if (Array.isArray(pdpSlider)) {
+    pdpSlider.forEach(slider => {
+      slider.$el.on('click', '.product__slider-thumbnail-item', function() {
+        var idx = $(this).data('slideid');
+        $(this).siblings().removeClass('active');
+        $(this).addClass('active');
+        slider.slideToLoop(idx);
+      });
+    })
+  } else {
+    $('.product').on('click', '.product__slider-thumbnail-item', function() {
+      console.log($(this));
+      var idx = $(this).data('slideid');
 
-    $('.product__slider-thumbnail-item').removeClass('active');
-    $(this).addClass('active');
+      $('.product__slider-thumbnail-item').removeClass('active');
+      $(this).addClass('active');
 
-    pdpSlider.slideToLoop(idx); 
-  });
+      pdpSlider.slideToLoop(idx); 
+    });
+  }
 
   // On slide change
   if (Array.isArray(pdpSlider)) {
