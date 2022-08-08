@@ -11,11 +11,13 @@
       "blocks": {
         "subtotal": {
           "type": "subtotal",
-          "settings": {}
+          "settings": {
+          }
         },
         "buttons": {
           "type": "buttons",
-          "settings": {}
+          "settings": {
+          }
         }
       },
       "block_order": [
@@ -41,11 +43,18 @@
         "show_image_outline": true,
         "show_vendor": false
       }
+    },
+    "cross-sell": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{% render \"cross-sell\" %}"
+      }
     }
   },
   "order": [
     "cart-items",
     "cart-footer",
-    "featured-products"
+    "featured-products",
+    "cross-sell"
   ]
 }

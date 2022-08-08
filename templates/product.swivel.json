@@ -136,7 +136,8 @@
         "14c54148-1a3f-4507-964e-3033c47c003a",
         "26242c4d-cf04-4fbe-a135-bd4c24a54407"
       ],
-      "settings": {}
+      "settings": {
+      }
     },
     "1635865904d90bbfaf": {
       "type": "product-dimensions",
@@ -182,7 +183,7 @@
       "type": "product-comparison",
       "settings": {
         "title": "Product Comparison",
-        "comparison_chart": "shopify:\/\/shop_images\/Group_1904_b339f0ba-7650-4120-a73e-510ffb01a5ac.png",
+        "comparison_chart": "shopify:\/\/shop_images\/Compare_swivel.png",
         "comparison_chart_mobile": "shopify:\/\/shop_images\/product-comparison-mobile.png"
       }
     },
@@ -270,7 +271,8 @@
         "2bc0ebff-bf53-417a-82bf-daabfb6d21e2",
         "1a5680ab-cc35-4d3e-ab05-03b7d3eb57ee"
       ],
-      "settings": {}
+      "settings": {
+      }
     },
     "product-recommendations": {
       "type": "product-recommendations",
