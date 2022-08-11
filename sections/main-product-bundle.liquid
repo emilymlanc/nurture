@@ -372,6 +372,38 @@
   // Initialize the prices
   $(document).trigger('bundle:updated');
 
+  // Bundle Variant Image Update
+  window.addEventListener('load', function () {
+    let variantDots = document.querySelectorAll('.product-bundle');
+    variantDots.forEach(variant => {
+      let variantRadioOptions = variant.querySelectorAll('.product-bundle__info .product-bundle__options .product-form__variant-list input');
+      let variantImages = variant.querySelectorAll('.pdp--bundle-image .product-bundle__image');
+      variantRadioOptions.forEach(radio => {
+        if(radio.checked) {
+          let radioId = radio.dataset.id;
+          variantImages.forEach(img => {
+            let imgId = img.dataset.id;
+            if (radioId == imgId) {
+              img.classList.add('display');
+            } else if(img.classList.contains('display')) {
+              img.classList.remove('display');
+            }
+          })
+        }
+        radio.addEventListener('change', () => {
+          let newRadioId = radio.dataset.id;
+          variantImages.forEach(img => {
+            let imgId = img.dataset.id;
+            if (newRadioId == imgId) {
+              img.classList.add('display');
+            } else if(img.classList.contains('display')) {
+              img.classList.remove('display');
+            }
+          })
+        })
+      })
+    })
+  })
 {% endjavascript %}
 
 {% schema %}

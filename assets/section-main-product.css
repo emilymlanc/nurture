@@ -985,3 +985,17 @@ variant-radios {
     padding-right: 10px;
   }
 }
+
+/* PDP Bundle Image */
+.pdp--bundle-image {
+  height: 150px;
+  position: relative;
+  width: 150px;
+  margin-right: 20px;
+}
+.pdp--bundle-image img.product-bundle__image {
+  display: none;
+}
+.pdp--bundle-image img.product-bundle__image.display {
+  display: block;
+}
