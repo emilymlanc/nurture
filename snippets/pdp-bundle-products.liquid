@@ -32,8 +32,10 @@
         {%- render 'pdp-bundle' bundle: bundle -%}
       {%- endfor -%}
     {%- endif -%}
-    {%- if has_seating -%}
-      <div class="freeswatch__atc nav swatch-link">Try a Swatch</div>
-    {%- endif -%}
+    {% comment %}
+      {%- if has_seating -%}
+        <div class="freeswatch__atc nav swatch-link">Try a Swatch</div>
+      {%- endif -%}
+    {% endcomment %}
   </div>
 {%- endif -%}
