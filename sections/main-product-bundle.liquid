@@ -92,7 +92,14 @@
       
 
         <div class="no-js-hidden product__price-main" id="price-{{ section.id }}">
-          {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'sh2' -%}
+          {%- 
+            render 'price', 
+            product: product, 
+            use_variant: true, 
+            show_badges: true,
+            bundle_product: true, 
+            price_class: 'sh2' 
+          -%}
         </div>
     
         <div>
@@ -372,8 +379,8 @@
   // Initialize the prices
   $(document).trigger('bundle:updated');
 
-  // Bundle Variant Image Update
   window.addEventListener('load', function () {
+    // Bundle Variant Image Update
     let variantDots = document.querySelectorAll('.product-bundle');
     variantDots.forEach(variant => {
       let variantRadioOptions = variant.querySelectorAll('.product-bundle__info .product-bundle__options .product-form__variant-list input');
@@ -404,6 +411,20 @@
       })
     })
   })
+  // Bundle save value
+  let bundleSave = document.querySelectorAll('.product-bundle__group-tabs .product-bundle__group-tab');
+  bundleSave.forEach(tab => { 
+    tab.addEventListener('click', ()=> {
+      getBundleSaveValue();
+    })
+  })
+  getBundleSaveValue()
+  // Get Bundle Save Value
+  function getBundleSaveValue() {
+    let bundleSaveValue = document.querySelector('.product-bundles__save:not(p.hidden) b');
+    let bundleSavePill = document.querySelector('#pdp--bundle-badge');
+    bundleSavePill.innerText = bundleSaveValue.innerText;
+  }
 {% endjavascript %}
 
 {% schema %}

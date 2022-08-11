@@ -999,3 +999,6 @@ variant-radios {
 .pdp--bundle-image img.product-bundle__image.display {
   display: block;
 }
+.badge.display {
+  display: block !important;
+}
