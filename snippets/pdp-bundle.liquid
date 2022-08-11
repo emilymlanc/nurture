@@ -11,7 +11,12 @@
       <div class="product-bundle__info">
         <p class="product-bundle__title">{{ bundle.title | escape }}</p>
         <div class="product-bundle__price">
-          {%- render 'price', product: bundle, use_variant: true -%}
+          {%- 
+            render 'price', 
+            product: bundle, 
+            use_variant: true,
+            bundle_product: true
+          -%}
           <modal-opener data-modal="#BundleModal-{{ bundle.id }}">
             <button>{%- render 'icon-question-circle' %}</button>
           </modal-opener>
