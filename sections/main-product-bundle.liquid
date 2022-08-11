@@ -1,0 +1,425 @@
+{% comment %}theme-check-disable TemplateLength{% endcomment %}
+{{ 'section-main-product.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'component-rte.css' | asset_url | stylesheet_tag }}
+
+<link rel="stylesheet" href="{{ 'component-deferred-media.css' | asset_url }}" media="print" onload="this.media='all'">
+
+<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'format-money.js' | asset_url }}"></script>
+
+{%- assign first_3d_model = product.media | where: "media_type", "model" | first -%}
+{%- if first_3d_model -%}
+  {{ 'component-product-model.css' | asset_url | stylesheet_tag }}
+  <link id="ModelViewerStyle" rel="stylesheet" href="https://cdn.shopify.com/shopifycloud/model-viewer-ui/assets/v1.0/model-viewer-ui.css" media="print" onload="this.media='all'">
+  <link id="ModelViewerOverride" rel="stylesheet" href="{{ 'component-model-viewer-ui.css' | asset_url }}" media="print" onload="this.media='all'">
+{%- endif -%}
+
+<section class="page-width">
+  <div class="product product--bundle">
+    <div class="product__media-wrapper">
+      <div class="product__media-container">
+        <a class="skip-to-content-link button visually-hidden" href="#ProductInfo-{{ section.id }}">
+          {{ "accessibility.skip_to_product_info" | t }}
+        </a>
+        <ul class="product__media-list swiper" role="list">
+          {% if product.metafields.my_fields.product_card_badge != blank %}
+                  <div class="product-tag">
+                    <p class="body-4 bold">{{ product.metafields.my_fields.product_card_badge }}</p>
+                  </div>
+                  {% endif %}
+          <div class="swiper-wrapper">
+            {%- for media in product.media -%}
+              {% assign alt_strip = media.alt | strip | downcase %}
+              {% assign curr_varriant = product.selected_or_first_available_variant.title | downcase %}
+              {% if curr_varriant == 'default title' or curr_varriant contains alt_strip %}
+                <li class="product__media-item swiper-slide{% if media.media_type != 'image' %} product__media-item--full{% endif %}" data-media-id="{{ section.id }}-{{ media.id }}">
+                  
+                  {% render 'product-thumbnail', media: media, position: forloop.index, loop: section.settings.enable_video_looping, modal_id: section.id, xr_button: true %}
+                </li>
+              {% endif %}
+            {%- endfor -%}
+          </div> 
+    
+          <div class="product__media-thumbnails">
+            {% assign thumb_counter = 0 %}
+            {%- assign featured_media = product.selected_or_first_available_variant.featured_media -%}
+            {% for media in product.media %}
+              {% assign alt_strip = media.alt | strip | downcase %}
+              {% assign curr_varriant = product.selected_or_first_available_variant.title | downcase %}
+              {% if curr_varriant == 'default title' or curr_varriant contains alt_strip %}
+                <div class="product__slider-thumbnail-item{% if thumb_counter == 0 %} active{% endif %}" data-media-id="{{ section.id }}-{{ media.id }}" data-slideid="{{ thumb_counter }}">
+                  {% render 'lazy-image' image: media.preview_image, blur: true, classes: 'img-fill' %}
+                </div>
+
+                {% assign thumb_counter = thumb_counter | plus: 1 %}
+              {% endif %}
+            {% endfor %}  
+          </div>
+        </ul>
+
+        <div class="product__media-arrows">
+          <div class="swiper-button swiper-button-next">
+            {% render 'svg-arrow-button-right' %}
+          </div>
+          <div class="swiper-button swiper-button-prev">
+            {% render 'svg-arrow-button-left' %}
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="product__info-wrapper">
+      <div id="ProductInfo-{{ section.id }}" class="product__info-container{% if section.settings.enable_sticky_info %} product__info-container--sticky{% endif %}">
+        {%- assign product_form_id = 'product-form-' | append: section.id -%}
+
+        <h1 class="product__title h2">
+          {{ product.title | escape }}
+        </h1>
+
+        <div class="yotpo bottomLine"
+          data-appkey="P3ppHFODI45UdcU4EDf74Cb6VxZcPOF3xSEqzmsq"
+          data-domain="{{shop.permanent_domain | escape }}"
+          data-product-id="{{ product.id }}"
+          data-product-models="{{ product.id }}"
+          data-name="{{ product.title | escape }}"
+          data-url="{{ shop.url }}{{ product.url }}"
+          data-image-url="{{ product.featured_image | product_img_url: 'large' |replace: '?', '%3F' | replace: '&','%26'}}"
+          data-description="{{ product.description | escape }}"
+          data-bread-crumbs="{% for tag in product.tags %}{{ tag | escape }};{% endfor %}">
+        </div>
+      
+
+        <div class="no-js-hidden product__price-main" id="price-{{ section.id }}">
+          {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'sh2' -%}
+        </div>
+    
+        <div>
+          {%- form 'product', product, id: 'product-form-installment', class: 'body-2' -%}
+            <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+            {{ form | payment_terms }}
+          {%- endform -%}
+        </div>
+    
+        <div class="product__description-wrapper">
+          {% if product.metafields.my_fields.mini_card_description != blank %}
+            <p class="body medium">{{ product.metafields.my_fields.mini_card_description }}</p>
+          {% endif %}
+
+          {%- if product.description != blank -%}
+            <div class="product__description body-1">
+              {{ product.description }}
+            </div>
+          {%- endif -%}
+        </div>
+        
+        {% for variant in product.variants %}
+          {% if variant.metafields.my_fields.delivery_tag != blank %}
+            <p style="{% if product.selected_or_first_available_variant.id == variant.id and variant.metafields.my_fields.delivery_tag != blank %}display: inline-block;{% endif %}"
+              data-id="{{variant.id}}" class="product__shipping nav">
+              {{ variant.metafields.my_fields.delivery_tag }}
+            </p>
+          {% endif %}
+        {% endfor %}
+        
+        {%- comment -%} Bundle {%- endcomment -%}
+        {% render 'pdp-bundle-products' %}
+        
+        <product-form class="product-form">
+          {%- form 'product', product, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+            <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+            <div class="product-form__buttons">
+
+              <div class="product-form__qty-btn">
+                <div class="product-form__input product-form__quantity">
+                  <quantity-input class="quantity">
+                    <button class="quantity__button no-js-hidden" name="minus" type="button">
+                      <span class="visually-hidden">{{ 'products.product.quantity.decrease' | t: product: product.title | escape }}</span>
+                      {% render 'icon-minus' %}
+                    </button>
+                    <input class="quantity__input btn"
+                        type="number"
+                        name="quantity"
+                        id="Quantity-{{ section.id }}"
+                        min="1"
+                        value="1"
+                        form="product-form-{{ section.id }}"
+                      >
+                    <button class="quantity__button no-js-hidden" name="plus" type="button">
+                      <span class="visually-hidden">{{ 'products.product.quantity.increase' | t: product: product.title | escape }}</span>
+                      {% render 'icon-plus' %}
+                    </button>
+                  </quantity-input>
+                </div>
+                <button
+                  type="submit"
+                  name="add"
+                  class="product-form__submit button button--full-width {% if block.settings.show_dynamic_checkout and product.selling_plan_groups == empty %}button--secondary{% else %}button--primary{% endif %}"
+                {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}
+                >
+                  {%- if product.selected_or_first_available_variant.available -%}
+                    {{ 'products.product.add_to_cart' | t }}
+                  {%- else -%}
+                    {{ 'products.product.sold_out' | t }}
+                  {%- endif -%}
+                </button>
+              </div>
+
+              {%- if block.settings.show_dynamic_checkout -%}
+                {{ form | payment_button }}
+              {%- endif -%}
+            </div>
+          {%- endform -%}
+        </product-form>
+
+        <div class="product__dropdowns">
+          {% if product.metafields.my_fields.product_materials != blank %}
+            <div class="product__dropdown-item">
+              <button class="product__dropdown-header">
+                <p class="field">Product Materials</p>
+                <div class="product__dropdown-control"></div>
+              </button>
+              <div class="product__dropdown-content">
+                <p class="body-1">{{ product.metafields.my_fields.product_materials }}</p>
+              </div>
+            </div>
+          {% endif %}
+
+          {% if product.metafields.my_fields.safety != blank %}
+            <div class="product__dropdown-item">
+              <button class="product__dropdown-header">
+                <p class="field">Safety</p>
+                <div class="product__dropdown-control"></div>
+              </button>
+              <div class="product__dropdown-content">
+                <p class="body-1">{{ product.metafields.my_fields.safety }}</p>
+              </div>
+            </div>
+          {% endif %}
+
+          {% if product.metafields.my_fields.product_care != blank %}
+            <div class="product__dropdown-item">
+              <button class="product__dropdown-header">
+                <p class="field">Product Care</p>
+                <div class="product__dropdown-control"></div>
+              </button>
+              <div class="product__dropdown-content">
+                <p class="body-1">{{ product.metafields.my_fields.product_care }}</p>
+              </div>
+            </div>
+          {% endif %}
+
+          {% if product.metafields.my_fields.returns_warranty != blank %}
+            <div class="product__dropdown-item">
+              <button class="product__dropdown-header">
+                <p class="field">Returns & Warranty</p>
+                <div class="product__dropdown-control"></div>
+              </button>
+              <div class="product__dropdown-content">
+                <p class="body-1">{{ product.metafields.my_fields.returns_warranty }}</p>
+              </div>
+            </div>
+          {% endif %}
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="visually-hidden" data-variant-images>
+    {% for image in product.images %}
+      {% assign variant_name = image.alt %}
+
+      {% assign count = 1 %}
+      {% if image.alt contains variant_name %}
+        <div data-variant-name="{{ image.alt }}" data-variant-url="{{ image.src | img_url: '1000x', crop: 'center' }}" data-media-id="{{ image.id }}" data-media-position="{{ count }}" data-media-aspect="{{ image.aspect_ratio }}"></div>
+        {% assign count = count | plus: 1 %}
+      {% endif %}
+    {% endfor %}
+  </div>
+
+</section>
+
+{% javascript %}
+  // Initialize Slider
+  const pdpSlider = new Swiper('.product__media-list', {
+    slidesPerView: 1,
+    loop: true,
+    spaceBetween: 20,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    }
+  });
+
+  window.pdpSlider = pdpSlider;
+
+  // On thumbnail click
+  if (Array.isArray(pdpSlider)) {
+    pdpSlider.forEach(slider => {
+      slider.$el.on('click', '.product__slider-thumbnail-item', function() {
+        var idx = $(this).data('slideid');
+        $(this).siblings().removeClass('active');
+        $(this).addClass('active');
+        slider.slideToLoop(idx);
+      });
+    })
+  } else {
+    $('.product').on('click', '.product__slider-thumbnail-item', function() {
+      console.log($(this));
+      var idx = $(this).data('slideid');
+
+      $('.product__slider-thumbnail-item').removeClass('active');
+      $(this).addClass('active');
+
+      pdpSlider.slideToLoop(idx); 
+    });
+  }
+
+  // On slide change
+  if (Array.isArray(pdpSlider)) {
+    pdpSlider.forEach(slider => {
+      slider.on('slideChange', function (swiper) {
+        var idx = swiper.realIndex;
+        $(swiper.el).find('.product__slider-thumbnail-item').removeClass('active');
+        $(swiper.el).find(`.product__slider-thumbnail-item[data-slideid="${idx}"]`).addClass('active');
+      });
+    })
+  } else {
+    pdpSlider.on('slideChange', function (slider) {
+      var idx = slider.realIndex;
+      $('.product__slider-thumbnail-item').removeClass('active');
+      $(`.product__slider-thumbnail-item[data-slideid="${idx}"]`).addClass('active');
+    });
+  }
+
+  // Dropdowns
+  $('.product__dropdown-header').click(function() {
+    $(this).toggleClass('active');
+    $(this).siblings('.product__dropdown-content').slideToggle(400);
+  });
+
+  // Main Bundle Product Alternatives
+  $('.product-bundle__group-tab').on('click', function() {
+    $(this).siblings().removeClass('active');
+    $(this).addClass('active');
+    let idx = $(this).index();
+    let item = $(this).closest('.product-bundle__group').find('.product-bundle').get(idx);
+    let announcement = $(this).closest('.product-bundles').find('.product-bundles__save').get(idx);
+    $(item).siblings().addClass('hidden');
+    $(item).removeClass('hidden');
+    $(announcement).siblings().addClass('hidden');
+    $(announcement).removeClass('hidden');
+
+    $(document).trigger('bundle:updated');
+  });
+
+  // Bundle Variant Selection
+  $('.product-bundle input[type="radio"]').change(function() {
+    let $bundleOptions = $(this).closest('.product-bundle__options');
+    let $activeOption = $bundleOptions?.find('.product-form__variant-active p');
+    $activeOption?.text(this.value);
+    
+    $(document).trigger('bundle:updated');
+  });
+
+  $('.product-bundle modal-opener').click(function() {
+    let $bundle = $(this).closest('.product-bundle__wrapper');
+    let $selectedVariant = $bundle?.find('input[type="radio"]:checked');
+    let $modal = $($(this).data('modal'));
+    $modal?.find(`.product-bundle__options input[type="radio"][data-id="${$selectedVariant.data('id')}"]`).prop('checked', true);
+    $modal?.find('.product-form__variant-active p').text($selectedVariant.val());
+  });
+
+  $('.product-bundle__modal-submit').click(function() {
+    let $modal = $(this).closest('.product-bundle__modal');
+    let $selectedVariant = $modal.find('input[type="radio"]:checked');
+    let $bundle = $modal.siblings('.product-bundle__wrapper');
+    $bundle?.find(`.product-bundle__options input[type="radio"][data-id="${$selectedVariant.data('id')}"]`).prop('checked', true);
+    $bundle?.find('.product-form__variant-active p').text($selectedVariant.val());
+    $modal.trigger('click');
+
+    $(document).trigger('bundle:updated');
+  });
+
+  $(document).on('bundle:updated', function() {
+    // update bundle price & ATC button price
+    let price = 0;
+    let compare_at_price = 0;
+    let $price = $('.product__price-main .price');
+    $('.product-bundle:not(.hidden)').each(function() {
+      let $price = $(this).find('.product-bundle__wrapper .price');
+      let p = $price.data('price');
+      let cp = $price.data('compare-price');
+      price += p;
+      compare_at_price += cp ? cp : p;
+    });
+    if (price == compare_at_price) {
+      $price.removeClass('price--on-sale');
+      $price.find('.price__regular .price-item--regular').text(Shopify.formatMoney(price));
+    } else {
+      $price.addClass('price--on-sale');
+      $price.find('.price__sale .price-item--regular').text(Shopify.formatMoney(compare_at_price));
+      $price.find('.price__sale .price-item--sale').text(Shopify.formatMoney(price));
+      $price.find('.price__badge-sale').text(Shopify.formatMoney(compare_at_price - price, '${{amount_no_decimals}}') + ' off');
+    }
+    $('.product-form__submit').find('span').remove()
+    let atcLabel = $('.product-form__submit').html()
+    $('.product-form__submit').html(atcLabel + `<span>&nbsp;·&nbsp;${Shopify.formatMoney(price)}</span>`);
+  });
+
+  // Initialize the prices
+  $(document).trigger('bundle:updated');
+
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "t:sections.main-product.name",
+  "class": "product-section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "picker_type",
+      "options": [
+        {
+          "value": "dropdown",
+          "label": "t:sections.main-product.blocks.variant_picker.settings.picker_type.options__1.label"
+        },
+        {
+          "value": "button",
+          "label": "t:sections.main-product.blocks.variant_picker.settings.picker_type.options__2.label"
+        }
+      ],
+      "default": "button",
+      "label": "t:sections.main-product.blocks.variant_picker.settings.picker_type.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sticky_info",
+      "default": true,
+      "label": "t:sections.main-product.settings.enable_sticky_info.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.main-product.settings.header.content",
+      "info": "t:sections.main-product.settings.header.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_variants",
+      "default": false,
+      "label": "t:sections.main-product.settings.hide_variants.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_video_looping",
+      "default": false,
+      "label": "t:sections.main-product.settings.enable_video_looping.label"
+    }
+  ]
+}
+{% endschema %}
+

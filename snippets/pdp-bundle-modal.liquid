@@ -1,0 +1,114 @@
+<modal-dialog id="BundleModal-{{ product.id }}" class="product-bundle__modal">
+  <div class="product" role="dialog">
+    <button id="ModalClose-{{ product.id }}" type="button" class="product-bundle__modal-close" aria-label="{{ 'accessibility.close' | t }}">{% render 'icon-close' %}</button>
+    <div class="product__media-wrapper">
+      <div class="product__media-container">
+        <ul class="product__media-list swiper" role="list">
+          {% if product.metafields.my_fields.product_card_badge != blank %}
+            <div class="product-tag">
+              <p class="body-4 bold">{{ product.metafields.my_fields.product_card_badge }}</p>
+            </div>
+          {% endif %}
+          <div class="swiper-wrapper">
+            {%- for media in product.media -%}
+              {% assign alt_strip = media.alt | strip | downcase %}
+              {% assign curr_varriant = product.selected_or_first_available_variant.title | downcase %}
+              {% if curr_varriant contains alt_strip %}
+                <li class="product__media-item swiper-slide{% if media.media_type != 'image' %} product__media-item--full{% endif %}" data-media-id="{{ product.id }}-{{ media.id }}">
+                  
+                  {% render 'product-thumbnail', media: media, position: forloop.index, modal_id: product.id, xr_button: true %}
+                </li>
+              {% endif %}
+            {%- endfor -%}
+          </div> 
+    
+          <div class="product__media-thumbnails">
+            {% assign thumb_counter = 0 %}
+            {%- assign featured_media = product.selected_or_first_available_variant.featured_media -%}
+            {% for media in product.media %}
+              {% assign alt_strip = media.alt | strip | downcase %}
+              {% assign curr_varriant = product.selected_or_first_available_variant.title | downcase %}
+              {% if curr_varriant contains alt_strip %}
+                <div class="product__slider-thumbnail-item{% if thumb_counter == 0 %} active{% endif %}" data-media-id="{{ product.id }}-{{ media.id }}" data-slideid="{{ thumb_counter }}">
+                  {% render 'lazy-image' image: media.preview_image, blur: true, classes: 'img-fill' %}
+                </div>
+
+                {% assign thumb_counter = thumb_counter | plus: 1 %}
+              {% endif %}
+            {% endfor %}  
+          </div>
+        </ul>
+
+        <div class="product__media-arrows">
+          <div class="swiper-button swiper-button-next">
+            {% render 'svg-arrow-button-right' %}
+          </div>
+          <div class="swiper-button swiper-button-prev">
+            {% render 'svg-arrow-button-left' %}
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="product__info-wrapper">
+      <div id="ProductInfo-{{ product.id }}" class="product__info-container">
+        {%- assign product_form_id = 'product-form-' | append: product.id -%}
+
+        <h3 class="product__title h3">{{ product.title | escape }}</h3>
+
+        <div class="yotpo bottomLine"
+          data-appkey="P3ppHFODI45UdcU4EDf74Cb6VxZcPOF3xSEqzmsq"
+          data-domain="{{shop.permanent_domain | escape }}"
+          data-product-id="{{ product.id }}"
+          data-product-models="{{ product.id }}"
+          data-name="{{ product.title | escape }}"
+          data-url="{{ shop.url }}{{ product.url }}"
+          data-image-url="{{ product.featured_image | product_img_url: 'large' |replace: '?', '%3F' | replace: '&','%26'}}"
+          data-description="{{ product.description | escape }}"
+          data-bread-crumbs="{% for tag in product.tags %}{{ tag | escape }};{% endfor %}">
+        </div>
+      
+        <div class="no-js-hidden" id="price-{{ product.id }}">
+          {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'sh2' -%}
+        </div>
+    
+        <div>
+          {%- form 'product', product, id: 'product-form-installment', class: 'body-2' -%}
+            <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+            {{ form | payment_terms }}
+          {%- endform -%}
+        </div>
+    
+        <div class="product__description-wrapper">
+          {% if product.metafields.my_fields.mini_card_description != blank %}
+            <p class="body medium">{{ product.metafields.my_fields.mini_card_description }}</p>
+          {% endif %}
+
+          {%- if product.description != blank -%}
+            <div class="product__description body-1">
+              {{ product.description }}
+            </div>
+          {%- endif -%}
+        </div>
+        
+        {% for variant in product.variants %}
+          {% if variant.metafields.my_fields.delivery_tag != blank %}
+            <p style="{%- if product.selected_or_first_available_variant.id == variant.id and variant.metafields.my_fields.delivery_tag != blank %}display: inline-block;{% endif %}" data-id="{{variant.id}}" class="product__shipping nav">{{ variant.metafields.my_fields.delivery_tag }}</p>
+          {% endif %}
+        {% endfor %}
+        
+        {%- unless product.has_only_default_variant -%}
+          {%- render 'pdp-bundle-variant' product: product, modal: true -%}
+        {%- endunless -%}
+
+        <product-form class="product-form">
+          <button type="button" class="product-bundle__modal-submit button button--full-width button--primary"
+            {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}
+          >Select</button>
+        </product-form>
+
+      </div>
+    </div>
+  </div>
+</modal-dialog>

@@ -142,62 +142,6 @@
             "video_url": ""
           }
         },
-        "b1be75d1-f115-4031-b9d4-129d607aff1c": {
-          "type": "block",
-          "settings": {
-            "product": "the-manual-glider",
-            "image": "shopify:\/\/shop_images\/glider_transparent.webp",
-            "part_a_description": "",
-            "part_a_quantity": "",
-            "part_b_description": "",
-            "part_b_quantity": "",
-            "part_c_description": "",
-            "part_c_quantity": "",
-            "part_d_description": "",
-            "part_d_quantity": "",
-            "part_e_description": "",
-            "part_e_quantity": "",
-            "part_f_description": "",
-            "part_f_quantity": "",
-            "part_g_description": "",
-            "part_g_quantity": "",
-            "part_h_description": "",
-            "part_h_quantity": "",
-            "step_1_text": "",
-            "step_2_text": "",
-            "step_3_text": "",
-            "pdf_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0283\/0227\/8795\/files\/The_Manual_Glider_2_2.pdf?v=1659122602",
-            "video_url": ""
-          }
-        },
-        "73dc2c94-5b3f-41b4-bc87-7dae3180cdcb": {
-          "type": "block",
-          "settings": {
-            "product": "the-crib",
-            "image": "shopify:\/\/shop_images\/Product_Photo_Large_Image_for_Crib.png",
-            "part_a_description": "",
-            "part_a_quantity": "",
-            "part_b_description": "",
-            "part_b_quantity": "",
-            "part_c_description": "",
-            "part_c_quantity": "",
-            "part_d_description": "",
-            "part_d_quantity": "",
-            "part_e_description": "",
-            "part_e_quantity": "",
-            "part_f_description": "",
-            "part_f_quantity": "",
-            "part_g_description": "",
-            "part_g_quantity": "",
-            "part_h_description": "",
-            "part_h_quantity": "",
-            "step_1_text": "",
-            "step_2_text": "",
-            "step_3_text": "",
-            "pdf_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0283\/0227\/8795\/files\/The_Crib_2022.06.02.pdf?v=1659122696",
-            "video_url": ""
-          }
-        },
         "c080acfc-2041-47c7-9c51-7a752d6c3008": {
           "type": "block",
           "settings": {
@@ -233,43 +177,12 @@
             "pdf_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0283\/0227\/8795\/files\/The_Swivel.pdf?v=1636526716",
             "video_url": ""
           }
-        },
-        "a56ee609-1cde-4235-8336-534decd60efe": {
-          "type": "block",
-          "settings": {
-            "product": "the-topper",
-            "image": "shopify:\/\/shop_images\/Untitled_design_-_2022-07-29T152801.808.png",
-            "part_a_description": "",
-            "part_a_quantity": "",
-            "part_b_description": "",
-            "part_b_quantity": "",
-            "part_c_description": "",
-            "part_c_quantity": "",
-            "part_d_description": "",
-            "part_d_quantity": "",
-            "part_e_description": "",
-            "part_e_quantity": "",
-            "part_f_description": "",
-            "part_f_quantity": "",
-            "part_g_description": "",
-            "part_g_quantity": "",
-            "part_h_description": "",
-            "part_h_quantity": "",
-            "step_1_text": "",
-            "step_2_text": "",
-            "step_3_text": "",
-            "pdf_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0283\/0227\/8795\/files\/The_Changing_Table_Topper.pdf?v=1659122708",
-            "video_url": ""
-          }
         }
       },
       "block_order": [
         "767bdb12-dbd0-4791-9f70-96baa48b57f4",
         "16d4ccda-62c7-4271-a42f-d967186f1d0b",
-        "b1be75d1-f115-4031-b9d4-129d607aff1c",
-        "73dc2c94-5b3f-41b4-bc87-7dae3180cdcb",
-        "c080acfc-2041-47c7-9c51-7a752d6c3008",
-        "a56ee609-1cde-4235-8336-534decd60efe"
+        "c080acfc-2041-47c7-9c51-7a752d6c3008"
       ],
       "settings": {
         "title": "Choose Your Product",

@@ -26,14 +26,23 @@
               "title": "Seating",
               "product_1": "the-glider-plus",
               "product_2": "the-glider",
-              "product_3": "the-manual-glider"
+              "product_3": "the-swivel"
+            }
+          },
+          "f3733838-24a1-40a4-a71d-8bbbd4ffce59": {
+            "type": "mega_menu_grid",
+            "settings": {
+              "title": "Hideout",
+              "product_1": "the-hideout",
+              "product_2": "the-cushioned-columns",
+              "product_3": ""
             }
           },
           "8361fa64-66fd-4cbe-90d2-3bc02b6222b6": {
             "type": "mega_menu_grid",
             "settings": {
-              "title": "Play",
-              "product_1": "the-hideout",
+              "title": "PlayPad",
+              "product_1": "the-playpad-mini",
               "product_2": "the-playpad-circle",
               "product_3": "the-playpad-medium"
             }
@@ -67,15 +76,16 @@
           "a3809220-107f-4cf7-960d-e8ddb7b183f4": {
             "type": "mega_menu_grid",
             "settings": {
-              "title": "Furniture",
+              "title": "",
               "product_1": "",
-              "product_2": "the-crib",
-              "product_3": "the-dresser"
+              "product_2": "",
+              "product_3": ""
             }
           }
         },
         "block_order": [
           "e8ca6663-0ba1-4460-81af-eea9c0bb6e35",
+          "f3733838-24a1-40a4-a71d-8bbbd4ffce59",
           "8361fa64-66fd-4cbe-90d2-3bc02b6222b6",
           "fc3f2747-2fcb-4d30-a0ed-ac666969abbc",
           "75295f21-3327-440c-baf3-325a90068878",

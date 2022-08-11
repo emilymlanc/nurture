@@ -21,7 +21,7 @@
           "type": "dropdown",
           "settings": {
             "title": "What is included in delivery?",
-            "subtitle": "<p>Furniture items will arrive in one box. The standard shipping includes delivery to your front threshold - i.e. delivered to your front door, or if you live in an apartment building, to your lobby. <\/p><p>The Dresser will ship via an alternative shipping carrier designed to accommodate oversized packages and comes fully assembled. <\/p>",
+            "subtitle": "<p>Furniture items will arrive in one box. The standard shipping includes delivery to your front threshold - i.e. delivered to your front door, or if you live in an apartment building, to your lobby. <br\/><br\/><\/p>",
             "title_2": "",
             "subtitle_2": "",
             "title_3": "",
@@ -46,7 +46,7 @@
           "type": "dropdown",
           "settings": {
             "title": "How many boxes should I expect my furniture to arrive in?",
-            "subtitle": "<p>Our furniture items are heavy, so please be prepared to have two people carry the item to your room of choice. Our furniture items all come in one box, however, if you have ordered more than one piece, you may receive separate shipments of the items.<\/p><p>Pillows and other small items (blankets, gifts) are shipped via UPS.<\/p>",
+            "subtitle": "<p>Our furniture items are heavy, so please be prepared to have two people carry the item to your room of choice.<\/p><p>The Glider - box weighs 112.5 lbs.<\/p><p>The Glider Plus - box weighs 134.5 lbs.<\/p><p>The Swivel - box weighs 60 lbs<\/p><p>The Ottoman - box weighs 24 lbs<\/p><p>The Glider and The Glider Plus both require light assembly - three easy steps that can be done in 5-10 minutes. We do recommend having a helping hand for this due to the weight of the item.<\/p><p><\/p><p>Pillows and other small items (blankets, gifts) are shipped via UPS.<\/p>",
             "title_2": "",
             "subtitle_2": "",
             "title_3": "",
@@ -71,7 +71,7 @@
           "type": "dropdown",
           "settings": {
             "title": "Can I cancel or exchange my order after it has been shipped?",
-            "subtitle": "<p>Unfortunately, as soon as your order has been shipped, we are no longer able to cancel or change your order (including updating shipping address or colors). You will have to receive the order and then follow our return policy (listed below) in order to receive a full refund.<\/p>",
+            "subtitle": "<p>Unfortunately, as soon as your order has been shipped, we are no longer able to cancel your order. You will have to receive the order and then follow our return policy (listed below) in order to receive a full refund.<\/p>",
             "title_2": "",
             "subtitle_2": "",
             "title_3": "",
@@ -96,32 +96,7 @@
           "type": "dropdown",
           "settings": {
             "title": "What is the expected shipping time frame?",
-            "subtitle": "<p>If an item is in-stock, it will ship from our warehouse between 3-5 business days. Once a furniture item ships, it can take from 1 - 3 week to be delivered. You will receive an email with a shipment tracking number that will update you on your estimated delivery date and time.<\/p><p>Although we do our best to accurately estimate shipment date, there are times where there may be a delay due to worldwide supply chain issues because of COVID-19 that are beyond our control. Due to this, we recommend that you place your Nurture& order sooner rather than later due to longer than expected shipping and delivery times. <\/p><p>Please check on the inventory status of each item on the individual product pages.<\/p><p><\/p>",
-            "title_2": "",
-            "subtitle_2": "",
-            "title_3": "",
-            "subtitle_3": "",
-            "title_4": "",
-            "subtitle_4": "",
-            "title_5": "",
-            "subtitle_5": "",
-            "title_6": "",
-            "subtitle_6": "",
-            "title_7": "",
-            "subtitle_7": "",
-            "title_8": "",
-            "subtitle_8": "",
-            "title_9": "",
-            "subtitle_9": "",
-            "title_10": "",
-            "subtitle_10": ""
-          }
-        },
-        "9e89dceb-5ee8-4d4a-b1d7-4d21a5fb09fa": {
-          "type": "dropdown",
-          "settings": {
-            "title": "What happens if there are damages to my item when it arrives?",
-            "subtitle": "<p>Please email us with photos of the damages to info@nurtureand.com and we’ll get to fixing it ASAP.<\/p>",
+            "subtitle": "<p>Although we do our best to accurately estimate shipment date, there are times where there may be a delay due to worldwide supply chain issues because of COVID-19 that are beyond our control. Due to this, we recommend that you place your Nurture& order sooner rather than later due to longer than expected shipping and delivery times.<\/p><p>Once your furniture item ships from our warehouse, it can take up to 3 weeks to be delivered to your local hub, barring any severe weather conditions (and depending on how close you are to a major city). Please reach out if you have any questions on timing specifically for your zip code.<\/p>",
             "title_2": "",
             "subtitle_2": "",
             "title_3": "",
@@ -152,7 +127,7 @@
           "type": "dropdown",
           "settings": {
             "title": "What is your return policy?",
-            "subtitle": "<p>We offer a flexible return policy that is designed to allow you to try out any Nurture& furniture pieces worry-free in your own space for 30 days. If you are unhappy with the product for any reason, we will refund the amount paid.<\/p><p>To initiate the return process, please email us at info@nurtureand.com before your 30 day free trial window is over. As we are committed to reducing environmental waste and sustainability, we are proud to offer a donation option for returns.<\/p><p>We currently offer a refund in exchange for you donating your Nurture& furniture product. A valid proof of donation receipt from a 501c3 tax-exempt organization of your choosing must be retained and emailed to <a href=\"mailto:info@nurtureand.com\">info@nurtureand.com<\/a> within two weeks of the return confirmation date. Once received, you will be refunded for the amount paid.<\/p><p>Smaller items can be returned via UPS or Fedex - our customer service team will generate a return label for you. Please email us at <a href=\"mailto:info@nurtureand.com\">info@nurtureand.com<\/a>  to initiate a return.<\/p>",
+            "subtitle": "<p>We offer a flexible return policy that is designed to allow you to try out any Nurture& furniture pieces worry-free in your own space for 30 days. If you are unhappy with the product for any reason, we will refund the amount paid.<\/p><p>To initiate the return process, please email us at info@nurtureand.com before your 30 day free trial window is over. As we are committed to reducing environmental waste and sustainability, we are proud to offer a donation option for returns.<\/p><p>We currently offer a refund in exchange for you donating your Nurture& product. A valid proof of donation receipt from a 501c3 tax-exempt organization of your choosing must be retained and emailed to <a href=\"mailto:info@nurtureand.com\">info@nurtureand.com<\/a> within two weeks of the return confirmation date. Once received, you will be refunded for the amount paid.<\/p><p>Again, please email us at <a href=\"mailto:info@nurtureand.com\">info@nurtureand.com<\/a> if you have any questions.<\/p>",
             "title_2": "",
             "subtitle_2": "",
             "title_3": "",
@@ -207,7 +182,7 @@
         "092512a6-25a3-4b0b-98c1-94260d8f5562": {
           "type": "dropdown",
           "settings": {
-            "title": "What type of fabric do you use on your gliders?",
+            "title": "What type of fabric do you use?",
             "subtitle": "<p>We use LiveSmart by Culp fabric for our furniture items, which are produced exclusively with performance yarns that are encapsulated with a stain repellent and moisture repellent finish for exceptional \"cleanability\". Spills bead up on the surface of the fabric instead of penetrating into the cushion. This fabric was developed with years of research and testing, and the LiveSmart technology provides lasting performance. The fabric meets or exceeds standards for ASTM performance and safety.<\/p><p>Moisture repellent Stain resistant Easily cleaned No harmful chemicals No after market treatments required<\/p><p><strong>Moisture repellency<\/strong> - Spray rating of 80 - 100 (AATCC Test Method 22-2010)<\/p><p><strong>Stain resistance -<\/strong> Class 4-5 (AATCC Test Method 130-2010 modified)<\/p><p>Ease of cleaning utilizing various cleaning products.<\/p>",
             "title_2": "",
             "subtitle_2": "",
@@ -235,11 +210,37 @@
             "heading": "Assembly"
           }
         },
-        "8f38e061-1899-4715-8564-37b66457e794": {
+        "555933bb-a3ce-404a-be49-506b0fe67532": {
+          "type": "dropdown",
+          "disabled": true,
+          "settings": {
+            "title": "What’s included with purchase?",
+            "subtitle": "<p>Include a helpful and informative answer to the frequently asked question here.<\/p>",
+            "title_2": "Title",
+            "subtitle_2": "<p>Include a helpful and informative answer to the frequently asked question here.<\/p>",
+            "title_3": "Title",
+            "subtitle_3": "<p>Include a helpful and informative answer to the frequently asked question here.<\/p>",
+            "title_4": "Title",
+            "subtitle_4": "<p>Include a helpful and informative answer to the frequently asked question here.<\/p>",
+            "title_5": "Title",
+            "subtitle_5": "<p>Include a helpful and informative answer to the frequently asked question here.<\/p>",
+            "title_6": "Title",
+            "subtitle_6": "<p>Include a helpful and informative answer to the frequently asked question here.<\/p>",
+            "title_7": "Title",
+            "subtitle_7": "<p>Include a helpful and informative answer to the frequently asked question here.<\/p>",
+            "title_8": "Title",
+            "subtitle_8": "<p>Include a helpful and informative answer to the frequently asked question here.<\/p>",
+            "title_9": "Title",
+            "subtitle_9": "<p>Include a helpful and informative answer to the frequently asked question here.<\/p>",
+            "title_10": "Title",
+            "subtitle_10": "<p>Include a helpful and informative answer to the frequently asked question here.<\/p>"
+          }
+        },
+        "9e89dceb-5ee8-4d4a-b1d7-4d21a5fb09fa": {
           "type": "dropdown",
           "settings": {
-            "title": "What kind of assembly is required for furniture pieces?",
-            "subtitle": "<p>The Glider, The Glider Plus, and The Crib require light assembly. All of our other furniture pieces (including ottomans and The Dresser) come fully assembled. <\/p><p>All assembly guides can be found <a href=\"https:\/\/nurtureand.com\/pages\/assembly\" target=\"_blank\" title=\"https:\/\/nurtureand.com\/pages\/assembly\">here. <\/a><\/p><p><\/p>",
+            "title": "What happens if there are damages to my item when it arrives?",
+            "subtitle": "<p>Please email us with photos of the damages to info@nurtureand.com and we’ll get to fixing it.<\/p>",
             "title_2": "",
             "subtitle_2": "",
             "title_3": "",
@@ -270,7 +271,7 @@
           "type": "dropdown",
           "settings": {
             "title": "What types of payment do you accept?",
-            "subtitle": "<p>We accept all major credit cards as well as Paypal. We also offer pay over time options via Klarna, a third party payment provider<\/p>",
+            "subtitle": "<p>We accept all major credit cards.<\/p>",
             "title_2": "",
             "subtitle_2": "",
             "title_3": "",
@@ -298,14 +299,14 @@
         "393244ba-7003-47af-86e5-dd606ea72814",
         "58a9da59-ac2b-457b-8ba1-183e56ce2135",
         "096bba6e-58ac-4641-8247-c61ca84cca36",
-        "9e89dceb-5ee8-4d4a-b1d7-4d21a5fb09fa",
         "b15f09a2-8320-4521-9131-fac8c6e44332",
         "d8d8fe38-8801-4c66-93c0-3226d66f0a9f",
         "14558cc1-7720-4b3b-bc26-350b2af63451",
         "d1954b0f-f226-4d10-ac0c-073d216f92b7",
         "092512a6-25a3-4b0b-98c1-94260d8f5562",
         "012c3c8f-9eb3-4f42-9e7d-b5355d743fb5",
-        "8f38e061-1899-4715-8564-37b66457e794",
+        "555933bb-a3ce-404a-be49-506b0fe67532",
+        "9e89dceb-5ee8-4d4a-b1d7-4d21a5fb09fa",
         "0f0d9c7a-7b9a-42a2-80be-baeceb7c23f0",
         "7bb99120-0b8c-4f6f-bbbc-a805d276b4aa"
       ],

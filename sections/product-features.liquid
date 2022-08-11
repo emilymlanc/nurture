@@ -15,7 +15,7 @@
   <div class="page-width">
     <div class="product-features__header">
       <h2 class="fade-in-up" data-aos data-aos-delay="100">{{ section.settings.title }}</h2>
-      {% if section.blocks.size > 0 %}
+      {% if section.blocks.size > 1 %}
         <div class="product-features__nav fade-in-up" data-aos data-aos-delay="200">
           {% for block in section.blocks %}
             {% assign current_product = all_products[block.settings.product] %}
@@ -37,7 +37,7 @@
           {% render 'product-feature-manual-glider', current_product: current_product, current_image: block.settings.image, idx: forloop.index %}
         {% elsif current_product.handle contains 'the-crib' %}
           {% render 'product-feature-crib', current_product: current_product, current_image: block.settings.image, idx: forloop.index %}
-        {% elsif current_product.handle contains 'the-changing-table' or current_product.handle contains 'the-dresser' %}
+        {% elsif current_product.handle contains 'the-changing-table' %}
           {% render 'product-feature-changing-table', current_product: current_product, current_image: block.settings.image, idx: forloop.index %}
         {% endif %}
       {% endfor %}
@@ -97,10 +97,6 @@
     allowTouchMove: false,
     fadeEffect: {
       crossFade: true
-    },
-    autoplay: {
-      delay: 3000,
-      pauseOnMouseEnter: true
     }
   }
 
@@ -110,11 +106,7 @@
   
   const featureBadgeSlider = [];
   $('.product-features__badge-groups').each(function(idx) {
-    let slider = new Swiper(this, sliderConfig);
-    slider.on('slideChange', (swiper) => {
-      $(swiper.$el).closest('.product-features__item').find('.product-features__feature').removeClass('active').filter(`[data-num="${swiper.realIndex + 1}"]`).addClass('active');
-    });
-    featureBadgeSlider.push(slider);
+    featureBadgeSlider.push(new Swiper(this, sliderConfig));
   });
 
   // Handle feature on click
@@ -146,21 +138,7 @@
   });
 
   // Mobile features sliders
-  const mobileFeatureSlider = [];
-  $('.product-features__item .product-features__mobile-slider').each(function(idx) {
-    mobileFeatureSlider.push(new Swiper(this, {
-      spaceBetween: 20,
-      loop: true,
-      pagination: {
-        el: this.querySelector('.swiper-pagination'),
-        clickable: true,
-      },
-      thumbs: {
-        swiper: featureBadgeSlider[idx]
-      }
-    }));
-  });
-  /*const mobileFeatureSlider1 = new Swiper('.product-features__item[data-num="1"] .product-features__mobile-slider', {
+  const mobileFeatureSlider1 = new Swiper('.product-features__item[data-num="1"] .product-features__mobile-slider', {
     spaceBetween: 20,
     loop: true,
     pagination: {
@@ -194,7 +172,7 @@
     thumbs: {
       swiper: featureBadgeSlider3
     }
-  });*/
+  });
 {% endjavascript %}
 
 {% schema %}
