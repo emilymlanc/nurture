@@ -1002,3 +1002,21 @@ variant-radios {
 .badge.display {
   display: block !important;
 }
+
+/* PDP Bundle Btn */
+.product--bundle .product-form__quantity {
+  align-self: center;
+}
+.product--bundle .product-form__submit {
+  display: block;
+  padding: 0;
+}
+.product--bundle .product-form__submit label.atcLabel {
+  display: flex;
+  justify-content: center;
+}
+.product--bundle .product-form__submit .normal-price,
+.product--bundle .product-form__submit .discounted-price {
+  margin: 2px 5px;
+  width: calc(50% - 10px);
+}

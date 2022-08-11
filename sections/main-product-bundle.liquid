@@ -373,7 +373,7 @@
     }
     $('.product-form__submit').find('span').remove()
     let atcLabel = $('.product-form__submit').html()
-    $('.product-form__submit').html(atcLabel + `<span>&nbsp;·&nbsp;${Shopify.formatMoney(price)}</span>`);
+    $('.product-form__submit').html(`<label class="atcLabel">${atcLabel}</label>` + `<span class="normal-price">&nbsp;·&nbsp;${Shopify.formatMoney(price)}</span>`);
   });
 
   // Initialize the prices
@@ -424,6 +424,19 @@
     let bundleSaveValue = document.querySelector('.product-bundles__save:not(p.hidden) b');
     let bundleSavePill = document.querySelector('#pdp--bundle-badge');
     bundleSavePill.innerText = bundleSaveValue.innerText;
+    // Button text
+    let bundleDiscount = Number(bundleSavePill.innerText.replace(/[^0-9.-]+/g,"")) * 100;
+    let bundleBtn = document.querySelector('.product--bundle .product-form__submit');
+    let bundleBtnSpan = document.querySelector('.product--bundle .product-form__submit .normal-price');
+    bundleBtnSpan.style.textDecoration = 'line-through';
+    let bundleBtnPrice = Number(bundleBtnSpan.innerText.replace(' · ', '').replace(/[^0-9.-]+/g,"")) * 100;
+    bundleBtnSpan.innerHTML = '';
+    bundleBtnSpan.innerText = ` ${Shopify.formatMoney(bundleBtnPrice)}`;
+    let finalPrice = bundleBtnPrice - bundleDiscount;
+    let newPriceSpan = document.createElement('span');
+    newPriceSpan.classList.add("discounted-price");
+    newPriceSpan.innerText = ` ${Shopify.formatMoney(finalPrice)}`;
+    bundleBtn.append(newPriceSpan);
   }
 {% endjavascript %}
 
