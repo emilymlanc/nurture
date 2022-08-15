@@ -287,7 +287,7 @@
   display: -webkit-box;
   overflow: hidden;
   text-overflow: ellipsis;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
 }
 .cart-drawer__content #cross-sell .cross-sell.xs-v2 .xs-card .xs-card-body {
@@ -301,11 +301,15 @@
   box-shadow: none;
   height: 200px;
   margin: 5px 10px 5px 0;
-  width: 100px;
+  width: 140px;
 }
 .cart-drawer__content #cross-sell .cross-sell.xs-v2 .xs-card .xs-image {
-  width: 100px;
   min-height: 100px;
+  overflow: hidden;
+  width: 140px;
+}
+.cart-drawer__content #cross-sell .cross-sell.xs-v2 .xs-card .xs-card-body .xs-product-title {
+  font-family: beirut-display, serif;
 }
 .cart-drawer__content #cross-sell .cross-sell.xs-v2 .xs-card .xs-card-footer .xs-price {
   font-family: beirut-display, serif;
