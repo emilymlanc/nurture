@@ -1011,6 +1011,9 @@ variant-radios {
   display: block;
   padding: 0;
 }
+.product--bundle .product-form__submit * {
+  cursor: pointer;
+}
 .product--bundle .product-form__submit label.atcLabel {
   display: flex;
   justify-content: center;
