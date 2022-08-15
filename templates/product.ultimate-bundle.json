@@ -1,0 +1,111 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product-bundle",
+      "settings": {
+        "picker_type": "button",
+        "enable_sticky_info": true,
+        "hide_variants": false,
+        "enable_video_looping": false
+      }
+    },
+    "16363859020c8ea576": {
+      "type": "product-bar",
+      "blocks": {
+        "32c35e5d-d883-4937-9b92-0cb9dc26b015": {
+          "type": "nav_item",
+          "settings": {
+            "title": "Key Features"
+          }
+        },
+        "be0dc619-0848-4e1d-ae7c-95a3048820f9": {
+          "type": "nav_item",
+          "settings": {
+            "title": "Reviews"
+          }
+        },
+        "03e34ceb-bfff-4567-bea9-1daa6cb1d071": {
+          "type": "nav_item",
+          "settings": {
+            "title": "Dimensions"
+          }
+        },
+        "5a25fc8b-8336-4627-bd9a-a57a4982c6ce": {
+          "type": "nav_item",
+          "settings": {
+            "title": "Comparison"
+          }
+        },
+        "b312c0d2-91f3-48f8-997b-44295c730ff3": {
+          "type": "nav_item",
+          "settings": {
+            "title": "Recommended"
+          }
+        }
+      },
+      "block_order": [
+        "32c35e5d-d883-4937-9b92-0cb9dc26b015",
+        "be0dc619-0848-4e1d-ae7c-95a3048820f9",
+        "03e34ceb-bfff-4567-bea9-1daa6cb1d071",
+        "5a25fc8b-8336-4627-bd9a-a57a4982c6ce",
+        "b312c0d2-91f3-48f8-997b-44295c730ff3"
+      ],
+      "settings": {
+        "title": ""
+      }
+    },
+    "16363860202ad86fd5": {
+      "type": "product-features",
+      "blocks": {
+        "07df352c-a472-4889-b6db-1983f16bb59c": {
+          "type": "product",
+          "settings": {
+            "product": "the-glider",
+            "image": "shopify:\/\/shop_images\/Image_6.png"
+          }
+        },
+        "5ff138a9-f194-4078-9a9c-5e27b7232fca": {
+          "type": "product",
+          "settings": {
+            "product": "the-glider-plus"
+          }
+        },
+        "5a454e10-dc13-4b67-9ae1-c70402460c9f": {
+          "type": "product",
+          "settings": {
+            "product": "the-swivel",
+            "image": "shopify:\/\/shop_images\/swivel_transparent.png"
+          }
+        }
+      },
+      "block_order": [
+        "07df352c-a472-4889-b6db-1983f16bb59c",
+        "5ff138a9-f194-4078-9a9c-5e27b7232fca",
+        "5a454e10-dc13-4b67-9ae1-c70402460c9f"
+      ],
+      "settings": {
+        "title": ""
+      }
+    },
+    "163638631812bdfaea": {
+      "type": "product-reviews",
+      "settings": {
+        "title": "Customer Reviews"
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "add_top_border": false,
+        "heading": "You may also like"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "16363859020c8ea576",
+    "16363860202ad86fd5",
+    "163638631812bdfaea",
+    "product-recommendations"
+  ]
+}

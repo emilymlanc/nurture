@@ -1,0 +1,23 @@
+{% if bundle != blank %}
+  <div class="product-bundle{% if hidden %} hidden{% endif %}">
+    <div class="product-bundle__wrapper">
+      {% assign current_variant = bundle.first_available_variant %}
+      {% assign bundle_img = current_variant.featured_image %}
+      {% if bundle_img == blank %}
+        {% assign bundle_img = bundle.featured_image %}
+      {% endif %}
+      <img src="{{ bundle_img | image_url: width: 300 }}" class="product-bundle__image" />
+      <div class="product-bundle__info">
+        <p class="product-bundle__title">{{ bundle.title | escape }}</p>
+        <div class="product-bundle__price">
+          {%- render 'price', product: bundle, use_variant: true -%}
+          <modal-opener data-modal="#BundleModal-{{ bundle.id }}">
+            <button>{%- render 'icon-question-circle' %}</button>
+          </modal-opener>
+        </div>
+        {%- render 'pdp-bundle-variant' product: bundle -%}
+      </div>
+    </div>
+    {%- render 'pdp-bundle-modal' product: bundle %}
+  </div>
+{% endif %}

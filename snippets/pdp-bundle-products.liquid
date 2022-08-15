@@ -1,0 +1,39 @@
+{% liquid
+  assign announcements = product.metafields.custom.bundle_announcement_list.value
+  assign group_bundles = product.metafields.custom.bundle_main_product_alt.value
+  assign bundles = product.metafields.custom.bundle_product_list.value
+  assign has_seating = false
+  for bundle in group_bundles
+    if bundle.type == 'Seating'
+      assign has_seating = true
+    endif
+  endfor
+  for bundle in bundles
+    if bundle.type == 'Seating'
+      assign has_seating = true
+    endif
+  endfor
+%}
+
+{%- if group_bundles != blank or bundles != blank -%}
+  <div class="product-bundles">
+    {%- if announcements != blank -%}
+      <div class="product-bundles__announcement">
+        {%- for announcement in announcements -%}
+          <p class="product-bundles__save{% unless forloop.last %} hidden{% endunless %}">{{ announcement }}</p>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}  
+    {%- if group_bundles != blank -%}
+      {%- render 'pdp-group-bundle' group_bundles: group_bundles -%}
+    {%- endif -%}
+    {%- if bundles != blank -%}
+      {%- for bundle in bundles -%}
+        {%- render 'pdp-bundle' bundle: bundle -%}
+      {%- endfor -%}
+    {%- endif -%}
+    {%- if has_seating -%}
+      <div class="freeswatch__atc nav swatch-link">Try a Swatch</div>
+    {%- endif -%}
+  </div>
+{%- endif -%}
