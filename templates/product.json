@@ -59,6 +59,7 @@
       "blocks": {
         "07df352c-a472-4889-b6db-1983f16bb59c": {
           "type": "product",
+          "disabled": true,
           "settings": {
             "product": "the-glider",
             "image": "shopify:\/\/shop_images\/Image_6.png"
@@ -66,22 +67,32 @@
         },
         "5ff138a9-f194-4078-9a9c-5e27b7232fca": {
           "type": "product",
+          "disabled": true,
           "settings": {
             "product": "the-glider-plus"
           }
         },
         "5a454e10-dc13-4b67-9ae1-c70402460c9f": {
           "type": "product",
+          "disabled": true,
           "settings": {
             "product": "the-swivel",
             "image": "shopify:\/\/shop_images\/swivel_transparent.png"
+          }
+        },
+        "70435b9b-996a-4f71-9c9a-002fcc2e762f": {
+          "type": "product",
+          "settings": {
+            "product": "the-dresser",
+            "image": "shopify:\/\/shop_images\/Large_Product_Image.png"
           }
         }
       },
       "block_order": [
         "07df352c-a472-4889-b6db-1983f16bb59c",
         "5ff138a9-f194-4078-9a9c-5e27b7232fca",
-        "5a454e10-dc13-4b67-9ae1-c70402460c9f"
+        "5a454e10-dc13-4b67-9ae1-c70402460c9f",
+        "70435b9b-996a-4f71-9c9a-002fcc2e762f"
       ],
       "settings": {
         "title": ""

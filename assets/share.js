@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 class ShareButton extends DetailsDisclosure {
   constructor() {
     super();
@@ -36,7 +35,7 @@ class ShareButton extends DetailsDisclosure {
 }
 
 customElements.define('share-button', ShareButton);
-=======
+
 if (!customElements.get('share-button')) {
   customElements.define('share-button', class ShareButton extends DetailsDisclosure {
     constructor() {
@@ -89,4 +88,3 @@ if (!customElements.get('share-button')) {
     }
   });
 }
->>>>>>> bce03274339b8af323c67c7b4700b2b5fdf8fc70

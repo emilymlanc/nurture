@@ -18,9 +18,19 @@
     assign target = product
     assign product_id = target.id
   endif
-
-  assign compare_at_price = target.compare_at_price
-  assign price = target.price | default: 1999
+  
+  if bundle_product == true
+    if target.compare_at_price > target.price
+      assign compare_at_price = 0
+      assign price = target.compare_at_price | default: 1999
+    else 
+      assign compare_at_price = target.compare_at_price
+      assign price = target.price | default: 1999
+    endif 
+  else
+    assign compare_at_price = target.compare_at_price
+    assign price = target.price | default: 1999
+  endif 
   assign available = target.available | default: false
   assign money_price = price | money
   if settings.currency_code_enabled
@@ -31,12 +41,12 @@
     assign money_price = 'products.product.price.from_price_html' | t: price: money_price
   endif
 -%}
-
 <div class="price
   {%- if price_class %} {{ price_class }}{% endif -%}
   {%- if available == false %} price--sold-out {% endif -%}
   {%- if compare_at_price > price %} price--on-sale {% endif -%}
   {%- if product.price_varies == false and product.compare_at_price_varies %} price--no-compare{% endif -%}"
+  data-price="{{- price -}}" data-compare-price="{{- compare_at_price -}}"
   data-price="{{- price -}}" data-compare-price="{{- compare_at_price -}}">
   <dl>
     {%- comment -%}
@@ -98,8 +108,13 @@
     </small>
   </dl>
   {%- if show_badges -%}
-    <span class="badge price__badge-sale btn" aria-hidden="true">
-      {{ compare_at_price | minus: price | money }} off
+    <span class="badge price__badge-sale btn{% if bundle_product %} display{% endif %}" aria-hidden="true">
+      {% if bundle_product %}
+        <span id="pdp--bundle-badge"></span>
+      {% else %}
+        {{ compare_at_price | minus: price | money }}
+      {% endif %}
+      off
     </span>
 
     <span class="badge price__badge-sold-out btn color-{{ settings.sold_out_badge_color_scheme }}" aria-hidden="true">

@@ -5,7 +5,12 @@
       {%- for bundle in group_bundles -%}
         <li class="product-bundle__group-tab{% if forloop.last %} active{% endif %}">
           <p>{{ bundle.title | downcase | remove_first: 'the' | strip | escape }}</p>
-          {%- render 'price', product: bundle, use_variant: true -%}
+          {%- 
+            render 'price', 
+            product: bundle, 
+            use_variant: true,
+            bundle_product: true
+          -%}
         </li>
       {%- endfor -%}
     </ul>

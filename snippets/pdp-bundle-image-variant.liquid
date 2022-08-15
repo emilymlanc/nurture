@@ -1,0 +1,11 @@
+<div class="pdp--bundle-image">
+{% for variant in product.variants %}
+  <img 
+    src="{{ variant.featured_image.src | image_url: width: 300, height: 300 }}" 
+    class="product-bundle__image"
+    alt="{{ product.title }} | {{ variant.title }}"
+    data-id="{{ variant.id }}"
+    loading="lazy"
+  />
+{% endfor %}
+</div>

@@ -9,6 +9,24 @@
         "enable_video_looping": false
       }
     },
+    "165876931801569dd6": {
+      "type": "product-features",
+      "blocks": {
+        "3a7b4d32-54f8-4ca3-9bef-7a931db34c51": {
+          "type": "product",
+          "settings": {
+            "product": "the-crib",
+            "image": "shopify:\/\/shop_images\/Product_Photo_Large_Image_for_Crib.png"
+          }
+        }
+      },
+      "block_order": [
+        "3a7b4d32-54f8-4ca3-9bef-7a931db34c51"
+      ],
+      "settings": {
+        "title": "Designed for life's moments"
+      }
+    },
     "1635874208e28ba17d": {
       "type": "product-bar",
       "blocks": {
@@ -90,7 +108,8 @@
         "14c54148-1a3f-4507-964e-3033c47c003a",
         "26242c4d-cf04-4fbe-a135-bd4c24a54407"
       ],
-      "settings": {}
+      "settings": {
+      }
     },
     "16358676125be54543": {
       "type": "marquee",
@@ -191,6 +210,7 @@
     "16358240590dfdb30c": {
       "type": "promo-bar",
       "settings": {
+        "bg_color": "orange",
         "title": "",
         "text": "Order Swatches Today!",
         "link": ""
@@ -238,7 +258,8 @@
         "2bc0ebff-bf53-417a-82bf-daabfb6d21e2",
         "1a5680ab-cc35-4d3e-ab05-03b7d3eb57ee"
       ],
-      "settings": {}
+      "settings": {
+      }
     },
     "product-recommendations": {
       "type": "product-recommendations",
@@ -292,6 +313,7 @@
   },
   "order": [
     "main",
+    "165876931801569dd6",
     "1635874208e28ba17d",
     "16358249938c6387b7",
     "16358676125be54543",

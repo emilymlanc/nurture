@@ -985,3 +985,41 @@ variant-radios {
     padding-right: 10px;
   }
 }
+
+/* PDP Bundle Image */
+.pdp--bundle-image {
+  height: 150px;
+  position: relative;
+  width: 150px;
+  margin-right: 20px;
+}
+.pdp--bundle-image img.product-bundle__image {
+  display: none;
+}
+.pdp--bundle-image img.product-bundle__image.display {
+  display: block;
+}
+.badge.display {
+  display: block !important;
+}
+
+/* PDP Bundle Btn */
+.product--bundle .product-form__quantity {
+  align-self: center;
+}
+.product--bundle .product-form__submit {
+  display: block;
+  padding: 0;
+}
+.product--bundle .product-form__submit * {
+  cursor: pointer;
+}
+.product--bundle .product-form__submit label.atcLabel {
+  display: flex;
+  justify-content: center;
+}
+.product--bundle .product-form__submit .normal-price,
+.product--bundle .product-form__submit .discounted-price {
+  margin: 2px 5px;
+  width: calc(50% - 10px);
+}

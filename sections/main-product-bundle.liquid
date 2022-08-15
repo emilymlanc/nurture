@@ -92,7 +92,14 @@
       
 
         <div class="no-js-hidden product__price-main" id="price-{{ section.id }}">
-          {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'sh2' -%}
+          {%- 
+            render 'price', 
+            product: product, 
+            use_variant: true, 
+            show_badges: true,
+            bundle_product: true, 
+            price_class: 'sh2' 
+          -%}
         </div>
     
         <div>
@@ -366,12 +373,72 @@
     }
     $('.product-form__submit').find('span').remove()
     let atcLabel = $('.product-form__submit').html()
-    $('.product-form__submit').html(atcLabel + `<span>&nbsp;·&nbsp;${Shopify.formatMoney(price)}</span>`);
+    $('.product-form__submit').html(`<label class="atcLabel">${atcLabel}</label>` + `<span class="normal-price">&nbsp;·&nbsp;${Shopify.formatMoney(price)}</span>`);
   });
 
   // Initialize the prices
   $(document).trigger('bundle:updated');
 
+  window.addEventListener('load', function () {
+    // Bundle Variant Image Update
+    let variantDots = document.querySelectorAll('.product-bundle');
+    variantDots.forEach(variant => {
+      let variantRadioOptions = variant.querySelectorAll('.product-bundle__info .product-bundle__options .product-form__variant-list input');
+      let variantImages = variant.querySelectorAll('.pdp--bundle-image .product-bundle__image');
+      variantRadioOptions.forEach(radio => {
+        if(radio.checked) {
+          let radioId = radio.dataset.id;
+          variantImages.forEach(img => {
+            let imgId = img.dataset.id;
+            if (radioId == imgId) {
+              img.classList.add('display');
+            } else if(img.classList.contains('display')) {
+              img.classList.remove('display');
+            }
+          })
+        }
+        radio.addEventListener('change', () => {
+          let newRadioId = radio.dataset.id;
+          variantImages.forEach(img => {
+            let imgId = img.dataset.id;
+            if (newRadioId == imgId) {
+              img.classList.add('display');
+            } else if(img.classList.contains('display')) {
+              img.classList.remove('display');
+            }
+          })
+          getBundleSaveValue();
+        })
+      })
+    })
+  })
+  // Bundle save value
+  let bundleSave = document.querySelectorAll('.product-bundle__group-tabs .product-bundle__group-tab');
+  bundleSave.forEach(tab => { 
+    tab.addEventListener('click', ()=> {
+      getBundleSaveValue();
+    })
+  })
+  getBundleSaveValue()
+  // Get Bundle Save Value
+  function getBundleSaveValue() {
+    let bundleSaveValue = document.querySelector('.product-bundles__save:not(p.hidden) b');
+    let bundleSavePill = document.querySelector('#pdp--bundle-badge');
+    bundleSavePill.innerText = bundleSaveValue.innerText;
+    // Button text
+    let bundleDiscount = Number(bundleSavePill.innerText.replace(/[^0-9.-]+/g,"")) * 100;
+    let bundleBtn = document.querySelector('.product--bundle .product-form__submit');
+    let bundleBtnSpan = document.querySelector('.product--bundle .product-form__submit .normal-price');
+    bundleBtnSpan.style.textDecoration = 'line-through';
+    let bundleBtnPrice = Number(bundleBtnSpan.innerText.replace(' · ', '').replace(/[^0-9.-]+/g,"")) * 100;
+    bundleBtnSpan.innerHTML = '';
+    bundleBtnSpan.innerText = ` ${Shopify.formatMoney(bundleBtnPrice)}`;
+    let finalPrice = bundleBtnPrice - bundleDiscount;
+    let newPriceSpan = document.createElement('span');
+    newPriceSpan.classList.add("discounted-price");
+    newPriceSpan.innerText = ` ${Shopify.formatMoney(finalPrice)}`;
+    bundleBtn.append(newPriceSpan);
+  }
 {% endjavascript %}
 
 {% schema %}
