@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 class ProductForm extends HTMLElement {
   constructor() {
     super();   
@@ -86,4 +85,3 @@ class ProductForm extends HTMLElement {
 }
 
 customElements.define('product-form', ProductForm);
->>>>>>> 6d76704e6669600895813589596703f6667449d2
