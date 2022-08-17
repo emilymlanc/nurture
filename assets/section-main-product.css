@@ -344,6 +344,18 @@ variant-radios {
   margin: 0 10px 0 0;
 }
 
+/* General upgrade products */
+.general-pdp-bundles .upgrade-products:not(:first-child){
+  border-top: none;
+}
+.general-pdp-bundles .upgrade-products .upgrade-header {
+  display: none;
+}
+.general-pdp-bundles .upgrade-products:first-child .upgrade-header {
+  display: block;
+}
+
+
 .product-info__hover {
   background: #F8F7F3;
   box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.1);
