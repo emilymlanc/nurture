@@ -55,4 +55,9 @@
       </fieldset>
     {%- endif -%}
   {%- endfor -%}
+  {% for variant in product.variants %}
+    {% if variant.metafields.my_fields.delivery_tag != blank %}
+    <p style="{% if product.selected_or_first_available_variant.id == variant.id and variant.metafields.my_fields.delivery_tag != blank %}display: inline-block;{% endif %}" data-id="{{variant.id}}" class="product__shipping nav">{{ variant.metafields.my_fields.delivery_tag }}</p>
+    {% endif %}
+  {% endfor %}
 </div>
