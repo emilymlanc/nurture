@@ -65,7 +65,8 @@
         <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
       </dt>
       <dd {% if show_badges == false %}class="price__last"{% endif %}>
-        <span class="price-item price-item--regular" data-product-id="{{product.id}}">
+        <span class="price-item price-item--regular" data-product-id="{{product.id}}"
+          {% if main_bundle_product == true %}style="display:none;"{% endif %}>
           {{ money_price }}
         </span>
       </dd>

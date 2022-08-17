@@ -32,6 +32,20 @@
         {%- render 'pdp-bundle' bundle: bundle -%}
       {%- endfor -%}
     {%- endif -%}
+
+    {%- if bundles != blank -%}
+      <div class="general-pdp-bundles">
+      {%- for bundle in bundles -%}
+        {% 
+          render 'pdp-bundle-upgrade-products', 
+          product: bundle,
+          bundles: bundles,
+          group_bundles: group_bundles
+        %}
+      {%- endfor -%}
+      </div>
+    {%- endif -%}
+
     {% comment %}
       {%- if has_seating -%}
         <div class="freeswatch__atc nav swatch-link">Try a Swatch</div>

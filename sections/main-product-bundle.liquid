@@ -98,7 +98,8 @@
             use_variant: true, 
             show_badges: true,
             bundle_product: true, 
-            price_class: 'sh2' 
+            price_class: 'sh2',
+            main_bundle_product: true
           -%}
         </div>
     
@@ -438,6 +439,14 @@
     newPriceSpan.classList.add("discounted-price");
     newPriceSpan.innerText = ` ${Shopify.formatMoney(finalPrice)}`;
     bundleBtn.append(newPriceSpan);
+    // Main Price
+    let priceContainer = document.querySelector('.sh2 .price__sale');
+    priceContainer.style.display = 'flex';
+    let priceItemSale = document.querySelector('.sh2 .price__sale .price-item.price-item--sale');
+    let priceItemRegular = document.querySelector('.sh2 .price__sale .price-item.price-item--regular');
+    priceItemSale.innerText = `${Shopify.formatMoney(finalPrice)}`;
+    priceItemRegular.innerText = `${Shopify.formatMoney(bundleBtnPrice)}`;
+    priceItemRegular.style.opacity = '0.5';
   }
 {% endjavascript %}
 
