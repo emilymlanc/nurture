@@ -66,7 +66,7 @@
       </dt>
       <dd {% if show_badges == false %}class="price__last"{% endif %}>
         <span class="price-item price-item--regular" data-product-id="{{product.id}}"
-          {% if bundle_product == true %}style="display:none;"{% endif %}>
+          {% if main_bundle_product == true %}style="display:none;"{% endif %}>
           {{ money_price }}
         </span>
       </dd>
