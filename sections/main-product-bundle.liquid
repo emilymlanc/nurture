@@ -425,6 +425,16 @@
   modalDialogInput.forEach(modalInput => {
     modalInput.addEventListener('change', ()=> {
       getBundleSaveValue();
+      let variantImages = document.querySelectorAll('.product-bundle .pdp--bundle-image .product-bundle__image');
+      let modalRadioId = modalInput.dataset.id;
+      variantImages.forEach(img => {
+        let imgId = img.dataset.id;
+        if (modalRadioId == imgId) {
+          img.classList.add('display');
+        } else if(img.classList.contains('display')) {
+          img.classList.remove('display');
+        }
+      })
     })
   })
   let modalSelectBtn = document.querySelectorAll('.product-bundle__modal-submit');
