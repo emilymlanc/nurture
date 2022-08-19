@@ -374,7 +374,7 @@
     }
     $('.product-form__submit').find('span').remove()
     let atcLabel = $('.product-form__submit').html()
-    $('.product-form__submit').html(`<label class="atcLabel">${atcLabel}</label>` + `<span class="normal-price">&nbsp;·&nbsp;${Shopify.formatMoney(price)}</span>`);
+    $('.product-form__submit').html(`<span class="atcLabel">${atcLabel}</span>` + `<span class="normal-price">&nbsp;·&nbsp;${Shopify.formatMoney(price)}</span>`);
   });
 
   // Initialize the prices
@@ -429,6 +429,8 @@
     // Button text
     let bundleDiscount = Number(bundleSavePill.innerText.replace(/[^0-9.-]+/g,"")) * 100;
     let bundleBtn = document.querySelector('.product--bundle .product-form__submit');
+    let btnSpanATC = bundleBtn.querySelector('span.atcLabel');
+    btnSpanATC.innerText = 'Add to Cart'
     let bundleBtnSpan = document.querySelector('.product--bundle .product-form__submit .normal-price');
     bundleBtnSpan.style.textDecoration = 'line-through';
     let bundleBtnPrice = Number(bundleBtnSpan.innerText.replace(' · ', '').replace(/[^0-9.-]+/g,"")) * 100;
