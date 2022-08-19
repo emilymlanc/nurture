@@ -420,7 +420,21 @@
       getBundleSaveValue();
     })
   })
-  getBundleSaveValue()
+  // Modal Select btn update
+  let modalDialogInput = document.querySelectorAll('modal-dialog input[type="radio"]');
+  modalDialogInput.forEach(modalInput => {
+    modalInput.addEventListener('change', ()=> {
+      getBundleSaveValue();
+    })
+  })
+  let modalSelectBtn = document.querySelectorAll('.product-bundle__modal-submit');
+  modalSelectBtn.forEach(modalBtn => {
+    modalBtn.addEventListener('click', ()=> {
+      getBundleSaveValue();
+    })
+  })
+  getBundleSaveValue();
+
   // Get Bundle Save Value
   function getBundleSaveValue() {
     let bundleSaveValue = document.querySelector('.product-bundles__save:not(p.hidden) b');
