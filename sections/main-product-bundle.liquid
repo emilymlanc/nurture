@@ -421,19 +421,30 @@
     })
   })
   // Modal Select btn update
-  let modalDialogInput = document.querySelectorAll('modal-dialog input[type="radio"]');
-  modalDialogInput.forEach(modalInput => {
-    modalInput.addEventListener('change', ()=> {
-      getBundleSaveValue();
-      let variantImages = document.querySelectorAll('.product-bundle .pdp--bundle-image .product-bundle__image');
-      let modalRadioId = modalInput.dataset.id;
-      variantImages.forEach(img => {
-        let imgId = img.dataset.id;
-        if (modalRadioId == imgId) {
-          img.classList.add('display');
-        } else if(img.classList.contains('display')) {
-          img.classList.remove('display');
-        }
+  let allModalDialogs = document.querySelectorAll('modal-dialog');
+  allModalDialogs.forEach(modalPop => {
+    let modalDialogId = modalPop.id.replace('BundleModal-', '')
+    let modalDialogInput = modalPop.querySelectorAll('input[type="radio"]');
+    modalDialogInput.forEach(modalInput => {
+      modalInput.addEventListener('change', ()=> {
+        let variantBundles = document.querySelectorAll('.product-bundle__group-content .product-bundle__wrapper');
+        variantBundles.forEach(bundle => {
+          let bundleId = bundle.dataset.id;
+          if(modalDialogId == bundleId) {
+            let bundleVariantImages = bundle.querySelectorAll('.product-bundle .pdp--bundle-image .product-bundle__image');
+            bundleVariantImages.forEach(img => {
+              let modalRadioId = modalInput.dataset.id;
+              let imgId = img.dataset.id;
+              if (modalRadioId == imgId) {
+                img.classList.add('display');
+              } else if(img.classList.contains('display')) {
+                img.classList.remove('display');
+              }
+            })
+
+          }
+        })
+        getBundleSaveValue();
       })
     })
   })
