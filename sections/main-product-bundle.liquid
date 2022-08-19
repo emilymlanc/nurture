@@ -425,8 +425,18 @@
   allModalDialogs.forEach(modalPop => {
     let modalDialogId = modalPop.id.replace('BundleModal-', '')
     let modalDialogInput = modalPop.querySelectorAll('input[type="radio"]');
+    let modalDialogGallery = modalPop.querySelectorAll('.product__variant-item');
     modalDialogInput.forEach(modalInput => {
       modalInput.addEventListener('change', ()=> {
+        let modalId = modalInput.dataset.id;
+        modalDialogGallery.forEach(gallery => {
+          let galleryId = gallery.dataset.id;
+          if (modalId == galleryId) {
+            gallery.classList.add('display');
+          } else if(gallery.classList.contains('display')) {
+            gallery.classList.remove('display');
+          }
+        })
         let variantBundles = document.querySelectorAll('.product-bundle__wrapper');
         variantBundles.forEach(bundle => {
           let bundleId = bundle.dataset.id;
