@@ -1037,7 +1037,7 @@ modal-dialog.product-bundle__modal .product__variant-item.display {
 .product--bundle .product-form__submit * {
   cursor: pointer;
 }
-.product--bundle .product-form__submit label.atcLabel {
+.product--bundle .product-form__submit span.atcLabel {
   display: flex;
   justify-content: center;
 }
