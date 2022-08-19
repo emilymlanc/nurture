@@ -427,7 +427,7 @@
     let modalDialogInput = modalPop.querySelectorAll('input[type="radio"]');
     modalDialogInput.forEach(modalInput => {
       modalInput.addEventListener('change', ()=> {
-        let variantBundles = document.querySelectorAll('.product-bundle__group-content .product-bundle__wrapper');
+        let variantBundles = document.querySelectorAll('.product-bundle__wrapper');
         variantBundles.forEach(bundle => {
           let bundleId = bundle.dataset.id;
           if(modalDialogId == bundleId) {
