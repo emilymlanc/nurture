@@ -18,6 +18,27 @@
             "title": "Seating"
           }
         },
+        "6fb12112-5b3f-4f17-9eef-6a4b4f76eab1": {
+          "type": "block",
+          "settings": {
+            "collection": "furniture",
+            "title": "Furniture"
+          }
+        },
+        "b0a2d48b-a4d5-479a-a72c-31195f9d02aa": {
+          "type": "block",
+          "settings": {
+            "collection": "bundle-save",
+            "title": "Bundle & Save"
+          }
+        },
+        "a4d3c878-c8f5-400b-b2fc-01f339ef36ce": {
+          "type": "block",
+          "settings": {
+            "collection": "mattress",
+            "title": "Mattress"
+          }
+        },
         "f882f47f-102e-40f2-af91-faf7e31de98b": {
           "type": "block",
           "settings": {
@@ -36,12 +57,15 @@
           "type": "block",
           "settings": {
             "collection": "soft-goods",
-            "title": "Bundles"
+            "title": "Soft Goods"
           }
         }
       },
       "block_order": [
         "b645d23a-ba97-4531-92a3-81f72a272d99",
+        "6fb12112-5b3f-4f17-9eef-6a4b4f76eab1",
+        "b0a2d48b-a4d5-479a-a72c-31195f9d02aa",
+        "a4d3c878-c8f5-400b-b2fc-01f339ef36ce",
         "f882f47f-102e-40f2-af91-faf7e31de98b",
         "65829e00-b5be-4faa-8238-1b25913a4eab",
         "102b1820-b7bd-4608-a71e-978b3fcea8a8"

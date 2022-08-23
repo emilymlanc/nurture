@@ -104,18 +104,21 @@
       <h2>Keep reading</h2>
       <div class="wf-keep-reading__collection w-dyn-list">
         <div role="list" class="wf-keep-reading__collection-list w-dyn-items w-row">
-        {% for article in blog.articles %}
-          <div role="listitem" class="wf-keep-reading_item w-dyn-item w-col w-col-6">
-            <a href="{{ article.url }}" class="wf-keep-reading_wrapper w-inline-block"><img loading="lazy" alt="" src="{{ article.image.src | img_url: 'medium' }}" class="wf-keep-reading_image">
-              <div class="wf-keep-reading__content">
-                <div class="wf-keep-reading_category">{{ article.tags }}</div>
-                <div class="wf-keep-reading_title">{{ article.title }}</div>
-                <div class="keep-reading__paragraph">{{ article.description }}</div>
-                <p class="keep-reading__paragraph">{{ article.description }}
-              </div>
-            </a>
-          </div>
-          {% endfor %}
+        {% for item in blog.articles limit:6 %}
+            {% if item.title == article.title %}
+                {% continue %}
+            {% else %}
+                <div role="listitem" class="wf-keep-reading_item w-dyn-item w-col w-col-6">
+                    <a href="{{ item.url }}" class="wf-keep-reading_wrapper w-inline-block"><img loading="lazy" alt="" src="{{ item.image.src | img_url: '1000x1000' }}" class="wf-keep-reading_image">
+                    <div class="wf-keep-reading__content">
+                        <div class="wf-keep-reading_category">{{ item.tags }}</div>
+                        <div class="wf-keep-reading_title">{{ item.title }}</div>
+                        <p class="keep-reading__paragraph">{{ item.description }}
+                    </div>
+                    </a>
+                </div>
+            {% endif %}
+        {% endfor %}
         </div>
         {% if blog.articles_count == 0 %}
           <div class="w-dyn-empty">
