@@ -420,7 +420,52 @@
       getBundleSaveValue();
     })
   })
-  getBundleSaveValue()
+  // Modal Select btn update
+  let allModalDialogs = document.querySelectorAll('modal-dialog');
+  allModalDialogs.forEach(modalPop => {
+    let modalDialogId = modalPop.id.replace('BundleModal-', '')
+    let modalDialogInput = modalPop.querySelectorAll('input[type="radio"]');
+    let modalDialogGallery = modalPop.querySelectorAll('.product__variant-item');
+    modalDialogInput.forEach(modalInput => {
+      modalInput.addEventListener('change', ()=> {
+        let modalId = modalInput.dataset.id;
+        modalDialogGallery.forEach(gallery => {
+          let galleryId = gallery.dataset.id;
+          if (modalId == galleryId) {
+            gallery.classList.add('display');
+          } else if(gallery.classList.contains('display')) {
+            gallery.classList.remove('display');
+          }
+        })
+        let variantBundles = document.querySelectorAll('.product-bundle__wrapper');
+        variantBundles.forEach(bundle => {
+          let bundleId = bundle.dataset.id;
+          if(modalDialogId == bundleId) {
+            let bundleVariantImages = bundle.querySelectorAll('.product-bundle .pdp--bundle-image .product-bundle__image');
+            bundleVariantImages.forEach(img => {
+              let modalRadioId = modalInput.dataset.id;
+              let imgId = img.dataset.id;
+              if (modalRadioId == imgId) {
+                img.classList.add('display');
+              } else if(img.classList.contains('display')) {
+                img.classList.remove('display');
+              }
+            })
+
+          }
+        })
+        getBundleSaveValue();
+      })
+    })
+  })
+  let modalSelectBtn = document.querySelectorAll('.product-bundle__modal-submit');
+  modalSelectBtn.forEach(modalBtn => {
+    modalBtn.addEventListener('click', ()=> {
+      getBundleSaveValue();
+    })
+  })
+  getBundleSaveValue();
+
   // Get Bundle Save Value
   function getBundleSaveValue() {
     let bundleSaveValue = document.querySelector('.product-bundles__save:not(p.hidden) b');

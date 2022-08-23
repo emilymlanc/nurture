@@ -997,6 +997,17 @@ variant-radios {
     padding-right: 10px;
   }
 }
+/* Product Modal Internal gallery */
+/* modal-dialog.product-bundle__modal .product__media-wrapper {
+  position: relative;
+  border: 1px solid red;
+} */
+modal-dialog.product-bundle__modal .product__variant-item {
+  display: none;
+}
+modal-dialog.product-bundle__modal .product__variant-item.display {
+  display: block;
+}
 
 /* PDP Bundle Image */
 .pdp--bundle-image {
