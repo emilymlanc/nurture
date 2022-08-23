@@ -862,6 +862,25 @@
         "title": "Made with Premium, Wipeable Leather",
         "show_badge": true
       }
+    },
+    "166126791650e2d572": {
+      "type": "apps",
+      "blocks": {
+        "30e09d8c-e95b-489d-897d-e2e6ae522bb7": {
+          "type": "shopify:\/\/apps\/cross-sell-cart-upsell\/blocks\/app-general\/d57b28bc-34f0-4ebc-b397-9eb9c6ea4220",
+          "settings": {
+            "titleproductpage": "You may also like...",
+            "titleproductpagedefault": "Our Bestsellers...",
+            "titlecheckoutpage": "Before you checkout, have you considered..."
+          }
+        }
+      },
+      "block_order": [
+        "30e09d8c-e95b-489d-897d-e2e6ae522bb7"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
@@ -882,6 +901,7 @@
     "1634682464ef9d53e9",
     "163470234670a335e1",
     "165771955177760fba",
-    "16581740156e42d28c"
+    "16581740156e42d28c",
+    "166126791650e2d572"
   ]
 }
