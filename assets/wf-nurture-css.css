@@ -2209,6 +2209,7 @@ blockquote {
   .wf-btn.wf-btn_nav {
     padding: 10px;
     height: 40px;
+    max-width: 180px;
   }
 }
 
