@@ -1,0 +1,173 @@
+<div>
+  <header >
+    <link href="https://cdn.shopify.com/s/files/1/0283/0227/8795/files/webflow.css?v=1648578552" rel="stylesheet" type="text/css" media="all">
+    <link href="https://cdn.shopify.com/s/files/1/0283/0227/8795/files/normalize.css?v=1648578552" rel="stylesheet" type="text/css" media="all">
+    <link rel="stylesheet" href="{{ 'wf-nurture-css.css' | asset_url }}" type="text/css">
+  </header>
+  
+  <!--Hero section-->
+  <div class="wf-article_hero wf-section">
+    <div class="wf-mycontain horizontal-container flex-gap-10px">
+      <div class="wf-flex2col flex-vertical">
+        <div class="wf-article_info-wrap lower-margin--20px"><img src="https://cdn.shopify.com/s/files/1/0283/0227/8795/files/arrow-back-orange.svg?v=1651256702" loading="lazy" alt="" class="right-margin--5px">
+          <a href="#">Back</a>
+        </div>
+        <div class="wf-article_info-wrap lower-margin--20px">
+          <div class="wf-article_info_category">{{ article.tags }}</div>
+        </div>
+        <h1 data-w-id="" class="wf-article_title">{{ article.title }}</h1>
+        <div class="wf-article_info-wrap lower-margin--20px">
+          <div class="wf-article_info-wrap">
+            <div class="wf-article_info">By {{ article.author }}</div>
+            <div></div>
+          </div>
+        </div>
+        <div class="wf-article_info-wrap">
+          <div></div>
+          <div class="wf-article-info__separator"></div>
+          <div>{{ article.created_at | date: "%b %d, %y" }}</div>
+        </div>
+      </div><img src={{ article.image.src | img_url: '1024x1024' }} loading="lazy" alt="" class="wf-article_image">
+    </div>
+  </div>
+  
+  <!--Hero section-->      
+  <div class="article_content-section wf-section">
+    <div class="wf-blogcontain">
+        
+      <div class="wf-left-column">
+        <div class="table-of-contents">
+          <div class="tableofcontents__title">table of contents</div>
+          <ul role="list" class="tableofcontents__list">
+          </ul>
+        </div>
+        <div class="wf-share-wrapper">
+          <div>Share this post!</div>
+          <div class="share-buttons-html">
+            <div class="w-embed">
+              <a class="w-inline-block social-share-icon facebook" href="https://www.facebook.com/sharer/sharer.php?u=&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&t=' + encodeURIComponent(document.URL)); return false;"> </a>
+            </div>
+            <div class="w-embed">
+              <a class="w-inline-block social-share-icon tw" href="https://twitter.com/intent/tweet?" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20 ' + encodeURIComponent(document.URL)); return false;"></a>
+            </div>
+            <div class="w-embed">
+              <a class="w-inline-block social-share-icon wa" href="https://web.whatsapp.com//send?text=" title="Share On Whatsapp" onclick="window.open('whatsapp://send?text=' + encodeURIComponent(document.title) + '%20' + encodeURIComponent(document.URL)); return false;"></a>
+            </div>
+            <div class="w-embed">
+              <a class="w-inline-block social-share-icon linkedin" href="http://www.linkedin.com/shareArticle?mini=true&url=&title=&summary=&source=" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(document.URL) + '&title=' + encodeURIComponent(document.title)); return false;"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="wf-article_wrapper">
+        <div class="wf-article_content">
+          {{ article.content }}
+        </div>
+      </div>
+
+      <div class="wf-right-wrapper">
+        <div class="right-wrapper-sticky">
+          <div class="wf-article_aboutus-wrap">
+            <div class="wf-bold lower-margin--10px">ABOUT NURTURE&amp;</div>
+            <div>Nurture&amp; was born out of a desire to create thoughtfully designed and premium quality nursery &amp; kids products for modern parents. We’re here so that you can focus on your number one priority - making the beautiful big moments with your family and soaking in all the little ones in between.</div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wf-article_cta-break">
+    <div class="wf-article_cta-break_title">Explore The Nursery</div>
+    <div class="lower-margin--45px">Free Shipping on All Gliders + Free Returns</div>
+    <a href="/collections#seating" class="wf-btn wf-btn--medium w-button">Shop all</a>
+  </div>
+  
+  <div class="wf-section-basic wf-section">
+    <div class="wf-mycontain flex-vertical flex-align-center">
+      <div class="wf-article_author">
+      {% assign authorImage = article.user.first_name | append:'_' | append: article.user.last_name | append:'.jpg' %}
+      <img src="{{ authorImage | file_img_url }}" loading="lazy" alt="" class="wf-article_author-image">
+        <div class="flex-vertical">
+          <div class="textblock--14px bold">WRITTEN BY</div>
+          <div class="wf-article_author-name">{{article.user.first_name}} {{article.user.last_name}}</div>
+          <div>{{article.user.bio}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  {% section 'product-recommendations' %}
+  
+	
+  
+  <div class="wf-section-basic wf-section">
+    <div class="wf-mycontain flex-vertical flex-align-center">
+      <h2>Keep reading</h2>
+      <div class="wf-keep-reading__collection w-dyn-list">
+        <div role="list" class="wf-keep-reading__collection-list w-dyn-items w-row">
+        {% for item in blog.articles limit:6 %}
+            {% if item.title == article.title %}
+                {% continue %}
+            {% else %}
+                <div role="listitem" class="wf-keep-reading_item w-dyn-item w-col w-col-6">
+                    <a href="{{ item.url }}" class="wf-keep-reading_wrapper w-inline-block"><img loading="lazy" alt="" src="{{ item.image.src | img_url: '1000x1000' }}" class="wf-keep-reading_image">
+                    <div class="wf-keep-reading__content">
+                        <div class="wf-keep-reading_category">{{ item.tags }}</div>
+                        <div class="wf-keep-reading_title">{{ item.title }}</div>
+                        <p class="keep-reading__paragraph">{{ item.description }}
+                    </div>
+                    </a>
+                </div>
+            {% endif %}
+        {% endfor %}
+        </div>
+        {% if blog.articles_count == 0 %}
+          <div class="w-dyn-empty">
+            <div>No items found.</div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  
+  
+ <script>
+    // Creamos un nuevo array vacío para agregar posteriormente todos los títulos.
+    var titleArray = [];
+    // Extraemos listado de h2 en el contenido del artículo.
+    const titleObject = $(".wf-article_content").find("h2");
+    // Rellenamos el Array solo con el contenido de texto de los h2 encontrados.
+    for (var i = 0; i < titleObject.length; i++) {
+        titleArray[i] = titleObject[i].innerText;
+        $(titleObject[i]).attr("id", `subsection_${i}`);
+        $(titleObject[i]).attr("class", `wf-article_subtitle`);
+        
+        if (i==0){
+        	$(titleObject[i]).css({marginTop : "-100px", paddingTop: "100px"});
+		}else{
+        	$(titleObject[i]).css({marginTop : "-40px", paddingTop: "100px"});
+        }
+    }
+
+    // Buscamos el objeto con los títulos del panel de navegación.
+    const panelItemsObject = document.getElementsByClassName('tableofcontents__list')[0];
+
+    for (title in titleArray){
+        createListElement(titleArray[title], title)
+    }
+
+    function createListElement (text, index){
+        const li = document.createElement('li');
+        li.setAttribute('class','tableofcontents__item-jump-to');
+        const a = document.createElement('a');
+        a.setAttribute('class','tableofcontents__section-link');
+        a.setAttribute('href',`#subsection_${index}`);
+        a.textContent=text;
+        li.appendChild(a);
+        panelItemsObject.appendChild(li);
+    }
+  </script>
+
+</div>
