@@ -934,6 +934,15 @@ blockquote {
   background-color: #9dbae5;
 }
 
+.wf-btn.wf-btn_nav {
+  padding: 16px 16px;
+  background-color: #344e62;
+}
+
+.wf-btn.wf-btn_nav:hover {
+  background-color: #9dbae5;
+}
+
 .wf-btn.button--medium {
   width: 250px;
 }
