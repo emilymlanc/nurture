@@ -1,9 +1,3 @@
-<style>
-  .sticky-header {
-    display: none !important;
-  }
-</style>
-
 <div>
   <header >
     <link href="https://cdn.shopify.com/s/files/1/0283/0227/8795/files/webflow.css?v=1648578552" rel="stylesheet" type="text/css" media="all">
@@ -16,7 +10,7 @@
     <div class="wf-mycontain horizontal-container flex-gap-10px">
       <div class="wf-flex2col flex-vertical">
         <div class="wf-article_info-wrap lower-margin--20px"><img src="https://cdn.shopify.com/s/files/1/0283/0227/8795/files/arrow-back-orange.svg?v=1651256702" loading="lazy" alt="" class="right-margin--5px">
-          <a href="#">Back</a>
+          <a href="#" id="back-btn" class="wf-textcolor--orange">Back</a>
         </div>
         <div class="wf-article_info-wrap lower-margin--20px">
           <div class="wf-article_info_category">{{ article.tags }}</div>
@@ -143,6 +137,7 @@
 
   <!--Table of contents linking-->
   <script>
+
     // Creamos un nuevo array vacío para agregar posteriormente todos los títulos.
     var titleArray = [];
     // Extraemos listado de h2 en el contenido del artículo.
@@ -177,6 +172,7 @@
         li.appendChild(a);
         panelItemsObject.appendChild(li);
     }
+
   </script>
 
   <!--Append middle CTA-->
@@ -186,6 +182,16 @@
     const articleContent = document.getElementById("article-content");
     articleContent.insertBefore(middleCta, document.getElementById("subsection_2"));
     
+  </script>
+
+  <!--Back button-->
+  <script>
+
+    let backBtn = document.getElementById("back-btn");
+    backBtn.addEventListener("click", e => {
+      history.back();
+    });
+
   </script>
 
 </div>
