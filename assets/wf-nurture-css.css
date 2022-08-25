@@ -106,10 +106,6 @@ blockquote {
   line-height: 22px;
 }
 
-.wf-article_content a {
-  color: #dc9d70;
-}
-
 .wf-article_hero {
   display: -webkit-box;
   display: -webkit-flex;
@@ -201,6 +197,10 @@ blockquote {
   -ms-flex-direction: column;
   flex-direction: column;
   background-color: transparent;
+}
+
+.wf-article_content a {
+  color: #dc9d70;
 }
 
 .wf-article_title {
@@ -917,7 +917,7 @@ blockquote {
   background-color: #9dbae5;
   -webkit-transition: all 200ms ease;
   transition: all 200ms ease;
-  color: #fff;
+  color: #fff !important;
   font-size: 15px;
   line-height: 110%;
   font-weight: 700;
