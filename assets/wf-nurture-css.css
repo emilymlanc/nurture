@@ -937,6 +937,8 @@ blockquote {
 .wf-btn.wf-btn_nav {
   padding: 16px 16px;
   background-color: #344e62;
+  justify-self: end;
+  width: 250px;
 }
 
 .wf-btn.wf-btn_nav:hover {
