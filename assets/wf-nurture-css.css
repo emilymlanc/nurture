@@ -938,7 +938,8 @@ blockquote {
   padding: 16px 16px;
   background-color: #344e62;
   justify-self: end;
-  width: 250px;
+  width: 100%;
+  max-width: 200px;
 }
 
 .wf-btn.wf-btn_nav:hover {
@@ -2203,6 +2204,11 @@ blockquote {
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
+  }
+
+  .wf-btn.wf-btn_nav {
+    padding: 10px;
+    height: 44px;
   }
 }
 
