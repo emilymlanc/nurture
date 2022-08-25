@@ -4,7 +4,8 @@
     <link href="https://cdn.shopify.com/s/files/1/0283/0227/8795/files/normalize.css?v=1648578552" rel="stylesheet" type="text/css" media="all">
     <link rel="stylesheet" href="{{ 'wf-nurture-css.css' | asset_url }}" type="text/css">
   </header>
-       
+  
+  <!--Hero section-->
   <div class="wf-article_hero wf-section">
     <div class="wf-mycontain horizontal-container flex-gap-10px">
       <div class="wf-flex2col flex-vertical">
@@ -30,7 +31,7 @@
     </div>
   </div>
   
-        
+  <!--Content section-->      
   <div class="article_content-section wf-section">
     <div class="wf-blogcontain">
         
@@ -59,12 +60,13 @@
         </div>
       </div>
       
+      <!--Article content-->
       <div class="wf-article_wrapper">
-        <div class="wf-article_content">
+        <div class="wf-article_content" id="article-content">
           {{ article.content }}
         </div>
       </div>
-      
+
       <div class="wf-right-wrapper">
         <div class="right-wrapper-sticky">
           <div class="wf-article_aboutus-wrap">
@@ -76,7 +78,15 @@
       </div>
     </div>
   </div>
+
+  <!--Middle CTA-->
+  <div class="wf-article_cta-break" id="middle-cta">
+    <div class="wf-article_cta-break_title">Explore The Nursery</div>
+    <div class="lower-margin--45px">Free Shipping on All Gliders + Free Returns</div>
+    <a href="/collections#seating" class="wf-btn wf-btn--medium w-button">Shop all</a>
+  </div>
   
+  <!--Author-->
   <div class="wf-section-basic wf-section">
     <div class="wf-mycontain flex-vertical flex-align-center">
       <div class="wf-article_author">
@@ -94,7 +104,7 @@
   {% section 'product-recommendations' %}
   
 	
-  
+  <!--Keep reading-->
   <div class="wf-section-basic wf-section">
     <div class="wf-mycontain flex-vertical flex-align-center">
       <h2>Keep reading</h2>
@@ -124,9 +134,9 @@
       </div>
     </div>
   </div>
-  
-  
- <script>
+
+  <!--Table of contents linking-->
+  <script>
     // Creamos un nuevo array vacío para agregar posteriormente todos los títulos.
     var titleArray = [];
     // Extraemos listado de h2 en el contenido del artículo.
@@ -161,6 +171,15 @@
         li.appendChild(a);
         panelItemsObject.appendChild(li);
     }
+  </script>
+
+  <!--Append middle CTA-->
+  <script>
+
+    const middleCta = document.getElementById("middle-cta");
+    const articleContent = document.getElementById("article-content");
+    articleContent.insertBefore(middleCta, document.getElementById("subsection_2"));
+    
   </script>
 
 </div>
