@@ -106,6 +106,10 @@ blockquote {
   line-height: 22px;
 }
 
+.wf-article_content a {
+  color: #dc9d70;
+}
+
 .wf-article_hero {
   display: -webkit-box;
   display: -webkit-flex;
@@ -197,10 +201,6 @@ blockquote {
   -ms-flex-direction: column;
   flex-direction: column;
   background-color: transparent;
-}
-
-.wf-article_content a {
-  color: #dc9d70;
 }
 
 .wf-article_title {
