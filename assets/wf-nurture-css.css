@@ -2502,7 +2502,8 @@ blockquote {
   font-style: normal;
   font-display: swap;
 }
+/*
 @font-face {
     font-family: "Lora";
     src: url({{ Lora-Regular.ttf | asset_url }}) format("TrueType");
-}
+}*/
