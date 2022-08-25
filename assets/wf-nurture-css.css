@@ -199,6 +199,10 @@ blockquote {
   background-color: transparent;
 }
 
+.wf-article_content a {
+  color: #dc9d70;
+}
+
 .wf-article_title {
   font-family: Lora;
   font-size: 60px;
