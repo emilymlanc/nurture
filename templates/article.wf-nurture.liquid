@@ -5,12 +5,40 @@
     <link rel="stylesheet" href="{{ 'wf-nurture-css.css' | asset_url }}" type="text/css">
   </header>
   
+  <style>
+    .header__icons {
+      display: none !important;
+    }
+
+    @media screen and (max-width: 767px) {
+      .header{
+        grid-template-columns: auto auto auto;
+      }
+
+      .header__svg-logo svg {
+        width: 100%;
+      }
+    }
+  </style>
+
+  <!--Nav CTA-->
+  <a href="/collections#seating" class="wf-btn wf-btn_nav" id="nav-cta">Shop all</a>
+
+  <!--Append Nav CTA-->
+  <script>
+
+    let navContainer = document.querySelector("header.header");
+    let navCta = document.getElementById("nav-cta");
+    navContainer.appendChild(navCta);
+
+  </script>
+
   <!--Hero section-->
   <div class="wf-article_hero wf-section">
     <div class="wf-mycontain horizontal-container flex-gap-10px">
       <div class="wf-flex2col flex-vertical">
         <div class="wf-article_info-wrap lower-margin--20px"><img src="https://cdn.shopify.com/s/files/1/0283/0227/8795/files/arrow-back-orange.svg?v=1651256702" loading="lazy" alt="" class="right-margin--5px">
-          <a href="#">Back</a>
+          <a href="#" id="back-btn" class="wf-textcolor--orange">Back</a>
         </div>
         <div class="wf-article_info-wrap lower-margin--20px">
           <div class="wf-article_info_category">{{ article.tags }}</div>
@@ -137,6 +165,7 @@
 
   <!--Table of contents linking-->
   <script>
+
     // Creamos un nuevo array vacío para agregar posteriormente todos los títulos.
     var titleArray = [];
     // Extraemos listado de h2 en el contenido del artículo.
@@ -171,6 +200,7 @@
         li.appendChild(a);
         panelItemsObject.appendChild(li);
     }
+
   </script>
 
   <!--Append middle CTA-->
@@ -180,6 +210,16 @@
     const articleContent = document.getElementById("article-content");
     articleContent.insertBefore(middleCta, document.getElementById("subsection_2"));
     
+  </script>
+
+  <!--Back button-->
+  <script>
+
+    let backBtn = document.getElementById("back-btn");
+    backBtn.addEventListener("click", e => {
+      history.back();
+    });
+
   </script>
 
 </div>
