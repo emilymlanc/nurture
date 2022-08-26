@@ -44,6 +44,7 @@ class CartDrawer extends HTMLElement {
     this.drawer.setAttribute('aria-expanded', true);
 
     this.pageOverlayElement.classList.add('is-visible');
+    document.body.classList.add('is-overlayed');
     document.body.addEventListener('click', this.onBodyClick);
   }
 
@@ -52,6 +53,7 @@ class CartDrawer extends HTMLElement {
     this.drawer.removeAttribute('aria-expanded', true);
 
     this.pageOverlayElement.classList.remove('is-visible');
+    document.body.classList.remove('is-overlayed');
     document.body.removeEventListener('click', this.onBodyClick);
   }
 

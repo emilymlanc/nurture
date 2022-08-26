@@ -3,7 +3,7 @@
   max-width: 500px;
   height: 100%;
   opacity: 0;
-  overflow-y: auto;
+  overflow-y: hidden;
   padding: 0;
   position: fixed;
   right: 0;
@@ -48,13 +48,14 @@
 }
 
 .cart-drawer__content {
-  height: calc(100% - 80px);
+  height: calc(100% - 195px);
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
 }
 
 .cart-drawer__items {
-  height: 100%;
+  /*height: 100%;*/
   padding: 0 20px;
   /* overflow: scroll; */
 }
@@ -326,4 +327,13 @@
 }
 .cart-drawer__content #cross-sell .cross-sell .flickity-prev-next-button:hover .flickity-button-icon {
   fill: var(--beige);
+}
+div#dcodeOuterWrapper{
+  position: absolute;
+  z-index: 9;
+  width: 100%;
+  bottom: 0;
+}
+body.is-overlayed{
+  overflow: hidden;
 }
