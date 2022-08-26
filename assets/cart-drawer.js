@@ -87,21 +87,6 @@ class CartDrawer extends HTMLElement {
 
         }));
 
-        function waitForElement(selector, callback) {
-          if (document.querySelector(selector) !== null) {
-              callback();
-          } else {
-              setTimeout(function() {
-                  UTIL_.waitForElement(selector, callback);
-              }, 100);
-          }
-        }
-
-        waitForElement('#dcodeOuterWrapper',function(){
-          var dcodeOuterWrapperHeight = $('#dcodeOuterWrapper').height();
-          console.log(dcodeOuterWrapperHeight);
-        });
-
         this.disableLoading();
       }).catch(() => {
         this.disableLoading();
