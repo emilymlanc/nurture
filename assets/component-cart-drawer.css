@@ -48,7 +48,7 @@
 }
 
 .cart-drawer__content {
-  height: calc(100% - 195px);
+  height: calc(100% - 210px);
   display: flex;
   flex-direction: column;
   overflow-y: auto;
@@ -333,6 +333,7 @@ div#dcodeOuterWrapper{
   z-index: 9;
   width: 100%;
   bottom: 0;
+  background-color: #fff;
 }
 body.is-overlayed{
   overflow: hidden;
