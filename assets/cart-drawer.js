@@ -58,8 +58,8 @@ class CartDrawer extends HTMLElement {
       }
     }
 
-    waitForElement('#dcodeOuterWrapper',function(){
-      var dcodeOuterWrapperHeight = $('#dcodeOuterWrapper').height();
+    waitForElement('#dcodeInnerWrapper',function(){
+      var dcodeOuterWrapperHeight = $('#dcodeInnerWrapper').height();
       console.log(dcodeOuterWrapperHeight);
     });
   }
