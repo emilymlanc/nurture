@@ -44,7 +44,24 @@ class CartDrawer extends HTMLElement {
     this.drawer.setAttribute('aria-expanded', true);
 
     this.pageOverlayElement.classList.add('is-visible');
+    document.body.classList.add('is-overlayed');
     document.body.addEventListener('click', this.onBodyClick);
+    
+
+    function waitForElement(selector, callback) {
+      if (document.querySelector(selector) !== null) {
+          callback();
+      } else {
+          setTimeout(function() {
+              waitForElement(selector, callback);
+          }, 100);
+      }
+    }
+
+    waitForElement('.cart-drawer #dcodeInfo',function(){
+      var dcodeOuterWrapperHeight = $('.cart-drawer #dcodeInnerWrapper').outerHeight(true) + 70;
+      $('.cart-drawer .cart-drawer__content').css('height', 'calc(100% - '+(dcodeOuterWrapperHeight)+'px)');
+    });
   }
 
   close() {
@@ -52,6 +69,7 @@ class CartDrawer extends HTMLElement {
     this.drawer.removeAttribute('aria-expanded', true);
 
     this.pageOverlayElement.classList.remove('is-visible');
+    document.body.classList.remove('is-overlayed');
     document.body.removeEventListener('click', this.onBodyClick);
   }
 
