@@ -53,7 +53,7 @@ class CartDrawer extends HTMLElement {
           callback();
       } else {
           setTimeout(function() {
-              UTIL_.waitForElement(selector, callback);
+              waitForElement(selector, callback);
           }, 100);
       }
     }
