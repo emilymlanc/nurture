@@ -46,6 +46,22 @@ class CartDrawer extends HTMLElement {
     this.pageOverlayElement.classList.add('is-visible');
     document.body.classList.add('is-overlayed');
     document.body.addEventListener('click', this.onBodyClick);
+    
+
+    function waitForElement(selector, callback) {
+      if (document.querySelector(selector) !== null) {
+          callback();
+      } else {
+          setTimeout(function() {
+              UTIL_.waitForElement(selector, callback);
+          }, 100);
+      }
+    }
+
+    waitForElement('#dcodeOuterWrapper',function(){
+      var dcodeOuterWrapperHeight = $('#dcodeOuterWrapper').height();
+      console.log(dcodeOuterWrapperHeight);
+    });
   }
 
   close() {
