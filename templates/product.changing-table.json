@@ -279,6 +279,12 @@
         "add_top_border": false,
         "heading": "You may also like"
       }
+    },
+    "cross-sell": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{% render \"cross-sell\" %}"
+      }
     }
   },
   "order": [
@@ -290,6 +296,7 @@
     "165850275053c24bdb",
     "165850289832f657e6",
     "16585027918c618449",
-    "product-recommendations"
+    "product-recommendations",
+    "cross-sell"
   ]
 }

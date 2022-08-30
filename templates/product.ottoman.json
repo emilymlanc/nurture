@@ -99,12 +99,19 @@
         "button_label": "Follow Us",
         "button_link": "https:\/\/www.instagram.com\/nurture_and\/"
       }
+    },
+    "cross-sell": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{% render \"cross-sell\" %}"
+      }
     }
   },
   "order": [
     "main",
     "1643302349106ae575",
     "product-recommendations",
-    "1635869636fcde88aa"
+    "1635869636fcde88aa",
+    "cross-sell"
   ]
 }

@@ -280,7 +280,6 @@
     },
     "cross-sell": {
       "type": "custom-liquid",
-      "disabled": true,
       "settings": {
         "custom_liquid": "{% render \"cross-sell\" %}"
       }

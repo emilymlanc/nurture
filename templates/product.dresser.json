@@ -333,6 +333,12 @@
         "button_label": "Follow Us",
         "button_link": ""
       }
+    },
+    "cross-sell": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{% render \"cross-sell\" %}"
+      }
     }
   },
   "order": [
@@ -345,6 +351,7 @@
     "165850289832f657e6",
     "16585027918c618449",
     "product-recommendations",
-    "1658952296876889d8"
+    "1658952296876889d8",
+    "cross-sell"
   ]
 }
