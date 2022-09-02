@@ -409,6 +409,23 @@
             }
           })
           getBundleSaveValue();
+          // Updating modal from PDP
+          let allModalDialogs = document.querySelectorAll('modal-dialog');
+          allModalDialogs.forEach(modalPop => {
+            let modalDialogId = modalPop.id.replace('BundleModal-', '')
+            let modalDialogGallery = modalPop.querySelectorAll('.product__variant-item');
+            let variantWrapperId = variant.querySelector('.product-bundle__wrapper').dataset.id;
+            if (variantWrapperId == modalDialogId) {
+              modalDialogGallery.forEach(gallery => {
+                let galleryId = gallery.dataset.id;
+                if (newRadioId == galleryId) {
+                  gallery.classList.add('display');
+                } else if(gallery.classList.contains('display')) {
+                  gallery.classList.remove('display');
+                }
+              })
+            }
+          })
         })
       })
     })
@@ -451,7 +468,6 @@
                 img.classList.remove('display');
               }
             })
-
           }
         })
         getBundleSaveValue();
