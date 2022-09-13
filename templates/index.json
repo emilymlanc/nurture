@@ -661,13 +661,40 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/Ivory_Glider_TeresaS_0d444f2d-1257-409e-83ca-2b7dcaafe420.jpg"
           }
+        },
+        "77e97861-eac0-4243-a10e-9f592390e00e": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Nurture_carousel_pic_1_-_Edited.png"
+          }
+        },
+        "8f88fce2-f88a-4422-ad80-d0d7756be0cf": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IMG_1182_-_Edited.png"
+          }
+        },
+        "b5e39378-a6f0-4178-ab1b-fed662e679a1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/DSC06743_-_Edited.png"
+          }
+        },
+        "74ccffbb-7c0c-4cbf-8ec0-36647c8827d0": {
+          "type": "image",
+          "settings": {
+          }
         }
       },
       "block_order": [
         "5eb5341c-8cee-425b-95e2-e1b3bfdfe759",
         "7228e1ce-cbdd-4a15-b3fc-67004e67c4ef",
         "da168c9a-617a-42aa-9646-74f83f746a3c",
-        "cc42eced-bb2c-422c-b570-7dbc0ac07b2b"
+        "cc42eced-bb2c-422c-b570-7dbc0ac07b2b",
+        "77e97861-eac0-4243-a10e-9f592390e00e",
+        "8f88fce2-f88a-4422-ad80-d0d7756be0cf",
+        "b5e39378-a6f0-4178-ab1b-fed662e679a1",
+        "74ccffbb-7c0c-4cbf-8ec0-36647c8827d0"
       ],
       "settings": {
         "add_top_border": true,
