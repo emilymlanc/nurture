@@ -142,6 +142,31 @@
             "subtitle_10": ""
           }
         },
+        "a5a16c5e-48c4-4eaf-911a-8f49dba15e00": {
+          "type": "dropdown",
+          "settings": {
+            "title": "Why is there a shipping fee for The Dresser but not your other furniture and seating?",
+            "subtitle": "<p>The Dresser arrives pre-assembled and is therefore much larger and more expensive to ship than our other furniture and seating products. We still assume the bulk of shipping expenses – the shipping fee represents a fraction of the overall cost. <\/p>",
+            "title_2": "Title",
+            "subtitle_2": "<p>Include a helpful and informative answer to the frequently asked question here.<\/p>",
+            "title_3": "Title",
+            "subtitle_3": "<p>Include a helpful and informative answer to the frequently asked question here.<\/p>",
+            "title_4": "Title",
+            "subtitle_4": "<p>Include a helpful and informative answer to the frequently asked question here.<\/p>",
+            "title_5": "Title",
+            "subtitle_5": "<p>Include a helpful and informative answer to the frequently asked question here.<\/p>",
+            "title_6": "Title",
+            "subtitle_6": "<p>Include a helpful and informative answer to the frequently asked question here.<\/p>",
+            "title_7": "Title",
+            "subtitle_7": "<p>Include a helpful and informative answer to the frequently asked question here.<\/p>",
+            "title_8": "Title",
+            "subtitle_8": "<p>Include a helpful and informative answer to the frequently asked question here.<\/p>",
+            "title_9": "Title",
+            "subtitle_9": "<p>Include a helpful and informative answer to the frequently asked question here.<\/p>",
+            "title_10": "Title",
+            "subtitle_10": "<p>Include a helpful and informative answer to the frequently asked question here.<\/p>"
+          }
+        },
         "b15f09a2-8320-4521-9131-fac8c6e44332": {
           "type": "heading",
           "settings": {
@@ -299,6 +324,7 @@
         "58a9da59-ac2b-457b-8ba1-183e56ce2135",
         "096bba6e-58ac-4641-8247-c61ca84cca36",
         "9e89dceb-5ee8-4d4a-b1d7-4d21a5fb09fa",
+        "a5a16c5e-48c4-4eaf-911a-8f49dba15e00",
         "b15f09a2-8320-4521-9131-fac8c6e44332",
         "d8d8fe38-8801-4c66-93c0-3226d66f0a9f",
         "14558cc1-7720-4b3b-bc26-350b2af63451",
