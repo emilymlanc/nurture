@@ -76,7 +76,7 @@
         <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.sale_price' | t }}</span>
       </dt>
       <dd {% if show_badges == false %}class="price__last"{% endif %}>
-        <span class="price-item price-item--sale">
+        <span data-product-id="{{ product.id }}" class="price-item price-item--sale">
           {{ money_price }}
         </span>
       </dd>
@@ -84,7 +84,7 @@
         <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
       </dt>
       <dd class="price__compare">
-        <s class="price-item price-item--regular">
+        <s data-product-id="{{ product.id }}" class="price-item price-item--regular">
           {% if settings.currency_code_enabled %}
             {{ compare_at_price | money }}
           {% else %}
