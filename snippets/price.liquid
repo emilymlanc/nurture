@@ -113,7 +113,7 @@
       {% if bundle_product %}
         <span id="pdp--bundle-badge"></span>
       {% else %}
-        {{ compare_at_price | minus: price | money }}
+        <span>{{ compare_at_price | minus: price | money }} </span>
       {% endif %}
       off
     </span>
