@@ -487,7 +487,7 @@
                                     <a href="{{ product_2.url }}">
                                       <h2 class="sh2">{{ product_2.title }}</h2>
                                     </a>
-                                    <p class="label-2 bold">{% if product_2.compare_at_price > product_2.price %}<strike>{{ product_2.compare_at_price | money_without_trailing_zeros }}</strike> {% endif %}{{ product_2.price | money_without_trailing_zeros }}</p>
+                                    <p class="label-2 bold">{% if product_2.compare_at_price > product_2.price %}<strike>{{ product_2.compare_at_price | money_without_trailing_zeros }}</strike> {% endif %}<span>{{ product_2.price | money_without_trailing_zeros }}</span></p>
                                   </div>
                                 {% endif %}
                                 {% if block.settings.product_3 != blank %}
@@ -513,7 +513,7 @@
                                     <a href="{{ product_3.url }}">
                                       <h2 class="sh2">{{ product_3.title }}</h2>
                                     </a>
-                                    <p class="label-2 bold">{% if product_3.compare_at_price > product_3.price %}<strike>{{ product_3.compare_at_price | money_without_trailing_zeros }}</strike> {% endif %}{{ product_3.price | money_without_trailing_zeros }}</p>
+                                    <p class="label-2 bold">{% if product_3.compare_at_price > product_3.price %}<strike>{{ product_3.compare_at_price | money_without_trailing_zeros }}</strike> {% endif %}<span>{{ product_3.price | money_without_trailing_zeros }}</span></p>
                                   </div>
                                 {% endif %}
                               </div>
