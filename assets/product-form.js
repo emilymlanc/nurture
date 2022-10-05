@@ -18,11 +18,7 @@ class ProductForm extends HTMLElement {
     submitButton.setAttribute('disabled', true);
     submitButton.classList.add('loading');
 
-    let body = JSON.stringify({
-      ...JSON.parse(serializeForm(this.form)),
-      sections: this.getSectionsToRender().map((section) => section.section),
-      sections_url: window.location.pathname
-    });
+    //If Bundle Product
     if (this.bundles.length) {
       let items = [];
       this.bundles.forEach(bundle => {
@@ -32,14 +28,46 @@ class ProductForm extends HTMLElement {
           quantity: this.form.querySelector('.quantity__input').value
         });
       })
-      body = JSON.stringify({
+      let body = JSON.stringify({
         items,
         sections: this.getSectionsToRender().map((section) => section.section),
         sections_url: window.location.pathname
       });
-    }
 
-    fetch(`${routes.cart_add_url}`, { ...fetchConfig('javascript'), body })
+      fetch(`${routes.cart_add_url}`, { ...fetchConfig('javascript'), body })
+      .then((response) => response.json())
+      .then(async (parsedState) => {
+        if (!parsedState.sections) {
+          const sections = await fetch(`${routes.cart_url}?sections=${this.getSectionsToRender().map(section => section.section)}`)
+          parsedState.sections = await sections.json();
+        }
+        this.getSectionsToRender().forEach((section => {
+          const elementToReplace =
+            document.getElementById(section.id).querySelector(section.selector) || document.getElementById(section.id);
+
+          elementToReplace.innerHTML =
+            this.getSectionInnerHTML(parsedState.sections[section.section], section.selector);
+
+        }));
+      })
+      .catch((e) => {
+        console.error(e);
+      })
+      .finally(() => {
+        submitButton.classList.remove('loading');
+        submitButton.removeAttribute('disabled');
+        this.cartDrawer.open();
+      });
+
+    }else{
+      //If Simple Product
+      let body = JSON.stringify({
+        ...JSON.parse(serializeForm(this.form)),
+        sections: this.getSectionsToRender().map((section) => section.section),
+        sections_url: window.location.pathname
+      });
+
+      fetch(`${routes.cart_add_url}`, { ...fetchConfig('javascript'), body })
       .then((response) => response.json())
       .then((parsedState) => {
 
@@ -60,6 +88,7 @@ class ProductForm extends HTMLElement {
         submitButton.removeAttribute('disabled');
         this.cartDrawer.open();
       });
+    }
   }
 
   getSectionsToRender() {
