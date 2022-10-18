@@ -3,9 +3,9 @@
     "hero": {
       "type": "hero",
       "settings": {
-        "layout": "split",
-        "image": "shopify:\/\/shop_images\/Untitled_design_43.png",
-        "mobile_image": "shopify:\/\/shop_images\/Untitled_design_43.png",
+        "layout": "left",
+        "image": "shopify:\/\/shop_images\/Untitled_design_109.png",
+        "mobile_image": "shopify:\/\/shop_images\/Test_-_mobile_home_page.png",
         "add_overlay": true,
         "subtitle": "Rethink the Nursery",
         "title": "Home of The Award Winning Glider",
@@ -15,7 +15,7 @@
         "button_link": "shopify:\/\/collections",
         "button_color": "white",
         "review_badge": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"157\" height=\"157\" viewbox=\"0 0 157 157\" fill=\"none\">\n<circle opacity=\"0.4\" cx=\"78.7296\" cy=\"78.3866\" r=\"64.6071\" transform=\"rotate(7.10461 78.7296 78.3866)\" fill=\"#F8F7F3\" stroke=\"#F8F7F3\" stroke-width=\"0.863124\"><\/circle>\n<circle cx=\"78.7308\" cy=\"78.3864\" r=\"69.4478\" transform=\"rotate(7.10461 78.7308 78.3864)\" stroke=\"#F8F7F3\" stroke-width=\"0.888889\"><\/circle>\n<style type=\"text\/css\">\n\t.st0{opacity:0.4;fill:#F8F7F3;stroke:#F8F7F3;stroke-width:0.8631;enable-background:new    ;}\n\t.st1{fill:none;stroke:#F8F7F3;stroke-width:0.8889;}\n\t.st2{fill:#344E62;}\n\t.st3{fill:#5F6063;}\n\t.st4{font-family:'BrandonGrotesque-Bold';}\n\t.st5{font-size:12px;}\n<\/style>\n<circle class=\"st0\" cx=\"78.7\" cy=\"78.4\" r=\"64.6\"><\/circle>\n<circle class=\"st1\" cx=\"78.7\" cy=\"78.4\" r=\"69.4\"><\/circle>\n<path class=\"st2\" d=\"M64.3,61.4h9.2l-3.5-2v-3.9h4.6l0.3-0.9H70v-5.4l-2.1,0.8v4.6h-8.4l9.6-12.5h-3.7l-7.1,13.4h9.6v3.9L64.3,61.4z   M78.6,61.7c1,0,1.7-0.7,1.7-1.7c0-1-0.8-1.7-1.7-1.7c-1,0-1.7,0.7-1.7,1.7C76.8,61,77.6,61.7,78.6,61.7z M88.8,61.7  c5.5,0,8.3-5.1,8.3-10.4c0-5.3-2.7-9.5-7.6-9.5c-4,0-6.6,2.9-6.6,6.6c0,3.2,2,6.2,5.9,6.2c2.1,0,4.2-1,5.7-3.2  c0,5.5-2.4,9.4-5.7,9.5l-3.8-3.8l-2,2.2C84.9,60.8,86.5,61.7,88.8,61.7z M85.5,47.8c0-2.9,1.3-5.2,3.9-5.2c2.9,0,5,3.1,5.2,7.8  c-1.3,1.8-3.1,2.4-4.7,2.4C86.8,52.8,85.5,50.4,85.5,47.8z\"><\/path>\n<path class=\"st2\" d=\"M47.7,72.4l1.5,4.8h4.7l-3.8,3l1.5,4.8l-3.8-3l-3.8,3l1.5-4.8l-3.8-3h4.7L47.7,72.4z\"><\/path>\n<path class=\"st2\" d=\"M62.7,72.4l1.5,4.8h4.7l-3.8,3l1.5,4.8l-3.8-3l-3.8,3l1.5-4.8l-3.8-3h4.7L62.7,72.4z\"><\/path>\n<path class=\"st2\" d=\"M78.2,72.4l1.6,4.8h5.1l-4.1,3l1.6,4.8l-4.1-3l-4.1,3l1.6-4.8l-4.1-3h5.1L78.2,72.4z\"><\/path>\n<path class=\"st2\" d=\"M93.7,72.4l1.5,4.8h4.7l-3.8,3l1.5,4.8l-3.8-3l-3.8,3l1.5-4.8l-3.8-3h4.7L93.7,72.4z\"><\/path>\n<path class=\"st2\" d=\"M108.7,72.4l1.5,4.8h4.7l-3.8,3l1.5,4.8l-3.8-3l-3.8,3l1.5-4.8l-3.8-3h4.7L108.7,72.4z\"><\/path>\n<text transform=\"matrix(1 0 0 1 39.121 102.7564)\" class=\"st3 st4 st5\">205+ REVIEWS<\/text>\n<\/svg>",
-        "promo": true,
+        "promo": false,
         "split_bg_color": "#dc9d70",
         "promo_title": "Fall Sale!",
         "promo_text1": "$100 off $999+",
