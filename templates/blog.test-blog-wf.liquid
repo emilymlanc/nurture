@@ -1,10 +1,25 @@
- 
 <div>
   <header>
-    <link href="{{ 'wf-blog-index-webflow-css' | asset_url }}" rel="stylesheet" type="text/css" media="all">
-    <link href="{{ 'wf-blog-index-normalize-css' | asset_url }}" type="text/css" media="all">
-    <link rel="stylesheet" href="{{ 'wf-blog-index-css' | asset_url }}" type="text/css">
+    <link href="https://cdn.shopify.com/s/files/1/0283/0227/8795/files/wf-blog-index-webflow-css.css?v=1666791488" rel="stylesheet" type="text/css" media="all">
+    <link href="https://cdn.shopify.com/s/files/1/0283/0227/8795/files/wf-blog-index-normalize-css.css?v=1666791487" type="text/css" media="all">
+    <link rel="stylesheet" href="https://cdn.shopify.com/s/files/1/0283/0227/8795/files/wf-blog-index-css.css?v=1666791488" type="text/css">
   </header>
+
+  <style>
+    .header__icons {
+      display: none !important;
+    }
+
+    @media screen and (max-width: 767px) {
+      .header {
+        grid-template-columns: auto auto auto;
+      }
+
+      .header__svg-logo svg {
+        width: 100%;
+      }
+    }
+  </style>
 
   <!--Nav CTA-->
   <a href="/collections#seating" class="wf-btn wf-btn_nav" id="nav-cta">Shop all</a>
