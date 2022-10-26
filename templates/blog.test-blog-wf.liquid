@@ -38,7 +38,7 @@
         <a href="{{ item.url }}" class="_wf-heroblog-wrap w-inline-block"><img src="{{item.image.src | img_url: '1024x1024'}}" loading="lazy" alt="" class="_wf-heroblog-mainimg">
           <div class="_wf-heroblog-content">
             <div class="_wf-labelblock _wf-labelblock-button">{{ item.tags }}</div>
-            <h3>{{ item.title }}</h3>
+            <h3 id="main-article-title">{{ item.title }}</h3>
             <p class="_wf-span-color_brand--1">{{ item.excerpt }}</p><img src="https://uploads-ssl.webflow.com/614cf582249767ca6d30a78f/6170356bb999eb24b6e690f1_Seal.png" loading="lazy" alt="" class="_wf-heroblog-sign _wf-mobile">
             <div class="_wf-articlecard-readmore-wrap">
               <div class="_wf-labelblock _wf-labelblock-button _wf-span-color_brand--1">READ MORE</div><img src="https://uploads-ssl.webflow.com/614cf582249767ca6d30a78f/617045ff4bd832d80da5e123_Vector%2020.png" loading="lazy" alt="" class="_wf-articlecard-readmore-icon">
@@ -47,5 +47,10 @@
         </a>
       {% endfor %}
     </div>
+  </div>
+
+  <!--Promotional Banner-->
+  <div class="_wf-promotional-banner wf-section">
+    <div class="_wf-labelblock _wf-span-bold-700 _wf-span-color_white">YOUR GO-TO GUIDE FOR ALL THINGS NURSERY</div>
   </div>
 </div>
