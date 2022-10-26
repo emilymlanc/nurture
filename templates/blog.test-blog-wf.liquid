@@ -5,8 +5,41 @@
     <link href="https://cdn.shopify.com/s/files/1/0283/0227/8795/files/webflow_shopify-test.css?v=1648578622" rel="stylesheet" type="text/css" media="all">
   </header>
   
- <div>
-        {% for tag in blog.all_tags %}
-            {{ tag }}
-          {% endfor %}
+<div>
+  <header>
+    <link href="https://cdn.shopify.com/s/files/1/0283/0227/8795/files/webflow.css?v=1648578552" rel="stylesheet" type="text/css" media="all">
+    <link href="https://cdn.shopify.com/s/files/1/0283/0227/8795/files/normalize.css?v=1648578552" rel="stylesheet" type="text/css" media="all">
+    <link rel="stylesheet" href="{{ 'wf-nurture-blogIndex-css.css' | asset_url }}" type="text/css">
+  </header>
+
+  <!--Nav CTA-->
+  <a href="/collections#seating" class="wf-btn wf-btn_nav" id="nav-cta">Shop all</a>
+
+  <!--Append Nav CTA-->
+  <script>
+    let navContainer = document.querySelector("header.header");
+    let navCta = document.getElementById("nav-cta");
+    navContainer.appendChild(navCta);
+  </script>
+
+  <!--Spacing Section-->
+  <div class="_wf-spacing-section wf-section"></div>
+
+  <!--Hero Section-->
+  <div class="_wf-heroblog-section wf-section">
+    <div class="_wf-heroblog-collection-list-wrapper">
+      {% for item in blog.articles limit:1%}
+        <a href="{{ item.url }}" class="_wf-heroblog-wrap w-inline-block"><img src="{{item.image.src}}" loading="lazy" alt="" class="_wf-heroblog-mainimg">
+          <div class="_wf-heroblog-content">
+            <div class="_wf-labelblock _wf-labelblock-button">{{ item.tags }}</div>
+            <h3>{{ item.title }}</h3>
+            <p class="_wf-span-color_brand--1">{{ item.description }}</p><img src="https://uploads-ssl.webflow.com/614cf582249767ca6d30a78f/6170356bb999eb24b6e690f1_Seal.png" loading="lazy" alt="" class="_wf-heroblog-sign _wf-mobile">
+            <div class="_wf-articlecard-readmore-wrap">
+              <div class="_wf-labelblock _wf-labelblock-button _wf-span-color_brand--1">READ MORE</div><img src="https://uploads-ssl.webflow.com/614cf582249767ca6d30a78f/617045ff4bd832d80da5e123_Vector%2020.png" loading="lazy" alt="" class="_wf-articlecard-readmore-icon">
+            </div>
+          </div><img src="https://uploads-ssl.webflow.com/614cf582249767ca6d30a78f/6170356bb999eb24b6e690f1_Seal.png" loading="lazy" alt="" class="_wf-heroblog-sign">
+        </a>
+      {% endfor %}
     </div>
+  </div>
+</div>
