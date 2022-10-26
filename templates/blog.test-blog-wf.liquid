@@ -1,8 +1,8 @@
 <div>
   <header>
-    <link href="{{ 'wf-blog-index-webflow-css.css' | asset_url }}" rel="stylesheet" type="text/css" media="all">
-    <link href="{{ 'wf-blog-index-normalize-css.css' | asset_url }}" type="text/css" media="all">
-    <link rel="stylesheet" href="{{ 'wf-blog-index-css.css' | asset_url }}" type="text/css">
+    <link href="https://cdn.shopify.com/s/files/1/0283/0227/8795/files/wf-blog-index-webflow-css.css?v=1666791488" rel="stylesheet" type="text/css" media="all">
+    <link href="https://cdn.shopify.com/s/files/1/0283/0227/8795/files/wf-blog-index-normalize-css.css?v=1666791487" type="text/css" media="all">
+    <link rel="stylesheet" href="{{ 'wf-blog-index-css.css' | asset_url | stylesheet_tag }}" type="text/css">
   </header>
 
   <style>
@@ -21,6 +21,10 @@
     }
   </style>
 
+
+
+  <!--Nav CTA-->
+
   <!--Nav CTA-->
   <a href="/collections#seating" class="wf-btn wf-btn_nav" id="nav-cta">Shop all</a>
 
@@ -37,7 +41,7 @@
       {% for item in blog.articles limit:1%}
         <a href="{{ item.url }}" class="_wf-heroblog-wrap w-inline-block"><img src="{{item.image.src | img_url: '1024x1024'}}" loading="lazy" alt="" class="_wf-heroblog-mainimg">
           <div class="_wf-heroblog-content">
-            <div class="_wf-labelblock _wf-labelblock-button">{{ item.tags }}</div>
+            <div class="_wf-labelblock _wf-labelblock-button" id="main-article-category">{{ item.tags }}</div>
             <h3 id="main-article-title">{{ item.title }}</h3>
             <p class="_wf-span-color_brand--1">{{ item.excerpt }}</p><img src="https://uploads-ssl.webflow.com/614cf582249767ca6d30a78f/6170356bb999eb24b6e690f1_Seal.png" loading="lazy" alt="" class="_wf-heroblog-sign _wf-mobile">
             <div class="_wf-articlecard-readmore-wrap">
@@ -53,4 +57,46 @@
   <div class="_wf-promotional-banner wf-section">
     <div class="_wf-labelblock _wf-span-bold-700 _wf-span-color_white">YOUR GO-TO GUIDE FOR ALL THINGS NURSERY</div>
   </div>
+
+
+
+  <!--Category Styles-->
+  <script>
+    let categoryProperties = [
+      {
+        name: 'PREGNANCY',
+        color: "#9dbae5"
+      },
+      {
+        name: 'PREGNANCY CARE',
+        color: "#344e62"
+      },
+      {
+        name: 'NURSERY',
+        color: "#a2a884"
+      },
+      {
+        name: 'CHECK LIST',
+        color: "#9dbae5"
+      }, {
+        name: 'GENDER',
+        color: "#344e62"
+      }, {
+        name: 'FIRST TRIMESTER',
+        color: "#dc9d70"
+      }, {
+        name: 'SECOND TRIMESTER',
+        color: "#dc9d70"
+      }, {
+        name: 'THIRD TRIMESTER',
+        color: "#dc9d70"
+      }
+    ]
+    let mainArticleCategory = document.getElementById('main-article-category');
+    categoryProperties.forEach(e => {
+      e.name == mainArticleCategory.innerHTML
+        ? mainArticleCategory.style.color = e.color
+        :;
+    })
+  </script>
 </div>
