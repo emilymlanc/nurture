@@ -2126,8 +2126,7 @@ blockquote {
 
 ._wf-index-blog__filter-checkbox-label {
     position: relative;
-    z-index: 1;
-    padding: 10px 50px;
+    padding: 10px 20px;
     font-weight: 700;
 }
 
