@@ -132,7 +132,7 @@
     ]
 
     let mainArticleCategory = document.getElementById('main-article-category');
-    let categoryTabsItems = document.getElementById('category-tabs-list').childNodes;
+    let categoryTabsItems = document.getElementById('category-tabs-list').children.map(e => e.childNodes[0]);
     mainArticleCategory.style.color = '#344e62'
     categoryProperties.forEach(e => {
       if (e.name == mainArticleCategory.innerHTML) {
