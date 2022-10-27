@@ -167,19 +167,14 @@
 // Common articles, category style
     articles.forEach(article => {
       let articleCategoryColor;
-      categoryProperties
-        .some(propertie => {
-          console.log([propertie.name, article.getAttribute('category')])
-          if (propertie.name == article.getAttribute('category')) {
-            articleCategoryColor = propertie.color;
-            return;
-          }
-        })
-        console
-        .log(articleCategoryColor)
-        article
-        .querySelector('img')
-        .style = `border-bottom: 17px solid ${
+      categoryProperties.some(propertie => {
+        if (propertie.name == article.getAttribute('category')) {
+          articleCategoryColor = propertie.color;
+          return;
+        }
+      })
+
+      article.querySelector('img').style = `border-bottom: 17px solid ${
         articleCategoryColor == undefined
           ? defaultColor
           : articleCategoryColor
@@ -190,13 +185,14 @@
   <!--Filter by Category-->
   <script>
     let categoryOptions = document.querySelectorAll('[filterType="filter-option"]');
+    let objectToFilter = document.querySelectorAll('[filterType="object-to-filter"]');
+    let optionSelected;
     categoryOptions.forEach(category => {
       category.addEventListener('click', event => {
-        let optionSelected = event.target;
+        optionSelected = event.target;
 
         categoryOptions.forEach(item => {
-          console.log(item.firstElementChild.innerHTML)
-          console.log(optionSelected.innerHTML)
+
 
           if (item.firstElementChild.innerHTML == optionSelected.innerHTML) {
             let categoryColor = categoryProperties
@@ -219,7 +215,13 @@
           }
 
         })
-        document.querySelectorAll('[filterType="object-to-filter"]')
+        objectToFilter.forEach(article => {
+          if (optionSelected.innerHTML != article.getAttribute('category')) {
+            article.style.display = 'none';
+          } else {
+            article.style.display = 'block';
+          }
+        })
       })
     })
   </script>
