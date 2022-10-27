@@ -169,6 +169,9 @@
         let optionSelected = event.target;
 
         categoryOptions.forEach(item => {
+          console.log(item.firstElementChild.innerHTML)
+          console.log(optionSelected.innerHTML)
+
           if (item.firstElementChild.innerHTML == optionSelected.innerHTML) {
             let categoryColor = categoryProperties.some(properties => {
               if (properties.name == optionSelected.innerHTML) {
