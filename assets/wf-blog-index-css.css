@@ -944,7 +944,7 @@ blockquote {
     width: 50%;
 }
 
-._wf-btn {
+.wf-btn {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -961,7 +961,7 @@ blockquote {
     background-color: #9dbae5;
     -webkit-transition: all 200ms ease;
     transition: all 200ms ease;
-    color: #fff;
+    color: #fff !important;
     font-size: 15px;
     line-height: 110%;
     font-weight: 700;
@@ -976,7 +976,11 @@ blockquote {
     justify-self: end;
     width: 100%;
     max-width: 200px;
-  }
+}
+
+.wf-btn.wf-btn_nav:hover {
+    background-color: #9dbae5;
+}
 
 ._wf-btn:hover {
     background-color: #344e62;
