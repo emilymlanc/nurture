@@ -139,14 +139,12 @@ let defaultColor = '#344e62'
     })
     categoryTabsItems = categoryTabsItems.map(e => e.firstElementChild);
     categoryTabsItems.forEach(e => {
-      try {
-        e.style.color = categoryProperties.find(category => {
-          category.name == e.innerHTML
-        }).color;
-      } catch (error) {
-        e.style.color = defaultColor;
+      e.style.color = defaultColor;
+      for (item in categoryProperties) {
+        if (categoryProperties[item].name === e.innerHTML) {
+          e.style.color = categoryProperties[item].color;
+        }
       }
-
     })
 
 
