@@ -24,8 +24,6 @@
 
 
   <!--Nav CTA-->
-
-  <!--Nav CTA-->
   <a href="/collections#seating" class="wf-btn wf-btn_nav" id="nav-cta">Shop all</a>
 
   <!--Append Nav CTA-->
@@ -58,22 +56,51 @@
     <div class="_wf-labelblock _wf-span-bold-700 _wf-span-color_white">YOUR GO-TO GUIDE FOR ALL THINGS NURSERY</div>
   </div>
 
-<div id="email-form" class="_wf-index-blog__form-filter">
+  <!--Index Section -->
+  <div class="_wf-cc-section wf-section">
+    <div class="_wf-index-blog__container">
+      <div class="_wf-index-blog__filter-container">
+        <div class="_wf-index-blog__form-block-filter w-form">
+          <div id="email-form" class="_wf-index-blog__form-filter">
             <div class="_wf-index-blog__filter-collection">
-              <div class="_wf-index-blog__filter-collection-list">
+              <div id="category-tabs-list" class="_wf-index-blog__filter-collection-list">
+
                 {% for item in blog.tags%}
-                    <div class="w-checkbox _wf-index-blog___filter-option">
-                      <div class="_wf-index-blog__filter-checkbox-label w-form-label" >{{item}}</div>
-                    </div>
+                  <div class="w-checkbox _wf-index-blog___filter-option">
+                    <div class="_wf-index-blog__filter-checkbox-label w-form-label">{{item}}</div>
+                  </div>
                 {% endfor %}
+
               </div>
             </div>
             <a fs-cmsfilter-element="reset" href="#" class="_wf-index-blog__reset">Show All</a>
           </div>
+        </div>
+      </div>
+      <div>
+        <h2 class="_wf-span-light-300 _wf-span-color_brand--1">Latest on the Journal</h2>
+        <div class="_wf-index-blog__filter-collection">
+          <div class="_wf-index-blog__collection-list">
+            <div class="_wf-collection-item__articlecard">
+              <a href="#" class="_wf-keep-reading_wrapper w-inline-block"><img loading="lazy" alt="" src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" class="_wf-keep-reading_image">
+                <div class="_wf-keep-reading__content">
+                  <div class="_wf-keep-reading_category">Example category</div>
+                  <div class="_wf-keep-reading_title">Example title</div>
+                  <p class="_wf-keep-reading__paragraph">Example content. Example content. Example content. Example content. Example content. Example content. Example content. Example content. Example content. Example content. Example content. Example content. Example content. Example content. Example content. Example content. Example content. Example content.
+                  </p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <!--Category Styles-->
   <script>
-let categoryProperties = [
+    let categoryProperties = [
       {
         name: 'PREGNANCY',
         color: "#9dbae5"
@@ -103,10 +130,14 @@ let categoryProperties = [
         color: "#dc9d70"
       }
     ]
+
     let mainArticleCategory = document.getElementById('main-article-category');
+    let categoryTabsItems = document.getElementById('category-tabs-list').childNodes.map(e => e.childNodes[0]);
     mainArticleCategory.style.color = '#344e62'
     categoryProperties.forEach(e => {
-      if (e.name == mainArticleCategory.innerHTML) {mainArticleCategory.style.color = e.color}
+      if (e.name == mainArticleCategory.innerHTML) {
+        mainArticleCategory.style.color = e.color
+      }
     })
   </script>
 </div>
