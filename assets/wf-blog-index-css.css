@@ -970,6 +970,14 @@ blockquote {
     text-transform: uppercase;
 }
 
+.wf-btn.wf-btn_nav {
+    padding: 16px 16px;
+    background-color: #344e62;
+    justify-self: end;
+    width: 100%;
+    max-width: 200px;
+  }
+
 ._wf-btn:hover {
     background-color: #344e62;
     color: #fff;
