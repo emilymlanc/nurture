@@ -62,9 +62,7 @@
 
   <!--Category Styles-->
   <script>
-    function testing(){
-    debugger;
-    let categoryProperties = [
+let categoryProperties = [
       {
         name: 'PREGNANCY',
         color: "#9dbae5"
@@ -95,10 +93,9 @@
       }
     ]
     let mainArticleCategory = document.getElementById('main-article-category');
+    mainArticleCategory.style.color = '#344e62'
     categoryProperties.forEach(e => {
-      e.name == mainArticleCategory.innerHTML
-        ? mainArticleCategory.style.color = e.color
-        : mainArticleCategory.style.color = 'black'
-    })}
+      if (e.name == mainArticleCategory.innerHTML) mainArticleCategory.style.color = e.color
+    })
   </script>
 </div>
