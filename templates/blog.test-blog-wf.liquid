@@ -82,10 +82,8 @@
         <div class="_wf-index-blog__filter-collection">
           <div class="_wf-index-blog__collection-list">
 
-            {% capture index %}
-            {{ 'now' | date: '%S' | times: collections.frontpage.products.size | divided_by: 60 }}
-            {% endcapture %}
-            {% for item in blog.articles offset:index%}
+            
+            {% for item in blog.articles%}
               <div class="_wf-collection-item__articlecard">
                 <a href="{{ item.url }}" class="_wf-keep-reading_wrapper w-inline-block">
                   <img loading="lazy" alt="" src="{{item.image.src | img_url: '1024x1024'}}" class="_wf-keep-reading_image">
@@ -104,6 +102,8 @@
       </div>
     </div>
   </div>
+
+
 
 
   <!--Category Styles-->
