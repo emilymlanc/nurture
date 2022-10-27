@@ -1,0 +1,236 @@
+<div>
+  <header>
+    <link href="{{ 'wf-blog-index-webflow-css.css' | asset_url }}" rel="stylesheet" type="text/css" media="all">
+    <link href="{{ 'wf-blog-index-normalize-css.css' | asset_url }}" type="text/css" media="all">
+    <link rel="stylesheet" href="{{ 'wf-blog-index-css.css' | asset_url }}" type="text/css">
+  </header>
+
+  <style>
+    .header__icons {
+      display: none !important;
+    }
+
+    @media screen and (max-width: 767px) {
+      .header {
+        grid-template-columns: auto auto auto;
+      }
+
+      .header__svg-logo svg {
+        width: 100%;
+      }
+    }
+  </style>
+
+
+
+  <!--Nav CTA-->
+  <a href="/collections#seating" class="wf-btn wf-btn_nav" id="nav-cta">Shop all</a>
+
+  <!--Append Nav CTA-->
+  <script>
+    let navContainer = document.querySelector("header.header");
+    let navCta = document.getElementById("nav-cta");
+    navContainer.appendChild(navCta);
+  </script>
+
+  <!--Hero Section-->
+  <div class="_wf-heroblog-section wf-section">
+    <div class="_wf-heroblog-collection-list-wrapper">
+      {% for item in blog.articles limit:1%}
+        <a href="{{ item.url }}" class="_wf-heroblog-wrap w-inline-block"><img src="{{item.image.src | img_url: '1024x1024'}}" loading="lazy" alt="" class="_wf-heroblog-mainimg">
+          <div class="_wf-heroblog-content">
+            <div class="_wf-labelblock _wf-labelblock-button" id="main-article-category">{{ item.tags }}</div>
+            <h3 id="main-article-title">{{ item.title }}</h3>
+            <p class="_wf-span-color_brand--1">{{ item.excerpt }}</p><img src="https://uploads-ssl.webflow.com/614cf582249767ca6d30a78f/6170356bb999eb24b6e690f1_Seal.png" loading="lazy" alt="" class="_wf-heroblog-sign _wf-mobile">
+            <div class="_wf-articlecard-readmore-wrap">
+              <div class="_wf-labelblock _wf-labelblock-button _wf-span-color_brand--1">READ MORE</div><img src="https://uploads-ssl.webflow.com/614cf582249767ca6d30a78f/617045ff4bd832d80da5e123_Vector%2020.png" loading="lazy" alt="" class="_wf-articlecard-readmore-icon">
+            </div>
+          </div><img src="https://uploads-ssl.webflow.com/614cf582249767ca6d30a78f/6170356bb999eb24b6e690f1_Seal.png" loading="lazy" alt="" class="_wf-heroblog-sign">
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!--Promotional Banner-->
+  <div class="_wf-promotional-banner wf-section">
+    <div class="_wf-labelblock _wf-span-bold-700 _wf-span-color_white">YOUR GO-TO GUIDE FOR ALL THINGS NURSERY</div>
+  </div>
+
+  <!--Index Section -->
+  <div class="_wf-cc-section wf-section">
+    <div class="_wf-index-blog__container">
+      <div class="_wf-index-blog__filter-container">
+        <div class="_wf-index-blog__form-block-filter w-form">
+          <div id="email-form" class="_wf-index-blog__form-filter">
+            <div class="_wf-index-blog__filter-collection">
+              <div id="category-tabs-list" class="_wf-index-blog__filter-collection-list">
+
+                {% for item in blog.tags%}
+                  <div filterType='filter-option' class="w-checkbox _wf-index-blog___filter-option">
+                    <div class="_wf-index-blog__filter-checkbox-label w-form-label">{{item}}</div>
+                  </div>
+                {% endfor %}
+
+              </div>
+            </div>
+            <a filterType="reset" href="#category-tabs-list" class="_wf-index-blog__reset">Show All</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h2 class="_wf-span-light-300 _wf-span-color_brand--1 text-align-center">Latest on the Journal</h2>
+        <div class="_wf-index-blog__filter-collection">
+          <div class="_wf-index-blog__collection-list">
+
+            {% for item in blog.articles%}
+              <div filterType='object-to-filter' category='{{ item.tags }}' class="_wf-collection-item__articlecard">
+                <a href="{{ item.url }}" class="_wf-keep-reading_wrapper w-inline-block">
+                  <img loading="lazy" alt="" src="{{item.image.src | img_url: '1024x1024'}}" class="_wf-keep-reading_image">
+                  <div class="_wf-keep-reading__content">
+                    <div class="_wf-keep-reading_category">{{ item.tags }}</div>
+                    <div class="_wf-keep-reading_title">{{ item.title }}</div>
+                    <p class="_wf-keep-reading__paragraph">{{ item.excerpt }}</p>
+                  </div>
+                </a>
+              </div>
+            {% endfor %}
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!--Category Styles-->
+  <script>
+    let categoryProperties = [
+      {
+        name: 'PREGNANCY',
+        color: "#9dbae5"
+      },
+      {
+        name: 'PREGNANCY CARE',
+        color: "#344e62"
+      },
+      {
+        name: 'NURSERY',
+        color: "#a2a884"
+      },
+      {
+        name: 'CHECK LIST',
+        color: "#9dbae5"
+      }, {
+        name: 'GENDER',
+        color: "#344e62"
+      }, {
+        name: 'FIRST TRIMESTER',
+        color: "#dc9d70"
+      }, {
+        name: 'SECOND TRIMESTER',
+        color: "#dc9d70"
+      }, {
+        name: 'THIRD TRIMESTER',
+        color: "#dc9d70"
+      }
+    ]
+    let defaultColor = '#344e62'
+    let mainArticleCategory = document.getElementById('main-article-category');
+    let categoryTabsItems = [];
+    let categoryTabChilds = document.getElementById('category-tabs-list').children;
+    let articles = document.querySelectorAll('[filterType="object-to-filter"]');
+
+
+// Category tabs style
+    Array.prototype.forEach.call(categoryTabChilds, e => {
+      categoryTabsItems.push(e)
+    })
+    categoryTabsItems = categoryTabsItems.map(e => e.firstElementChild);
+    categoryTabsItems.forEach(e => {
+      e.style.color = defaultColor;
+      for (item in categoryProperties) {
+        if (categoryProperties[item].name === e.innerHTML) {
+          e.style.color = categoryProperties[item].color;
+        }
+      }
+    })
+
+
+// Main article style
+    mainArticleCategory.style.color = defaultColor;
+    categoryProperties.forEach(e => {
+      if (e.name == mainArticleCategory.innerHTML) {
+        mainArticleCategory.style.color = e.color
+      }
+    })
+
+// Common articles, category style
+    articles.forEach(article => {
+      let articleCategoryColor;
+      categoryProperties.some(propertie => {
+        if (propertie.name == article.getAttribute('category')) {
+          articleCategoryColor = propertie.color;
+          return;
+        }
+      })
+
+      article.querySelector('img').style = `border-bottom: 17px solid ${
+        articleCategoryColor == undefined
+          ? defaultColor
+          : articleCategoryColor
+        }`;
+    })
+  </script>
+
+  <!--Filter by Category-->
+  <script>
+    let categoryOptions = document.querySelectorAll('[filterType="filter-option"]');
+    let objectToFilter = document.querySelectorAll('[filterType="object-to-filter"]');
+    let resetOption = document.querySelectorAll('[filterType="reset"]')[0];
+    let optionSelected;
+    categoryOptions.forEach(category => {
+      category.addEventListener('click', event => {
+        optionSelected = event.target;
+        categoryOptions.forEach(item => {
+          if (item.firstElementChild.innerHTML == optionSelected.innerHTML) {
+            let categoryColor = categoryProperties
+              .some(properties => {
+                if (properties.name == optionSelected.innerHTML) {
+                  return properties.color
+                }
+              })
+              item
+              .firstElementChild
+              .style
+              .border_color = categoryColor;
+            item.firstElementChild.style.borderBottomStyle = 'solid'
+            item.firstElementChild.style.borderBottomWidth = '5px'
+
+          } else {
+            item.firstElementChild.style.border_color = defaultColor;
+            item.firstElementChild.style.borderBottomStyle = 'none'
+            item.firstElementChild.style.borderBottomWidth = '0px'
+          }
+        })
+        objectToFilter.forEach(article => {
+          if (optionSelected.innerHTML != article.getAttribute('category')) {
+            article.style.display = 'none';
+          } else {
+            article.style.display = 'block';
+          }
+        })
+      })
+    });
+    resetOption.addEventListener('click', e => {
+      optionSelected = undefined
+      objectToFilter.forEach(article => {
+        article.style.display = 'block';
+      })
+      categoryOptions.forEach(option => {
+        option.firstElementChild.style.border_color = defaultColor;
+        option.firstElementChild.style.borderBottomStyle = 'none'
+        option.firstElementChild.style.borderBottomWidth = '0px'
+      })
+    })
+  </script>
+</div>
