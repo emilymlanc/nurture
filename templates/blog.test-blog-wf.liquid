@@ -83,7 +83,7 @@
           <div class="_wf-index-blog__collection-list">
 
             {% for item in blog.articles%}
-              <div filterType='filter-option' class="_wf-collection-item__articlecard">
+              <div filterType='object-to-filter' class="_wf-collection-item__articlecard">
                 <a href="{{ item.url }}" class="_wf-keep-reading_wrapper w-inline-block">
                   <img loading="lazy" alt="" src="{{item.image.src | img_url: '1024x1024'}}" class="_wf-keep-reading_image">
                   <div class="_wf-keep-reading__content">
