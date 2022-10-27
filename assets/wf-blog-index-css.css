@@ -1810,9 +1810,9 @@ blockquote {
 ._wf-collection-item__articlecard {
     width: 100%;
     max-width: 400px;
-    margin-right: auto;
+    margin-right: 10px;
     margin-bottom: 50px;
-    margin-left: auto;
+    margin-left: 10px;
 }
 
 ._wf-subscribe-section {
