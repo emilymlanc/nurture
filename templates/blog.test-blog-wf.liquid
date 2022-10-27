@@ -178,14 +178,14 @@
                 return properties.color
               }
             })
-            optionSelected.style.border_color = categoryColor;
-            optionSelected.style.borderBottomStyle = 'solid'
-            optionSelected.style.borderBottomWidth = '5px'
+            item.firstElementChild.style.border_color = categoryColor;
+            item.firstElementChild.style.borderBottomStyle = 'solid'
+            item.firstElementChild.style.borderBottomWidth = '5px'
 
           } else {
-            optionSelected.style.border_color = defaultColor;
-            optionSelected.style.borderBottomStyle = 'none'
-            optionSelected.style.borderBottomWidth = '5px'
+            item.firstElementChild.style.border_color = defaultColor;
+            item.firstElementChild.style.borderBottomStyle = 'none'
+            item.firstElementChild.style.borderBottomWidth = '5px'
           }
 
         })
