@@ -130,7 +130,7 @@
         color: "#dc9d70"
       }
     ]
-
+let defaultColor = '#344e62'
     let mainArticleCategory = document.getElementById('main-article-category');
     let categoryTabsItems = [];
     let categoryTabChilds = document.getElementById('category-tabs-list').children;
@@ -138,7 +138,20 @@
       categoryTabsItems.push(e)
     })
     categoryTabsItems = categoryTabsItems.map(e => e.firstElementChild);
-    mainArticleCategory.style.color = '#344e62'
+    categoryTabsItems.forEach(e => {
+      try {
+        e.style.color = categoryProperties.find(category => {
+          category.name == e.innerHTML
+        }).color;
+      } catch (error) {
+        e.style.color = defaultColor;
+      }
+
+    })
+
+
+
+    mainArticleCategory.style.color = defaultColor;
     categoryProperties.forEach(e => {
       if (e.name == mainArticleCategory.innerHTML) {
         mainArticleCategory.style.color = e.color
