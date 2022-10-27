@@ -1808,7 +1808,7 @@ blockquote {
 }
 
 ._wf-collection-item__articlecard {
-    width: 30%;
+    width: 100%;
     max-width: 400px;
     margin-right: auto;
     margin-bottom: 50px;
