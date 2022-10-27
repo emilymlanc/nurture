@@ -166,11 +166,13 @@
 
 // Common articles, category style
     articles.forEach(article => {
-      let articleCategoryColor = categoryProperties
+      let articleCategoryColor;
+      categoryProperties
         .some(propertie => {
           console.log([propertie.name, article.getAttribute('category')])
           if (propertie.name == article.getAttribute('category')) {
-            return propertie.color;
+            articleCategoryColor = propertie.color;
+            return;
           }
         })
         console
