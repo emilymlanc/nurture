@@ -186,7 +186,7 @@
   <script>
     let categoryOptions = document.querySelectorAll('[filterType="filter-option"]');
     let objectToFilter = document.querySelectorAll('[filterType="object-to-filter"]');
-    let resetOption = document.querySelectorAll('[filterType="reset"]')
+    let resetOption = document.querySelectorAll('[filterType="reset"]')[0];
     let optionSelected;
     categoryOptions.forEach(category => {
       category.addEventListener('click', event => {
