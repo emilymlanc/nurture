@@ -133,9 +133,11 @@
 
     let mainArticleCategory = document.getElementById('main-article-category');
     let categoryTabsItems = [];
-    document.getElementById('category-tabs-list').children.forEach(e => {
+    let categoryTabChilds = document.getElementById('category-tabs-list').children
+    categoryTabChilds.forEach(e => {
       categoryTabsItems.push(e)
     });
+
     categoryTabsItems = categoryTabsItems.map(e => e.firstElementChild);
     mainArticleCategory.style.color = '#344e62'
     categoryProperties.forEach(e => {
