@@ -66,7 +66,7 @@
               <div id="category-tabs-list" class="_wf-index-blog__filter-collection-list">
 
                 {% for item in blog.tags%}
-                  <div filterType='category-option' class="w-checkbox _wf-index-blog___filter-option">
+                  <div filterType='filter-option' class="w-checkbox _wf-index-blog___filter-option">
                     <div class="_wf-index-blog__filter-checkbox-label w-form-label">{{item}}</div>
                   </div>
                 {% endfor %}
@@ -83,7 +83,7 @@
           <div class="_wf-index-blog__collection-list">
 
             {% for item in blog.articles%}
-              <div class="_wf-collection-item__articlecard">
+              <div filterType='filter-option' class="_wf-collection-item__articlecard">
                 <a href="{{ item.url }}" class="_wf-keep-reading_wrapper w-inline-block">
                   <img loading="lazy" alt="" src="{{item.image.src | img_url: '1024x1024'}}" class="_wf-keep-reading_image">
                   <div class="_wf-keep-reading__content">
@@ -158,6 +158,31 @@
       if (e.name == mainArticleCategory.innerHTML) {
         mainArticleCategory.style.color = e.color
       }
+    })
+  </script>
+
+  <!--Filter by Category-->
+  <script>
+    let categoryOptions = document.querySelectorAll('[filterType="filter-option"]');
+    categoryOptions.forEach(category => {
+      category.addEventListener('click', event => {
+        let optionSelected = event.target;
+
+        categoryOptions.forEach(item => {
+          if (item.firstElementChild.innerHTML == optionSelected.innerHTML) {
+            let categoryColor = categoryProperties.some(properties => {
+              if (properties.name == optionSelected.innerHTML) {
+                return properties.color
+              }
+            })
+            optionSelected.style.border_color = categoryColor;
+          } else {
+            optionSelected.style.border_color = defaultColor;
+          }
+
+        })
+        document.querySelectorAll('[filterType="object-to-filter"]')
+      })
     })
   </script>
 </div>
