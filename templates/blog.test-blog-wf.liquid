@@ -166,12 +166,17 @@
 
 // Common articles, category style
     articles.forEach(article => {
-      let articleCategoryColor = categoryProperties.some(propertie => {
-        if (propertie.name == article.category) {
-          return propertie.color;
-        }
-      })
-      article.querySelector('img').style = `border-bottom: 17px solid ${
+      let articleCategoryColor = categoryProperties
+        .some(propertie => {
+          if (propertie.name == article.category) {
+            return propertie.color;
+          }
+        })
+        console
+        .log(articleCategoryColor)
+        article
+        .querySelector('img')
+        .style = `border-bottom: 17px solid ${
         articleCategoryColor == undefined
           ? defaultColor
           : articleCategoryColor
