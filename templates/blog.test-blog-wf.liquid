@@ -56,7 +56,7 @@
     <div class="_wf-labelblock _wf-span-bold-700 _wf-span-color_white">YOUR GO-TO GUIDE FOR ALL THINGS NURSERY</div>
   </div>
 
-   <!--Index Section -->
+  <!--Index Section -->
   <div class="_wf-cc-section wf-section">
     <div class="_wf-index-blog__container">
       <div class="_wf-index-blog__filter-container">
@@ -78,11 +78,10 @@
         </div>
       </div>
       <div>
-        <h2 class="_wf-span-light-300 _wf-span-color_brand--1">Latest on the Journal</h2>
+        <h2 class="_wf-span-light-300 _wf-span-color_brand--1 text-align-center">Latest on the Journal</h2>
         <div class="_wf-index-blog__filter-collection">
           <div class="_wf-index-blog__collection-list">
 
-            
             {% for item in blog.articles%}
               <div class="_wf-collection-item__articlecard">
                 <a href="{{ item.url }}" class="_wf-keep-reading_wrapper w-inline-block">
@@ -96,14 +95,11 @@
               </div>
             {% endfor %}
 
-
           </div>
         </div>
       </div>
     </div>
   </div>
-
-
 
 
   <!--Category Styles-->
@@ -138,7 +134,7 @@
         color: "#dc9d70"
       }
     ]
-let defaultColor = '#344e62'
+    let defaultColor = '#344e62'
     let mainArticleCategory = document.getElementById('main-article-category');
     let categoryTabsItems = [];
     let categoryTabChilds = document.getElementById('category-tabs-list').children;
