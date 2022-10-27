@@ -73,7 +73,7 @@
 
               </div>
             </div>
-            <a fs-cmsfilter-element="reset" href="#category-tabs-list" class="_wf-index-blog__reset">Show All</a>
+            <a filterType="reset" href="#category-tabs-list" class="_wf-index-blog__reset">Show All</a>
           </div>
         </div>
       </div>
@@ -186,14 +186,12 @@
   <script>
     let categoryOptions = document.querySelectorAll('[filterType="filter-option"]');
     let objectToFilter = document.querySelectorAll('[filterType="object-to-filter"]');
+    let resetOption = document.querySelectorAll('[filterType="reset"]')
     let optionSelected;
     categoryOptions.forEach(category => {
       category.addEventListener('click', event => {
         optionSelected = event.target;
-
         categoryOptions.forEach(item => {
-
-
           if (item.firstElementChild.innerHTML == optionSelected.innerHTML) {
             let categoryColor = categoryProperties
               .some(properties => {
@@ -213,7 +211,6 @@
             item.firstElementChild.style.borderBottomStyle = 'none'
             item.firstElementChild.style.borderBottomWidth = '0px'
           }
-
         })
         objectToFilter.forEach(article => {
           if (optionSelected.innerHTML != article.getAttribute('category')) {
@@ -222,6 +219,17 @@
             article.style.display = 'block';
           }
         })
+      })
+    });
+    resetOption.addEventListener('click', e => {
+      optionSelected = undefined
+      objectToFilter.forEach(article => {
+        article.style.display = 'block';
+      })
+      categoryOptions.forEach(option => {
+        item.firstElementChild.style.border_color = defaultColor;
+        item.firstElementChild.style.borderBottomStyle = 'none'
+        item.firstElementChild.style.borderBottomWidth = '0px'
       })
     })
   </script>
