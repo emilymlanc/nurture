@@ -134,12 +134,9 @@
     let mainArticleCategory = document.getElementById('main-article-category');
     let categoryTabsItems = [];
     let categoryTabChilds = document.getElementById('category-tabs-list').children;
-        console.log(categoryTabChilds);
-
-    categoryTabChilds.forEach(e => {
+    Array.prototype.forEach.call(categoryTabChilds, e => {
       categoryTabsItems.push(e)
-    });
-
+    })
     categoryTabsItems = categoryTabsItems.map(e => e.firstElementChild);
     mainArticleCategory.style.color = '#344e62'
     categoryProperties.forEach(e => {
