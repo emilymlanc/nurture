@@ -58,16 +58,18 @@
     <div class="_wf-labelblock _wf-span-bold-700 _wf-span-color_white">YOUR GO-TO GUIDE FOR ALL THINGS NURSERY</div>
   </div>
 
-<div class="_wf-index-blog__filter-collection">
+<div id="email-form" class="_wf-index-blog__form-filter">
+            <div class="_wf-index-blog__filter-collection">
               <div class="_wf-index-blog__filter-collection-list">
                 {% for item in blog.tags%}
                     <div class="w-checkbox _wf-index-blog___filter-option">
-                      <div class="_wf-index-blog__filter-checkbox-label w-form-label" >{{item}}</span>
+                      <div class="_wf-index-blog__filter-checkbox-label w-form-label" >{{item}}</div>
                     </div>
                 {% endfor %}
               </div>
             </div>
             <a fs-cmsfilter-element="reset" href="#" class="_wf-index-blog__reset">Show All</a>
+          </div>
 
   <!--Category Styles-->
   <script>
