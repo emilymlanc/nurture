@@ -208,10 +208,10 @@
     "1658945398e0766f9c": {
       "type": "product-individual-slider",
       "blocks": {
-        "e95b00bc-ec7d-4f54-a90f-d3111da5f1c8": {
+        "993804ba-43fb-4fa0-9101-de104ff85545": {
           "type": "individual_product",
           "settings": {
-            "product": "the-best-sellers-nursery-bundle"
+            "product": "glider-dresser"
           }
         },
         "705e95b5-c1cb-4c05-964f-92e8f58f590f": {
@@ -220,24 +220,24 @@
             "product": "the-ultimate-nursery-bundle"
           }
         },
+        "e95b00bc-ec7d-4f54-a90f-d3111da5f1c8": {
+          "type": "individual_product",
+          "settings": {
+            "product": "the-best-sellers-nursery-bundle"
+          }
+        },
         "5b8c7017-5a30-4273-a28c-0971744242fd": {
           "type": "individual_product",
           "settings": {
             "product": "the-classic-nursery-bundle"
           }
-        },
-        "993804ba-43fb-4fa0-9101-de104ff85545": {
-          "type": "individual_product",
-          "settings": {
-            "product": "glider-dresser"
-          }
         }
       },
       "block_order": [
-        "e95b00bc-ec7d-4f54-a90f-d3111da5f1c8",
+        "993804ba-43fb-4fa0-9101-de104ff85545",
         "705e95b5-c1cb-4c05-964f-92e8f58f590f",
-        "5b8c7017-5a30-4273-a28c-0971744242fd",
-        "993804ba-43fb-4fa0-9101-de104ff85545"
+        "e95b00bc-ec7d-4f54-a90f-d3111da5f1c8",
+        "5b8c7017-5a30-4273-a28c-0971744242fd"
       ],
       "settings": {
         "show_borders": true,
