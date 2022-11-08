@@ -37,6 +37,9 @@
   <div class="_wf-heroblog-section wf-section">
     <div class="_wf-heroblog-collection-list-wrapper">
       {% for item in blog.articles%}
+      <script>
+        console.log('{{item.metafields.relevance}}')
+      </script>
         {% if item.metafields.relevance == 1 %}
           <a href="{{ item.url }}" class="_wf-heroblog-wrap w-inline-block"><img src="{{item.image.src | img_url: '1024x1024'}}" loading="lazy" alt="" class="_wf-heroblog-mainimg">
             <div class="_wf-heroblog-content">
