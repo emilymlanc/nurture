@@ -64,13 +64,7 @@
           <div id="email-form" class="_wf-index-blog__form-filter">
             <div class="_wf-index-blog__filter-collection">
               <div id="category-tabs-list" class="_wf-index-blog__filter-collection-list">
-                <script>
-                  let categorylist = [];
-                </script>
                 {% for item in blog.tags%}
-                  <script>
-                    categorylist.push('{{ item }}');
-                  </script>
                   <div filterType='filter-option' class="w-checkbox _wf-index-blog___filter-option">
                     <div class="_wf-index-blog__filter-checkbox-label w-form-label">{{item}}</div>
                   </div>
