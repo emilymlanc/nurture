@@ -37,9 +37,6 @@
   <div class="_wf-heroblog-section wf-section">
     <div class="_wf-heroblog-collection-list-wrapper">
       {% for item in blog.articles%}
-      <script>
-        console.log('{{item.metafields.global.relevance.value}}')
-      </script>
         {% if item.metafields.global.relevance.value == 1 %}
           <a href="{{ item.url }}" class="_wf-heroblog-wrap w-inline-block"><img src="{{item.image.src | img_url: '1024x1024'}}" loading="lazy" alt="" class="_wf-heroblog-mainimg">
             <div class="_wf-heroblog-content">
@@ -51,8 +48,7 @@
               </div>
             </div><img src="https://uploads-ssl.webflow.com/614cf582249767ca6d30a78f/6170356bb999eb24b6e690f1_Seal.png" loading="lazy" alt="" class="_wf-heroblog-sign">
           </a>
-        {% endif %}}
-
+        {% endif %}
       {% endfor %}
     </div>
   </div>
@@ -267,5 +263,3 @@
     })
   </script>
 </div>
-
-
