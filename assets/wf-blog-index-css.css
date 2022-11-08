@@ -1,3 +1,15 @@
+.wf-btn.wf-btn_nav {
+  padding: 16px 16px;
+  background-color: #344e62;
+  justify-self: end;
+  width: 100%;
+  max-width: 200px;
+}
+
+.wf-btn.wf-btn_nav:hover {
+  background-color: #9dbae5;
+}
+
 .w-layout-grid {
   display: -ms-grid;
   display: grid;
@@ -140,7 +152,6 @@ p {
 }
 
 a {
-  color: #dc9d70;
   text-decoration: none;
 }
 
@@ -946,7 +957,7 @@ blockquote {
   width: 50%;
 }
 
-._wf-btn {
+.wf-btn {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -963,7 +974,7 @@ blockquote {
   background-color: #9dbae5;
   -webkit-transition: all 200ms ease;
   transition: all 200ms ease;
-  color: #fff;
+  color: #fff !important;
   font-size: 15px;
   line-height: 110%;
   font-weight: 700;
