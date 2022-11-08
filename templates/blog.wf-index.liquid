@@ -38,9 +38,9 @@
     <div class="_wf-heroblog-collection-list-wrapper">
       {% for item in blog.articles%}
       <script>
-        console.log('{{article.metafields.global.relevance.value}}')
+        console.log('{{item.metafields.global.relevance.value}}')
       </script>
-        {% if article.metafields.global.relevance.value == 1 %}
+        {% if item.metafields.global.relevance.value == 1 %}
           <a href="{{ item.url }}" class="_wf-heroblog-wrap w-inline-block"><img src="{{item.image.src | img_url: '1024x1024'}}" loading="lazy" alt="" class="_wf-heroblog-mainimg">
             <div class="_wf-heroblog-content">
               <div class="_wf-labelblock _wf-labelblock-button" id="main-article-category">{{ item.tags }}</div>
