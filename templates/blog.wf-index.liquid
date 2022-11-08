@@ -64,11 +64,13 @@
           <div id="email-form" class="_wf-index-blog__form-filter">
             <div class="_wf-index-blog__filter-collection">
               <div id="category-tabs-list" class="_wf-index-blog__filter-collection-list">
+
                 {% for item in blog.tags%}
-                  <div id='{{ item }}' filterType='filter-option' class="w-checkbox _wf-index-blog___filter-option">
+                  <div id="{{item}}" filterType='filter-option' class="w-checkbox _wf-index-blog___filter-option">
                     <div class="_wf-index-blog__filter-checkbox-label w-form-label">{{item}}</div>
                   </div>
                 {% endfor %}
+
               </div>
             </div>
             <a filterType="reset" href="#category-tabs-list" class="_wf-index-blog__reset">Show All</a>
@@ -100,36 +102,42 @@
   </div>
 
 
+  <!--Category Order-->
+  <script>
+    // First trimester before second trimester
+    document.getElementById('FIRST TRIMESTER').parentNode.insertBefore(document.getElementById('FIRST TRIMESTER'), document.getElementById('SECOND TRIMESTER'))
+  </script>
+
   <!--Category Styles-->
   <script>
     let categoryProperties = [
       {
         name: 'PREGNANCY',
-        color: "#9dbae5"
+        color: "#344e62" // Azul oscuro
       },
       {
         name: 'PREGNANCY CARE',
-        color: "#344e62"
+        color: "#a2a884" // Verde
       },
       {
         name: 'NURSERY',
-        color: "#a2a884"
+        color: "#9dbae5" // Azul claro
       },
       {
         name: 'CHECK LIST',
-        color: "#9dbae5"
+        color: "#9dbae5" // Azul claro
       }, {
         name: 'GENDER',
-        color: "#344e62"
+        color: "#344e62" // Azul oscuro
       }, {
         name: 'FIRST TRIMESTER',
-        color: "#dc9d70"
+        color: "#dc9d70" // Naranja
       }, {
         name: 'SECOND TRIMESTER',
-        color: "#dc9d70"
+        color: "#dc9d70" // Naranja
       }, {
         name: 'THIRD TRIMESTER',
-        color: "#dc9d70"
+        color: "#dc9d70" // Naranja
       }
     ]
     let defaultColor = '#344e62'
