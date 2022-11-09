@@ -169,42 +169,6 @@
         "title": "Designed for life’s moments."
       }
     },
-    "163422646004fc7602": {
-      "type": "categories-grid",
-      "blocks": {
-        "58ef42e3-f263-4a94-8309-9ebeb083d4d1": {
-          "type": "block",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Untitled_design_45.png",
-            "title": "Shop Seating",
-            "link": "https:\/\/nurtureand.com\/collections#seating"
-          }
-        },
-        "23e3b83a-e89a-45ed-827f-bbacd8ab1377": {
-          "type": "block",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Untitled_design_2_a382876c-e7f4-46fb-bf4a-814e3894b3c9.jpg",
-            "title": "Shop Furniture",
-            "link": "https:\/\/nurtureand.com\/collections#furniture"
-          }
-        },
-        "1400a2e3-35b4-4058-b36c-166536667141": {
-          "type": "block",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Untitled_design_f958827c-f327-4835-8c7f-a3d20ab9d3a5.png",
-            "title": "Shop PlayPad & Hideout",
-            "link": "https:\/\/nurtureand.com\/collections#play"
-          }
-        }
-      },
-      "block_order": [
-        "58ef42e3-f263-4a94-8309-9ebeb083d4d1",
-        "23e3b83a-e89a-45ed-827f-bbacd8ab1377",
-        "1400a2e3-35b4-4058-b36c-166536667141"
-      ],
-      "settings": {
-      }
-    },
     "1658945398e0766f9c": {
       "type": "product-individual-slider",
       "blocks": {
@@ -241,9 +205,45 @@
       ],
       "settings": {
         "show_borders": true,
-        "subtitle": "All of your nursery needs, in one place.",
+        "subtitle": "Exclusive black friday savings",
         "title": "Build Your Nursery, Bundle & Save",
         "show_badge": true
+      }
+    },
+    "163422646004fc7602": {
+      "type": "categories-grid",
+      "blocks": {
+        "58ef42e3-f263-4a94-8309-9ebeb083d4d1": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Untitled_design_45.png",
+            "title": "Shop Seating",
+            "link": "https:\/\/nurtureand.com\/collections#seating"
+          }
+        },
+        "23e3b83a-e89a-45ed-827f-bbacd8ab1377": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Untitled_design_2_a382876c-e7f4-46fb-bf4a-814e3894b3c9.jpg",
+            "title": "Shop Furniture",
+            "link": "https:\/\/nurtureand.com\/collections#furniture"
+          }
+        },
+        "1400a2e3-35b4-4058-b36c-166536667141": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Untitled_design_f958827c-f327-4835-8c7f-a3d20ab9d3a5.png",
+            "title": "Shop PlayPad & Hideout",
+            "link": "https:\/\/nurtureand.com\/collections#play"
+          }
+        }
+      },
+      "block_order": [
+        "58ef42e3-f263-4a94-8309-9ebeb083d4d1",
+        "23e3b83a-e89a-45ed-827f-bbacd8ab1377",
+        "1400a2e3-35b4-4058-b36c-166536667141"
+      ],
+      "settings": {
       }
     },
     "1634229698d8303517": {
@@ -832,8 +832,8 @@
     "1634220250c6629c41",
     "1658945338e40c6243",
     "16347581471ff1d7ef",
-    "163422646004fc7602",
     "1658945398e0766f9c",
+    "163422646004fc7602",
     "1634229698d8303517",
     "163423206288466992",
     "16342440668cfe2682",
